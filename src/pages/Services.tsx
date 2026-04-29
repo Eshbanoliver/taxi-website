@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Car, Plane, Clock, Users, Briefcase, Heart, Calendar, MapPin, CheckCircle, ArrowRight } from 'lucide-react';
+import { Car, Plane, Clock, Briefcase, Heart, Calendar, MapPin, CheckCircle } from 'lucide-react';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<string | null>(null);

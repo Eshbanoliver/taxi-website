@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { WhatsApp, Phone, ArrowUp } from 'lucide-react';
+import { Phone, ArrowUp, MessageCircle } from 'lucide-react';
 
 const FloatingButtons = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,14 +29,13 @@ const FloatingButtons = () => {
       {/* WhatsApp Button */}
       <div className="fixed left-6 bottom-6 z-50 animate-float">
         <a
-          href="#"
-          className="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition-colors duration-300 group"
-          aria-label="Contact on WhatsApp"
+          href="https://wa.me/919876543210"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 animate-float"
+          aria-label="WhatsApp"
         >
-          <WhatsApp className="text-white" size={24} />
-          <span className="absolute left-16 bg-gray-800 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-            WhatsApp Us
-          </span>
+          <MessageCircle size={24} />
         </a>
       </div>
 

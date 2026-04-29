@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Phone, Mail } from 'lucide-react';
+import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight } from 'lucide-react';
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('hatchback');

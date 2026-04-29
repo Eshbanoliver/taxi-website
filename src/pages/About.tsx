@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, Clock, MapPin, CheckCircle, Target, Eye, Heart } from 'lucide-react';
+import { Users, Award, Clock, CheckCircle, Target, Eye, Heart, Shield } from 'lucide-react';
 
 const About = () => {
   const team = [

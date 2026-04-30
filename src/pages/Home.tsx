@@ -147,22 +147,101 @@ const Home = () => {
       </section>
 
       {/* Key Metrics */}
-      <section className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-6">
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-taxi-black mb-4">Our Achievements</h2>
+          <p className="text-xl text-gray-700">Numbers that speak for our excellence</p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { number: '50K+', label: 'Rides Completed', icon: Car },
-            { number: '10K+', label: 'Happy Customers', icon: Users },
-            { number: '15+', label: 'Cities Covered', icon: MapPin },
-            { number: '24/7', label: 'Service Available', icon: Clock },
+            { 
+              number: '50K+', 
+              label: 'Rides Completed', 
+              icon: Car, 
+              color: 'from-blue-500 to-blue-600',
+              bgColor: 'bg-blue-500/10',
+              description: 'Safe journeys delivered'
+            },
+            { 
+              number: '10K+', 
+              label: 'Happy Customers', 
+              icon: Users, 
+              color: 'from-green-500 to-green-600',
+              bgColor: 'bg-green-500/10',
+              description: 'Satisfied passengers'
+            },
+            { 
+              number: '15+', 
+              label: 'Cities Covered', 
+              icon: MapPin, 
+              color: 'from-purple-500 to-purple-600',
+              bgColor: 'bg-purple-500/10',
+              description: 'Wide network reach'
+            },
+            { 
+              number: '24/7', 
+              label: 'Service Available', 
+              icon: Clock, 
+              color: 'from-orange-500 to-orange-600',
+              bgColor: 'bg-orange-500/10',
+              description: 'Always here for you'
+            },
           ].map((metric, index) => (
-            <div key={index} className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto mb-4">
-                <metric.icon className="text-taxi-black" size={32} />
+            <div key={index} className="group relative">
+              {/* Card */}
+              <div className="relative glass rounded-3xl p-8 text-center hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                {/* Background gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${metric.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                
+                {/* Floating decoration */}
+                <div className={`absolute top-4 right-4 w-8 h-8 ${metric.bgColor} rounded-full animate-pulse`}></div>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon container */}
+                  <div className="relative mx-auto mb-6">
+                    <div className={`w-20 h-20 bg-gradient-to-br ${metric.color} rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                      <metric.icon className="text-white" size={40} />
+                    </div>
+                    {/* Ring animation */}
+                    <div className={`absolute inset-0 rounded-full border-2 ${metric.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
+                  </div>
+                  
+                  {/* Number */}
+                  <div className="text-5xl font-bold text-taxi-black mb-3 group-hover:scale-110 transition-transform duration-300">
+                    {metric.number}
+                  </div>
+                  
+                  {/* Label */}
+                  <div className="text-lg font-semibold text-gray-700 mb-2">
+                    {metric.label}
+                  </div>
+                  
+                  {/* Description */}
+                  <div className="text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    {metric.description}
+                  </div>
+                </div>
+                
+                {/* Hover effect overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${metric.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
               </div>
-              <div className="text-3xl font-bold text-taxi-black mb-2">{metric.number}</div>
-              <div className="text-gray-600">{metric.label}</div>
+              
+              {/* Bottom accent line */}
+              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${metric.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
             </div>
           ))}
+        </div>
+        
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-taxi-yellow to-yellow-400 px-8 py-4 rounded-full shadow-xl">
+            <div className="flex items-center space-x-2">
+              <Star className="text-taxi-black" size={20} />
+              <span className="text-taxi-black font-bold">Trusted by thousands daily</span>
+            </div>
+          </div>
         </div>
       </section>
 

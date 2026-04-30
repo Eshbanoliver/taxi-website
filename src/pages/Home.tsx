@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight } from 'lucide-react';
+import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 
 const Home = () => {
@@ -246,28 +246,112 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Our Services</h2>
-          <p className="text-xl text-gray-700">Comprehensive transportation solutions for all your needs</p>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <span className="text-taxi-yellow font-semibold">What We Offer</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Our Services</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Comprehensive transportation solutions tailored to meet your every need</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {[
-            { title: 'Local Rides', desc: 'Quick and affordable city transportation' },
-            { title: 'Airport Transfer', desc: 'Punctual pickup and drop services' },
-            { title: 'Outstation Trips', desc: 'Comfortable long-distance travel' },
+            { 
+              title: 'Local Rides', 
+              desc: 'Quick and affordable city transportation',
+              icon: Car,
+              color: 'from-blue-500 to-blue-600',
+              features: ['Quick Pickup', 'Affordable Rates', 'City Coverage'],
+              badge: 'Popular'
+            },
+            { 
+              title: 'Airport Transfer', 
+              desc: 'Punctual pickup and drop services',
+              icon: Plane,
+              color: 'from-green-500 to-green-600',
+              features: ['Flight Tracking', 'Luggage Help', 'Meet & Greet'],
+              badge: 'Premium'
+            },
+            { 
+              title: 'Outstation Trips', 
+              desc: 'Comfortable long-distance travel',
+              icon: MapPin,
+              color: 'from-purple-500 to-purple-600',
+              features: ['One-way & Round', 'Experienced Drivers', 'Comfortable'],
+              badge: null
+            },
           ].map((service, index) => (
-            <div key={index} className="glass rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
-              <h3 className="text-xl font-semibold text-taxi-black mb-3">{service.title}</h3>
-              <p className="text-gray-700 mb-4">{service.desc}</p>
-              <button className="text-taxi-yellow font-semibold hover:text-yellow-600 transition-colors">
-                Learn More →
-              </button>
+            <div key={index} className="group relative">
+              {/* Card */}
+              <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                {/* Background gradient */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                
+                {/* Badge */}
+                {service.badge && (
+                  <div className="absolute top-4 right-4">
+                    <div className={`bg-gradient-to-r ${service.color} text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse`}>
+                      {service.badge}
+                    </div>
+                  </div>
+                )}
+                
+                {/* Floating decoration */}
+                <div className={`absolute bottom-4 right-4 w-12 h-12 ${service.color.replace('from-', 'bg-').split(' ')[0]}/20 rounded-full animate-float`}></div>
+                
+                {/* Content */}
+                <div className="relative z-10">
+                  {/* Icon */}
+                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                    <service.icon className="text-white" size={32} />
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-2xl font-bold text-taxi-black mb-3 group-hover:text-gray-800 transition-colors duration-300">
+                    {service.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-700 mb-6 leading-relaxed">{service.desc}</p>
+                  
+                  {/* Features */}
+                  <div className="space-y-2 mb-6">
+                    {service.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
+                        <CheckCircle className={`text-${service.color.replace('from-', '').split(' ')[0]}-500`} size={16} />
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Button */}
+                  <button className={`group/btn w-full bg-gradient-to-r ${service.color} text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2`}>
+                    <span>Learn More</span>
+                    <ArrowRight className="group-hover/btn:translate-x-1 transition-transform" size={20} />
+                  </button>
+                </div>
+                
+                {/* Hover effect overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
+              </div>
+              
+              {/* Bottom accent line */}
+              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${service.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
             </div>
           ))}
         </div>
+        
+        {/* CTA Section */}
         <div className="text-center">
-          <a href="/services" className="btn-primary">View All Services</a>
+          <div className="relative inline-block group">
+            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+            <a href="/services" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+              <span>Explore All Services</span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </a>
+          </div>
+          <p className="text-gray-600 mt-4">Discover our complete range of transportation solutions</p>
         </div>
       </section>
 

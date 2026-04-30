@@ -17,6 +17,7 @@ export default {
       animation: {
         'float': 'float 3s ease-in-out infinite',
         'gradient': 'gradient 3s ease infinite',
+        'fade-in-up': 'fadeInUp 1s ease-out',
       },
       keyframes: {
         float: {
@@ -26,6 +27,10 @@ export default {
         gradient: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
         },
       },
     },

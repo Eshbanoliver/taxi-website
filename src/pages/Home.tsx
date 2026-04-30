@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight } from 'lucide-react';
+import HeroSlider from '../components/HeroSlider';
 
 const Home = () => {
   const [activeCategory, setActiveCategory] = useState('hatchback');
@@ -43,28 +44,8 @@ const Home = () => {
 
   return (
     <div className="space-y-20">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-100/50"></div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-taxi-black mb-6">
-            Your Trusted
-            <span className="block text-taxi-yellow">Taxi Service</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Professional, reliable, and affordable taxi services in Udaipur and beyond
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="btn-primary text-lg">Book Now</button>
-            <button className="btn-secondary text-lg">View Services</button>
-          </div>
-        </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-taxi-black rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-taxi-black rounded-full mt-2"></div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Slider Section */}
+      <HeroSlider />
 
       {/* About Us Preview */}
       <section className="container mx-auto px-4">

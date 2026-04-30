@@ -83,17 +83,17 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden bg-black">
+    <div className="relative" style={{ height: '100vh' }}>
       {/* Slides Container */}
-      <div className="relative h-full">
+      <div className="relative w-full h-full">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+            className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${
               index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
             }`}
           >
-            {/* Background Image with proper sizing */}
+            {/* Background Image */}
             <div
               className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
               style={{ 
@@ -103,54 +103,52 @@ const HeroSlider = () => {
               }}
             />
             
-            {/* Professional Gradient Overlay */}
+            {/* Gradient Overlay */}
             <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient}`} />
             
-            {/* Content Container */}
-            <div className="relative h-full flex items-center">
-              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="max-w-4xl mx-auto text-center lg:text-left">
-                  <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
-                    {/* Main Title */}
-                    <div className="space-y-2">
-                      <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
-                        {slide.title}
-                      </h1>
-                      <h2 className="text-xl sm:text-2xl lg:text-3xl text-taxi-yellow font-semibold">
-                        {slide.subtitle}
-                      </h2>
-                    </div>
-                    
-                    {/* Description */}
-                    <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                      {slide.description}
-                    </p>
-                    
-                    {/* Features */}
-                    <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
-                      {slide.features.map((feature, idx) => (
-                        <div
-                          key={idx}
-                          className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-sm px-4 py-2 rounded-full border border-taxi-yellow/30"
-                        >
-                          <CheckCircle className="text-taxi-yellow" size={16} />
-                          <span className="text-white font-medium text-sm">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                      <button className="group relative bg-taxi-yellow text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-2 min-w-[200px]">
-                        <Phone size={20} className="group-hover:animate-pulse" />
-                        <span>{slide.ctaText}</span>
-                        <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                      </button>
-                      <a href="/services" className="group bg-white/10 backdrop-blur-md text-white font-semibold py-4 px-8 rounded-full hover:bg-white/20 transform hover:scale-105 transition-all duration-300 border border-white/20 flex items-center justify-center min-w-[200px]">
-                        <span>View All Services</span>
-                        <ChevronRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
-                      </a>
-                    </div>
+            {/* Content */}
+            <div className="relative w-full h-full flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-8">
+              <div className="w-full max-w-7xl mx-auto lg:mx-0">
+                <div className="text-center lg:text-left space-y-8 lg:space-y-12">
+                  {/* Title */}
+                  <div className="space-y-4">
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight">
+                      {slide.title}
+                    </h1>
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl text-taxi-yellow font-semibold">
+                      {slide.subtitle}
+                    </h2>
+                  </div>
+                  
+                  {/* Description */}
+                  <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                    {slide.description}
+                  </p>
+                  
+                  {/* Features */}
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6">
+                    {slide.features.map((feature, idx) => (
+                      <div
+                        key={idx}
+                        className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-sm px-6 py-3 rounded-full border border-taxi-yellow/30"
+                      >
+                        <CheckCircle className="text-taxi-yellow" size={20} />
+                        <span className="text-white font-medium text-base">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* CTA Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
+                    <button className="group relative bg-taxi-yellow text-taxi-black font-bold py-5 px-10 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-3 min-w-[220px] text-lg">
+                      <Phone size={24} className="group-hover:animate-pulse" />
+                      <span>{slide.ctaText}</span>
+                      <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                    </button>
+                    <a href="/services" className="group bg-white/10 backdrop-blur-md text-white font-semibold py-5 px-10 rounded-full hover:bg-white/20 transform hover:scale-105 transition-all duration-300 border border-white/20 flex items-center justify-center min-w-[220px] text-lg">
+                      <span>View All Services</span>
+                      <ChevronRight size={24} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -160,33 +158,33 @@ const HeroSlider = () => {
       </div>
 
       {/* Professional Navigation Controls */}
-      <div className="absolute top-1/2 left-4 right-4 transform -translate-y-1/2 flex justify-between items-center pointer-events-none z-20">
+      <div className="absolute top-1/2 left-4 right-4 transform -translate-y-1/2 flex justify-between items-center pointer-events-none z-30">
         <button
           onClick={prevSlide}
-          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20"
+          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20 shadow-xl"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={24} className="group-hover:-translate-x-0.5 transition-transform" />
+          <ChevronLeft size={28} className="group-hover:-translate-x-0.5 transition-transform" />
         </button>
         <button
           onClick={nextSlide}
-          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20"
+          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20 shadow-xl"
           aria-label="Next slide"
         >
-          <ChevronRight size={24} className="group-hover:translate-x-0.5 transition-transform" />
+          <ChevronRight size={28} className="group-hover:translate-x-0.5 transition-transform" />
         </button>
       </div>
 
       {/* Professional Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
+      <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex space-x-4 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'bg-taxi-yellow w-12'
-                : 'bg-white/40 hover:bg-white/60 w-8'
+                ? 'bg-taxi-yellow w-16'
+                : 'bg-white/40 hover:bg-white/60 w-10'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -196,48 +194,48 @@ const HeroSlider = () => {
       {/* Professional Auto-play Toggle */}
       <button
         onClick={() => setIsAutoPlay(!isAutoPlay)}
-        className="absolute top-8 right-8 bg-white/10 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 border border-white/20 z-20"
+        className="absolute top-12 right-12 bg-white/10 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 border border-white/20 z-30 shadow-xl"
         aria-label={isAutoPlay ? "Pause autoplay" : "Start autoplay"}
       >
         {isAutoPlay ? (
-          <div className="w-5 h-5 flex items-center justify-center">
-            <div className="w-4 h-4 bg-current rounded-sm" />
+          <div className="w-6 h-6 flex items-center justify-center">
+            <div className="w-5 h-5 bg-current rounded-sm" />
           </div>
         ) : (
-          <div className="w-5 h-5 flex items-center justify-center space-x-1">
-            <div className="w-1 h-4 bg-current" />
-            <div className="w-1 h-4 bg-current" />
+          <div className="w-6 h-6 flex items-center justify-center space-x-1.5">
+            <div className="w-1.5 h-5 bg-current" />
+            <div className="w-1.5 h-5 bg-current" />
           </div>
         )}
       </button>
 
       {/* Professional Trust Badges */}
-      <div className="absolute top-8 left-8 flex flex-col space-y-3 z-10">
-        <div className="bg-taxi-yellow/20 backdrop-blur-sm p-3 rounded-xl border border-taxi-yellow/30 flex items-center space-x-3">
-          <Star className="text-taxi-yellow" size={20} />
+      <div className="absolute top-12 left-12 flex flex-col space-y-4 z-20">
+        <div className="bg-taxi-yellow/20 backdrop-blur-sm p-4 rounded-xl border border-taxi-yellow/30 flex items-center space-x-3 shadow-xl">
+          <Star className="text-taxi-yellow" size={24} />
           <div>
-            <p className="text-white font-bold text-lg">4.9</p>
-            <p className="text-white/80 text-xs">Rating</p>
+            <p className="text-white font-bold text-xl">4.9</p>
+            <p className="text-white/80 text-sm">Rating</p>
           </div>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-sm p-3 rounded-xl border border-white/20 flex items-center space-x-3">
-          <Shield className="text-white" size={20} />
+        <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 flex items-center space-x-3 shadow-xl">
+          <Shield className="text-white" size={24} />
           <div>
-            <p className="text-white font-bold text-lg">100%</p>
-            <p className="text-white/80 text-xs">Insured</p>
+            <p className="text-white font-bold text-xl">100%</p>
+            <p className="text-white/80 text-sm">Insured</p>
           </div>
         </div>
       </div>
       
-      <div className="absolute bottom-8 right-8 bg-white/10 backdrop-blur-sm p-3 rounded-xl border border-white/20 flex items-center space-x-3 z-10">
-        <Clock className="text-white" size={20} />
+      <div className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 flex items-center space-x-3 z-20 shadow-xl">
+        <Clock className="text-white" size={24} />
         <div>
-          <p className="text-white font-bold text-lg">24/7</p>
-          <p className="text-white/80 text-xs">Service</p>
+          <p className="text-white font-bold text-xl">24/7</p>
+          <p className="text-white/80 text-sm">Service</p>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

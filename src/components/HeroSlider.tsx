@@ -14,7 +14,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["24/7 Service", "GPS Tracking", "Safe & Secure"],
       ctaText: "Book Premium Ride",
-      bgGradient: "from-blue-900/90 to-blue-700/90"
+      bgGradient: "from-black/70 via-black/50 to-black/70"
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1436491865334-268b13d53b3a?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["Flight Monitoring", "Luggage Help", "Meet & Greet"],
       ctaText: "Book Airport Ride",
-      bgGradient: "from-purple-900/90 to-purple-700/90"
+      bgGradient: "from-black/70 via-black/50 to-black/70"
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["Monthly Billing", "Priority Service", "Executive Vehicles"],
       ctaText: "Corporate Plans",
-      bgGradient: "from-gray-900/90 to-gray-700/90"
+      bgGradient: "from-black/70 via-black/50 to-black/70"
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["Local Guides", "Flexible Routes", "Photo Stops"],
       ctaText: "Book City Tour",
-      bgGradient: "from-green-900/90 to-green-700/90"
+      bgGradient: "from-black/70 via-black/50 to-black/70"
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["One-way & Round-trip", "Highway Expert", "Comfortable"],
       ctaText: "Plan Outstation Trip",
-      bgGradient: "from-orange-900/90 to-orange-700/90"
+      bgGradient: "from-black/70 via-black/50 to-black/70"
     }
   ];
 
@@ -62,7 +62,7 @@ const HeroSlider = () => {
     if (isAutoPlay) {
       const interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, 5000);
+      }, 6000);
       return () => clearInterval(interval);
     }
   }, [isAutoPlay, slides.length]);
@@ -83,61 +83,72 @@ const HeroSlider = () => {
   };
 
   return (
-    <section className="relative h-screen overflow-hidden">
-      {/* Slides */}
+    <section className="relative h-screen overflow-hidden bg-black">
+      {/* Slides Container */}
       <div className="relative h-full">
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
             }`}
           >
-            {/* Background Image */}
+            {/* Background Image with proper sizing */}
             <div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${slide.image})` }}
+              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
+              style={{ 
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center'
+              }}
             />
             
-            {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-br ${slide.bgGradient}`} />
+            {/* Professional Gradient Overlay */}
+            <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient}`} />
             
-            {/* Content */}
+            {/* Content Container */}
             <div className="relative h-full flex items-center">
-              <div className="container mx-auto px-4">
-                <div className="max-w-3xl">
-                  <div className="animate-fade-in-up">
-                    <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
-                      {slide.title}
-                    </h1>
-                    <h2 className="text-2xl md:text-3xl text-yellow-300 mb-6">
-                      {slide.subtitle}
-                    </h2>
-                    <p className="text-xl text-white/90 mb-8 leading-relaxed">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-4xl mx-auto text-center lg:text-left">
+                  <div className="space-y-6 lg:space-y-8 animate-fade-in-up">
+                    {/* Main Title */}
+                    <div className="space-y-2">
+                      <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                        {slide.title}
+                      </h1>
+                      <h2 className="text-xl sm:text-2xl lg:text-3xl text-taxi-yellow font-semibold">
+                        {slide.subtitle}
+                      </h2>
+                    </div>
+                    
+                    {/* Description */}
+                    <p className="text-lg sm:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                       {slide.description}
                     </p>
                     
                     {/* Features */}
-                    <div className="flex flex-wrap gap-4 mb-8">
+                    <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
                       {slide.features.map((feature, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center space-x-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full"
+                          className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-sm px-4 py-2 rounded-full border border-taxi-yellow/30"
                         >
-                          <CheckCircle className="text-yellow-300" size={16} />
-                          <span className="text-white font-medium">{feature}</span>
+                          <CheckCircle className="text-taxi-yellow" size={16} />
+                          <span className="text-white font-medium text-sm">{feature}</span>
                         </div>
                       ))}
                     </div>
                     
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-4">
-                      <button className="bg-taxi-yellow text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-xl flex items-center justify-center space-x-2">
-                        <Phone size={20} />
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                      <button className="group relative bg-taxi-yellow text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-2 min-w-[200px]">
+                        <Phone size={20} className="group-hover:animate-pulse" />
                         <span>{slide.ctaText}</span>
+                        <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                       </button>
-                      <a href="/services" className="bg-white/20 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 border border-white/30">
-                        View All Services
+                      <a href="/services" className="group bg-white/10 backdrop-blur-md text-white font-semibold py-4 px-8 rounded-full hover:bg-white/20 transform hover:scale-105 transition-all duration-300 border border-white/20 flex items-center justify-center min-w-[200px]">
+                        <span>View All Services</span>
+                        <ChevronRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </div>
                   </div>
@@ -148,77 +159,82 @@ const HeroSlider = () => {
         ))}
       </div>
 
-      {/* Navigation Controls */}
-      <div className="absolute top-1/2 left-4 right-4 transform -translate-y-1/2 flex justify-between items-center pointer-events-none">
+      {/* Professional Navigation Controls */}
+      <div className="absolute top-1/2 left-4 right-4 transform -translate-y-1/2 flex justify-between items-center pointer-events-none z-20">
         <button
           onClick={prevSlide}
-          className="pointer-events-auto bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={24} className="group-hover:-translate-x-0.5 transition-transform" />
         </button>
         <button
           onClick={nextSlide}
-          className="pointer-events-auto bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20"
           aria-label="Next slide"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={24} className="group-hover:translate-x-0.5 transition-transform" />
         </button>
       </div>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      {/* Professional Slide Indicators */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`h-2 rounded-full transition-all duration-300 ${
               index === currentSlide
-                ? 'bg-taxi-yellow w-8'
-                : 'bg-white/50 hover:bg-white/70'
+                ? 'bg-taxi-yellow w-12'
+                : 'bg-white/40 hover:bg-white/60 w-8'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
 
-      {/* Auto-play Toggle */}
+      {/* Professional Auto-play Toggle */}
       <button
         onClick={() => setIsAutoPlay(!isAutoPlay)}
-        className="absolute top-8 right-8 bg-white/20 backdrop-blur-sm text-white p-2 rounded-full hover:bg-white/30 transition-all duration-300"
+        className="absolute top-8 right-8 bg-white/10 backdrop-blur-md text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 border border-white/20 z-20"
         aria-label={isAutoPlay ? "Pause autoplay" : "Start autoplay"}
       >
         {isAutoPlay ? (
-          <div className="w-4 h-4 flex items-center justify-center">
-            <div className="w-3 h-3 bg-current rounded-sm" />
+          <div className="w-5 h-5 flex items-center justify-center">
+            <div className="w-4 h-4 bg-current rounded-sm" />
           </div>
         ) : (
-          <div className="w-4 h-4 flex items-center justify-center space-x-0.5">
+          <div className="w-5 h-5 flex items-center justify-center space-x-1">
             <div className="w-1 h-4 bg-current" />
             <div className="w-1 h-4 bg-current" />
           </div>
         )}
       </button>
 
-      {/* Floating Elements */}
-      <div className="absolute top-20 left-10 animate-float">
-        <div className="bg-taxi-yellow/20 backdrop-blur-sm p-4 rounded-2xl border border-white/30">
-          <Star className="text-yellow-300" size={24} />
-          <p className="text-white font-semibold mt-2">4.9 Rating</p>
+      {/* Professional Trust Badges */}
+      <div className="absolute top-8 left-8 flex flex-col space-y-3 z-10">
+        <div className="bg-taxi-yellow/20 backdrop-blur-sm p-3 rounded-xl border border-taxi-yellow/30 flex items-center space-x-3">
+          <Star className="text-taxi-yellow" size={20} />
+          <div>
+            <p className="text-white font-bold text-lg">4.9</p>
+            <p className="text-white/80 text-xs">Rating</p>
+          </div>
+        </div>
+        
+        <div className="bg-white/10 backdrop-blur-sm p-3 rounded-xl border border-white/20 flex items-center space-x-3">
+          <Shield className="text-white" size={20} />
+          <div>
+            <p className="text-white font-bold text-lg">100%</p>
+            <p className="text-white/80 text-xs">Insured</p>
+          </div>
         </div>
       </div>
       
-      <div className="absolute top-40 right-10 animate-float" style={{ animationDelay: '1s' }}>
-        <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl border border-white/30">
-          <Shield className="text-white" size={24} />
-          <p className="text-white font-semibold mt-2">Fully Insured</p>
-        </div>
-      </div>
-      
-      <div className="absolute bottom-40 left-10 animate-float" style={{ animationDelay: '2s' }}>
-        <div className="bg-white/20 backdrop-blur-sm p-4 rounded-2xl border border-white/30">
-          <Clock className="text-white" size={24} />
-          <p className="text-white font-semibold mt-2">24/7 Service</p>
+      <div className="absolute bottom-8 right-8 bg-white/10 backdrop-blur-sm p-3 rounded-xl border border-white/20 flex items-center space-x-3 z-10">
+        <Clock className="text-white" size={20} />
+        <div>
+          <p className="text-white font-bold text-lg">24/7</p>
+          <p className="text-white/80 text-xs">Service</p>
         </div>
       </div>
     </section>

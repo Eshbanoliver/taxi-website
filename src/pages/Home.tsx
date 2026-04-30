@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane } from 'lucide-react';
+import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 
 const Home = () => {
@@ -356,49 +356,123 @@ const Home = () => {
       </section>
 
       {/* Cars Section */}
-      <section className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Choose Your Ride</h2>
-          <p className="text-xl text-gray-700">Select from our wide range of vehicles</p>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Car className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Fleet</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Choose Your Ride</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Select from our wide range of well-maintained vehicles for your perfect journey</p>
         </div>
         
-        {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
+        {/* Enhanced Category Tabs */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              className={`group relative px-8 py-4 rounded-full font-bold transition-all duration-500 transform hover:scale-105 ${
                 activeCategory === category
-                  ? 'bg-taxi-yellow text-taxi-black'
-                  : 'glass text-taxi-black hover:bg-white/30'
+                  ? 'bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black shadow-xl'
+                  : 'glass text-taxi-black hover:bg-white/30 hover:shadow-lg'
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              <span className="relative z-10 flex items-center space-x-2">
+                <Car size={18} />
+                <span>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
+              </span>
+              {activeCategory === category && (
+                <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full animate-pulse opacity-50"></div>
+              )}
             </button>
           ))}
         </div>
 
         {/* Cars Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {cars[activeCategory as keyof typeof cars].map((car, index) => (
-            <div key={index} className="glass rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-40 bg-taxi-yellow/20 rounded-xl mb-4 flex items-center justify-center">
-                <Car className="text-taxi-yellow" size={60} />
+            <div key={index} className="group relative">
+              {/* Card */}
+              <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                {/* Background decoration */}
+                <div className="absolute top-4 right-4 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                
+                {/* Car Visual */}
+                <div className="relative mb-6">
+                  <div className="w-full h-48 bg-gradient-to-br from-taxi-yellow/30 to-yellow-400/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                    {/* Animated background */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-32 h-32 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                    </div>
+                    
+                    {/* Car icon */}
+                    <div className="relative z-10">
+                      <div className="w-20 h-20 bg-taxi-yellow rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                        <Car className="text-taxi-black" size={48} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="space-y-4">
+                  {/* Title and Price */}
+                  <div className="flex items-start justify-between">
+                    <div>
+                      <h3 className="text-2xl font-bold text-taxi-black mb-1 group-hover:text-gray-800 transition-colors duration-300">
+                        {car.name}
+                      </h3>
+                      <div className="flex items-center space-x-2">
+                        <div className="text-3xl font-bold text-taxi-yellow">{car.price}</div>
+                        <div className="text-sm text-gray-600">per km</div>
+                      </div>
+                    </div>
+                    <div className="bg-green-500/10 px-3 py-1 rounded-full">
+                      <span className="text-green-600 text-sm font-semibold">Available</span>
+                    </div>
+                  </div>
+                  
+                  {/* Features */}
+                  <div className="space-y-3">
+                    {car.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center space-x-3 group/feature">
+                        <div className="w-8 h-8 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover/feature:scale-110 transition-transform duration-300">
+                          <CheckCircle className="text-taxi-yellow" size={16} />
+                        </div>
+                        <span className="text-gray-700 font-medium">{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                  
+                  {/* Book Button */}
+                  <button className="group/btn w-full bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-6 rounded-2xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
+                    <Phone size={20} className="group-hover/btn:animate-pulse" />
+                    <span>Book Now</span>
+                    <ArrowRight className="group-hover/btn:translate-x-1 transition-transform" size={20} />
+                  </button>
+                </div>
+                
+                {/* Hover effect overlay */}
+                <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
               </div>
-              <h3 className="text-xl font-semibold text-taxi-black mb-2">{car.name}</h3>
-              <div className="text-2xl font-bold text-taxi-yellow mb-3">{car.price}</div>
-              <ul className="space-y-2 mb-4">
-                {car.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-gray-700">
-                    <CheckCircle className="text-taxi-yellow mr-2" size={16} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <button className="btn-primary w-full">Book Now</button>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
             </div>
           ))}
+        </div>
+        
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="relative inline-block group">
+            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+            <a href="/services" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+              <span>View Complete Fleet</span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </a>
+          </div>
+          <p className="text-gray-600 mt-4">Explore all our vehicles and find your perfect match</p>
         </div>
       </section>
 

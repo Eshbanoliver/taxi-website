@@ -48,22 +48,98 @@ const Home = () => {
       <HeroSlider />
 
       {/* About Us Preview */}
-      <section className="container mx-auto px-4">
-        <div className="glass rounded-3xl p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-taxi-black mb-6">About Us</h2>
-              <p className="text-gray-700 mb-6">
-                With over 10 years of experience, Taxi Services has been the leading taxi provider in Udaipur. 
-                We pride ourselves on offering safe, comfortable, and affordable transportation solutions for all your needs.
-              </p>
-              <a href="/about" className="btn-primary inline-flex items-center">
-                Learn More <ArrowRight className="ml-2" size={20} />
-              </a>
-            </div>
-            <div className="relative">
-              <div className="w-full h-64 bg-taxi-yellow/20 rounded-2xl flex items-center justify-center">
-                <Car className="text-taxi-yellow" size={80} />
+      <section className="container mx-auto px-4 py-16">
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
+            {/* Floating elements */}
+            <div className="absolute top-10 right-10 w-20 h-20 bg-taxi-yellow/20 rounded-full animate-float"></div>
+            <div className="absolute bottom-10 left-10 w-16 h-16 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-8">
+                <div className="space-y-4">
+                  <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full">
+                    <span className="text-taxi-yellow font-semibold">Since 2014</span>
+                  </div>
+                  <h2 className="text-5xl md:text-6xl font-bold text-taxi-black leading-tight">
+                    Your Trusted
+                    <span className="block text-taxi-yellow">Journey Partner</span>
+                  </h2>
+                </div>
+                
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  With over 10 years of excellence, Taxi Services stands as Udaipur's premier transportation provider. 
+                  We combine cutting-edge technology with traditional hospitality to deliver safe, comfortable, and affordable journeys that exceed expectations.
+                </p>
+                
+                {/* Key highlights */}
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { icon: Shield, text: "Fully Licensed & Insured" },
+                    { icon: Clock, text: "24/7 Availability" },
+                    { icon: Users, text: "Professional Drivers" },
+                    { icon: MapPin, text: "City Wide Coverage" }
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-center space-x-3 group">
+                      <div className="w-12 h-12 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <item.icon className="text-taxi-yellow" size={20} />
+                      </div>
+                      <span className="text-gray-700 font-medium">{item.text}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <a href="/about" className="group inline-flex items-center space-x-3 bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <span>Discover Our Story</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+              </div>
+              
+              <div className="relative">
+                {/* Main visual */}
+                <div className="relative">
+                  <div className="w-full h-80 md:h-96 bg-gradient-to-br from-taxi-yellow/30 to-yellow-400/20 rounded-3xl flex items-center justify-center relative overflow-hidden">
+                    {/* Animated background elements */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-64 h-64 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                    </div>
+                    
+                    {/* Central car icon */}
+                    <div className="relative z-10">
+                      <div className="w-32 h-32 bg-taxi-yellow rounded-full flex items-center justify-center shadow-2xl animate-float">
+                        <Car className="text-taxi-black" size={64} />
+                      </div>
+                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full animate-ping"></div>
+                    </div>
+                    
+                    {/* Floating badges */}
+                    <div className="absolute top-8 left-8 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg animate-float">
+                      <span className="text-taxi-black font-bold text-sm">50K+ Rides</span>
+                    </div>
+                    <div className="absolute bottom-8 right-8 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg animate-float" style={{ animationDelay: '1s' }}>
+                      <span className="text-taxi-black font-bold text-sm">4.9 Rating</span>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Trust indicators */}
+                <div className="mt-8 grid grid-cols-3 gap-4">
+                  {[
+                    { number: "10+", label: "Years Experience" },
+                    { number: "15+", label: "Cities" },
+                    { number: "100%", label: "Satisfaction" }
+                  ].map((stat, index) => (
+                    <div key={index} className="text-center group">
+                      <div className="text-2xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">
+                        {stat.number}
+                      </div>
+                      <div className="text-xs text-gray-600 mt-1">{stat.label}</div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

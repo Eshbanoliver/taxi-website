@@ -28,7 +28,7 @@ const Header = () => {
         ? 'bg-gradient-to-r from-taxi-yellow/95 via-yellow-400/95 to-taxi-yellow/95 backdrop-blur-xl shadow-2xl border-b border-white/20' 
         : 'bg-gradient-to-r from-taxi-yellow/80 via-yellow-300/80 to-taxi-yellow/80 backdrop-blur-lg'
     }`}>
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Animated Logo */}
           <div className="flex items-center space-x-3 group">
@@ -48,12 +48,12 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-2">
+          <nav className="hidden md:flex items-center space-x-3 lg:space-x-4">
             {navItems.map((item, index) => (
               <div key={item.name} className="relative group">
                 <a
                   href={item.href}
-                  className={`relative px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  className={`relative px-6 py-2.5 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
                     activeSection === item.icon
                       ? 'bg-taxi-black text-taxi-yellow shadow-lg'
                       : 'text-taxi-black hover:bg-white/30 hover:shadow-md'
@@ -68,7 +68,7 @@ const Header = () => {
             ))}
             
             {/* Enhanced Book Now Button */}
-            <div className="ml-4 relative group">
+            <div className="ml-6 relative group">
               <button className="relative bg-gradient-to-r from-taxi-black to-gray-800 text-taxi-yellow font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden group">
                 <span className="relative z-10 flex items-center space-x-2">
                   <Phone size={18} />
@@ -88,7 +88,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden relative group"
+            className="md:hidden relative group"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             <div className="w-10 h-10 bg-taxi-black rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
@@ -104,7 +104,7 @@ const Header = () => {
 
         {/* Enhanced Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-6 py-6 bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl">
+          <div className="md:hidden mt-6 py-6 bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl">
             <nav className="flex flex-col space-y-3">
               {navItems.map((item, index) => (
                 <a

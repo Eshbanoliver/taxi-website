@@ -477,22 +477,128 @@ const Home = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="glass rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-taxi-black mb-4">Our Mission</h3>
-            <p className="text-gray-700">
-              To provide safe, reliable, and affordable transportation services that exceed customer expectations 
-              and contribute to the community's mobility needs.
-            </p>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Star className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Foundation</span>
           </div>
-          <div className="glass rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-taxi-black mb-4">Our Vision</h3>
-            <p className="text-gray-700">
-              To become the most trusted and preferred taxi service provider in Rajasthan, known for our 
-              commitment to excellence and customer satisfaction.
-            </p>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Mission & Vision</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">The driving force behind our commitment to excellence</p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          {/* Mission Card */}
+          <div className="group relative">
+            <div className="relative glass rounded-3xl p-10 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute top-8 right-8 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-full animate-pulse"></div>
+              
+              {/* Icon */}
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                  <Shield className="text-white" size={32} />
+                </div>
+                {/* Ring animation */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-blue-500 opacity-30 animate-ping"></div>
+              </div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold text-taxi-black mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                  Our Mission
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  To provide safe, reliable, and affordable transportation services that exceed customer expectations 
+                  and contribute to the community's mobility needs.
+                </p>
+                
+                {/* Key points */}
+                <div className="space-y-3">
+                  {[
+                    'Safe & Reliable Service',
+                    'Affordable Pricing',
+                    'Community Focus'
+                  ].map((point, index) => (
+                    <div key={index} className="flex items-center space-x-3 group/point">
+                      <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center group-hover/point:scale-110 transition-transform duration-300">
+                        <CheckCircle className="text-blue-500" size={16} />
+                      </div>
+                      <span className="text-gray-700 font-medium">{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Hover effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+            </div>
+            
+            {/* Bottom accent line */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 group-hover:w-full transition-all duration-500 rounded-full"></div>
           </div>
+          
+          {/* Vision Card */}
+          <div className="group relative">
+            <div className="relative glass rounded-3xl p-10 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+              {/* Background decoration */}
+              <div className="absolute top-8 right-8 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-full animate-pulse"></div>
+              
+              {/* Icon */}
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                  <Star className="text-white" size={32} />
+                </div>
+                {/* Ring animation */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-purple-500 opacity-30 animate-ping"></div>
+              </div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <h3 className="text-3xl font-bold text-taxi-black mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                  Our Vision
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                  To become the most trusted and preferred taxi service provider in Rajasthan, known for our 
+                  commitment to excellence and customer satisfaction.
+                </p>
+                
+                {/* Key points */}
+                <div className="space-y-3">
+                  {[
+                    'Trusted Provider',
+                    'Excellence in Service',
+                    'Customer Satisfaction'
+                  ].map((point, index) => (
+                    <div key={index} className="flex items-center space-x-3 group/point">
+                      <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center group-hover/point:scale-110 transition-transform duration-300">
+                        <CheckCircle className="text-purple-500" size={16} />
+                      </div>
+                      <span className="text-gray-700 font-medium">{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              {/* Hover effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+            </div>
+            
+            {/* Bottom accent line */}
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-purple-500 to-purple-600 group-hover:w-full transition-all duration-500 rounded-full"></div>
+          </div>
+        </div>
+        
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="relative inline-block group">
+            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+            <a href="/about" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+              <span>Learn More About Us</span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </a>
+          </div>
+          <p className="text-gray-600 mt-4">Discover our story and commitment to excellence</p>
         </div>
       </section>
 

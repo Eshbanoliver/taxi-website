@@ -910,25 +910,103 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">What Our Customers Say</h2>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Star className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Customer Voices</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">What Our Customers Say</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Real experiences from real people who trust our services</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          {testimonials.map((testimonial, index) => (
-            <div key={index} className="glass rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
-              <div className="flex mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="text-taxi-yellow fill-current" size={20} />
-                ))}
+        
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="group relative">
+                {/* Card */}
+                <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                  {/* Background decoration */}
+                  <div className="absolute top-4 right-4 w-12 h-12 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                  
+                  {/* Quote icon */}
+                  <div className="absolute top-6 left-6 w-8 h-8 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
+                    <div className="w-4 h-4 bg-taxi-yellow rounded-full"></div>
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Rating */}
+                    <div className="flex mb-6">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <Star key={i} className="text-taxi-yellow fill-current animate-pulse" size={20} style={{ animationDelay: `${i * 0.1}s` }} />
+                      ))}
+                    </div>
+                    
+                    {/* Testimonial text */}
+                    <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
+                      "{testimonial.text}"
+                    </p>
+                    
+                    {/* Customer info */}
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+                        <Users className="text-taxi-black" size={24} />
+                      </div>
+                      <div>
+                        <p className="font-bold text-taxi-black">{testimonial.name}</p>
+                        <p className="text-sm text-gray-600">Verified Customer</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
               </div>
-              <p className="text-gray-700 mb-4">"{testimonial.text}"</p>
-              <p className="font-semibold text-taxi-black">- {testimonial.name}</p>
+            ))}
+          </div>
+          
+          {/* Stats bar */}
+          <div className="relative glass rounded-3xl p-8 mb-12">
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              {[
+                { number: "4.9", label: "Average Rating", icon: Star },
+                { number: "50K+", label: "Reviews", icon: Users },
+                { number: "98%", label: "Satisfaction", icon: Shield },
+                { number: "24/7", label: "Support", icon: Clock }
+              ].map((stat, index) => (
+                <div key={index} className="group">
+                  <div className="w-12 h-12 bg-taxi-yellow/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                    <stat.icon className="text-taxi-yellow" size={24} />
+                  </div>
+                  <div className="text-3xl font-bold text-taxi-black mb-1 group-hover:text-taxi-yellow transition-colors duration-300">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-gray-600">{stat.label}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="text-center">
-          <a href="/testimonials" className="btn-primary">View All Testimonials</a>
+          </div>
+          
+          {/* CTA */}
+          <div className="text-center">
+            <div className="relative inline-block group">
+              <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+              <a href="/testimonials" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+                <Star className="group-hover:animate-pulse" size={20} />
+                <span>View All Testimonials</span>
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              </a>
+            </div>
+            <p className="text-gray-600 mt-4">Read more stories from our satisfied customers</p>
+          </div>
         </div>
       </section>
 

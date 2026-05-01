@@ -34,6 +34,11 @@ const Home = () => {
     { name: 'Rahul Sharma', text: 'Excellent service! Very professional and punctual drivers.', rating: 5 },
     { name: 'Priya Patel', text: 'Clean cars and affordable rates. Highly recommended!', rating: 5 },
     { name: 'Amit Kumar', text: 'Best taxi service in Udaipur. Always on time!', rating: 5 },
+    { name: 'Sneha Reddy', text: 'Amazing experience! Drivers are courteous and vehicles are well-maintained.', rating: 5 },
+    { name: 'Vikram Singh', text: 'Used their airport transfer service. Flawless execution!', rating: 5 },
+    { name: 'Anjali Mehta', text: 'Very reliable and safe. I use them daily for my office commute.', rating: 5 },
+    { name: 'Rohit Verma', text: 'Outstation trips made comfortable and stress-free. Great service!', rating: 5 },
+    { name: 'Kavya Nair', text: 'Transparent pricing and no hidden charges. Trustworthy service!', rating: 5 },
   ];
 
   const faqs = [
@@ -924,53 +929,59 @@ const Home = () => {
           {/* Background decoration */}
           <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
           
-          <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="group relative">
-                {/* Card */}
-                <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
-                  {/* Background decoration */}
-                  <div className="absolute top-4 right-4 w-12 h-12 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
-                  
-                  {/* Quote icon */}
-                  <div className="absolute top-6 left-6 w-8 h-8 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
-                    <div className="w-4 h-4 bg-taxi-yellow rounded-full"></div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="relative z-10">
-                    {/* Rating */}
-                    <div className="flex mb-6">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="text-taxi-yellow fill-current animate-pulse" size={20} style={{ animationDelay: `${i * 0.1}s` }} />
-                      ))}
+          {/* Infinite Scroll Container */}
+          <div className="relative overflow-hidden mb-12">
+            <div className="flex animate-scroll space-x-8">
+              {/* First set of testimonials */}
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
+                <div key={`${index}-1`} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                  <div className="group relative h-full">
+                    {/* Card */}
+                    <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden h-full">
+                      {/* Background decoration */}
+                      <div className="absolute top-4 right-4 w-12 h-12 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                      
+                      {/* Quote icon */}
+                      <div className="absolute top-6 left-6 w-8 h-8 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
+                        <div className="w-4 h-4 bg-taxi-yellow rounded-full"></div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10">
+                        {/* Rating */}
+                        <div className="flex mb-6">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="text-taxi-yellow fill-current animate-pulse" size={20} style={{ animationDelay: `${i * 0.1}s` }} />
+                          ))}
+                        </div>
+                        
+                        {/* Testimonial text */}
+                        <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
+                          "{testimonial.text}"
+                        </p>
+                        
+                        {/* Customer info */}
+                        <div className="flex items-center space-x-4">
+                          <div className="w-12 h-12 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg">
+                            <Users className="text-taxi-black" size={24} />
+                          </div>
+                          <div>
+                            <p className="font-bold text-taxi-black">{testimonial.name}</p>
+                            <p className="text-sm text-gray-600">Verified Customer</p>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Hover effect overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
                     </div>
                     
-                    {/* Testimonial text */}
-                    <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
-                      "{testimonial.text}"
-                    </p>
-                    
-                    {/* Customer info */}
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                        <Users className="text-taxi-black" size={24} />
-                      </div>
-                      <div>
-                        <p className="font-bold text-taxi-black">{testimonial.name}</p>
-                        <p className="text-sm text-gray-600">Verified Customer</p>
-                      </div>
-                    </div>
+                    {/* Bottom accent line */}
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
                   </div>
-                  
-                  {/* Hover effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
                 </div>
-                
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
           
           {/* Stats bar */}

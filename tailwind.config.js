@@ -18,6 +18,7 @@ export default {
         'float': 'float 3s ease-in-out infinite',
         'gradient': 'gradient 3s ease infinite',
         'fade-in-up': 'fadeInUp 1s ease-out',
+        'scroll': 'scroll 30s linear infinite',
       },
       keyframes: {
         float: {
@@ -31,6 +32,10 @@ export default {
         fadeInUp: {
           '0%': { opacity: '0', transform: 'translateY(30px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
     },

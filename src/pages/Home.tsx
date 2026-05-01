@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, TrendingUp } from 'lucide-react';
+import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, TrendingUp, HelpCircle, BookOpen, MessageCircle } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 
 const Home = () => {
@@ -1118,20 +1118,83 @@ const Home = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Frequently Asked Questions</h2>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <HelpCircle className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Get Answers</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Frequently Asked Questions</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Everything you need to know about our taxi services</p>
         </div>
-        <div className="max-w-3xl mx-auto space-y-4">
-          {faqs.map((faq, index) => (
-            <div key={index} className="glass rounded-2xl p-6">
-              <h3 className="text-lg font-semibold text-taxi-black mb-2">{faq.q}</h3>
-              <p className="text-gray-700">{faq.a}</p>
+        
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative glass rounded-3xl p-8 md:p-12 overflow-hidden">
+            {/* Floating elements */}
+            <div className="absolute top-8 right-8 w-20 h-20 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-8 left-8 w-16 h-16 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            
+            <div className="max-w-4xl mx-auto space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="group relative">
+                  {/* FAQ Card */}
+                  <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Question */}
+                    <div className="relative z-10">
+                      <div className="flex items-start space-x-4">
+                        <div className="w-12 h-12 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                          <HelpCircle className="text-taxi-black" size={24} />
+                        </div>
+                        
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-taxi-black mb-3 group-hover:text-gray-800 transition-colors duration-300">
+                            {faq.q}
+                          </h3>
+                          <p className="text-gray-700 leading-relaxed">
+                            {faq.a}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl"></div>
+                  </div>
+                  
+                  {/* Bottom accent line */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="text-center mt-8">
-          <a href="/faq" className="btn-primary">View All FAQs</a>
+            
+            {/* Quick help section */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center space-x-4 bg-taxi-yellow/20 px-6 py-3 rounded-full mb-6">
+                <Phone className="text-taxi-yellow animate-pulse" size={20} />
+                <span className="text-taxi-black font-semibold">Need more help? Call us anytime!</span>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/faq" className="group relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+                  <BookOpen className="group-hover:animate-pulse" size={20} />
+                  <span>View All FAQs</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+                
+                <a href="/contact" className="group relative glass text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 border border-taxi-yellow/30">
+                  <MessageCircle className="group-hover:animate-pulse" size={20} />
+                  <span>Contact Support</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

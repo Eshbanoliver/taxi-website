@@ -710,25 +710,113 @@ const Home = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="container mx-auto px-4">
-        <div className="glass rounded-3xl p-8 md:p-12">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-taxi-black mb-4">Why Choose Us</h2>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Star className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Advantages</span>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              'Experienced and professional drivers',
-              'Well-maintained and clean vehicles',
-              'Competitive and transparent pricing',
-              '24/7 customer support',
-              'Easy booking process',
-              'Flexible payment options',
-            ].map((reason, index) => (
-              <div key={index} className="flex items-start space-x-3">
-                <CheckCircle className="text-taxi-yellow mt-1 flex-shrink-0" size={20} />
-                <span className="text-gray-700">{reason}</span>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Why Choose Us</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Discover the reasons that make us the preferred choice for thousands of customers</p>
+        </div>
+        
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
+            {/* Floating elements */}
+            <div className="absolute top-8 right-8 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-float"></div>
+            <div className="absolute bottom-8 left-8 w-12 h-12 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                { 
+                  reason: 'Experienced and professional drivers', 
+                  icon: Users, 
+                  color: 'from-blue-500 to-blue-600',
+                  bgColor: 'bg-blue-500/10',
+                  description: 'Licensed and trained professionals'
+                },
+                { 
+                  reason: 'Well-maintained and clean vehicles', 
+                  icon: Car, 
+                  color: 'from-green-500 to-green-600',
+                  bgColor: 'bg-green-500/10',
+                  description: 'Regular maintenance and sanitation'
+                },
+                { 
+                  reason: 'Competitive and transparent pricing', 
+                  icon: Shield, 
+                  color: 'from-purple-500 to-purple-600',
+                  bgColor: 'bg-purple-500/10',
+                  description: 'No hidden charges, fair rates'
+                },
+                { 
+                  reason: '24/7 customer support', 
+                  icon: Clock, 
+                  color: 'from-orange-500 to-orange-600',
+                  bgColor: 'bg-orange-500/10',
+                  description: 'Always here to help you'
+                },
+                { 
+                  reason: 'Easy booking process', 
+                  icon: Phone, 
+                  color: 'from-red-500 to-red-600',
+                  bgColor: 'bg-red-500/10',
+                  description: 'Book in seconds, hassle-free'
+                },
+                { 
+                  reason: 'Flexible payment options', 
+                  icon: Star, 
+                  color: 'from-indigo-500 to-indigo-600',
+                  bgColor: 'bg-indigo-500/10',
+                  description: 'Multiple payment methods available'
+                },
+              ].map((item, index) => (
+                <div key={index} className="group relative">
+                  {/* Card */}
+                  <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                    {/* Background gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      {/* Icon */}
+                      <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                        <item.icon className="text-white" size={24} />
+                      </div>
+                      
+                      {/* Text */}
+                      <h4 className="text-lg font-bold text-taxi-black mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                        {item.reason}
+                      </h4>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                    
+                    {/* Hover effect overlay */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}></div>
+                  </div>
+                  
+                  {/* Bottom accent line */}
+                  <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${item.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
+                </div>
+              ))}
+            </div>
+            
+            {/* Bottom CTA */}
+            <div className="text-center mt-12">
+              <div className="relative inline-block group">
+                <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                <a href="/about" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+                  <span>Learn More About Our Services</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
               </div>
-            ))}
+              <p className="text-gray-600 mt-4">Join thousands of satisfied customers</p>
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, TrendingUp, HelpCircle, BookOpen, MessageCircle } from 'lucide-react';
+import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, TrendingUp, HelpCircle, BookOpen, MessageCircle, Mail } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 
 const Home = () => {
@@ -1173,25 +1173,93 @@ const Home = () => {
               ))}
             </div>
             
-            {/* Quick help section */}
-            <div className="mt-12 text-center">
-              <div className="inline-flex items-center space-x-4 bg-taxi-yellow/20 px-6 py-3 rounded-full mb-6">
-                <Phone className="text-taxi-yellow animate-pulse" size={20} />
-                <span className="text-taxi-black font-semibold">Need more help? Call us anytime!</span>
-              </div>
+            {/* Enhanced CTA Section */}
+            <div className="mt-16 relative">
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-400/30 rounded-3xl"></div>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="/faq" className="group relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-                  <BookOpen className="group-hover:animate-pulse" size={20} />
-                  <span>View All FAQs</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                </a>
+              <div className="relative glass rounded-3xl p-8 md:p-12 text-center overflow-hidden">
+                {/* Floating elements */}
+                <div className="absolute top-6 right-6 w-16 h-16 bg-taxi-yellow/30 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-6 left-6 w-12 h-12 bg-yellow-300/40 rounded-full animate-float"></div>
                 
-                <a href="/contact" className="group relative glass text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 border border-taxi-yellow/30">
-                  <MessageCircle className="group-hover:animate-pulse" size={20} />
-                  <span>Contact Support</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                </a>
+                {/* Main CTA content */}
+                <div className="relative z-10 space-y-8">
+                  {/* Badge */}
+                  <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-6 py-3 rounded-full">
+                    <Phone className="text-taxi-yellow animate-pulse" size={20} />
+                    <span className="text-taxi-black font-bold">24/7 Support Available</span>
+                  </div>
+                  
+                  {/* Title */}
+                  <h3 className="text-3xl md:text-4xl font-bold text-taxi-black leading-tight">
+                    Still Have Questions?
+                    <span className="block text-taxi-yellow">We're Here to Help!</span>
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                    Can't find what you're looking for? Our friendly support team is ready to assist you with any queries about our taxi services.
+                  </p>
+                  
+                  {/* Contact options */}
+                  <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+                    <div className="group relative">
+                      <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                        {/* Background gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          <div className="w-16 h-16 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                            <Phone className="text-taxi-black" size={32} />
+                          </div>
+                          <h4 className="text-xl font-bold text-taxi-black mb-2">Call Us</h4>
+                          <p className="text-gray-600 mb-4">+91 98765 43210</p>
+                          <a href="tel:+919876543210" className="inline-flex items-center space-x-2 bg-taxi-yellow text-taxi-black font-bold py-2 px-6 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                            <span>Call Now</span>
+                            <ArrowRight size={16} />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="group relative">
+                      <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                        {/* Background gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        
+                        {/* Content */}
+                        <div className="relative z-10">
+                          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                            <MessageCircle className="text-white" size={32} />
+                          </div>
+                          <h4 className="text-xl font-bold text-taxi-black mb-2">Chat Support</h4>
+                          <p className="text-gray-600 mb-4">Instant help available</p>
+                          <a href="/contact" className="inline-flex items-center space-x-2 bg-blue-500 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-600 transition-colors duration-300">
+                            <span>Start Chat</span>
+                            <ArrowRight size={16} />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Additional CTAs */}
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                    <a href="/faq" className="group relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+                      <BookOpen className="group-hover:animate-pulse" size={20} />
+                      <span>Browse All FAQs</span>
+                      <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                    </a>
+                    
+                    <a href="/contact" className="group relative glass text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 border border-taxi-yellow/30">
+                      <Mail className="group-hover:animate-pulse" size={20} />
+                      <span>Email Support</span>
+                      <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

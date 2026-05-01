@@ -822,17 +822,89 @@ const Home = () => {
       </section>
 
       {/* CTA */}
-      <section className="container mx-auto px-4">
-        <div className="bg-gradient-to-r from-taxi-yellow to-yellow-500 rounded-3xl p-12 text-center">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Ready to Book Your Ride?</h2>
-          <p className="text-xl text-gray-800 mb-8">Experience the best taxi service in Udaipur</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-taxi-black text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-800 transform hover:scale-105 transition-all duration-300">
-              Book Now
-            </button>
-            <button className="bg-white text-taxi-black font-semibold py-3 px-8 rounded-full hover:bg-gray-100 transform hover:scale-105 transition-all duration-300">
-              Contact Us
-            </button>
+      <section className="container mx-auto px-4 py-16">
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-400/30 rounded-3xl"></div>
+          
+          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
+            {/* Floating elements */}
+            <div className="absolute top-8 right-8 w-20 h-20 bg-taxi-yellow/30 rounded-full animate-pulse"></div>
+            <div className="absolute bottom-8 left-8 w-16 h-16 bg-yellow-300/40 rounded-full animate-float"></div>
+            <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-yellow-400/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+            
+            {/* Main content */}
+            <div className="relative z-10 text-center space-y-8">
+              {/* Badge */}
+              <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-6 py-3 rounded-full">
+                <Car className="text-taxi-yellow animate-float" size={20} />
+                <span className="text-taxi-yellow font-bold">Book Your Journey</span>
+              </div>
+              
+              {/* Title */}
+              <h2 className="text-4xl md:text-6xl font-bold text-taxi-black leading-tight">
+                Ready to Book
+                <span className="block text-taxi-yellow">Your Ride?</span>
+              </h2>
+              
+              {/* Description */}
+              <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+                Experience the best taxi service in Udaipur with our professional drivers and well-maintained vehicles
+              </p>
+              
+              {/* Features */}
+              <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+                {[
+                  { icon: Shield, text: "Safe & Secure", color: "text-green-600" },
+                  { icon: Clock, text: "24/7 Available", color: "text-blue-600" },
+                  { icon: Star, text: "Best Prices", color: "text-purple-600" }
+                ].map((feature, index) => (
+                  <div key={index} className="flex items-center justify-center space-x-3 group">
+                    <div className="w-12 h-12 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <feature.icon className={`text-taxi-yellow ${feature.color}`} size={24} />
+                    </div>
+                    <span className="text-gray-700 font-semibold">{feature.text}</span>
+                  </div>
+                ))}
+              </div>
+              
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                <button className="group relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3">
+                  <Phone size={24} className="group-hover:animate-pulse" />
+                  <span>Book Now</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                  <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                </button>
+                
+                <a href="/contact" className="group relative glass text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 border border-taxi-yellow/30">
+                  <Phone size={24} />
+                  <span>Contact Us</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
+              </div>
+              
+              {/* Trust indicators */}
+              <div className="flex flex-wrap justify-center gap-8 pt-8">
+                {[
+                  { number: "50K+", label: "Happy Customers" },
+                  { number: "4.9", label: "Average Rating" },
+                  { number: "10+", label: "Years Experience" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center group">
+                    <div className="text-3xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            
+            {/* Animated background pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-taxi-yellow to-yellow-400 animate-pulse"></div>
+            </div>
           </div>
         </div>
       </section>

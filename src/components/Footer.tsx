@@ -18,7 +18,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative glass-dark mt-20 overflow-hidden">
+    <footer className="relative glass-dark mt-20 overflow-hidden w-full overflow-x-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/5 to-yellow-400/10"></div>
       

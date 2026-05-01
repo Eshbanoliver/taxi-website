@@ -12,9 +12,9 @@ import FloatingButtons from './components/FloatingButtons';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col w-full overflow-x-hidden">
         <Header />
-        <main className="flex-grow">
+        <main className="flex-grow w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

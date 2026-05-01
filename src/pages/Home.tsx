@@ -48,7 +48,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="space-y-20">
+    <div className="space-y-20 w-full overflow-x-hidden">
       {/* Hero Slider Section */}
       <HeroSlider />
 
@@ -930,11 +930,11 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
           
           {/* Infinite Scroll Container */}
-          <div className="relative overflow-hidden mb-12">
-            <div className="flex animate-scroll space-x-8" style={{ width: 'fit-content' }}>
+          <div className="relative overflow-hidden mb-12 max-w-full">
+            <div className="flex animate-scroll space-x-6 md:space-x-8" style={{ width: 'fit-content', minWidth: 'max-content' }}>
               {/* First set of testimonials */}
               {[...testimonials, ...testimonials].map((testimonial, index) => (
-                <div key={`${index}-1`} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3" style={{ minWidth: '300px' }}>
+                <div key={`${index}-1`} className="flex-shrink-0 w-80 md:w-96 lg:w-1/3" style={{ minWidth: '280px', maxWidth: '320px' }}>
                   <div className="group relative h-full">
                     {/* Card */}
                     <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden h-full">

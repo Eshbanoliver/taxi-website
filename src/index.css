@@ -5,6 +5,15 @@
 @layer base {
   body {
     @apply bg-gradient-to-br from-yellow-50 via-white to-yellow-100 min-h-screen;
+    overflow-x: hidden;
+  }
+  
+  html {
+    overflow-x: hidden;
+  }
+  
+  * {
+    box-sizing: border-box;
   }
 }
 
@@ -43,5 +52,19 @@
     100% {
       transform: translateX(-50%);
     }
+  }
+  
+  .container-responsive {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 100%;
+  }
+  
+  .no-overflow {
+    overflow-x: hidden;
+  }
+  
+  .full-width {
+    width: 100%;
+    max-width: 100%;
   }
 }

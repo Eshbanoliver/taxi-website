@@ -931,10 +931,10 @@ const Home = () => {
           
           {/* Infinite Scroll Container */}
           <div className="relative overflow-hidden mb-12">
-            <div className="flex animate-scroll space-x-8">
+            <div className="flex animate-scroll space-x-8" style={{ width: 'fit-content' }}>
               {/* First set of testimonials */}
               {[...testimonials, ...testimonials].map((testimonial, index) => (
-                <div key={`${index}-1`} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3">
+                <div key={`${index}-1`} className="flex-shrink-0 w-full md:w-1/2 lg:w-1/3" style={{ minWidth: '300px' }}>
                   <div className="group relative h-full">
                     {/* Card */}
                     <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden h-full">

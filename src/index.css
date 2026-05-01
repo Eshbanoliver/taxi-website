@@ -25,3 +25,23 @@
     @apply glass text-taxi-black font-semibold py-3 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300;
   }
 }
+
+@layer utilities {
+  .animate-scroll {
+    animation: scroll 30s linear infinite;
+    width: fit-content;
+  }
+  
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}

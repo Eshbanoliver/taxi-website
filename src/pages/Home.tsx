@@ -603,25 +603,109 @@ const Home = () => {
       </section>
 
       {/* Core Values */}
-      <section className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Core Values</h2>
+      <section className="container mx-auto px-4 py-16">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Star className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Principles</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Core Values</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">The fundamental beliefs that guide our every action and decision</p>
         </div>
-        <div className="grid md:grid-cols-4 gap-6">
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { title: 'Safety', desc: 'Your safety is our top priority', icon: Shield },
-            { title: 'Punctuality', desc: 'Always on time, every time', icon: Clock },
-            { title: 'Comfort', desc: 'Travel in comfort and style', icon: Car },
-            { title: 'Trust', desc: 'Building lasting relationships', icon: Users },
+            { 
+              title: 'Safety', 
+              desc: 'Your safety is our top priority', 
+              icon: Shield, 
+              color: 'from-red-500 to-red-600',
+              bgColor: 'bg-red-500/10',
+              features: ['Regular Vehicle Checks', 'Trained Drivers', '24/7 Support']
+            },
+            { 
+              title: 'Punctuality', 
+              desc: 'Always on time, every time', 
+              icon: Clock, 
+              color: 'from-blue-500 to-blue-600',
+              bgColor: 'bg-blue-500/10',
+              features: ['Real-time Tracking', 'Smart Scheduling', 'On-time Guarantee']
+            },
+            { 
+              title: 'Comfort', 
+              desc: 'Travel in comfort and style', 
+              icon: Car, 
+              color: 'from-green-500 to-green-600',
+              bgColor: 'bg-green-500/10',
+              features: ['Clean Vehicles', 'AC Comfort', 'Spacious Seating']
+            },
+            { 
+              title: 'Trust', 
+              desc: 'Building lasting relationships', 
+              icon: Users, 
+              color: 'from-purple-500 to-purple-600',
+              bgColor: 'bg-purple-500/10',
+              features: ['Transparent Pricing', 'Reliable Service', 'Customer Care']
+            },
           ].map((value, index) => (
-            <div key={index} className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto mb-4">
-                <value.icon className="text-taxi-black" size={32} />
+            <div key={index} className="group relative">
+              {/* Card */}
+              <div className="relative glass rounded-3xl p-8 text-center hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                {/* Background decoration */}
+                <div className={`absolute top-4 right-4 w-12 h-12 ${value.bgColor} rounded-full animate-pulse`}></div>
+                
+                {/* Icon */}
+                <div className="relative mb-6">
+                  <div className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                    <value.icon className="text-white" size={40} />
+                  </div>
+                  {/* Ring animation */}
+                  <div className={`absolute inset-0 rounded-2xl border-2 ${value.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative z-10 space-y-4">
+                  {/* Title */}
+                  <h3 className={`text-2xl font-bold text-taxi-black mb-2 group-hover:text-${value.color.replace('from-', '').split(' ')[0]}-600 transition-colors duration-300`}>
+                    {value.title}
+                  </h3>
+                  
+                  {/* Description */}
+                  <p className="text-gray-700 leading-relaxed">{value.desc}</p>
+                  
+                  {/* Features */}
+                  <div className="space-y-2 mt-4">
+                    {value.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center justify-center space-x-2 text-sm text-gray-600 group/feature">
+                        <div className={`w-6 h-6 ${value.bgColor} rounded-full flex items-center justify-center group-hover/feature:scale-110 transition-transform duration-300`}>
+                          <CheckCircle className={`text-${value.color.replace('from-', '').split(' ')[0]}-500`} size={12} />
+                        </div>
+                        <span>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                {/* Hover effect overlay */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
               </div>
-              <h3 className="text-xl font-semibold text-taxi-black mb-2">{value.title}</h3>
-              <p className="text-gray-700">{value.desc}</p>
+              
+              {/* Bottom accent line */}
+              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${value.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
             </div>
           ))}
+        </div>
+        
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <div className="relative inline-block group">
+            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+            <a href="/about" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+              <span>Learn About Our Values</span>
+              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+            </a>
+          </div>
+          <p className="text-gray-600 mt-4">Discover what makes us different and better</p>
         </div>
       </section>
 

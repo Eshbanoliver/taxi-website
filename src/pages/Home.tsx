@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone } from 'lucide-react';
+import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, TrendingUp } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 
 const Home = () => {
@@ -984,25 +984,121 @@ const Home = () => {
             </div>
           </div>
           
-          {/* Stats bar */}
-          <div className="relative glass rounded-3xl p-8 mb-12">
-            <div className="grid md:grid-cols-4 gap-8 text-center">
-              {[
-                { number: "4.9", label: "Average Rating", icon: Star },
-                { number: "50K+", label: "Reviews", icon: Users },
-                { number: "98%", label: "Satisfaction", icon: Shield },
-                { number: "24/7", label: "Support", icon: Clock }
-              ].map((stat, index) => (
-                <div key={index} className="group">
-                  <div className="w-12 h-12 bg-taxi-yellow/20 rounded-full flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
-                    <stat.icon className="text-taxi-yellow" size={24} />
-                  </div>
-                  <div className="text-3xl font-bold text-taxi-black mb-1 group-hover:text-taxi-yellow transition-colors duration-300">
-                    {stat.number}
-                  </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
+          {/* Enhanced Stats Section */}
+          <div className="relative">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+            
+            <div className="relative glass rounded-3xl p-8 md:p-12 mb-12 overflow-hidden">
+              {/* Floating elements */}
+              <div className="absolute top-4 right-4 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-float"></div>
+              <div className="absolute bottom-4 left-4 w-12 h-12 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+              
+              {/* Section header */}
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+                  <Star className="text-taxi-yellow" size={16} />
+                  <span className="text-taxi-yellow font-semibold">Our Impact</span>
                 </div>
-              ))}
+                <h3 className="text-3xl md:text-4xl font-bold text-taxi-black mb-2">Numbers That Speak</h3>
+                <p className="text-lg text-gray-700">Our commitment to excellence in action</p>
+              </div>
+              
+              {/* Stats grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {[
+                  { 
+                    number: "4.9", 
+                    label: "Average Rating", 
+                    icon: Star, 
+                    color: 'from-yellow-500 to-yellow-600',
+                    bgColor: 'bg-yellow-500/10',
+                    description: "Out of 5 stars"
+                  },
+                  { 
+                    number: "50K+", 
+                    label: "Happy Customers", 
+                    icon: Users, 
+                    color: 'from-blue-500 to-blue-600',
+                    bgColor: 'bg-blue-500/10',
+                    description: "And counting"
+                  },
+                  { 
+                    number: "98%", 
+                    label: "Satisfaction Rate", 
+                    icon: Shield, 
+                    color: 'from-green-500 to-green-600',
+                    bgColor: 'bg-green-500/10',
+                    description: "Customer satisfaction"
+                  },
+                  { 
+                    number: "24/7", 
+                    label: "Support Available", 
+                    icon: Clock, 
+                    color: 'from-purple-500 to-purple-600',
+                    bgColor: 'bg-purple-500/10',
+                    description: "Always here for you"
+                  }
+                ].map((stat, index) => (
+                  <div key={index} className="group relative">
+                    {/* Card */}
+                    <div className="relative glass rounded-2xl p-6 text-center hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                      {/* Background gradient */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                      
+                      {/* Floating decoration */}
+                      <div className={`absolute top-3 right-3 w-8 h-8 ${stat.bgColor} rounded-full animate-pulse`}></div>
+                      
+                      {/* Content */}
+                      <div className="relative z-10">
+                        {/* Icon */}
+                        <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                          <stat.icon className="text-white" size={32} />
+                        </div>
+                        
+                        {/* Ring animation */}
+                        <div className={`absolute inset-0 rounded-2xl border-2 ${stat.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
+                        
+                        {/* Number */}
+                        <div className="text-4xl md:text-5xl font-bold text-taxi-black mb-2 group-hover:text-gray-800 transition-colors duration-300">
+                          {stat.number}
+                        </div>
+                        
+                        {/* Label */}
+                        <div className="text-lg font-semibold text-gray-700 mb-1">
+                          {stat.label}
+                        </div>
+                        
+                        {/* Description */}
+                        <div className="text-sm text-gray-600">
+                          {stat.description}
+                        </div>
+                      </div>
+                      
+                      {/* Hover effect overlay */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}></div>
+                    </div>
+                    
+                    {/* Bottom accent line */}
+                    <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${stat.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Trust indicators */}
+              <div className="mt-12 text-center">
+                <div className="inline-flex items-center space-x-6 bg-taxi-yellow/20 px-6 py-3 rounded-full">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="text-taxi-yellow" size={20} />
+                    <span className="text-taxi-black font-semibold">Verified Statistics</span>
+                  </div>
+                  <div className="w-px h-6 bg-taxi-yellow/30"></div>
+                  <div className="flex items-center space-x-2">
+                    <TrendingUp className="text-taxi-yellow" size={20} />
+                    <span className="text-taxi-black font-semibold">Growing Daily</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Award, Clock, CheckCircle, Target, Eye, Heart, Shield } from 'lucide-react';
+import { Users, Award, Clock, CheckCircle, Target, Eye, Heart, Shield, Car, Star, ArrowRight, MapPin } from 'lucide-react';
 
 const About = () => {
   const team = [
@@ -19,14 +19,110 @@ const About = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-100/50"></div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ height: '100vh' }}>
+        {/* Background layers */}
+        <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/30 via-yellow-100/40 to-yellow-200/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+        
+        {/* Floating decorative elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-taxi-yellow/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-20 w-28 h-28 bg-yellow-400/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-40 right-10 w-20 h-20 bg-taxi-yellow/25 rounded-full animate-pulse"></div>
+        
+        {/* Animated background pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-10 left-10 w-64 h-64 border-4 border-taxi-yellow rounded-full animate-ping"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 border-4 border-yellow-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+        </div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-taxi-black mb-6">About Us</h1>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-              Learn more about our journey, mission, and the team behind Udaipur's most trusted taxi service
+          <div className="text-center max-w-5xl mx-auto">
+            {/* Badge */}
+            <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-lg px-6 py-3 rounded-full mb-8 group">
+              <Car className="text-taxi-yellow animate-float" size={24} />
+              <span className="text-taxi-yellow font-bold text-lg">Our Story</span>
+            </div>
+            
+            {/* Main heading with animation */}
+            <div className="relative mb-8">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-taxi-black leading-tight mb-4">
+                About
+                <span className="block text-taxi-yellow animate-pulse">Taxi GO</span>
+              </h1>
+              
+              {/* Decorative underline */}
+              <div className="relative">
+                <div className="h-1 bg-gradient-to-r from-transparent via-taxi-yellow to-transparent"></div>
+                <div className="absolute inset-0 h-1 bg-gradient-to-r from-transparent via-taxi-yellow to-transparent animate-pulse"></div>
+              </div>
+            </div>
+            
+            {/* Enhanced description */}
+            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
+              Discover our journey of excellence, from a small fleet to Udaipur's most trusted taxi service. 
+              <span className="block text-taxi-yellow font-semibold mt-2">Driven by passion, committed to you.</span>
             </p>
+            
+            {/* Stats preview */}
+            <div className="grid md:grid-cols-4 gap-8 mb-12">
+              {[
+                { number: '10+', label: 'Years of Excellence', icon: Award },
+                { number: '50K+', label: 'Happy Customers', icon: Users },
+                { number: '100+', label: 'Professional Drivers', icon: Shield },
+                { number: '24/7', label: 'Service Available', icon: Clock }
+              ].map((stat, index) => (
+                <div key={index} className="group">
+                  <div className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-2xl">
+                    <div className="w-16 h-16 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                      <stat.icon className="text-taxi-black" size={32} />
+                    </div>
+                    <div className="text-3xl font-bold text-taxi-black mb-2">{stat.number}</div>
+                    <div className="text-sm text-gray-600">{stat.label}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <a href="#story" className="group relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+                <Star className="group-hover:animate-pulse" size={20} />
+                <span>Our Journey</span>
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              </a>
+              
+              <a href="#team" className="group relative glass text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 border border-taxi-yellow/30">
+                <Users className="group-hover:animate-pulse" size={20} />
+                <span>Meet Our Team</span>
+                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+              </a>
+            </div>
+            
+            {/* Trust indicators */}
+            <div className="mt-12 flex flex-wrap justify-center items-center gap-8">
+              <div className="flex items-center space-x-2">
+                <MapPin className="text-taxi-yellow" size={20} />
+                <span className="text-gray-700 font-medium">Udaipur Based</span>
+              </div>
+              <div className="w-px h-6 bg-taxi-yellow/30"></div>
+              <div className="flex items-center space-x-2">
+                <Shield className="text-taxi-yellow" size={20} />
+                <span className="text-gray-700 font-medium">Fully Licensed</span>
+              </div>
+              <div className="w-px h-6 bg-taxi-yellow/30"></div>
+              <div className="flex items-center space-x-2">
+                <Star className="text-taxi-yellow" size={20} />
+                <span className="text-gray-700 font-medium">4.9 Rating</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-taxi-yellow rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-taxi-yellow rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>

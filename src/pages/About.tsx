@@ -508,35 +508,100 @@ const About = () => {
         </div>
         
         {/* Values highlight */}
-        <div className="mt-16 text-center">
-          <div className="relative glass rounded-3xl p-8 overflow-hidden">
+        <div className="mt-20 text-center">
+          <div className="relative glass rounded-3xl p-8 md:p-12 overflow-hidden hover:scale-105 transition-all duration-500 hover:shadow-2xl">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20"></div>
             
+            {/* Floating elements */}
+            <div className="absolute top-6 right-6 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-float"></div>
+            <div className="absolute bottom-6 left-6 w-12 h-12 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            
             {/* Content */}
             <div className="relative z-10">
-              <h3 className="text-2xl font-bold text-taxi-black mb-4">Our Commitment</h3>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+              {/* Badge */}
+              <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-lg px-4 py-2 rounded-full mb-6 group">
+                <Heart className="text-taxi-yellow animate-pulse" size={16} />
+                <span className="text-taxi-yellow font-bold">Our Promise</span>
+              </div>
+              
+              {/* Title */}
+              <h3 className="text-3xl md:text-4xl font-bold text-taxi-black mb-6 group-hover:text-gray-800 transition-colors duration-300">Our Commitment</h3>
+              
+              {/* Description */}
+              <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
                 These core values aren't just words on a page – they're the principles that guide every decision we make, 
                 every interaction we have, and every service we provide to our valued customers.
               </p>
               
               {/* Trust indicators */}
-              <div className="flex flex-wrap justify-center items-center gap-8">
-                <div className="flex items-center space-x-2">
-                  <Shield className="text-taxi-yellow" size={20} />
-                  <span className="text-gray-700 font-medium">Certified Safe</span>
+              <div className="grid md:grid-cols-3 gap-8 mb-12">
+                <div className="group relative">
+                  <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-green-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                        <Shield className="text-white" size={32} />
+                      </div>
+                      <h4 className="text-xl font-bold text-taxi-black mb-2 group-hover:text-green-600 transition-colors duration-300">Certified Safe</h4>
+                      <p className="text-gray-600">Fully licensed and insured for your peace of mind</p>
+                    </div>
+                    
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 to-green-600/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl"></div>
+                  </div>
                 </div>
-                <div className="w-px h-6 bg-taxi-yellow/30"></div>
-                <div className="flex items-center space-x-2">
-                  <Award className="text-taxi-yellow" size={20} />
-                  <span className="text-gray-700 font-medium">Award Winning</span>
+                
+                <div className="group relative">
+                  <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                        <Award className="text-white" size={32} />
+                      </div>
+                      <h4 className="text-xl font-bold text-taxi-black mb-2 group-hover:text-yellow-600 transition-colors duration-300">Award Winning</h4>
+                      <p className="text-gray-600">Recognized for excellence in service</p>
+                    </div>
+                    
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/10 to-yellow-600/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl"></div>
+                  </div>
                 </div>
-                <div className="w-px h-6 bg-taxi-yellow/30"></div>
-                <div className="flex items-center space-x-2">
-                  <Star className="text-taxi-yellow" size={20} />
-                  <span className="text-gray-700 font-medium">Top Rated</span>
+                
+                <div className="group relative">
+                  <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
+                    {/* Background gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                        <Star className="text-white" size={32} />
+                      </div>
+                      <h4 className="text-xl font-bold text-taxi-black mb-2 group-hover:text-purple-600 transition-colors duration-300">Top Rated</h4>
+                      <p className="text-gray-600">4.9/5 stars from 50,000+ customers</p>
+                    </div>
+                    
+                    {/* Hover effect overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-600/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl"></div>
+                  </div>
                 </div>
+              </div>
+              
+              {/* CTA */}
+              <div className="relative inline-block group">
+                <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                <a href="#team" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
+                  <Users className="group-hover:animate-pulse" size={20} />
+                  <span>Meet Our Team</span>
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                </a>
               </div>
             </div>
           </div>

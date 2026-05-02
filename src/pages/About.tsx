@@ -132,31 +132,143 @@ const About = () => {
       </section>
 
       {/* Company Story */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="glass rounded-3xl p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-taxi-black mb-6">Our Story</h2>
-              <p className="text-gray-700 mb-6">
-                Founded in 2013, Taxi Services started as a small fleet of 5 cars with a simple mission: 
-                to provide safe, reliable, and affordable transportation in Udaipur. Today, we've grown into 
-                the city's leading taxi service with over 100 vehicles and a team of dedicated professionals.
-              </p>
-              <p className="text-gray-700 mb-6">
-                Our journey has been driven by our commitment to customer satisfaction and our passion for 
-                excellence. We've continuously expanded our services, upgraded our fleet, and embraced technology 
-                to better serve our customers.
-              </p>
-              <p className="text-gray-700">
-                Today, we're proud to be the preferred choice for locals and tourists alike, offering 
-                comprehensive transportation solutions that meet every need and budget.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="w-full h-80 bg-taxi-yellow/20 rounded-2xl flex items-center justify-center">
-                <div className="text-center">
-                  <div className="text-6xl font-bold text-taxi-yellow mb-2">2013</div>
-                  <div className="text-xl text-taxi-black">Founded</div>
+      <section id="story" className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Car className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Journey</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Our Story</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">From humble beginnings to becoming Udaipur's trusted transportation partner</p>
+        </div>
+        
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
+            {/* Floating elements */}
+            <div className="absolute top-8 right-8 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-float"></div>
+            <div className="absolute bottom-8 left-8 w-12 h-12 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Story Content */}
+              <div className="space-y-8">
+                {/* Timeline item 1 */}
+                <div className="group relative">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                      <span className="text-taxi-black font-bold">1</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-taxi-black mb-2 group-hover:text-gray-800 transition-colors duration-300">The Beginning</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Founded in 2013, Taxi Services started as a small fleet of 5 cars with a simple mission: 
+                        to provide safe, reliable, and affordable transportation in Udaipur.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Timeline item 2 */}
+                <div className="group relative">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                      <span className="text-white font-bold">2</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-taxi-black mb-2 group-hover:text-gray-800 transition-colors duration-300">Growth & Expansion</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Our journey has been driven by our commitment to customer satisfaction and our passion for 
+                        excellence. We've continuously expanded our services, upgraded our fleet, and embraced technology.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Timeline item 3 */}
+                <div className="group relative">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 flex-shrink-0">
+                      <span className="text-white font-bold">3</span>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-taxi-black mb-2 group-hover:text-gray-800 transition-colors duration-300">Today's Success</h3>
+                      <p className="text-gray-700 leading-relaxed">
+                        Today, we're proud to be the preferred choice for locals and tourists alike, offering 
+                        comprehensive transportation solutions with over 100 vehicles and dedicated professionals.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Stats highlight */}
+                <div className="grid grid-cols-3 gap-4 pt-6">
+                  <div className="text-center group">
+                    <div className="text-3xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">100+</div>
+                    <div className="text-sm text-gray-600">Vehicles</div>
+                  </div>
+                  <div className="text-center group">
+                    <div className="text-3xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">50K+</div>
+                    <div className="text-sm text-gray-600">Customers</div>
+                  </div>
+                  <div className="text-center group">
+                    <div className="text-3xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">10+</div>
+                    <div className="text-sm text-gray-600">Years</div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Visual Timeline */}
+              <div className="relative">
+                <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                  {/* Background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 text-center">
+                    {/* Year display */}
+                    <div className="relative mb-8">
+                      <div className="w-32 h-32 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center mx-auto shadow-2xl animate-pulse">
+                        <div className="text-center">
+                          <div className="text-4xl font-black text-taxi-black">2013</div>
+                          <div className="text-sm font-bold text-taxi-black">Founded</div>
+                        </div>
+                      </div>
+                      {/* Ring animation */}
+                      <div className="absolute inset-0 rounded-full border-4 border-taxi-yellow opacity-30 animate-ping"></div>
+                    </div>
+                    
+                    {/* Journey visualization */}
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-3 h-3 bg-taxi-yellow rounded-full animate-pulse"></div>
+                        <div className="w-16 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400"></div>
+                        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
+                        <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                      </div>
+                      <div className="flex items-center justify-center space-x-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{ animationDelay: '1s' }}></div>
+                        <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-green-600"></div>
+                        <div className="w-3 h-3 bg-purple-500 rounded-full animate-pulse" style={{ animationDelay: '1.5s' }}></div>
+                      </div>
+                    </div>
+                    
+                    {/* Current status */}
+                    <div className="mt-8">
+                      <div className="inline-flex items-center space-x-2 bg-green-500/20 px-4 py-2 rounded-full">
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-green-700 font-bold">Leading Service Provider</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl"></div>
                 </div>
               </div>
             </div>

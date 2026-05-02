@@ -21,8 +21,8 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ height: '100vh' }}>
         {/* Background layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/30 via-yellow-100/40 to-yellow-200/50"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-100/80 via-white/90 to-gray-50/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         
         {/* Floating decorative elements */}
         <div className="absolute top-20 left-10 w-32 h-32 bg-taxi-yellow/20 rounded-full animate-float"></div>
@@ -36,8 +36,8 @@ const About = () => {
           <div className="absolute bottom-10 right-10 w-96 h-96 border-4 border-yellow-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
         </div>
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
+        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+          <div className="text-center max-w-6xl mx-auto">
             {/* Badge */}
             <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-lg px-6 py-3 rounded-full mb-8 group">
               <Car className="text-taxi-yellow animate-float" size={24} />
@@ -45,24 +45,28 @@ const About = () => {
             </div>
             
             {/* Main heading with animation */}
-            <div className="relative mb-8">
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-taxi-black leading-tight mb-4">
-                About
-                <span className="block text-taxi-yellow animate-pulse">Taxi GO</span>
-              </h1>
+            <div className="relative mb-16">
+              <div className="bg-black/10 backdrop-blur-sm rounded-3xl p-12 inline-block">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-loose mb-8" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
+                  <span className="block mb-4">About</span>
+                  <span className="block text-yellow-600 animate-pulse font-black" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>Taxi GO</span>
+                </h1>
+              </div>
               
               {/* Decorative underline */}
-              <div className="relative">
-                <div className="h-1 bg-gradient-to-r from-transparent via-taxi-yellow to-transparent"></div>
-                <div className="absolute inset-0 h-1 bg-gradient-to-r from-transparent via-taxi-yellow to-transparent animate-pulse"></div>
+              <div className="relative mt-8">
+                <div className="h-3 bg-gradient-to-r from-transparent via-yellow-600 to-transparent"></div>
+                <div className="absolute inset-0 h-3 bg-gradient-to-r from-transparent via-yellow-600 to-transparent animate-pulse"></div>
               </div>
             </div>
             
             {/* Enhanced description */}
-            <p className="text-xl md:text-2xl text-gray-700 max-w-4xl mx-auto mb-12 leading-relaxed">
-              Discover our journey of excellence, from a small fleet to Udaipur's most trusted taxi service. 
-              <span className="block text-taxi-yellow font-semibold mt-2">Driven by passion, committed to you.</span>
-            </p>
+            <div className="bg-white/80 backdrop-blur-sm border-2 border-yellow-600/30 rounded-3xl p-12 mb-16 max-w-5xl mx-auto shadow-2xl">
+              <p className="text-xl md:text-2xl text-gray-900 leading-loose font-bold" style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}>
+                Discover our journey of excellence, from a small fleet to Udaipur's most trusted taxi service. 
+                <span className="block text-yellow-600 font-black mt-6 text-xl">Driven by passion, committed to you.</span>
+              </p>
+            </div>
             
             {/* Stats preview */}
             <div className="grid md:grid-cols-4 gap-8 mb-12">

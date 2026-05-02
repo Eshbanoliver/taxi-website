@@ -408,26 +408,138 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Our Core Values</h2>
-          <p className="text-xl text-gray-700">The principles that guide everything we do</p>
+      <section className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Heart className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Principles</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Our Core Values</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">The foundation of everything we do and believe in</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            { title: 'Safety First', desc: 'Your safety is our top priority', icon: Shield },
-            { title: 'Punctuality', desc: 'Always on time, every time', icon: Clock },
-            { title: 'Customer Focus', desc: 'Your satisfaction drives us', icon: Users },
-            { title: 'Integrity', desc: 'Honest and transparent service', icon: Heart },
-          ].map((value, index) => (
-            <div key={index} className="glass rounded-2xl p-6 text-center hover:scale-105 transition-transform duration-300">
-              <div className="w-16 h-16 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto mb-4">
-                <value.icon className="text-taxi-black" size={32} />
+        
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { 
+                title: 'Safety First', 
+                desc: 'Your safety is our top priority with comprehensive measures and protocols', 
+                icon: Shield,
+                color: 'from-red-500 to-red-600',
+                bgColor: 'bg-red-500/10',
+                features: ['GPS Tracking', 'Verified Drivers', 'Insurance Coverage', '24/7 Support']
+              },
+              { 
+                title: 'Punctuality', 
+                desc: 'Always on time, every time with our commitment to reliability', 
+                icon: Clock,
+                color: 'from-blue-500 to-blue-600',
+                bgColor: 'bg-blue-500/10',
+                features: ['Real-time Tracking', 'ETA Updates', 'Professional Drivers', 'Optimized Routes']
+              },
+              { 
+                title: 'Customer Focus', 
+                desc: 'Your satisfaction drives us to deliver exceptional service', 
+                icon: Users,
+                color: 'from-green-500 to-green-600',
+                bgColor: 'bg-green-500/10',
+                features: ['24/7 Support', 'Feedback System', 'Personalized Service', 'Loyalty Rewards']
+              },
+              { 
+                title: 'Integrity', 
+                desc: 'Honest and transparent service in all our dealings', 
+                icon: Heart,
+                color: 'from-purple-500 to-purple-600',
+                bgColor: 'bg-purple-500/10',
+                features: ['Transparent Pricing', 'No Hidden Fees', 'Honest Communication', 'Ethical Practices']
+              }
+            ].map((value, index) => (
+              <div key={index} className="group relative">
+                {/* Card */}
+                <div className="relative glass rounded-3xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                  {/* Background gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
+                  
+                  {/* Floating decoration */}
+                  <div className={`absolute top-4 right-4 w-8 h-8 ${value.bgColor} rounded-full animate-pulse`}></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 text-center">
+                    {/* Icon */}
+                    <div className="relative mb-6">
+                      <div className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                        <value.icon className="text-white" size={40} />
+                      </div>
+                      {/* Ring animation */}
+                      <div className={`absolute inset-0 rounded-2xl border-2 ${value.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold text-taxi-black mb-3 group-hover:text-gray-800 transition-colors duration-300">{value.title}</h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-700 leading-relaxed mb-4">{value.desc}</p>
+                    
+                    {/* Features list */}
+                    <div className="space-y-2 text-left">
+                      {value.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center space-x-2 group/item">
+                          <div className={`w-4 h-4 ${value.bgColor} rounded-full flex items-center justify-center flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300`}>
+                            <CheckCircle className="text-white" size={12} />
+                          </div>
+                          <span className="text-sm text-gray-600 group-hover/item:text-gray-800 transition-colors duration-300">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
+                </div>
+                
+                {/* Bottom accent line */}
+                <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${value.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
               </div>
-              <h3 className="text-xl font-semibold text-taxi-black mb-2">{value.title}</h3>
-              <p className="text-gray-700">{value.desc}</p>
+            ))}
+          </div>
+        </div>
+        
+        {/* Values highlight */}
+        <div className="mt-16 text-center">
+          <div className="relative glass rounded-3xl p-8 overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20"></div>
+            
+            {/* Content */}
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-taxi-black mb-4">Our Commitment</h3>
+              <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+                These core values aren't just words on a page – they're the principles that guide every decision we make, 
+                every interaction we have, and every service we provide to our valued customers.
+              </p>
+              
+              {/* Trust indicators */}
+              <div className="flex flex-wrap justify-center items-center gap-8">
+                <div className="flex items-center space-x-2">
+                  <Shield className="text-taxi-yellow" size={20} />
+                  <span className="text-gray-700 font-medium">Certified Safe</span>
+                </div>
+                <div className="w-px h-6 bg-taxi-yellow/30"></div>
+                <div className="flex items-center space-x-2">
+                  <Award className="text-taxi-yellow" size={20} />
+                  <span className="text-gray-700 font-medium">Award Winning</span>
+                </div>
+                <div className="w-px h-6 bg-taxi-yellow/30"></div>
+                <div className="flex items-center space-x-2">
+                  <Star className="text-taxi-yellow" size={20} />
+                  <span className="text-gray-700 font-medium">Top Rated</span>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 

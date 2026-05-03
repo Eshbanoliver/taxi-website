@@ -124,9 +124,9 @@ const Services = () => {
       {/* Services Grid */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Car className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Services</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full mb-4">
+            <Car className="text-white" size={16} />
+            <span className="text-white font-semibold">Our Services</span>
           </div>
           <h2 className="text-5xl font-bold text-taxi-black mb-4">Premium Transportation</h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your every need</p>
@@ -134,7 +134,7 @@ const Services = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-red-500/15 to-pink-500/20 rounded-3xl"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (
@@ -232,9 +232,9 @@ const Services = () => {
       {/* Vehicle Categories */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Car className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Fleet</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 px-4 py-2 rounded-full mb-4">
+            <Car className="text-white" size={16} />
+            <span className="text-white font-semibold">Our Fleet</span>
           </div>
           <h2 className="text-5xl font-bold text-taxi-black mb-4">Premium Vehicles</h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">Choose from our wide range of well-maintained vehicles</p>
@@ -242,7 +242,7 @@ const Services = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-green-500/20 via-emerald-500/15 to-teal-500/20 rounded-3xl"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {vehicleCategories.map((category, index) => (

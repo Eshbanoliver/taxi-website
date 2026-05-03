@@ -56,12 +56,13 @@ const Home = () => {
       <section className="container mx-auto px-4 py-16">
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/15 to-orange-400/20 rounded-3xl"></div>
           
           <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
             {/* Floating elements */}
-            <div className="absolute top-10 right-10 w-20 h-20 bg-taxi-yellow/20 rounded-full animate-float"></div>
-            <div className="absolute bottom-10 left-10 w-16 h-16 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float opacity-30"></div>
+            <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-br from-orange-400 to-yellow-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-pulse opacity-30"></div>
             
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
@@ -363,9 +364,9 @@ const Home = () => {
       {/* Cars Section */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Car className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Fleet</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 rounded-full mb-4">
+            <Car className="text-white" size={16} />
+            <span className="text-white font-semibold">Our Fleet</span>
           </div>
           <h2 className="text-5xl font-bold text-taxi-black mb-4">Choose Your Ride</h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">Select from our wide range of well-maintained vehicles for your perfect journey</p>
@@ -373,43 +374,60 @@ const Home = () => {
         
         {/* Enhanced Category Tabs */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`group relative px-8 py-4 rounded-full font-bold transition-all duration-500 transform hover:scale-105 ${
-                activeCategory === category
-                  ? 'bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black shadow-xl'
-                  : 'glass text-taxi-black hover:bg-white/30 hover:shadow-lg'
-              }`}
-            >
-              <span className="relative z-10 flex items-center space-x-2">
-                <Car size={18} />
-                <span>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
-              </span>
-              {activeCategory === category && (
-                <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full animate-pulse opacity-50"></div>
-              )}
-            </button>
-          ))}
+          {categories.map((category, index) => {
+            const colors = [
+              'from-purple-500 to-pink-500',
+              'from-blue-500 to-cyan-500',
+              'from-green-500 to-emerald-500',
+              'from-orange-500 to-red-500'
+            ];
+            return (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`group relative px-8 py-4 rounded-full font-bold transition-all duration-500 transform hover:scale-105 ${
+                  activeCategory === category
+                    ? `bg-gradient-to-r ${colors[index % colors.length]} text-white shadow-xl`
+                    : 'glass text-taxi-black hover:bg-white/30 hover:shadow-lg'
+                }`}
+              >
+                <span className="relative z-10 flex items-center space-x-2">
+                  <Car size={18} />
+                  <span>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
+                </span>
+                {activeCategory === category && (
+                  <div className={`absolute inset-0 bg-gradient-to-r ${colors[index % colors.length]} rounded-full animate-pulse opacity-50`}></div>
+                )}
+              </button>
+            );
+          })}
         </div>
 
         {/* Cars Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cars[activeCategory as keyof typeof cars].map((car, index) => (
-            <div key={index} className="group relative">
-              {/* Card */}
-              <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
-                {/* Background decoration */}
-                <div className="absolute top-4 right-4 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
-                
-                {/* Car Visual */}
-                <div className="relative mb-6">
-                  <div className="w-full h-48 bg-gradient-to-br from-taxi-yellow/30 to-yellow-400/20 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                    {/* Animated background */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-32 h-32 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
-                    </div>
+          {cars[activeCategory as keyof typeof cars].map((car, index) => {
+            const cardColors = [
+              'from-purple-500/30 to-pink-500/20',
+              'from-blue-500/30 to-cyan-500/20',
+              'from-green-500/30 to-emerald-500/20',
+              'from-orange-500/30 to-red-500/20',
+              'from-indigo-500/30 to-purple-500/20',
+              'from-teal-500/30 to-green-500/20'
+            ];
+            return (
+              <div key={index} className="group relative">
+                {/* Card */}
+                <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                  {/* Background decoration */}
+                  <div className={`absolute top-4 right-4 w-16 h-16 bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-full animate-pulse opacity-30`}></div>
+                  
+                  {/* Car Visual */}
+                  <div className="relative mb-6">
+                    <div className={`w-full h-48 bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-2xl flex items-center justify-center relative overflow-hidden`}>
+                      {/* Animated background */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className={`w-32 h-32 bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-full animate-pulse opacity-50`}></div>
+                      </div>
                     
                     {/* Car icon */}
                     <div className="relative z-10">
@@ -465,7 +483,8 @@ const Home = () => {
               {/* Bottom accent line */}
               <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
             </div>
-          ))}
+          );
+          })}
         </div>
         
         {/* Bottom CTA */}
@@ -484,9 +503,9 @@ const Home = () => {
       {/* Mission & Vision */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Star className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Foundation</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full mb-4">
+            <Star className="text-white" size={16} />
+            <span className="text-white font-semibold">Our Foundation</span>
           </div>
           <h2 className="text-5xl font-bold text-taxi-black mb-4">Mission & Vision</h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">The driving force behind our commitment to excellence</p>

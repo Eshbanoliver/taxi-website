@@ -97,10 +97,13 @@ const FAQ = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-100/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/30 via-purple-500/20 to-pink-500/30"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
-            <HelpCircle className="text-taxi-yellow mx-auto mb-6" size={64} />
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500 to-purple-500 px-4 py-2 rounded-full mb-6">
+              <HelpCircle className="text-white" size={20} />
+              <span className="text-white font-bold">Help Center</span>
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold text-taxi-black mb-6">Frequently Asked Questions</h1>
             <p className="text-xl text-gray-700 max-w-3xl mx-auto">
               Find answers to common questions about our taxi services

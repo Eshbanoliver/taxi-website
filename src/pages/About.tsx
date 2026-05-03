@@ -39,9 +39,9 @@ const About = () => {
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-6xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-lg px-6 py-3 rounded-full mb-8 group">
-              <Car className="text-taxi-yellow animate-float" size={24} />
-              <span className="text-taxi-yellow font-bold text-lg">Our Story</span>
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 backdrop-blur-lg px-6 py-3 rounded-full mb-8 group">
+              <Car className="text-white animate-float" size={24} />
+              <span className="text-white font-bold text-lg">Our Story</span>
             </div>
             
             {/* Main heading with animation */}
@@ -134,9 +134,9 @@ const About = () => {
       {/* Company Story */}
       <section id="story" className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Car className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Journey</span>
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 rounded-full mb-4">
+            <Car className="text-white" size={16} />
+            <span className="text-white font-semibold">Our Journey</span>
           </div>
           <h2 className="text-5xl font-bold text-taxi-black mb-4">Our Story</h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">From humble beginnings to becoming Udaipur's trusted transportation partner</p>
@@ -144,12 +144,13 @@ const About = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/15 to-teal-500/20 rounded-3xl"></div>
           
           <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
             {/* Floating elements */}
-            <div className="absolute top-8 right-8 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-float"></div>
-            <div className="absolute bottom-8 left-8 w-12 h-12 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-8 right-8 w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-float opacity-30"></div>
+            <div className="absolute bottom-8 left-8 w-12 h-12 bg-gradient-to-br from-teal-500 to-green-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/4 w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-pulse opacity-30"></div>
             
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Story Content */}

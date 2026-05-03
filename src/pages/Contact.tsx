@@ -87,7 +87,6 @@ const Contact = () => {
             </p>
           </div>
         </div>
-        </div>
       </section>
 
       {/* Contact Information */}
@@ -144,7 +143,6 @@ const Contact = () => {
               </div>
             ))}
           </div>
-        </div>
         </div>
       </section>
 
@@ -248,49 +246,49 @@ const Contact = () => {
               </div>
             </div>
 
-          {/* Map Placeholder */}
-          <div className="relative">
-            {/* Floating elements */}
-            <div className="absolute top-8 right-8 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float opacity-30"></div>
-            <div className="absolute bottom-8 left-8 w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
-            
-            <div className="relative glass rounded-3xl p-8 h-96 flex items-center justify-center overflow-hidden">
-              {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/5"></div>
+            {/* Map Placeholder */}
+            <div className="relative">
+              {/* Floating elements */}
+              <div className="absolute top-8 right-8 w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float opacity-30"></div>
+              <div className="absolute bottom-8 left-8 w-12 h-12 bg-gradient-to-br from-indigo-500 to-blue-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
               
-              <div className="relative z-10 text-center">
-                {/* Badge */}
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full mb-6">
-                  <MapPin className="text-white" size={16} />
-                  <span className="text-white font-bold">Location</span>
-                </div>
+              <div className="relative glass rounded-3xl p-8 h-96 flex items-center justify-center overflow-hidden">
+                {/* Background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/5"></div>
                 
-                <div className="relative mb-6">
-                  <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg animate-pulse">
-                    <MapPin className="text-white" size={48} />
+                <div className="relative z-10 text-center">
+                  {/* Badge */}
+                  <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full mb-6">
+                    <MapPin className="text-white" size={16} />
+                    <span className="text-white font-bold">Location</span>
                   </div>
-                  {/* Ring animation */}
-                  <div className="absolute inset-0 rounded-2xl border-2 border-purple-500 opacity-30 animate-ping"></div>
-                </div>
-                
-                <h3 className="text-2xl font-bold text-taxi-black mb-3">Find Us in Udaipur</h3>
-                <p className="text-gray-700 mb-2">Interactive map will be displayed here</p>
-                <p className="text-lg font-bold text-purple-600">Udaipur, Rajasthan 313001</p>
-                
-                {/* CTA */}
-                <div className="mt-6">
-                  <button className="relative inline-block group">
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-                    <a href="#" className="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2">
-                      <MapPin className="group-hover:animate-pulse" size={16} />
-                      <span>Get Directions</span>
-                    </a>
-                  </button>
+                  
+                  <div className="relative mb-6">
+                    <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto shadow-lg animate-pulse">
+                      <MapPin className="text-white" size={48} />
+                    </div>
+                    {/* Ring animation */}
+                    <div className="absolute inset-0 rounded-2xl border-2 border-purple-500 opacity-30 animate-ping"></div>
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-taxi-black mb-3">Find Us in Udaipur</h3>
+                  <p className="text-gray-700 mb-2">Interactive map will be displayed here</p>
+                  <p className="text-lg font-bold text-purple-600">Udaipur, Rajasthan 313001</p>
+                  
+                  {/* CTA */}
+                  <div className="mt-6">
+                    <button className="relative inline-block group">
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
+                      <a href="#" className="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold py-3 px-6 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-2">
+                        <MapPin className="group-hover:animate-pulse" size={16} />
+                        <span>Get Directions</span>
+                      </a>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </section>
 

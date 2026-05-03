@@ -122,79 +122,191 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <div
-              key={service.id}
-              className={`glass rounded-2xl p-6 hover:scale-105 transition-all duration-300 cursor-pointer ${
-                selectedService === service.id ? 'ring-4 ring-taxi-yellow' : ''
-              }`}
-              onClick={() => setSelectedService(service.id === selectedService ? null : service.id)}
-            >
-              {service.popular && (
-                <div className="bg-taxi-yellow text-taxi-black text-sm font-semibold px-3 py-1 rounded-full inline-block mb-4">
-                  Popular
+      <section className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Car className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Services</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Premium Transportation</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your every need</p>
+        </div>
+        
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <div
+                key={service.id}
+                className={`group relative ${
+                  selectedService === service.id ? 'scale-105' : ''
+                }`}
+              >
+                {/* Card */}
+                <div
+                  className={`relative glass rounded-3xl p-6 md:p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden cursor-pointer ${
+                    selectedService === service.id ? 'ring-4 ring-taxi-yellow shadow-2xl' : ''
+                  }`}
+                  onClick={() => setSelectedService(service.id === selectedService ? null : service.id)}
+                >
+                  {/* Background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Floating decoration */}
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                  
+                  {/* Popular badge */}
+                  {service.popular && (
+                    <div className="absolute top-4 left-4 z-10">
+                      <div className="bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black text-sm font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
+                        Popular
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className="relative mb-6">
+                      <div className="w-20 h-20 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                        <service.icon className="text-taxi-black" size={40} />
+                      </div>
+                      {/* Ring animation */}
+                      <div className="absolute inset-0 rounded-2xl border-2 border-taxi-yellow opacity-30 animate-ping"></div>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-2xl font-bold text-taxi-black mb-3 group-hover:text-gray-800 transition-colors duration-300">{service.title}</h3>
+                    
+                    {/* Description */}
+                    <p className="text-gray-700 leading-relaxed mb-4">{service.description}</p>
+                    
+                    {/* Price */}
+                    <div className="text-xl font-bold text-taxi-yellow mb-4">{service.price}</div>
+                    
+                    {/* Features (shown when selected) */}
+                    {selectedService === service.id && (
+                      <div className="mt-6 pt-6 border-t border-white/30 animate-fadeIn">
+                        <h4 className="font-bold text-taxi-black mb-4">Features:</h4>
+                        <ul className="space-y-3">
+                          {service.features.map((feature, index) => (
+                            <li key={index} className="flex items-center text-gray-700 group/item">
+                              <div className="w-5 h-5 bg-taxi-yellow rounded-full flex items-center justify-center mr-3 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                                <CheckCircle className="text-taxi-black" size={14} />
+                              </div>
+                              <span className="group-hover/item:text-gray-900 transition-colors duration-300">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <button className="w-full bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-3 px-6 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 mt-6">
+                          Book Now
+                        </button>
+                      </div>
+                    )}
+                    
+                    {/* View more hint (when not selected) */}
+                    {selectedService !== service.id && (
+                      <div className="text-center">
+                        <div className="inline-flex items-center space-x-2 text-taxi-yellow font-medium group-hover:text-taxi-black transition-colors duration-300">
+                          <span>View Details</span>
+                          <CheckCircle className="group-hover:rotate-180 transition-transform duration-300" size={16} />
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl"></div>
                 </div>
-              )}
-              <div className="w-16 h-16 bg-taxi-yellow/20 rounded-full flex items-center justify-center mb-4">
-                <service.icon className="text-taxi-yellow" size={32} />
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
               </div>
-              <h3 className="text-xl font-semibold text-taxi-black mb-3">{service.title}</h3>
-              <p className="text-gray-700 mb-4">{service.description}</p>
-              <div className="text-lg font-semibold text-taxi-yellow mb-4">{service.price}</div>
-              
-              {selectedService === service.id && (
-                <div className="mt-4 pt-4 border-t border-white/30">
-                  <h4 className="font-semibold text-taxi-black mb-3">Features:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-gray-700">
-                        <CheckCircle className="text-taxi-yellow mr-2" size={16} />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <button className="btn-primary w-full mt-4">Book Now</button>
-                </div>
-              )}
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Vehicle Categories */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Our Fleet</h2>
-          <p className="text-xl text-gray-700">Choose from our wide range of well-maintained vehicles</p>
+      <section className="container mx-auto px-4 py-20">
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
+            <Car className="text-taxi-yellow" size={16} />
+            <span className="text-taxi-yellow font-semibold">Our Fleet</span>
+          </div>
+          <h2 className="text-5xl font-bold text-taxi-black mb-4">Premium Vehicles</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Choose from our wide range of well-maintained vehicles</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {vehicleCategories.map((category, index) => (
-            <div key={index} className="glass rounded-2xl p-6 hover:scale-105 transition-transform duration-300">
-              <h3 className="text-xl font-semibold text-taxi-black mb-3">{category.category}</h3>
-              <div className="text-lg font-semibold text-taxi-yellow mb-3">{category.price}</div>
-              <div className="mb-4">
-                <p className="text-sm text-gray-600 mb-2">Available Vehicles:</p>
-                <div className="flex flex-wrap gap-2">
-                  {category.vehicles.map((vehicle, idx) => (
-                    <span key={idx} className="bg-taxi-yellow/20 text-taxi-black px-2 py-1 rounded text-sm">
-                      {vehicle}
-                    </span>
-                  ))}
+        
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          
+          <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {vehicleCategories.map((category, index) => (
+              <div key={index} className="group relative">
+                {/* Card */}
+                <div className="relative glass rounded-3xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+                  {/* Background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  {/* Floating decoration */}
+                  <div className="absolute top-4 right-4 w-8 h-8 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Category badge */}
+                    <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-3 py-1 rounded-full mb-4">
+                      <div className="w-2 h-2 bg-taxi-yellow rounded-full animate-pulse"></div>
+                      <span className="text-taxi-yellow font-bold text-sm">{category.category}</span>
+                    </div>
+                    
+                    {/* Price */}
+                    <div className="text-2xl font-bold text-taxi-black mb-4 group-hover:text-taxi-yellow transition-colors duration-300">
+                      {category.price}
+                    </div>
+                    
+                    {/* Vehicles */}
+                    <div className="mb-6">
+                      <p className="text-sm text-gray-600 mb-3 font-medium">Available Vehicles:</p>
+                      <div className="flex flex-wrap gap-2">
+                        {category.vehicles.map((vehicle, idx) => (
+                          <span key={idx} className="bg-taxi-yellow/20 text-taxi-black px-3 py-1 rounded-full text-sm font-medium hover:bg-taxi-yellow/30 transition-colors duration-300">
+                            {vehicle}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    
+                    {/* Features */}
+                    <ul className="space-y-2 mb-6">
+                      {category.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-gray-700 group/item">
+                          <div className="w-4 h-4 bg-taxi-yellow rounded-full flex items-center justify-center mr-2 flex-shrink-0 group-hover/item:scale-110 transition-transform duration-300">
+                            <CheckCircle className="text-taxi-black" size={12} />
+                          </div>
+                          <span className="text-sm group-hover/item:text-gray-900 transition-colors duration-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    {/* Button */}
+                    <button className="w-full glass text-taxi-black font-bold py-3 px-6 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 border border-taxi-yellow/30 group">
+                      <span className="group-hover:text-taxi-yellow transition-colors duration-300">Select Category</span>
+                    </button>
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl"></div>
                 </div>
+                
+                {/* Bottom accent line */}
+                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
               </div>
-              <ul className="space-y-1 mb-4">
-                {category.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center text-gray-700 text-sm">
-                    <CheckCircle className="text-taxi-yellow mr-2" size={14} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <button className="btn-secondary w-full">Select Category</button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

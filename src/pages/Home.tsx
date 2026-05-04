@@ -53,54 +53,59 @@ const Home = () => {
       <HeroSlider />
 
       {/* About Us Preview */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/15 to-orange-400/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-blue-900/30 to-indigo-900/40 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
           
-          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
-            {/* Floating elements */}
-            <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full animate-float opacity-30"></div>
-            <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-br from-orange-400 to-yellow-500 rounded-full animate-float opacity-30" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute top-1/2 left-1/4 w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-full animate-pulse opacity-30"></div>
-            
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-8">
-                <div className="space-y-4">
-                  <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full">
-                    <span className="text-taxi-yellow font-semibold">Since 2014</span>
+          {/* Floating elements - hide on mobile */}
+          <div className="hidden sm:block absolute top-8 right-8 w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 bg-gradient-to-br from-blue-500/20 to-cyan-500/10 rounded-full animate-float backdrop-blur-sm"></div>
+          <div className="hidden sm:block absolute bottom-8 left-8 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 bg-gradient-to-br from-indigo-500/20 to-purple-500/10 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
+          <div className="hidden lg:block absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 rounded-full animate-pulse backdrop-blur-sm"></div>
+          
+          <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-20 overflow-hidden border border-white/10">
+            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
+                <div className="space-y-4 sm:space-y-6">
+                  <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-blue-500/30 backdrop-blur-sm">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+                    <span className="text-blue-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
                   </div>
-                  <h2 className="text-5xl md:text-6xl font-bold text-taxi-black leading-tight">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
                     Your Trusted
-                    <span className="block text-taxi-yellow">Journey Partner</span>
+                    <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Journey Partner</span>
                   </h2>
                 </div>
                 
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  With over 10 years of excellence, Taxi Services stands as Udaipur's premier transportation provider. 
+                <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+                  With over a decade of excellence, we stand as Udaipur's premier transportation provider. 
                   We combine cutting-edge technology with traditional hospitality to deliver safe, comfortable, and affordable journeys that exceed expectations.
                 </p>
                 
                 {/* Key highlights */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   {[
-                    { icon: Shield, text: "Fully Licensed & Insured" },
-                    { icon: Clock, text: "24/7 Availability" },
-                    { icon: Users, text: "Professional Drivers" },
-                    { icon: MapPin, text: "City Wide Coverage" }
+                    { icon: Shield, text: "Fully Licensed & Insured", color: "from-blue-500 to-cyan-500" },
+                    { icon: Clock, text: "24/7 Availability", color: "from-indigo-500 to-purple-500" },
+                    { icon: Users, text: "Professional Drivers", color: "from-cyan-500 to-blue-500" },
+                    { icon: MapPin, text: "City Wide Coverage", color: "from-purple-500 to-indigo-500" }
                   ].map((item, index) => (
-                    <div key={index} className="flex items-center space-x-3 group">
-                      <div className="w-12 h-12 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <item.icon className="text-taxi-yellow" size={20} />
+                    <div key={index} className="group relative">
+                      <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
+                        <div className={`relative w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br ${item.color} rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
+                          <item.icon className="text-white w-4 h-4 sm:w-6 sm:h-6" />
+                          <div className={`absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.color} opacity-30 animate-pulse`}></div>
+                        </div>
+                        <span className="text-gray-200 font-medium text-sm sm:text-base group-hover:text-white transition-colors duration-300">{item.text}</span>
                       </div>
-                      <span className="text-gray-700 font-medium">{item.text}</span>
                     </div>
                   ))}
                 </div>
                 
-                <a href="/about" className="group inline-flex items-center space-x-3 bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <a href="/about" className="group inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
                   <span>Discover Our Story</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+                  <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
               </div>
               
@@ -153,79 +158,87 @@ const Home = () => {
       </section>
 
       {/* Key Metrics */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-taxi-black mb-4">Our Achievements</h2>
-          <p className="text-xl text-gray-700">Numbers that speak for our excellence</p>
+      <section className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 px-3 sm:px-4 py-2 rounded-full border border-indigo-500/30 backdrop-blur-sm mb-4 sm:mb-6">
+            <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
+            <span className="text-indigo-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Our Impact</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Numbers That Define Excellence</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">Metrics that showcase our commitment to quality service</p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { 
-              number: '50K+', 
-              label: 'Rides Completed', 
-              icon: Car, 
-              color: 'from-blue-500 to-blue-600',
-              bgColor: 'bg-blue-500/10',
-              description: 'Safe journeys delivered'
-            },
-            { 
-              number: '10K+', 
-              label: 'Happy Customers', 
-              icon: Users, 
-              color: 'from-green-500 to-green-600',
-              bgColor: 'bg-green-500/10',
-              description: 'Satisfied passengers'
-            },
-            { 
-              number: '15+', 
-              label: 'Cities Covered', 
-              icon: MapPin, 
-              color: 'from-purple-500 to-purple-600',
-              bgColor: 'bg-purple-500/10',
-              description: 'Wide network reach'
-            },
-            { 
-              number: '24/7', 
-              label: 'Service Available', 
-              icon: Clock, 
-              color: 'from-orange-500 to-orange-600',
-              bgColor: 'bg-orange-500/10',
-              description: 'Always here for you'
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-indigo-900/20 to-purple-900/30 rounded-3xl"></div>
+          
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+            {[
+              { 
+                number: '50K+', 
+                label: 'Rides Completed', 
+                icon: Car, 
+                color: 'from-blue-500 to-cyan-500',
+                bgColor: 'bg-blue-500/10',
+                description: 'Safe journeys delivered'
+              },
+              { 
+                number: '10K+', 
+                label: 'Happy Customers', 
+                icon: Users, 
+                color: 'from-emerald-500 to-green-500',
+                bgColor: 'bg-emerald-500/10',
+                description: 'Satisfied passengers'
+              },
+              { 
+                number: '15+', 
+                label: 'Cities Covered', 
+                icon: MapPin, 
+                color: 'from-purple-500 to-pink-500',
+                bgColor: 'bg-purple-500/10',
+                description: 'Wide network reach'
+              },
+              { 
+                number: '24/7', 
+                label: 'Service Available', 
+                icon: Clock, 
+                color: 'from-orange-500 to-red-500',
+                bgColor: 'bg-orange-500/10',
+                description: 'Always here for you'
             },
           ].map((metric, index) => (
             <div key={index} className="group relative">
               {/* Card */}
-              <div className="relative glass rounded-3xl p-8 text-center hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+              <div className="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 text-center hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
                 {/* Background gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${metric.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 
                 {/* Floating decoration */}
-                <div className={`absolute top-4 right-4 w-8 h-8 ${metric.bgColor} rounded-full animate-pulse`}></div>
+                <div className={`absolute top-2 sm:top-4 right-2 sm:right-4 w-6 h-6 sm:w-8 sm:h-8 ${metric.bgColor} rounded-full animate-pulse`}></div>
                 
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon container */}
-                  <div className="relative mx-auto mb-6">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${metric.color} rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
-                      <metric.icon className="text-white" size={40} />
+                  <div className="relative mx-auto mb-4 sm:mb-6">
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br ${metric.color} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                      <metric.icon className="text-white w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
                     </div>
                     {/* Ring animation */}
-                    <div className={`absolute inset-0 rounded-full border-2 ${metric.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
+                    <div className={`absolute inset-0 rounded-xl sm:rounded-2xl border-2 ${metric.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
                   </div>
                   
                   {/* Number */}
-                  <div className="text-5xl font-bold text-taxi-black mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                     {metric.number}
                   </div>
                   
                   {/* Label */}
-                  <div className="text-lg font-semibold text-gray-700 mb-2">
+                  <div className="text-sm sm:text-base lg:text-lg font-semibold text-gray-300 mb-2">
                     {metric.label}
                   </div>
                   
                   {/* Description */}
-                  <div className="text-sm text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {metric.description}
                   </div>
                 </div>
@@ -239,10 +252,11 @@ const Home = () => {
             </div>
           ))}
         </div>
+        </div>
         
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-taxi-yellow to-yellow-400 px-8 py-4 rounded-full shadow-xl">
+          <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-4 rounded-full shadow-xl border border-blue-500/30 backdrop-blur-sm">
             <div className="flex items-center space-x-2">
               <Star className="text-taxi-black" size={20} />
               <span className="text-taxi-black font-bold">Trusted by thousands daily</span>
@@ -252,71 +266,76 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <span className="text-taxi-yellow font-semibold">What We Offer</span>
+      <section className="container mx-auto px-4 py-20">
+        <div className="text-center mb-12 sm:mb-16">
+          <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-purple-500/30 backdrop-blur-sm mb-4 sm:mb-6">
+            <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
+            <span className="text-purple-300 font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
           </div>
-          <h2 className="text-5xl font-bold text-taxi-black mb-4">Our Services</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Comprehensive transportation solutions tailored to meet your every need</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Premium Transportation Services</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto font-light px-4">Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {[
-            { 
-              title: 'Local Rides', 
-              desc: 'Quick and affordable city transportation',
-              icon: Car,
-              color: 'from-blue-500 to-blue-600',
-              features: ['Quick Pickup', 'Affordable Rates', 'City Coverage'],
-              badge: 'Popular'
-            },
-            { 
-              title: 'Airport Transfer', 
-              desc: 'Punctual pickup and drop services',
-              icon: Plane,
-              color: 'from-green-500 to-green-600',
-              features: ['Flight Tracking', 'Luggage Help', 'Meet & Greet'],
-              badge: 'Premium'
-            },
-            { 
-              title: 'Outstation Trips', 
-              desc: 'Comfortable long-distance travel',
-              icon: MapPin,
-              color: 'from-purple-500 to-purple-600',
-              features: ['One-way & Round', 'Experienced Drivers', 'Comfortable'],
-              badge: null
-            },
-          ].map((service, index) => (
-            <div key={index} className="group relative">
-              {/* Card */}
-              <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
-                {/* Background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                
-                {/* Badge */}
-                {service.badge && (
-                  <div className="absolute top-4 right-4">
-                    <div className={`bg-gradient-to-r ${service.color} text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse`}>
-                      {service.badge}
-                    </div>
-                  </div>
-                )}
-                
-                {/* Floating decoration */}
-                <div className={`absolute bottom-4 right-4 w-12 h-12 ${service.color.replace('from-', 'bg-').split(' ')[0]}/20 rounded-full animate-float`}></div>
-                
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Icon */}
-                  <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
-                    <service.icon className="text-white" size={32} />
-                  </div>
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-purple-900/20 to-pink-900/30 rounded-3xl"></div>
+          
+          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+            {[
+              { 
+                title: 'Local Rides', 
+                desc: 'Quick and affordable city transportation',
+                icon: Car,
+                color: 'from-blue-500 to-cyan-500',
+                features: ['Quick Pickup', 'Affordable Rates', 'City Coverage'],
+                badge: 'Popular'
+              },
+              { 
+                title: 'Airport Transfer', 
+                desc: 'Punctual pickup and drop services',
+                icon: Plane,
+                color: 'from-emerald-500 to-green-500',
+                features: ['Flight Tracking', 'Luggage Help', 'Meet & Greet'],
+                badge: 'Premium'
+              },
+              { 
+                title: 'Outstation Trips', 
+                desc: 'Comfortable long-distance travel',
+                icon: MapPin,
+                color: 'from-purple-500 to-pink-500',
+                features: ['One-way & Round', 'Experienced Drivers', 'Comfortable'],
+                badge: null
+              },
+            ].map((service, index) => (
+              <div key={index} className="group relative">
+                {/* Card */}
+                <div className="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden border border-white/10">
+                  {/* Background gradient */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   
-                  {/* Title */}
-                  <h3 className="text-2xl font-bold text-taxi-black mb-3 group-hover:text-gray-800 transition-colors duration-300">
-                    {service.title}
-                  </h3>
+                  {/* Badge */}
+                  {service.badge && (
+                    <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
+                      <div className={`bg-gradient-to-r ${service.color} text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg animate-pulse`}>
+                        {service.badge}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {/* Floating decoration */}
+                  <div className={`absolute bottom-2 sm:bottom-4 right-2 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 ${service.color.replace('from-', 'bg-').split(' ')[0]}/20 rounded-full animate-float`}></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10">
+                    {/* Icon */}
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${service.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                      <service.icon className="text-white w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-gray-200 transition-colors duration-300">
+                      {service.title}
+                    </h3>
                   
                   {/* Description */}
                   <p className="text-gray-700 mb-6 leading-relaxed">{service.desc}</p>
@@ -359,27 +378,33 @@ const Home = () => {
           </div>
           <p className="text-gray-600 mt-4">Discover our complete range of transportation solutions</p>
         </div>
+        </div>
       </section>
 
       {/* Cars Section */}
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-500 px-4 py-2 rounded-full mb-4">
-            <Car className="text-white" size={16} />
-            <span className="text-white font-semibold">Our Fleet</span>
+          <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-6 py-3 rounded-full border border-cyan-500/30 backdrop-blur-sm mb-6">
+            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
+            <span className="text-cyan-300 font-bold text-sm tracking-wider uppercase">Our Fleet</span>
           </div>
-          <h2 className="text-5xl font-bold text-taxi-black mb-4">Choose Your Ride</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Select from our wide range of well-maintained vehicles for your perfect journey</p>
+          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Choose Your Perfect Ride</h2>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">Select from our wide range of well-maintained vehicles for your perfect journey experience</p>
         </div>
         
-        {/* Enhanced Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {categories.map((category, index) => {
-            const colors = [
-              'from-purple-500 to-pink-500',
-              'from-blue-500 to-cyan-500',
-              'from-green-500 to-emerald-500',
-              'from-orange-500 to-red-500'
+        <div className="relative">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-cyan-900/20 to-blue-900/30 rounded-3xl"></div>
+          
+          <div className="relative">
+            {/* Enhanced Category Tabs */}
+            <div className="flex flex-wrap justify-center gap-4 mb-12">
+              {categories.map((category, index) => {
+                const colors = [
+                  'from-purple-500 to-pink-500',
+                  'from-blue-500 to-cyan-500',
+                  'from-green-500 to-emerald-500',
+                  'from-orange-500 to-red-500'
             ];
             return (
               <button
@@ -497,6 +522,8 @@ const Home = () => {
             </a>
           </div>
           <p className="text-gray-600 mt-4">Explore all our vehicles and find your perfect match</p>
+        </div>
+          </div>
         </div>
       </section>
 

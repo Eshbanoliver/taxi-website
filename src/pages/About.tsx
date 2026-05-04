@@ -21,33 +21,34 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ height: '100vh' }}>
         {/* Background layers */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-100/80 via-white/90 to-gray-50/95"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/80 to-indigo-900/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
         
         {/* Floating decorative elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-taxi-yellow/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-20 w-28 h-28 bg-yellow-400/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-40 right-10 w-20 h-20 bg-taxi-yellow/25 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-500/20 to-cyan-500/10 rounded-full animate-float backdrop-blur-sm"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-indigo-500/20 to-purple-500/10 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-20 w-28 h-28 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-40 right-10 w-20 h-20 bg-gradient-to-br from-blue-500/25 to-indigo-500/15 rounded-full animate-pulse backdrop-blur-sm"></div>
         
         {/* Animated background pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 border-4 border-taxi-yellow rounded-full animate-ping"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 border-4 border-yellow-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-64 h-64 border-4 border-blue-500/30 rounded-full animate-ping"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 border-4 border-indigo-500/30 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
         </div>
         
         <div className="container mx-auto px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-6xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 backdrop-blur-lg px-6 py-3 rounded-full mb-8 group">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-lg px-6 py-3 rounded-full border border-blue-500/30 mb-8 group">
+              <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
               <Car className="text-white animate-float" size={24} />
-              <span className="text-white font-bold text-lg">Our Story</span>
+              <span className="text-white font-bold text-lg tracking-wider uppercase">Our Story</span>
             </div>
             
             {/* Main heading with animation */}
             <div className="relative mb-16">
-              <div className="bg-black/10 backdrop-blur-sm rounded-3xl p-12 inline-block">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-loose mb-8" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>
+              <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-12 inline-block border border-white/10">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-loose mb-8">
                   <span className="block mb-4">About</span>
                   <span className="block text-yellow-600 animate-pulse font-black" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}>Taxi GO</span>
                 </h1>
@@ -61,28 +62,28 @@ const About = () => {
             </div>
             
             {/* Enhanced description */}
-            <div className="bg-white/80 backdrop-blur-sm border-2 border-yellow-600/30 rounded-3xl p-12 mb-16 max-w-5xl mx-auto shadow-2xl">
-              <p className="text-xl md:text-2xl text-gray-900 leading-loose font-bold" style={{ textShadow: '1px 1px 2px rgba(255,255,255,0.8)' }}>
+            <div className="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm border border-white/20 rounded-3xl p-12 mb-16 max-w-5xl mx-auto shadow-2xl">
+              <p className="text-xl md:text-2xl text-gray-100 leading-loose font-light">
                 Discover our journey of excellence, from a small fleet to Udaipur's most trusted taxi service. 
-                <span className="block text-yellow-600 font-black mt-6 text-xl">Driven by passion, committed to you.</span>
+                <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent font-bold mt-6 text-2xl">Driven by passion, committed to you.</span>
               </p>
             </div>
             
             {/* Stats preview */}
             <div className="grid md:grid-cols-4 gap-8 mb-12">
               {[
-                { number: '10+', label: 'Years of Excellence', icon: Award },
-                { number: '50K+', label: 'Happy Customers', icon: Users },
-                { number: '100+', label: 'Professional Drivers', icon: Shield },
-                { number: '24/7', label: 'Service Available', icon: Clock }
+                { number: '10+', label: 'Years of Excellence', icon: Award, color: 'from-blue-500 to-cyan-500' },
+                { number: '50K+', label: 'Happy Customers', icon: Users, color: 'from-indigo-500 to-purple-500' },
+                { number: '100+', label: 'Professional Drivers', icon: Shield, color: 'from-cyan-500 to-blue-500' },
+                { number: '24/7', label: 'Service Available', icon: Clock, color: 'from-purple-500 to-indigo-500' }
               ].map((stat, index) => (
                 <div key={index} className="group">
-                  <div className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-2xl">
-                    <div className="w-16 h-16 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                      <stat.icon className="text-taxi-black" size={32} />
+                  <div className="glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-2xl border border-white/10">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                      <stat.icon className="text-white" size={32} />
                     </div>
-                    <div className="text-3xl font-bold text-taxi-black mb-2">{stat.number}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
+                    <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                    <div className="text-sm text-gray-300">{stat.label}</div>
                   </div>
                 </div>
               ))}

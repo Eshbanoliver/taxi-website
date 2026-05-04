@@ -22,40 +22,40 @@ const Footer = () => {
       {/* Background decoration */}
       <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/5 to-yellow-400/10"></div>
       
-      {/* Floating elements */}
-      <div className="absolute top-10 right-10 w-20 h-20 bg-taxi-yellow/20 rounded-full animate-float"></div>
-      <div className="absolute bottom-10 left-10 w-16 h-16 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+      {/* Floating elements - hide on mobile */}
+      <div className="hidden sm:block absolute top-10 right-10 w-16 h-16 sm:w-20 sm:h-20 bg-taxi-yellow/20 rounded-full animate-float"></div>
+      <div className="hidden sm:block absolute bottom-10 left-10 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
       
-      <div className="relative container mx-auto px-4 py-6">
+      <div className="relative container mx-auto px-4 py-4 sm:py-6">
         {/* Top Section */}
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-3 py-1 rounded-full mb-3">
-            <Car className="text-taxi-yellow animate-float" size={14} />
-            <span className="text-taxi-yellow font-bold text-sm">Stay Connected</span>
+        <div className="text-center mb-4 sm:mb-6">
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3">
+            <Car className="text-taxi-yellow animate-float w-3 h-3 sm:w-4 sm:h-4" />
+            <span className="text-taxi-yellow font-bold text-xs sm:text-sm">Stay Connected</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
             Let's Take You
             <span className="block text-taxi-yellow">Wherever You Need</span>
           </h2>
-          <p className="text-base text-gray-300 max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-4">
             Join thousands of satisfied customers who trust us for their daily transportation needs
           </p>
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-4 sm:mb-6">
           {/* Company Info */}
-          <div className="space-y-3 group">
+          <div className="space-y-2 sm:space-y-3 group">
             <div className="flex items-center space-x-2">
               <div className="relative">
-                <div className="w-8 h-8 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                  <span className="text-taxi-black font-bold text-base">T</span>
+                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                  <span className="text-taxi-black font-bold text-xs sm:text-base">T</span>
                 </div>
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-green-500 rounded-full animate-ping"></div>
+                <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-ping"></div>
               </div>
               <div>
-                <h3 className="text-lg font-bold text-white group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>
-                <p className="text-xs text-gray-400">Your Journey Partner</p>
+                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>
+                <p className="text-xs text-gray-400 hidden sm:block">Your Journey Partner</p>
               </div>
             </div>
             <p className="text-gray-300 text-xs leading-relaxed">
@@ -65,7 +65,7 @@ const Footer = () => {
             {/* Trust indicators */}
             <div className="flex items-center space-x-2">
               <div className="flex items-center space-x-1">
-                <Star className="text-taxi-yellow" size={12} />
+                <Star className="text-taxi-yellow w-3 h-3 sm:w-4 sm:h-4" />
                 <span className="text-white font-semibold text-xs">4.9</span>
               </div>
               <div className="w-px h-2 bg-white/30"></div>

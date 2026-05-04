@@ -28,32 +28,32 @@ const Header = () => {
         ? 'bg-gradient-to-r from-taxi-yellow/95 via-yellow-400/95 to-taxi-yellow/95 backdrop-blur-xl shadow-2xl border-b border-white/20' 
         : 'bg-gradient-to-r from-taxi-yellow/80 via-yellow-300/80 to-taxi-yellow/80 backdrop-blur-lg'
     }`}>
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Animated Logo */}
-          <div className="flex items-center space-x-3 group">
+          <div className="flex items-center space-x-2 sm:space-x-3 group">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-taxi-black to-gray-800 rounded-full flex items-center justify-center animate-pulse shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                <Car className="text-taxi-yellow animate-float" size={24} />
+              <div className="w-8 h-8 sm:w-10 sm:h-12 lg:w-12 lg:h-12 bg-gradient-to-br from-taxi-black to-gray-800 rounded-full flex items-center justify-center animate-pulse shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+                <Car className="text-taxi-yellow animate-float w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6" />
               </div>
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-ping"></div>
+              <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 bg-red-500 rounded-full animate-ping"></div>
             </div>
             <div className="flex flex-col">
-              <h1 className="text-2xl font-bold text-taxi-black group-hover:text-gray-800 transition-colors duration-300">
+              <h1 className="text-lg sm:text-xl lg:text-2xl font-bold text-taxi-black group-hover:text-gray-800 transition-colors duration-300">
                 Taxi
-                <span className="text-taxi-yellow bg-taxi-black px-1 rounded ml-1 text-sm">GO</span>
+                <span className="text-taxi-yellow bg-taxi-black px-1 rounded ml-1 text-xs sm:text-sm">GO</span>
               </h1>
-              <p className="text-xs text-gray-700 font-medium">Your Journey, Our Priority</p>
+              <p className="text-xs text-gray-700 font-medium hidden sm:block">Your Journey, Our Priority</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-3 lg:space-x-4">
+          <nav className="hidden lg:flex items-center space-x-3 lg:space-x-4">
             {navItems.map((item, index) => (
               <div key={item.name} className="relative group">
                 <a
                   href={item.href}
-                  className={`relative px-6 py-2.5 rounded-full font-medium transition-all duration-300 whitespace-nowrap ${
+                  className={`relative px-4 lg:px-6 py-2 lg:py-2.5 rounded-full font-medium transition-all duration-300 whitespace-nowrap text-sm lg:text-base ${
                     activeSection === item.icon
                       ? 'bg-taxi-black text-taxi-yellow shadow-lg'
                       : 'text-taxi-black hover:bg-white/30 hover:shadow-md'
@@ -68,11 +68,12 @@ const Header = () => {
             ))}
             
             {/* Enhanced Book Now Button */}
-            <div className="ml-6 relative group">
-              <button className="relative bg-gradient-to-r from-taxi-black to-gray-800 text-taxi-yellow font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden group">
+            <div className="ml-4 lg:ml-6 relative group">
+              <button className="relative bg-gradient-to-r from-taxi-black to-gray-800 text-taxi-yellow font-bold py-2 lg:py-3 px-4 lg:px-6 rounded-full shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden group text-sm lg:text-base">
                 <span className="relative z-10 flex items-center space-x-2">
-                  <Phone size={18} />
-                  <span>Book Now</span>
+                  <Phone className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <span className="hidden sm:inline">Book Now</span>
+                  <span className="sm:hidden">Book</span>
                 </span>
                 <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-taxi-yellow transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -88,29 +89,29 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden relative group"
+            className="lg:hidden relative group"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <div className="w-10 h-10 bg-taxi-black rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-taxi-black rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
               {isMenuOpen ? (
-                <X className="text-taxi-yellow animate-spin" size={20} />
+                <X className="text-taxi-yellow animate-spin w-4 h-4 sm:w-5 sm:h-5" />
               ) : (
-                <Menu className="text-taxi-yellow animate-pulse" size={20} />
+                <Menu className="text-taxi-yellow animate-pulse w-4 h-4 sm:w-5 sm:h-5" />
               )}
             </div>
-            <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-ping"></div>
+            <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-red-500 rounded-full animate-ping"></div>
           </button>
         </div>
 
         {/* Enhanced Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden mt-6 py-6 bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-2xl border border-white/30 shadow-2xl">
-            <nav className="flex flex-col space-y-3">
+          <div className="lg:hidden mt-4 sm:mt-6 py-4 sm:py-6 bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl rounded-xl sm:rounded-2xl border border-white/30 shadow-2xl">
+            <nav className="flex flex-col space-y-2 sm:space-y-3">
               {navItems.map((item, index) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="relative px-4 py-3 rounded-xl font-medium text-taxi-black hover:bg-taxi-yellow/30 hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2"
+                  className="relative px-3 sm:px-4 py-2 sm:py-3 rounded-lg sm:rounded-xl font-medium text-taxi-black hover:bg-taxi-yellow/30 hover:shadow-md transition-all duration-300 transform hover:scale-105 hover:translate-x-2 text-sm sm:text-base"
                   style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setIsMenuOpen(false)}
                 >

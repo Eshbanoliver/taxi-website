@@ -1,43 +1,16 @@
 import React, { useState } from 'react';
-import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, TrendingUp, HelpCircle, BookOpen, MessageCircle, Mail } from 'lucide-react';
+import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, TrendingUp, HelpCircle, BookOpen, MessageCircle, Mail, Award } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
 
 const Home = () => {
-  const [activeCategory, setActiveCategory] = useState('hatchback');
+  const [activeCategory, setActiveCategory] = useState('All');
 
-  const categories = ['hatchback', 'sedan', 'suv', 'luxury'];
+  const categories = ['All', 'Sedan', 'SUV', 'Luxury', 'Economy'];
   
-  const cars = {
-    hatchback: [
-      { name: 'Swift', price: '₹8/km', features: ['AC', '4 Seats', 'Luggage Space'] },
-      { name: 'WagonR', price: '₹7/km', features: ['AC', '4 Seats', 'Compact'] },
-      { name: 'i10', price: '₹8/km', features: ['AC', '4 Seats', 'Fuel Efficient'] },
-    ],
-    sedan: [
-      { name: 'Dzire', price: '₹10/km', features: ['AC', '4 Seats', 'Comfortable'] },
-      { name: 'City', price: '₹12/km', features: ['AC', '4 Seats', 'Premium'] },
-      { name: 'Ciaz', price: '₹11/km', features: ['AC', '4 Seats', 'Spacious'] },
-    ],
-    suv: [
-      { name: 'Brezza', price: '₹13/km', features: ['AC', '5 Seats', 'Off-road'] },
-      { name: 'XUV500', price: '₹15/km', features: ['AC', '7 Seats', 'Luxury'] },
-      { name: 'Scorpio', price: '₹14/km', features: ['AC', '7 Seats', 'Powerful'] },
-    ],
-    luxury: [
-      { name: 'BMW 3 Series', price: '₹25/km', features: ['AC', '4 Seats', 'Premium'] },
-      { name: 'Mercedes C-Class', price: '₹28/km', features: ['AC', '4 Seats', 'Luxury'] },
-      { name: 'Audi A4', price: '₹30/km', features: ['AC', '4 Seats', 'Executive'] },
-    ],
-  };
-
   const testimonials = [
-    { name: 'Rahul Sharma', text: 'Excellent service! Very professional and punctual drivers.', rating: 5 },
-    { name: 'Priya Patel', text: 'Clean cars and affordable rates. Highly recommended!', rating: 5 },
-    { name: 'Amit Kumar', text: 'Best taxi service in Udaipur. Always on time!', rating: 5 },
-    { name: 'Sneha Reddy', text: 'Amazing experience! Drivers are courteous and vehicles are well-maintained.', rating: 5 },
-    { name: 'Vikram Singh', text: 'Used their airport transfer service. Flawless execution!', rating: 5 },
-    { name: 'Anjali Mehta', text: 'Very reliable and safe. I use them daily for my office commute.', rating: 5 },
-    { name: 'Rohit Verma', text: 'Outstation trips made comfortable and stress-free. Great service!', rating: 5 },
+    { name: 'Rahul Sharma', text: 'Excellent service! The driver was professional and the car was spotless.', rating: 5 },
+    { name: 'Priya Patel', text: 'Very reliable and affordable. Best taxi service in Udaipur!', rating: 5 },
+    { name: 'Amit Kumar', text: 'Punctual pickups and comfortable rides. Highly recommended!', rating: 5 },
     { name: 'Kavya Nair', text: 'Transparent pricing and no hidden charges. Trustworthy service!', rating: 5 },
   ];
 
@@ -48,13 +21,13 @@ const Home = () => {
   ];
 
   return (
-    <div className="space-y-20 w-full overflow-x-hidden">
+    <div className="w-full overflow-x-hidden">
       {/* Hero Slider Section */}
       <HeroSlider />
 
       {/* About Us Preview */}
-      <section className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
-        <div className="relative">
+      <section className="section-container">
+        <div className="relative max-w-7xl mx-auto">
           {/* Background decoration */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-blue-900/30 to-indigo-900/40 rounded-3xl"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
@@ -65,7 +38,7 @@ const Home = () => {
           <div className="hidden lg:block absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 rounded-full animate-pulse backdrop-blur-sm"></div>
           
           <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-20 overflow-hidden border border-white/10">
-            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="content-grid">
               <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
                 <div className="space-y-4 sm:space-y-6">
                   <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-blue-500/30 backdrop-blur-sm">
@@ -118,12 +91,13 @@ const Home = () => {
                       <div className="w-64 h-64 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
                     </div>
                     
-                    {/* Central car icon */}
-                    <div className="relative z-10">
-                      <div className="w-32 h-32 bg-taxi-yellow rounded-full flex items-center justify-center shadow-2xl animate-float">
-                        <Car className="text-taxi-black" size={64} />
+                    {/* Main content */}
+                    <div className="relative z-10 text-center">
+                      <div className="w-24 h-24 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl animate-bounce">
+                        <Car className="text-taxi-black" size={48} />
                       </div>
-                      <div className="absolute -top-2 -right-2 w-8 h-8 bg-green-500 rounded-full animate-ping"></div>
+                      <h3 className="text-2xl font-bold text-taxi-black mb-2">Premium Taxi Service</h3>
+                      <p className="text-gray-800">Experience luxury and comfort</p>
                     </div>
                     
                     {/* Floating badges */}
@@ -158,9 +132,9 @@ const Home = () => {
       </section>
 
       {/* Key Metrics */}
-      <section className="container mx-auto px-4 py-12 sm:py-16 lg:py-20">
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-indigo-500/20 to-purple-500/20 px-3 sm:px-4 py-2 rounded-full border border-indigo-500/30 backdrop-blur-sm mb-4 sm:mb-6">
+      <section className="section-container">
+        <div className="page-header">
+          <div className="section-badge">
             <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
             <span className="text-indigo-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Our Impact</span>
           </div>
@@ -244,7 +218,7 @@ const Home = () => {
                 </div>
                 
                 {/* Hover effect overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${metric.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${metric.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl sm:rounded-3xl`}></div>
               </div>
               
               {/* Bottom accent line */}
@@ -266,9 +240,9 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-purple-500/30 backdrop-blur-sm mb-4 sm:mb-6">
+      <section className="section-container">
+        <div className="page-header">
+          <div className="section-badge">
             <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
             <span className="text-purple-300 font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
           </div>
@@ -338,33 +312,31 @@ const Home = () => {
                     </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-700 mb-6 leading-relaxed">{service.desc}</p>
+                  <p className="text-gray-300 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">{service.desc}</p>
                   
                   {/* Features */}
-                  <div className="space-y-2 mb-6">
+                  <div className="space-y-2 mb-4 sm:mb-6">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-600">
-                        <CheckCircle className={`text-${service.color.replace('from-', '').split(' ')[0]}-500`} size={16} />
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-300">
+                        <CheckCircle className="text-green-400 w-4 h-4" />
                         <span>{feature}</span>
                       </div>
                     ))}
                   </div>
                   
-                  {/* Button */}
-                  <button className={`group/btn w-full bg-gradient-to-r ${service.color} text-white font-semibold py-3 px-6 rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2`}>
+                  {/* CTA */}
+                  <a href="/services" className="inline-flex items-center space-x-2 text-white font-semibold hover:text-taxi-yellow transition-colors duration-300 group">
                     <span>Learn More</span>
-                    <ArrowRight className="group-hover/btn:translate-x-1 transition-transform" size={20} />
-                  </button>
+                    <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
+                  </a>
+                  </div>
+                  
+                  {/* Hover effect overlay */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl sm:rounded-3xl`}></div>
                 </div>
-                
-                {/* Hover effect overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
               </div>
-              
-              {/* Bottom accent line */}
-              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${service.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
         
         {/* CTA Section */}
@@ -376,936 +348,137 @@ const Home = () => {
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </a>
           </div>
-          <p className="text-gray-600 mt-4">Discover our complete range of transportation solutions</p>
-        </div>
-        </div>
-      </section>
-
-      {/* Cars Section */}
-      <section className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-6 py-3 rounded-full border border-cyan-500/30 backdrop-blur-sm mb-6">
-            <div className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-            <span className="text-cyan-300 font-bold text-sm tracking-wider uppercase">Our Fleet</span>
-          </div>
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">Choose Your Perfect Ride</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto font-light">Select from our wide range of well-maintained vehicles for your perfect journey experience</p>
-        </div>
-        
-        <div className="relative">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-cyan-900/20 to-blue-900/30 rounded-3xl"></div>
-          
-          <div className="relative">
-            {/* Enhanced Category Tabs */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {categories.map((category, index) => {
-                const colors = [
-                  'from-purple-500 to-pink-500',
-                  'from-blue-500 to-cyan-500',
-                  'from-green-500 to-emerald-500',
-                  'from-orange-500 to-red-500'
-            ];
-            return (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`group relative px-8 py-4 rounded-full font-bold transition-all duration-500 transform hover:scale-105 ${
-                  activeCategory === category
-                    ? `bg-gradient-to-r ${colors[index % colors.length]} text-white shadow-xl`
-                    : 'glass text-taxi-black hover:bg-white/30 hover:shadow-lg'
-                }`}
-              >
-                <span className="relative z-10 flex items-center space-x-2">
-                  <Car size={18} />
-                  <span>{category.charAt(0).toUpperCase() + category.slice(1)}</span>
-                </span>
-                {activeCategory === category && (
-                  <div className={`absolute inset-0 bg-gradient-to-r ${colors[index % colors.length]} rounded-full animate-pulse opacity-50`}></div>
-                )}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Cars Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {cars[activeCategory as keyof typeof cars].map((car, index) => {
-            const cardColors = [
-              'from-purple-500/30 to-pink-500/20',
-              'from-blue-500/30 to-cyan-500/20',
-              'from-green-500/30 to-emerald-500/20',
-              'from-orange-500/30 to-red-500/20',
-              'from-indigo-500/30 to-purple-500/20',
-              'from-teal-500/30 to-green-500/20'
-            ];
-            return (
-              <div key={index} className="group relative">
-                {/* Card */}
-                <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
-                  {/* Background decoration */}
-                  <div className={`absolute top-4 right-4 w-16 h-16 bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-full animate-pulse opacity-30`}></div>
-                  
-                  {/* Car Visual */}
-                  <div className="relative mb-6">
-                    <div className={`w-full h-48 bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-2xl flex items-center justify-center relative overflow-hidden`}>
-                      {/* Animated background */}
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <div className={`w-32 h-32 bg-gradient-to-br ${cardColors[index % cardColors.length]} rounded-full animate-pulse opacity-50`}></div>
-                      </div>
-                    
-                    {/* Car icon */}
-                    <div className="relative z-10">
-                      <div className="w-20 h-20 bg-taxi-yellow rounded-full flex items-center justify-center shadow-xl group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                        <Car className="text-taxi-black" size={48} />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Content */}
-                <div className="space-y-4">
-                  {/* Title and Price */}
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h3 className="text-2xl font-bold text-taxi-black mb-1 group-hover:text-gray-800 transition-colors duration-300">
-                        {car.name}
-                      </h3>
-                      <div className="flex items-center space-x-2">
-                        <div className="text-3xl font-bold text-taxi-yellow">{car.price}</div>
-                        <div className="text-sm text-gray-600">per km</div>
-                      </div>
-                    </div>
-                    <div className="bg-green-500/10 px-3 py-1 rounded-full">
-                      <span className="text-green-600 text-sm font-semibold">Available</span>
-                    </div>
-                  </div>
-                  
-                  {/* Features */}
-                  <div className="space-y-3">
-                    {car.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3 group/feature">
-                        <div className="w-8 h-8 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover/feature:scale-110 transition-transform duration-300">
-                          <CheckCircle className="text-taxi-yellow" size={16} />
-                        </div>
-                        <span className="text-gray-700 font-medium">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* Book Button */}
-                  <button className="group/btn w-full bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-6 rounded-2xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2">
-                    <Phone size={20} className="group-hover/btn:animate-pulse" />
-                    <span>Book Now</span>
-                    <ArrowRight className="group-hover/btn:translate-x-1 transition-transform" size={20} />
-                  </button>
-                </div>
-                
-                {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-              </div>
-              
-              {/* Bottom accent line */}
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
-            </div>
-          );
-          })}
-        </div>
-        
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="relative inline-block group">
-            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-            <a href="/services" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-              <span>View Complete Fleet</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-          </div>
-          <p className="text-gray-600 mt-4">Explore all our vehicles and find your perfect match</p>
-        </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 rounded-full mb-4">
-            <Star className="text-white" size={16} />
-            <span className="text-white font-semibold">Our Foundation</span>
-          </div>
-          <h2 className="text-5xl font-bold text-taxi-black mb-4">Mission & Vision</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">The driving force behind our commitment to excellence</p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-          {/* Mission Card */}
-          <div className="group relative">
-            <div className="relative glass rounded-3xl p-10 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
-              {/* Background decoration */}
-              <div className="absolute top-8 right-8 w-20 h-20 bg-gradient-to-br from-blue-500/20 to-blue-600/10 rounded-full animate-pulse"></div>
-              
-              {/* Icon */}
-              <div className="relative mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                  <Shield className="text-white" size={32} />
-                </div>
-                {/* Ring animation */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-blue-500 opacity-30 animate-ping"></div>
-              </div>
-              
-              {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold text-taxi-black mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                  Our Mission
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  To provide safe, reliable, and affordable transportation services that exceed customer expectations 
-                  and contribute to the community's mobility needs.
-                </p>
-                
-                {/* Key points */}
-                <div className="space-y-3">
-                  {[
-                    'Safe & Reliable Service',
-                    'Affordable Pricing',
-                    'Community Focus'
-                  ].map((point, index) => (
-                    <div key={index} className="flex items-center space-x-3 group/point">
-                      <div className="w-8 h-8 bg-blue-500/20 rounded-full flex items-center justify-center group-hover/point:scale-110 transition-transform duration-300">
-                        <CheckCircle className="text-blue-500" size={16} />
-                      </div>
-                      <span className="text-gray-700 font-medium">{point}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-            </div>
-            
-            {/* Bottom accent line */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-blue-500 to-blue-600 group-hover:w-full transition-all duration-500 rounded-full"></div>
-          </div>
-          
-          {/* Vision Card */}
-          <div className="group relative">
-            <div className="relative glass rounded-3xl p-10 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
-              {/* Background decoration */}
-              <div className="absolute top-8 right-8 w-20 h-20 bg-gradient-to-br from-purple-500/20 to-purple-600/10 rounded-full animate-pulse"></div>
-              
-              {/* Icon */}
-              <div className="relative mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                  <Star className="text-white" size={32} />
-                </div>
-                {/* Ring animation */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-purple-500 opacity-30 animate-ping"></div>
-              </div>
-              
-              {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-3xl font-bold text-taxi-black mb-4 group-hover:text-purple-600 transition-colors duration-300">
-                  Our Vision
-                </h3>
-                <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                  To become the most trusted and preferred taxi service provider in Rajasthan, known for our 
-                  commitment to excellence and customer satisfaction.
-                </p>
-                
-                {/* Key points */}
-                <div className="space-y-3">
-                  {[
-                    'Trusted Provider',
-                    'Excellence in Service',
-                    'Customer Satisfaction'
-                  ].map((point, index) => (
-                    <div key={index} className="flex items-center space-x-3 group/point">
-                      <div className="w-8 h-8 bg-purple-500/20 rounded-full flex items-center justify-center group-hover/point:scale-110 transition-transform duration-300">
-                        <CheckCircle className="text-purple-500" size={16} />
-                      </div>
-                      <span className="text-gray-700 font-medium">{point}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              
-              {/* Hover effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
-            </div>
-            
-            {/* Bottom accent line */}
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-purple-500 to-purple-600 group-hover:w-full transition-all duration-500 rounded-full"></div>
-          </div>
-        </div>
-        
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="relative inline-block group">
-            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-            <a href="/about" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-              <span>Learn More About Us</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-          </div>
-          <p className="text-gray-600 mt-4">Discover our story and commitment to excellence</p>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Star className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Principles</span>
-          </div>
-          <h2 className="text-5xl font-bold text-taxi-black mb-4">Core Values</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">The fundamental beliefs that guide our every action and decision</p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { 
-              title: 'Safety', 
-              desc: 'Your safety is our top priority', 
-              icon: Shield, 
-              color: 'from-red-500 to-red-600',
-              bgColor: 'bg-red-500/10',
-              features: ['Regular Vehicle Checks', 'Trained Drivers', '24/7 Support']
-            },
-            { 
-              title: 'Punctuality', 
-              desc: 'Always on time, every time', 
-              icon: Clock, 
-              color: 'from-blue-500 to-blue-600',
-              bgColor: 'bg-blue-500/10',
-              features: ['Real-time Tracking', 'Smart Scheduling', 'On-time Guarantee']
-            },
-            { 
-              title: 'Comfort', 
-              desc: 'Travel in comfort and style', 
-              icon: Car, 
-              color: 'from-green-500 to-green-600',
-              bgColor: 'bg-green-500/10',
-              features: ['Clean Vehicles', 'AC Comfort', 'Spacious Seating']
-            },
-            { 
-              title: 'Trust', 
-              desc: 'Building lasting relationships', 
-              icon: Users, 
-              color: 'from-purple-500 to-purple-600',
-              bgColor: 'bg-purple-500/10',
-              features: ['Transparent Pricing', 'Reliable Service', 'Customer Care']
-            },
-          ].map((value, index) => (
-            <div key={index} className="group relative">
-              {/* Card */}
-              <div className="relative glass rounded-3xl p-8 text-center hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
-                {/* Background decoration */}
-                <div className={`absolute top-4 right-4 w-12 h-12 ${value.bgColor} rounded-full animate-pulse`}></div>
-                
-                {/* Icon */}
-                <div className="relative mb-6">
-                  <div className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mx-auto shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
-                    <value.icon className="text-white" size={40} />
-                  </div>
-                  {/* Ring animation */}
-                  <div className={`absolute inset-0 rounded-2xl border-2 ${value.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
-                </div>
-                
-                {/* Content */}
-                <div className="relative z-10 space-y-4">
-                  {/* Title */}
-                  <h3 className={`text-2xl font-bold text-taxi-black mb-2 group-hover:text-${value.color.replace('from-', '').split(' ')[0]}-600 transition-colors duration-300`}>
-                    {value.title}
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-gray-700 leading-relaxed">{value.desc}</p>
-                  
-                  {/* Features */}
-                  <div className="space-y-2 mt-4">
-                    {value.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center justify-center space-x-2 text-sm text-gray-600 group/feature">
-                        <div className={`w-6 h-6 ${value.bgColor} rounded-full flex items-center justify-center group-hover/feature:scale-110 transition-transform duration-300`}>
-                          <CheckCircle className={`text-${value.color.replace('from-', '').split(' ')[0]}-500`} size={12} />
-                        </div>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                {/* Hover effect overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${value.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-3xl`}></div>
-              </div>
-              
-              {/* Bottom accent line */}
-              <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${value.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
-            </div>
-          ))}
-        </div>
-        
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="relative inline-block group">
-            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-            <a href="/about" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-              <span>Learn About Our Values</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-            </a>
-          </div>
-          <p className="text-gray-600 mt-4">Discover what makes us different and better</p>
-        </div>
-      </section>
-
-      {/* Why Choose Us */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Star className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Advantages</span>
-          </div>
-          <h2 className="text-5xl font-bold text-taxi-black mb-4">Why Choose Us</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Discover the reasons that make us the preferred choice for thousands of customers</p>
-        </div>
-        
-        <div className="relative">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
-          
-          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
-            {/* Floating elements */}
-            <div className="absolute top-8 right-8 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-float"></div>
-            <div className="absolute bottom-8 left-8 w-12 h-12 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                { 
-                  reason: 'Experienced and professional drivers', 
-                  icon: Users, 
-                  color: 'from-blue-500 to-blue-600',
-                  bgColor: 'bg-blue-500/10',
-                  description: 'Licensed and trained professionals'
-                },
-                { 
-                  reason: 'Well-maintained and clean vehicles', 
-                  icon: Car, 
-                  color: 'from-green-500 to-green-600',
-                  bgColor: 'bg-green-500/10',
-                  description: 'Regular maintenance and sanitation'
-                },
-                { 
-                  reason: 'Competitive and transparent pricing', 
-                  icon: Shield, 
-                  color: 'from-purple-500 to-purple-600',
-                  bgColor: 'bg-purple-500/10',
-                  description: 'No hidden charges, fair rates'
-                },
-                { 
-                  reason: '24/7 customer support', 
-                  icon: Clock, 
-                  color: 'from-orange-500 to-orange-600',
-                  bgColor: 'bg-orange-500/10',
-                  description: 'Always here to help you'
-                },
-                { 
-                  reason: 'Easy booking process', 
-                  icon: Phone, 
-                  color: 'from-red-500 to-red-600',
-                  bgColor: 'bg-red-500/10',
-                  description: 'Book in seconds, hassle-free'
-                },
-                { 
-                  reason: 'Flexible payment options', 
-                  icon: Star, 
-                  color: 'from-indigo-500 to-indigo-600',
-                  bgColor: 'bg-indigo-500/10',
-                  description: 'Multiple payment methods available'
-                },
-              ].map((item, index) => (
-                <div key={index} className="group relative">
-                  {/* Card */}
-                  <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
-                    {/* Background gradient */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                    
-                    {/* Content */}
-                    <div className="relative z-10">
-                      {/* Icon */}
-                      <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-xl flex items-center justify-center mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
-                        <item.icon className="text-white" size={24} />
-                      </div>
-                      
-                      {/* Text */}
-                      <h4 className="text-lg font-bold text-taxi-black mb-2 group-hover:text-gray-800 transition-colors duration-300">
-                        {item.reason}
-                      </h4>
-                      <p className="text-sm text-gray-600 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                    
-                    {/* Hover effect overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-br ${item.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}></div>
-                  </div>
-                  
-                  {/* Bottom accent line */}
-                  <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${item.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
-                </div>
-              ))}
-            </div>
-            
-            {/* Bottom CTA */}
-            <div className="text-center mt-12">
-              <div className="relative inline-block group">
-                <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-                <a href="/about" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-                  <span>Learn More About Our Services</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                </a>
-              </div>
-              <p className="text-gray-600 mt-4">Join thousands of satisfied customers</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="relative">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-400/30 rounded-3xl"></div>
-          
-          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
-            {/* Floating elements */}
-            <div className="absolute top-8 right-8 w-20 h-20 bg-taxi-yellow/30 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-8 left-8 w-16 h-16 bg-yellow-300/40 rounded-full animate-float"></div>
-            <div className="absolute top-1/2 right-1/4 w-12 h-12 bg-yellow-400/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-            
-            {/* Main content */}
-            <div className="relative z-10 text-center space-y-8">
-              {/* Badge */}
-              <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-6 py-3 rounded-full">
-                <Car className="text-taxi-yellow animate-float" size={20} />
-                <span className="text-taxi-yellow font-bold">Book Your Journey</span>
-              </div>
-              
-              {/* Title */}
-              <h2 className="text-4xl md:text-6xl font-bold text-taxi-black leading-tight">
-                Ready to Book
-                <span className="block text-taxi-yellow">Your Ride?</span>
-              </h2>
-              
-              {/* Description */}
-              <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-                Experience the best taxi service in Udaipur with our professional drivers and well-maintained vehicles
-              </p>
-              
-              {/* Features */}
-              <div className="grid md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-                {[
-                  { icon: Shield, text: "Safe & Secure", color: "text-green-600" },
-                  { icon: Clock, text: "24/7 Available", color: "text-blue-600" },
-                  { icon: Star, text: "Best Prices", color: "text-purple-600" }
-                ].map((feature, index) => (
-                  <div key={index} className="flex items-center justify-center space-x-3 group">
-                    <div className="w-12 h-12 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <feature.icon className={`text-taxi-yellow ${feature.color}`} size={24} />
-                    </div>
-                    <span className="text-gray-700 font-semibold">{feature.text}</span>
-                  </div>
-                ))}
-              </div>
-              
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                <button className="group relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 flex items-center space-x-3">
-                  <Phone size={24} className="group-hover:animate-pulse" />
-                  <span>Book Now</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                  <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
-                </button>
-                
-                <a href="/contact" className="group relative glass text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 flex items-center space-x-3 border border-taxi-yellow/30">
-                  <Phone size={24} />
-                  <span>Contact Us</span>
-                  <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                </a>
-              </div>
-              
-              {/* Trust indicators */}
-              <div className="flex flex-wrap justify-center gap-8 pt-8">
-                {[
-                  { number: "50K+", label: "Happy Customers" },
-                  { number: "4.9", label: "Average Rating" },
-                  { number: "10+", label: "Years Experience" }
-                ].map((stat, index) => (
-                  <div key={index} className="text-center group">
-                    <div className="text-3xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-gray-600 mt-1">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Animated background pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-taxi-yellow to-yellow-400 animate-pulse"></div>
-            </div>
-          </div>
+          <p className="text-gray-300 mt-4">Discover our complete range of transportation solutions</p>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <Star className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Customer Voices</span>
+      <section className="section-container">
+        <div className="page-header">
+          <div className="section-badge">
+            <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+            <span className="text-yellow-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Customer Stories</span>
           </div>
-          <h2 className="text-5xl font-bold text-taxi-black mb-4">What Our Customers Say</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Real experiences from real people who trust our services</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">What Our Customers Say</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">Real experiences from satisfied passengers</p>
         </div>
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-yellow-900/20 to-orange-900/30 rounded-3xl"></div>
           
-          {/* Infinite Scroll Container */}
-          <div className="relative overflow-hidden mb-12 max-w-full">
-            <div className="flex animate-scroll space-x-6 md:space-x-8" style={{ width: 'fit-content', minWidth: 'max-content' }}>
-              {/* First set of testimonials */}
-              {[...testimonials, ...testimonials].map((testimonial, index) => (
-                <div key={`${index}-1`} className="flex-shrink-0 w-80 md:w-96 lg:w-1/3" style={{ minWidth: '280px', maxWidth: '320px' }}>
-                  <div className="group relative h-full">
-                    {/* Card */}
-                    <div className="relative glass rounded-3xl p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden h-full">
-                      {/* Background decoration */}
-                      <div className="absolute top-4 right-4 w-12 h-12 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
-                      
-                      {/* Quote icon */}
-                      <div className="absolute top-6 left-6 w-8 h-8 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
-                        <div className="w-4 h-4 bg-taxi-yellow rounded-full"></div>
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="relative z-10">
-                        {/* Rating */}
-                        <div className="flex mb-6">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="text-taxi-yellow fill-current animate-pulse" size={20} style={{ animationDelay: `${i * 0.1}s` }} />
-                          ))}
-                        </div>
-                        
-                        {/* Testimonial text */}
-                        <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
-                          "{testimonial.text}"
-                        </p>
-                        
-                        {/* Customer info */}
-                        <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                            <Users className="text-taxi-black" size={24} />
-                          </div>
-                          <div>
-                            <p className="font-bold text-taxi-black">{testimonial.name}</p>
-                            <p className="text-sm text-gray-600">Verified Customer</p>
-                          </div>
-                        </div>
-                      </div>
-                      
-                      {/* Hover effect overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="group">
+                <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl border border-white/10">
+                  {/* Stars */}
+                  <div className="flex space-x-1 mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="text-taxi-yellow fill-current w-4 h-4 sm:w-5 sm:h-5" />
+                    ))}
+                  </div>
+                  
+                  {/* Quote */}
+                  <p className="text-gray-300 mb-6 text-sm sm:text-base leading-relaxed italic">
+                    "{testimonial.text}"
+                  </p>
+                  
+                  {/* Author */}
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center">
+                      <span className="text-taxi-black font-bold text-sm">{testimonial.name.charAt(0)}</span>
                     </div>
-                    
-                    {/* Bottom accent line */}
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Enhanced Stats Section */}
-          <div className="relative">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
-            
-            <div className="relative glass rounded-3xl p-8 md:p-12 mb-12 overflow-hidden">
-              {/* Floating elements */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-taxi-yellow/20 rounded-full animate-float"></div>
-              <div className="absolute bottom-4 left-4 w-12 h-12 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-              
-              {/* Section header */}
-              <div className="text-center mb-12">
-                <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-                  <Star className="text-taxi-yellow" size={16} />
-                  <span className="text-taxi-yellow font-semibold">Our Impact</span>
-                </div>
-                <h3 className="text-3xl md:text-4xl font-bold text-taxi-black mb-2">Numbers That Speak</h3>
-                <p className="text-lg text-gray-700">Our commitment to excellence in action</p>
-              </div>
-              
-              {/* Stats grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                {[
-                  { 
-                    number: "4.9", 
-                    label: "Average Rating", 
-                    icon: Star, 
-                    color: 'from-yellow-500 to-yellow-600',
-                    bgColor: 'bg-yellow-500/10',
-                    description: "Out of 5 stars"
-                  },
-                  { 
-                    number: "50K+", 
-                    label: "Happy Customers", 
-                    icon: Users, 
-                    color: 'from-blue-500 to-blue-600',
-                    bgColor: 'bg-blue-500/10',
-                    description: "And counting"
-                  },
-                  { 
-                    number: "98%", 
-                    label: "Satisfaction Rate", 
-                    icon: Shield, 
-                    color: 'from-green-500 to-green-600',
-                    bgColor: 'bg-green-500/10',
-                    description: "Customer satisfaction"
-                  },
-                  { 
-                    number: "24/7", 
-                    label: "Support Available", 
-                    icon: Clock, 
-                    color: 'from-purple-500 to-purple-600',
-                    bgColor: 'bg-purple-500/10',
-                    description: "Always here for you"
-                  }
-                ].map((stat, index) => (
-                  <div key={index} className="group relative">
-                    {/* Card */}
-                    <div className="relative glass rounded-2xl p-6 text-center hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
-                      {/* Background gradient */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-                      
-                      {/* Floating decoration */}
-                      <div className={`absolute top-3 right-3 w-8 h-8 ${stat.bgColor} rounded-full animate-pulse`}></div>
-                      
-                      {/* Content */}
-                      <div className="relative z-10">
-                        {/* Icon */}
-                        <div className={`w-16 h-16 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
-                          <stat.icon className="text-white" size={32} />
-                        </div>
-                        
-                        {/* Ring animation */}
-                        <div className={`absolute inset-0 rounded-2xl border-2 ${stat.color.replace('from-', 'border-').split(' ')[0]} opacity-30 animate-ping`}></div>
-                        
-                        {/* Number */}
-                        <div className="text-4xl md:text-5xl font-bold text-taxi-black mb-2 group-hover:text-gray-800 transition-colors duration-300">
-                          {stat.number}
-                        </div>
-                        
-                        {/* Label */}
-                        <div className="text-lg font-semibold text-gray-700 mb-1">
-                          {stat.label}
-                        </div>
-                        
-                        {/* Description */}
-                        <div className="text-sm text-gray-600">
-                          {stat.description}
-                        </div>
-                      </div>
-                      
-                      {/* Hover effect overlay */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl`}></div>
+                    <div>
+                      <div className="text-white font-semibold text-sm sm:text-base">{testimonial.name}</div>
+                      <div className="text-gray-400 text-xs">Verified Customer</div>
                     </div>
-                    
-                    {/* Bottom accent line */}
-                    <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${stat.color} group-hover:w-full transition-all duration-500 rounded-full`}></div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Trust indicators */}
-              <div className="mt-12 text-center">
-                <div className="inline-flex items-center space-x-6 bg-taxi-yellow/20 px-6 py-3 rounded-full">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="text-taxi-yellow" size={20} />
-                    <span className="text-taxi-black font-semibold">Verified Statistics</span>
-                  </div>
-                  <div className="w-px h-6 bg-taxi-yellow/30"></div>
-                  <div className="flex items-center space-x-2">
-                    <TrendingUp className="text-taxi-yellow" size={20} />
-                    <span className="text-taxi-black font-semibold">Growing Daily</span>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          
-          {/* CTA */}
-          <div className="text-center">
-            <div className="relative inline-block group">
-              <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-              <a href="/testimonials" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-                <Star className="group-hover:animate-pulse" size={20} />
-                <span>View All Testimonials</span>
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </a>
-            </div>
-            <p className="text-gray-600 mt-4">Read more stories from our satisfied customers</p>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-4 py-2 rounded-full mb-4">
-            <HelpCircle className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Get Answers</span>
+      {/* FAQ Preview */}
+      <section className="section-container">
+        <div className="page-header">
+          <div className="section-badge">
+            <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-green-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Quick Answers</span>
           </div>
-          <h2 className="text-5xl font-bold text-taxi-black mb-4">Frequently Asked Questions</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">Everything you need to know about our taxi services</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Frequently Asked Questions</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">Get answers to common questions about our services</p>
         </div>
         
-        <div className="relative">
+        <div className="relative max-w-4xl mx-auto">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-100/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-green-900/20 to-emerald-900/30 rounded-3xl"></div>
           
-          <div className="relative glass rounded-3xl p-8 md:p-12 overflow-hidden">
-            {/* Floating elements */}
-            <div className="absolute top-8 right-8 w-20 h-20 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
-            <div className="absolute bottom-8 left-8 w-16 h-16 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-            
-            <div className="max-w-4xl mx-auto space-y-6">
-              {faqs.map((faq, index) => (
-                <div key={index} className="group relative">
-                  {/* FAQ Card */}
-                  <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
-                    {/* Background gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    
-                    {/* Question */}
-                    <div className="relative z-10">
-                      <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 flex-shrink-0">
-                          <HelpCircle className="text-taxi-black" size={24} />
-                        </div>
-                        
-                        <div className="flex-1">
-                          <h3 className="text-xl font-bold text-taxi-black mb-3 group-hover:text-gray-800 transition-colors duration-300">
-                            {faq.q}
-                          </h3>
-                          <p className="text-gray-700 leading-relaxed">
-                            {faq.a}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Hover effect overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-2xl"></div>
+          <div className="relative space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="glass rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start space-x-4">
+                  <HelpCircle className="text-green-400 w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1" />
+                  <div className="flex-1">
+                    <h4 className="text-white font-semibold mb-2 text-sm sm:text-base">{faq.q}</h4>
+                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{faq.a}</p>
                   </div>
-                  
-                  {/* Bottom accent line */}
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r from-taxi-yellow to-yellow-400 group-hover:w-full transition-all duration-500 rounded-full"></div>
                 </div>
-              ))}
-            </div>
-            
-            {/* Enhanced CTA Section */}
-            <div className="mt-16 relative">
-              {/* Background decoration */}
-              <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-400/30 rounded-3xl"></div>
+              </div>
+            ))}
+          </div>
+          
+          {/* CTA */}
+          <div className="text-center mt-8">
+            <a href="/faq" className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-emerald-500 text-white font-bold py-3 px-6 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <span>View All FAQs</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="section-container">
+        <div className="relative max-w-4xl mx-auto">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-400/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+          
+          <div className="relative glass rounded-3xl p-8 sm:p-12 lg:p-16 text-center border border-white/20">
+            <div className="max-w-2xl mx-auto space-y-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Experience
+                <span className="block bg-gradient-to-r from-taxi-yellow to-yellow-400 bg-clip-text text-transparent">Premium Taxi Service?</span>
+              </h2>
               
-              <div className="relative glass rounded-3xl p-8 md:p-12 text-center overflow-hidden">
-                {/* Floating elements */}
-                <div className="absolute top-6 right-6 w-16 h-16 bg-taxi-yellow/30 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-6 left-6 w-12 h-12 bg-yellow-300/40 rounded-full animate-float"></div>
-                
-                {/* Main CTA content */}
-                <div className="relative z-10 space-y-8">
-                  {/* Badge */}
-                  <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-6 py-3 rounded-full">
-                    <Phone className="text-taxi-yellow animate-pulse" size={20} />
-                    <span className="text-taxi-black font-bold">24/7 Support Available</span>
-                  </div>
-                  
-                  {/* Title */}
-                  <h3 className="text-3xl md:text-4xl font-bold text-taxi-black leading-tight">
-                    Still Have Questions?
-                    <span className="block text-taxi-yellow">We're Here to Help!</span>
-                  </h3>
-                  
-                  {/* Description */}
-                  <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                    Can't find what you're looking for? Our friendly support team is ready to assist you with any queries about our taxi services.
-                  </p>
-                  
-                  {/* Contact options */}
-                  <div className="grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                    <div className="group relative">
-                      <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
-                        {/* Background gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 to-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
-                        {/* Content */}
-                        <div className="relative z-10">
-                          <div className="w-16 h-16 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                            <Phone className="text-taxi-black" size={32} />
-                          </div>
-                          <h4 className="text-xl font-bold text-taxi-black mb-2">Call Us</h4>
-                          <p className="text-gray-600 mb-4">+91 98765 43210</p>
-                          <a href="tel:+919876543210" className="inline-flex items-center space-x-2 bg-taxi-yellow text-taxi-black font-bold py-2 px-6 rounded-full hover:bg-yellow-400 transition-colors duration-300">
-                            <span>Call Now</span>
-                            <ArrowRight size={16} />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="group relative">
-                      <div className="relative glass rounded-2xl p-6 hover:scale-105 transition-all duration-500 hover:shadow-xl overflow-hidden">
-                        {/* Background gradient */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        
-                        {/* Content */}
-                        <div className="relative z-10">
-                          <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                            <MessageCircle className="text-white" size={32} />
-                          </div>
-                          <h4 className="text-xl font-bold text-taxi-black mb-2">Chat Support</h4>
-                          <p className="text-gray-600 mb-4">Instant help available</p>
-                          <a href="/contact" className="inline-flex items-center space-x-2 bg-blue-500 text-white font-bold py-2 px-6 rounded-full hover:bg-blue-600 transition-colors duration-300">
-                            <span>Start Chat</span>
-                            <ArrowRight size={16} />
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Additional CTAs */}
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                    <a href="/faq" className="group relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-                      <BookOpen className="group-hover:animate-pulse" size={20} />
-                      <span>Browse All FAQs</span>
-                      <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                    </a>
-                    
-                    <a href="/contact" className="group relative glass text-taxi-black font-bold py-4 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 border border-taxi-yellow/30">
-                      <Mail className="group-hover:animate-pulse" size={20} />
-                      <span>Email Support</span>
-                      <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
-                    </a>
-                  </div>
+              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
+                Join thousands of satisfied customers who trust Taxi GO for their transportation needs. 
+                Book your ride today and experience the difference!
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="/contact" className="btn-primary">
+                  <Phone className="w-5 h-5" />
+                  <span>Book Now</span>
+                </a>
+                <a href="/services" className="btn-secondary">
+                  <BookOpen className="w-5 h-5" />
+                  <span>View Services</span>
+                </a>
+              </div>
+              
+              {/* Trust indicators */}
+              <div className="flex items-center justify-center space-x-8 pt-6 border-t border-white/20">
+                <div className="flex items-center space-x-2">
+                  <Star className="text-taxi-yellow w-5 h-5" />
+                  <span className="text-white font-semibold">4.9 Rating</span>
                 </div>
+                <div className="text-gray-400">•</div>
+                <div className="text-white">50K+ Happy Customers</div>
+                <div className="text-gray-400">•</div>
+                <div className="text-white">24/7 Service</div>
               </div>
             </div>
           </div>

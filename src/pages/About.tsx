@@ -17,9 +17,9 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden" style={{ height: '100vh' }}>
+      <section className="hero-section">
         {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/80 to-indigo-900/90"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -36,12 +36,12 @@ const About = () => {
           <div className="absolute bottom-10 right-10 w-96 h-96 border-4 border-indigo-500/30 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
         </div>
         
-        <div className="container mx-auto px-6 lg:px-8 relative z-10">
+        <div className="section-container relative z-10">
           <div className="text-center max-w-6xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 backdrop-blur-lg px-6 py-3 rounded-full border border-blue-500/30 mb-8 group">
+            <div className="section-badge mb-8">
               <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <Car className="text-white animate-float" size={24} />
+              <Car className="text-white animate-float w-6 h-6" />
               <span className="text-white font-bold text-lg tracking-wider uppercase">Our Story</span>
             </div>
             

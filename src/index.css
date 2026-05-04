@@ -4,34 +4,70 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-yellow-50 via-white to-yellow-100 min-h-screen;
+    @apply bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen;
     overflow-x: hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   
   html {
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
   
   * {
     box-sizing: border-box;
   }
+  
+  /* Professional typography base */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
 }
 
 @layer components {
   .glass {
-    @apply bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg;
+    @apply bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl;
   }
   
   .glass-dark {
-    @apply bg-black/20 backdrop-blur-lg border border-white/20 shadow-lg;
+    @apply bg-black/30 backdrop-blur-lg border border-white/10 shadow-xl;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-taxi-yellow to-yellow-500 text-taxi-black font-semibold py-3 px-8 rounded-full hover:shadow-xl transform hover:scale-105 transition-all duration-300;
+    @apply bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-3 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300;
   }
   
   .btn-secondary {
-    @apply glass text-taxi-black font-semibold py-3 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300;
+    @apply glass text-white font-semibold py-3 px-8 rounded-full hover:bg-white/30 transform hover:scale-105 transition-all duration-300;
+  }
+  
+  /* Professional layout components */
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20;
+  }
+  
+  .page-header {
+    @apply text-center mb-12 sm:mb-16;
+  }
+  
+  .content-grid {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center;
+  }
+  
+  .card-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8;
+  }
+  
+  .hero-section {
+    @apply min-h-screen flex items-center justify-center relative overflow-hidden;
+  }
+  
+  .section-badge {
+    @apply inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 py-2 rounded-full border border-blue-500/30 backdrop-blur-sm;
   }
 }
 

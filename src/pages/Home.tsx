@@ -42,7 +42,7 @@ const Home = () => {
                   </div>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight animate-slide-in-up">
                     Your Trusted
-                    <span className="block text-taxi-yellow">Journey Partner</span>
+                    <span className="block text-gradient-vibrant mt-2">Journey Partner</span>
                   </h2>
                 </div>
                 
@@ -383,7 +383,7 @@ const Home = () => {
             <div className="max-w-2xl mx-auto space-y-8 sm:space-y-10">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                 Ready to Experience
-                <span className="block text-taxi-yellow mt-2">Premium Taxi Service?</span>
+                <span className="block text-gradient-vibrant mt-2">Premium Taxi Service?</span>
               </h2>
               
               <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">

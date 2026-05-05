@@ -20,17 +20,13 @@ const Footer = () => {
   return (
     <footer className="relative glass-dark mt-20 overflow-hidden w-full overflow-x-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/5 to-yellow-400/10"></div>
-      
-      {/* Floating elements - hide on mobile */}
-      <div className="hidden sm:block absolute top-10 right-10 w-16 h-16 sm:w-20 sm:h-20 bg-taxi-yellow/20 rounded-full animate-float"></div>
-      <div className="hidden sm:block absolute bottom-10 left-10 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-300/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute inset-0 bg-white/[0.02]"></div>
       
       <div className="relative container mx-auto px-4 py-4 sm:py-6">
         {/* Top Section */}
         <div className="text-center mb-4 sm:mb-6">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3">
-            <Car className="text-taxi-yellow animate-float w-3 h-3 sm:w-4 sm:h-4" />
+          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/10 px-3 py-1 rounded-full mb-3 border border-taxi-yellow/20">
+            <Car className="text-taxi-yellow w-4 h-4" />
             <span className="text-taxi-yellow font-bold text-xs sm:text-sm">Stay Connected</span>
           </div>
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
@@ -47,12 +43,9 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-2 sm:space-y-3 group">
             <div className="flex items-center space-x-2">
-              <div className="relative">
-                <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110">
-                  <span className="text-taxi-black font-bold text-xs sm:text-base">T</span>
+                <div className="w-8 h-8 bg-taxi-yellow rounded-xl flex items-center justify-center shadow-lg transition-all duration-300">
+                  <Car className="text-taxi-black w-4 h-4" />
                 </div>
-                <div className="absolute -top-1 -right-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-ping"></div>
-              </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>
                 <p className="text-xs text-gray-400 hidden sm:block">Your Journey Partner</p>
@@ -152,36 +145,24 @@ const Footer = () => {
             </div>
 
             {/* Social Media */}
-            <div className="space-y-2">
+            <div className="space-y-3 pt-2">
               <h5 className="text-xs font-semibold text-white">Follow Us</h5>
-              <div className="flex space-x-1">
-                <div className="group relative">
-                  <div className="w-6 h-6 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-110">
-                    <Facebook className="text-white" size={12} />
-                  </div>
-                  <div className="absolute inset-0 rounded-full bg-blue-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </div>
+              <div className="flex space-x-3">
+                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
+                  <Facebook className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                </a>
                 
-                <div className="group relative">
-                  <div className="w-6 h-6 bg-gradient-to-br from-pink-500 to-purple-600 rounded-full flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-110">
-                    <Instagram className="text-white" size={12} />
-                  </div>
-                  <div className="absolute inset-0 rounded-full bg-pink-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </div>
+                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
+                  <Instagram className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                </a>
                 
-                <div className="group relative">
-                  <div className="w-6 h-6 bg-gradient-to-br from-sky-400 to-blue-500 rounded-full flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-110">
-                    <Twitter className="text-white" size={12} />
-                  </div>
-                  <div className="absolute inset-0 rounded-full bg-sky-400 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </div>
+                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
+                  <Twitter className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                </a>
                 
-                <div className="group relative">
-                  <div className="w-6 h-6 bg-gradient-to-br from-red-500 to-red-600 rounded-full flex items-center justify-center cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-110">
-                    <Youtube className="text-white" size={12} />
-                  </div>
-                  <div className="absolute inset-0 rounded-full bg-red-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                </div>
+                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
+                  <Youtube className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                </a>
               </div>
             </div>
           </div>

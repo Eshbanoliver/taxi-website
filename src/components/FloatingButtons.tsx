@@ -27,12 +27,12 @@ const FloatingButtons = () => {
   return (
     <>
       {/* WhatsApp Button */}
-      <div className="fixed left-6 bottom-6 z-50 animate-float">
+      <div className="fixed left-6 bottom-6 z-50">
         <a
           href="https://wa.me/919876543210"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110 animate-float"
+          className="bg-green-500 text-white w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:-translate-y-1"
           aria-label="WhatsApp"
         >
           <MessageCircle size={24} />
@@ -40,10 +40,10 @@ const FloatingButtons = () => {
       </div>
 
       {/* Call Button */}
-      <div className="fixed left-6 bottom-24 z-50 animate-float" style={{ animationDelay: '1s' }}>
+      <div className="fixed left-6 bottom-24 z-50">
         <a
           href="#"
-          className="w-14 h-14 bg-taxi-yellow rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-400 transition-colors duration-300 group"
+          className="w-14 h-14 bg-taxi-yellow rounded-full flex items-center justify-center shadow-lg hover:bg-yellow-400 transition-all duration-300 hover:-translate-y-1 group"
           aria-label="Call us"
         >
           <Phone className="text-taxi-black" size={24} />

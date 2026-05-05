@@ -12,7 +12,7 @@ import FloatingButtons from './components/FloatingButtons';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex flex-col w-full overflow-x-hidden relative">
+      <div className="min-h-screen bg-gradient-to-br from-slate-800 via-blue-800 to-indigo-800 flex flex-col w-full overflow-x-hidden relative">
         {/* Animated Background Particles */}
         <div className="fixed inset-0 pointer-events-none">
           {[...Array(20)].map((_, i) => (

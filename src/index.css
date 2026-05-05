@@ -4,9 +4,10 @@
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 min-h-screen;
+    @apply bg-gradient-to-br from-slate-800 via-blue-800 to-indigo-800 min-h-screen;
     overflow-x: hidden;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #ffffff;
   }
   
   html {
@@ -21,10 +22,33 @@
   /* Professional typography base */
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
+    color: #ffffff;
   }
   
   p {
     @apply leading-relaxed;
+    color: #e5e7eb;
+  }
+  
+  /* Ensure text visibility */
+  .text-white {
+    color: #ffffff !important;
+  }
+  
+  .text-gray-300 {
+    color: #d1d5db !important;
+  }
+  
+  .text-gray-200 {
+    color: #e5e7eb !important;
+  }
+  
+  .text-taxi-black {
+    color: #000000 !important;
+  }
+  
+  .text-taxi-yellow {
+    color: #fbbf24 !important;
   }
 }
 

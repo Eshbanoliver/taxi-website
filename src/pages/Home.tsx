@@ -37,10 +37,10 @@ const Home = () => {
           <div className="hidden sm:block absolute bottom-8 left-8 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 bg-gradient-to-br from-indigo-500/20 to-purple-500/10 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
           <div className="hidden lg:block absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 rounded-full animate-pulse backdrop-blur-sm"></div>
           
-          <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-20 overflow-hidden border border-white/10 animate-glow">
+          <div className="relative glass rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 lg:p-24 overflow-hidden border border-white/10 animate-glow">
             <div className="content-grid">
-              <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
-                <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-8 sm:space-y-12 text-center lg:text-left">
+                <div className="space-y-6 sm:space-y-8">
                   <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-blue-500/30 backdrop-blur-sm animate-bounce-in hover-glow">
                     <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                     <span className="text-blue-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
@@ -57,7 +57,7 @@ const Home = () => {
                 </p>
                 
                 {/* Key highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
                   {[
                     { icon: Shield, text: "Fully Licensed & Insured", color: "from-blue-500 to-cyan-500" },
                     { icon: Clock, text: "24/7 Availability", color: "from-indigo-500 to-purple-500" },
@@ -112,7 +112,7 @@ const Home = () => {
                 </div>
                 
                 {/* Trust indicators */}
-                <div className="mt-8 grid grid-cols-3 gap-4">
+                <div className="mt-12 sm:mt-16 grid grid-cols-3 gap-6 sm:gap-8">
                   {[
                     { number: "10+", label: "Years Experience" },
                     { number: "15+", label: "Cities" },
@@ -162,7 +162,7 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
             {[
               { 
                 number: '50K+', 
@@ -285,7 +285,7 @@ const Home = () => {
             ))}
           </div>
           
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16">
             {[
               { 
                 title: 'Local Rides', 
@@ -398,7 +398,7 @@ const Home = () => {
           {/* Background decoration */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-teal-900/20 to-emerald-900/30 rounded-3xl"></div>
           
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="group">
                 <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl border border-white/10">
@@ -446,7 +446,7 @@ const Home = () => {
           {/* Background decoration */}
           <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-green-900/20 to-emerald-900/30 rounded-3xl"></div>
           
-          <div className="relative space-y-4">
+          <div className="relative space-y-6 sm:space-y-8">
             {faqs.map((faq, index) => (
               <div key={index} className="glass rounded-2xl p-6 border border-white/10 hover:bg-white/10 transition-all duration-300">
                 <div className="flex items-start space-x-4">
@@ -477,8 +477,8 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/20 to-yellow-400/20 rounded-3xl"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
           
-          <div className="relative glass rounded-3xl p-8 sm:p-12 lg:p-16 text-center border border-white/20">
-            <div className="max-w-2xl mx-auto space-y-6">
+          <div className="relative glass rounded-3xl p-10 sm:p-16 lg:p-24 text-center border border-white/20">
+            <div className="max-w-2xl mx-auto space-y-8 sm:space-y-10">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
                 Ready to Experience
                 <span className="block bg-gradient-to-r from-taxi-yellow to-yellow-400 bg-clip-text text-transparent">Premium Taxi Service?</span>

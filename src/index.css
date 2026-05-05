@@ -71,19 +71,19 @@
   
   /* Professional layout components */
   .section-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20;
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36;
   }
   
   .page-header {
-    @apply text-center mb-12 sm:mb-16;
+    @apply text-center mb-16 sm:mb-20 lg:mb-24;
   }
   
   .content-grid {
-    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center;
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center;
   }
   
   .card-grid {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8;
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 sm:gap-12 lg:gap-16;
   }
   
   .hero-section {

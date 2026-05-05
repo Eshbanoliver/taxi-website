@@ -29,7 +29,7 @@ const Home = () => {
       <section className="section-container">
         <div className="relative max-w-7xl mx-auto">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-blue-900/30 to-indigo-900/40 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/50 via-blue-900/30 to-indigo-900/40 rounded-3xl animate-gradient-shift"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
           
           {/* Floating elements - hide on mobile */}
@@ -37,21 +37,21 @@ const Home = () => {
           <div className="hidden sm:block absolute bottom-8 left-8 w-12 sm:w-16 lg:w-20 h-12 sm:h-16 lg:h-20 bg-gradient-to-br from-indigo-500/20 to-purple-500/10 rounded-full animate-float backdrop-blur-sm" style={{ animationDelay: '1s' }}></div>
           <div className="hidden lg:block absolute top-1/3 right-1/4 w-16 h-16 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 rounded-full animate-pulse backdrop-blur-sm"></div>
           
-          <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-20 overflow-hidden border border-white/10">
+          <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 lg:p-20 overflow-hidden border border-white/10 animate-glow">
             <div className="content-grid">
               <div className="space-y-6 sm:space-y-8 text-center lg:text-left">
                 <div className="space-y-4 sm:space-y-6">
-                  <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-blue-500/30 backdrop-blur-sm">
+                  <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-blue-500/20 to-indigo-500/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-blue-500/30 backdrop-blur-sm animate-bounce-in hover-glow">
                     <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                    <span className="text-blue-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
+                    <span className="text-blue-300 font-bold text-xs sm:text-sm tracking-wider uppercase gradient-text">Since 2014</span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight animate-slide-in-up">
                     Your Trusted
-                    <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Journey Partner</span>
+                    <span className="block bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent gradient-text animate-gradient-shift">Journey Partner</span>
                   </h2>
                 </div>
                 
-                <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0">
+                <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0 animate-slide-in-up" style={{ animationDelay: '200ms' }}>
                   With over a decade of excellence, we stand as Udaipur's premier transportation provider. 
                   We combine cutting-edge technology with traditional hospitality to deliver safe, comfortable, and affordable journeys that exceed expectations.
                 </p>
@@ -64,9 +64,9 @@ const Home = () => {
                     { icon: Users, text: "Professional Drivers", color: "from-cyan-500 to-blue-500" },
                     { icon: MapPin, text: "City Wide Coverage", color: "from-purple-500 to-indigo-500" }
                   ].map((item, index) => (
-                    <div key={index} className="group relative">
-                      <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300">
-                        <div className={`relative w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br ${item.color} rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0`}>
+                    <div key={index} className="group relative animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
+                      <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover-lift hover-shimmer">
+                        <div className={`relative w-10 h-10 sm:w-14 sm:h-14 bg-gradient-to-br ${item.color} rounded-xl sm:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg flex-shrink-0 hover-glow`}>
                           <item.icon className="text-white w-4 h-4 sm:w-6 sm:h-6" />
                           <div className={`absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br ${item.color} opacity-30 animate-pulse`}></div>
                         </div>
@@ -76,8 +76,8 @@ const Home = () => {
                   ))}
                 </div>
                 
-                <a href="/about" className="group inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base">
-                  <span>Discover Our Story</span>
+                <a href="/about" className="group inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 text-sm sm:text-base hover-lift gradient-border animate-bounce-in" style={{ animationDelay: '700ms' }}>
+                  <span className="gradient-text">Discover Our Story</span>
                   <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4 sm:w-5 sm:h-5" />
                 </a>
               </div>
@@ -85,27 +85,28 @@ const Home = () => {
               <div className="relative">
                 {/* Main visual */}
                 <div className="relative">
-                  <div className="w-full h-80 md:h-96 bg-gradient-to-br from-taxi-yellow/30 to-yellow-400/20 rounded-3xl flex items-center justify-center relative overflow-hidden">
+                  <div className="w-full h-80 md:h-96 bg-gradient-to-br from-taxi-yellow/30 to-yellow-400/20 rounded-3xl flex items-center justify-center relative overflow-hidden animate-glow">
                     {/* Animated background elements */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-64 h-64 bg-taxi-yellow/20 rounded-full animate-pulse"></div>
+                      <div className="absolute inset-0 w-48 h-48 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full animate-rotate-glow opacity-30"></div>
                     </div>
                     
                     {/* Main content */}
-                    <div className="relative z-10 text-center">
-                      <div className="w-24 h-24 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl animate-bounce">
-                        <Car className="text-taxi-black" size={48} />
+                    <div className="relative z-10 text-center animate-bounce-in">
+                      <div className="w-24 h-24 bg-gradient-to-br from-taxi-yellow to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl animate-bounce hover-glow gradient-border">
+                        <Car className="text-taxi-black animate-float" size={48} />
                       </div>
-                      <h3 className="text-2xl font-bold text-taxi-black mb-2">Premium Taxi Service</h3>
+                      <h3 className="text-2xl font-bold text-taxi-black mb-2 gradient-text">Premium Taxi Service</h3>
                       <p className="text-gray-800">Experience luxury and comfort</p>
                     </div>
                     
                     {/* Floating badges */}
-                    <div className="absolute top-8 left-8 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg animate-float">
-                      <span className="text-taxi-black font-bold text-sm">50K+ Rides</span>
+                    <div className="absolute top-8 left-8 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg animate-float hover-glow">
+                      <span className="text-taxi-black font-bold text-sm gradient-text">50K+ Rides</span>
                     </div>
-                    <div className="absolute bottom-8 right-8 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg animate-float" style={{ animationDelay: '1s' }}>
-                      <span className="text-taxi-black font-bold text-sm">4.9 Rating</span>
+                    <div className="absolute bottom-8 right-8 bg-white/80 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg animate-float hover-glow" style={{ animationDelay: '1s' }}>
+                      <span className="text-taxi-black font-bold text-sm gradient-text">4.9 Rating</span>
                     </div>
                   </div>
                 </div>
@@ -117,8 +118,8 @@ const Home = () => {
                     { number: "15+", label: "Cities" },
                     { number: "100%", label: "Satisfaction" }
                   ].map((stat, index) => (
-                    <div key={index} className="text-center group">
-                      <div className="text-2xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">
+                    <div key={index} className="text-center group animate-slide-in-up" style={{ animationDelay: `${800 + index * 100}ms` }}>
+                      <div className="text-2xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300 gradient-text">
                         {stat.number}
                       </div>
                       <div className="text-xs text-gray-600 mt-1">{stat.label}</div>
@@ -134,17 +135,32 @@ const Home = () => {
       {/* Key Metrics */}
       <section className="section-container">
         <div className="page-header">
-          <div className="section-badge">
+          <div className="section-badge animate-bounce-in hover-glow">
             <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse"></div>
-            <span className="text-indigo-300 font-bold text-xs sm:text-sm tracking-wider uppercase">Our Impact</span>
+            <span className="text-indigo-300 font-bold text-xs sm:text-sm tracking-wider uppercase gradient-text">Our Impact</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Numbers That Define Excellence</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">Metrics that showcase our commitment to quality service</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 animate-slide-in-up gradient-text">Numbers That Define Excellence</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Metrics that showcase our commitment to quality service</p>
         </div>
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-indigo-900/20 to-purple-900/30 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-indigo-900/20 to-purple-900/30 rounded-3xl animate-gradient-shift"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(8)].map((_, i) => (
+              <div
+                key={i}
+                className="particle w-1 h-1 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 4}s`,
+                  animationDuration: `${4 + Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
           
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
@@ -181,9 +197,9 @@ const Home = () => {
                 description: 'Always here for you'
             },
           ].map((metric, index) => (
-            <div key={index} className="group relative">
+            <div key={index} className="group relative animate-slide-in-up hover-lift" style={{ animationDelay: `${300 + index * 100}ms` }}>
               {/* Card */}
-              <div className="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 text-center hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden">
+              <div className="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 text-center hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden hover-glow gradient-border">
                 {/* Background gradient */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${metric.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                 
@@ -194,7 +210,7 @@ const Home = () => {
                 <div className="relative z-10">
                   {/* Icon container */}
                   <div className="relative mx-auto mb-4 sm:mb-6">
-                    <div className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br ${metric.color} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                    <div className={`w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-gradient-to-br ${metric.color} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 hover-glow`}>
                       <metric.icon className="text-white w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
                     </div>
                     {/* Ring animation */}
@@ -202,7 +218,7 @@ const Home = () => {
                   </div>
                   
                   {/* Number */}
-                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300 gradient-text">
                     {metric.number}
                   </div>
                   
@@ -230,10 +246,10 @@ const Home = () => {
         
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-4 rounded-full shadow-xl border border-blue-500/30 backdrop-blur-sm">
+          <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-blue-500 to-indigo-500 px-8 py-4 rounded-full shadow-xl border border-blue-500/30 backdrop-blur-sm animate-bounce-in hover-glow gradient-border hover-lift">
             <div className="flex items-center space-x-2">
-              <Star className="text-taxi-black" size={20} />
-              <span className="text-taxi-black font-bold">Trusted by thousands daily</span>
+              <Star className="text-taxi-black animate-pulse" size={20} />
+              <span className="text-taxi-black font-bold gradient-text">Trusted by thousands daily</span>
             </div>
           </div>
         </div>
@@ -242,17 +258,32 @@ const Home = () => {
       {/* Services Preview */}
       <section className="section-container">
         <div className="page-header">
-          <div className="section-badge">
+          <div className="section-badge animate-bounce-in hover-glow">
             <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
-            <span className="text-purple-300 font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
+            <span className="text-purple-300 font-bold text-xs sm:text-sm tracking-wider uppercase gradient-text">What We Offer</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Premium Transportation Services</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto font-light px-4">Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 animate-slide-in-up gradient-text">Premium Transportation Services</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
         </div>
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-purple-900/20 to-pink-900/30 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-purple-900/20 to-pink-900/30 rounded-3xl animate-gradient-shift"></div>
+          
+          {/* Floating particles */}
+          <div className="absolute inset-0 pointer-events-none">
+            {[...Array(6)].map((_, i) => (
+              <div
+                key={i}
+                className="particle w-1 h-1 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 4}s`,
+                  animationDuration: `${4 + Math.random() * 4}s`
+                }}
+              />
+            ))}
+          </div>
           
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8 sm:mb-12">
             {[
@@ -281,16 +312,16 @@ const Home = () => {
                 badge: null
               },
             ].map((service, index) => (
-              <div key={index} className="group relative">
+              <div key={index} className="group relative animate-slide-in-up hover-lift" style={{ animationDelay: `${300 + index * 100}ms` }}>
                 {/* Card */}
-                <div className="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden border border-white/10">
+                <div className="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 hover:scale-105 transition-all duration-500 hover:shadow-2xl overflow-hidden border border-white/10 hover-glow gradient-border">
                   {/* Background gradient */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
                   
                   {/* Badge */}
                   {service.badge && (
                     <div className="absolute top-2 sm:top-4 right-2 sm:right-4">
-                      <div className={`bg-gradient-to-r ${service.color} text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg animate-pulse`}>
+                      <div className={`bg-gradient-to-r ${service.color} text-white text-xs font-bold px-2 sm:px-3 py-1 rounded-full shadow-lg animate-pulse hover-glow`}>
                         {service.badge}
                       </div>
                     </div>
@@ -302,12 +333,12 @@ const Home = () => {
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${service.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110`}>
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br ${service.color} rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg group-hover:shadow-2xl transition-all duration-300 group-hover:scale-110 hover-glow`}>
                       <service.icon className="text-white w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-gray-200 transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-white mb-2 sm:mb-3 group-hover:text-gray-200 transition-colors duration-300 gradient-text">
                       {service.title}
                     </h3>
                   
@@ -317,16 +348,16 @@ const Home = () => {
                   {/* Features */}
                   <div className="space-y-2 mb-4 sm:mb-6">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-300">
-                        <CheckCircle className="text-green-400 w-4 h-4" />
+                      <div key={idx} className="flex items-center space-x-2 text-sm text-gray-300 hover-shimmer">
+                        <CheckCircle className="text-green-400 w-4 h-4 animate-pulse" />
                         <span>{feature}</span>
                       </div>
                     ))}
                   </div>
                   
                   {/* CTA */}
-                  <a href="/services" className="inline-flex items-center space-x-2 text-white font-semibold hover:text-taxi-yellow transition-colors duration-300 group">
-                    <span>Learn More</span>
+                  <a href="/services" className="inline-flex items-center space-x-2 text-white font-semibold hover:text-taxi-yellow transition-colors duration-300 group hover-lift">
+                    <span className="gradient-text">Learn More</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
                   </a>
                   </div>
@@ -341,14 +372,14 @@ const Home = () => {
         
         {/* CTA Section */}
         <div className="text-center">
-          <div className="relative inline-block group">
-            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300"></div>
-            <a href="/services" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3">
-              <span>Explore All Services</span>
+          <div className="relative inline-block group animate-bounce-in" style={{ animationDelay: '600ms' }}>
+            <div className="absolute inset-0 bg-gradient-to-r from-taxi-yellow to-yellow-400 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 animate-glow"></div>
+            <a href="/services" className="relative bg-gradient-to-r from-taxi-yellow to-yellow-400 text-taxi-black font-bold py-4 px-8 rounded-full hover:shadow-2xl transform hover:scale-105 transition-all duration-300 inline-flex items-center space-x-3 gradient-border hover-lift">
+              <span className="gradient-text">Explore All Services</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </a>
           </div>
-          <p className="text-gray-300 mt-4">Discover our complete range of transportation solutions</p>
+          <p className="text-gray-300 mt-4 animate-slide-in-up" style={{ animationDelay: '800ms' }}>Discover our complete range of transportation solutions</p>
         </div>
       </section>
 

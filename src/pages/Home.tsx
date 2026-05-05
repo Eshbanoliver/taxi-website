@@ -192,8 +192,8 @@ const Home = () => {
                 number: '24/7', 
                 label: 'Service Available', 
                 icon: Clock, 
-                color: 'from-orange-500 to-red-500',
-                bgColor: 'bg-orange-500/10',
+                color: 'from-emerald-500 to-teal-500',
+                bgColor: 'bg-emerald-500/10',
                 description: 'Always here for you'
             },
           ].map((metric, index) => (
@@ -396,7 +396,7 @@ const Home = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-yellow-900/20 to-orange-900/30 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/30 via-teal-900/20 to-emerald-900/30 rounded-3xl"></div>
           
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {testimonials.map((testimonial, index) => (

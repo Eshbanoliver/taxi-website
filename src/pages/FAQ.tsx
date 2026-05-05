@@ -124,7 +124,7 @@ const FAQ = () => {
               'from-purple-500 to-pink-500',
               'from-blue-500 to-cyan-500',
               'from-green-500 to-emerald-500',
-              'from-orange-500 to-red-500',
+              'from-emerald-500 to-teal-500',
               'from-indigo-500 to-purple-500'
             ];
             return (
@@ -158,14 +158,14 @@ const FAQ = () => {
               'from-purple-500/20 to-pink-500/10',
               'from-blue-500/20 to-cyan-500/10',
               'from-green-500/20 to-emerald-500/10',
-              'from-orange-500/20 to-red-500/10',
+              'from-emerald-500/20 to-teal-500/10',
               'from-indigo-500/20 to-purple-500/10'
             ];
             const categoryColors = {
               'Booking': 'from-blue-500 to-cyan-500',
               'Payment': 'from-green-500 to-emerald-500',
               'Safety': 'from-red-500 to-pink-500',
-              'Pricing': 'from-orange-500 to-yellow-500',
+              'Pricing': 'from-emerald-500 to-teal-500',
               'General': 'from-purple-500 to-indigo-500'
             };
             return (

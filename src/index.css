@@ -252,16 +252,17 @@
 
   /* Gradient text effects */
   .gradient-text {
-    background: linear-gradient(45deg, #FFD700, #FFA500, #FF6347, #FFD700);
+    background: linear-gradient(45deg, #10B981, #14B8A6, #06B6D4, #10B981);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     animation: gradient-shift 3s ease infinite;
   }
 
   .gradient-border {
     position: relative;
-    background: linear-gradient(45deg, #FFD700, #FFA500, #FF6347, #FFD700);
+    background: linear-gradient(45deg, #10B981, #14B8A6, #06B6D4, #10B981);
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
   }

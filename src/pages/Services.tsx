@@ -124,7 +124,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 rounded-full mb-4">
             <Car className="text-white" size={16} />
             <span className="text-white font-semibold">Our Services</span>
           </div>
@@ -134,7 +134,7 @@ const Services = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 via-red-500/15 to-pink-500/20 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-teal-500/15 to-cyan-500/20 rounded-3xl"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service) => (

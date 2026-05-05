@@ -49,8 +49,8 @@ const Contact = () => {
       icon: Clock,
       title: 'Business Hours',
       details: ['24/7 Service Available', 'Always Open'],
-      color: 'from-orange-500 to-red-500',
-      bgColor: 'bg-orange-500/10'
+      color: 'from-emerald-500 to-teal-500',
+      bgColor: 'bg-emerald-500/10'
     }
   ];
 
@@ -58,25 +58,25 @@ const Contact = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/30 via-red-500/20 to-pink-500/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/30 via-teal-500/20 to-cyan-500/30"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
         
         {/* Floating elements */}
-        <div className="absolute top-20 left-10 w-32 h-32 bg-orange-500/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-red-500/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute bottom-20 left-20 w-28 h-28 bg-pink-500/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-40 right-10 w-20 h-20 bg-orange-500/25 rounded-full animate-pulse"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-emerald-500/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-teal-500/30 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 left-20 w-28 h-28 bg-cyan-500/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-40 right-10 w-20 h-20 bg-emerald-500/25 rounded-full animate-pulse"></div>
         
         {/* Animated background pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-10 left-10 w-64 h-64 border-4 border-orange-500 rounded-full animate-ping"></div>
-          <div className="absolute bottom-10 right-10 w-96 h-96 border-4 border-red-500 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-10 left-10 w-64 h-64 border-4 border-emerald-500 rounded-full animate-ping"></div>
+          <div className="absolute bottom-10 right-10 w-96 h-96 border-4 border-teal-500 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 px-6 py-3 rounded-full mb-8 group">
+            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-teal-500 px-6 py-3 rounded-full mb-8 group">
               <Phone className="text-white animate-float" size={24} />
               <span className="text-white font-bold text-lg">Get In Touch</span>
             </div>
@@ -92,7 +92,7 @@ const Contact = () => {
       {/* Contact Information */}
       <section className="container mx-auto px-4 py-20">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500 to-red-500 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-teal-500 px-4 py-2 rounded-full mb-4">
             <Phone className="text-white" size={16} />
             <span className="text-white font-semibold">Contact Info</span>
           </div>
@@ -102,7 +102,7 @@ const Contact = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/15 to-pink-500/10 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-teal-500/15 to-cyan-500/10 rounded-3xl"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {contactInfo.map((info, index) => (

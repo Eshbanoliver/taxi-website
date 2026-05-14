@@ -26,7 +26,9 @@ const Home = () => {
       <HeroSlider />
 
       {/* About Us Preview */}
-      <section className="section-container">
+      <section className="section-container bg-emerald-50/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-emerald-200/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-emerald-100/20 blur-[120px] rounded-full"></div>
         <div className="relative max-w-7xl mx-auto">
           {/* Background decoration */}
           <div className="absolute inset-0 bg-mesh-emerald border border-emerald-100/50 rounded-3xl"></div>
@@ -121,11 +123,13 @@ const Home = () => {
       </section>
 
       {/* Key Metrics */}
-      <section className="section-container">
+      <section className="section-container bg-amber-50/30 relative overflow-hidden">
+        <div className="absolute top-1/2 left-0 w-1/4 h-1/4 bg-amber-200/20 blur-[100px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-orange-100/20 blur-[100px] rounded-full"></div>
         <div className="page-header">
           <div className="section-badge">
-            <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-            <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Our Impact</span>
+            <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
+            <span className="text-amber-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Our Impact</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Numbers That Define Excellence</h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Metrics that showcase our commitment to quality service</p>
@@ -187,11 +191,13 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="section-container">
+      <section className="section-container bg-indigo-50/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-indigo-200/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-100/20 blur-[120px] rounded-full"></div>
         <div className="page-header">
           <div className="section-badge">
-            <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-            <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
+            <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+            <span className="text-indigo-600 font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Premium Transportation Services</h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
@@ -340,11 +346,13 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-container">
+      <section className="section-container bg-rose-50/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/4 h-1/4 bg-rose-200/20 blur-[100px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-pink-100/20 blur-[100px] rounded-full"></div>
         <div className="page-header">
           <div className="section-badge">
-            <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-            <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Customer Stories</span>
+            <div className="w-2 h-2 bg-rose-500 rounded-full"></div>
+            <span className="text-rose-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Customer Stories</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">What Our Customers Say</h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Real experiences from satisfied passengers</p>

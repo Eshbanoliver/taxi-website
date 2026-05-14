@@ -123,11 +123,13 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
+      <section className="container mx-auto px-4 py-24 lg:py-36 bg-indigo-50/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-indigo-200/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-blue-100/20 blur-[120px] rounded-full"></div>
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Car className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Services</span>
+            <Car className="text-indigo-500" size={16} />
+            <span className="text-indigo-600 font-semibold">Our Services</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Premium Transportation</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your every need</p>
@@ -219,11 +221,13 @@ const Services = () => {
       </section>
 
       {/* Vehicle Categories */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
+      <section className="container mx-auto px-4 py-24 lg:py-36 bg-slate-50/50 relative overflow-hidden">
+        <div className="absolute top-1/2 left-0 w-1/4 h-1/4 bg-blue-200/20 blur-[100px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-indigo-100/20 blur-[100px] rounded-full"></div>
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Car className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Fleet</span>
+            <Car className="text-blue-500" size={16} />
+            <span className="text-blue-600 font-semibold">Our Fleet</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Premium Vehicles</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">Choose from our wide range of well-maintained vehicles</p>

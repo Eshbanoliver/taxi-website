@@ -67,11 +67,13 @@ const About = () => {
       </section>
 
       {/* Company Story */}
-      <section id="story" className="container mx-auto px-4 py-24 lg:py-36">
+      <section id="story" className="container mx-auto px-4 py-24 lg:py-36 bg-violet-50/30 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-violet-200/20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-purple-100/20 blur-[120px] rounded-full"></div>
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Car className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Journey</span>
+            <Car className="text-violet-500" size={16} />
+            <span className="text-violet-600 font-semibold">Our Journey</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Our Story</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">From humble beginnings to becoming Udaipur's trusted transportation partner</p>
@@ -166,8 +168,8 @@ const About = () => {
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Target className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Purpose</span>
+            <Target className="text-indigo-500" size={16} />
+            <span className="text-indigo-600 font-semibold">Our Purpose</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Mission & Vision</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">The driving force behind everything we do</p>
@@ -235,11 +237,13 @@ const About = () => {
       </section>
 
       {/* Core Values */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
+      <section className="container mx-auto px-4 py-24 lg:py-36 bg-emerald-50/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-1/4 h-1/4 bg-emerald-200/20 blur-[100px] rounded-full"></div>
+        <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-teal-100/20 blur-[100px] rounded-full"></div>
         <div className="text-center mb-16">
           <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Heart className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Our Principles</span>
+            <Heart className="text-emerald-500" size={16} />
+            <span className="text-emerald-600 font-semibold">Our Principles</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Our Core Values</h2>
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">The foundation of everything we do and believe in</p>

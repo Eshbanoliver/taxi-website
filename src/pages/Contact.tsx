@@ -50,16 +50,16 @@ const Contact = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-white/[0.02]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-slate-50 border-b border-slate-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
+            <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full mb-8 border border-slate-200 shadow-sm">
               <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
               <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Get In Touch</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">Contact Us</h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light mx-auto">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">Contact Us</h1>
+            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light mx-auto">
               Get in touch with us for bookings, inquiries, or support
             </p>
           </div>
@@ -73,29 +73,29 @@ const Contact = () => {
             <Phone className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Contact Info</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Get in Touch</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Multiple ways to reach us anytime</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Get in Touch</h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Multiple ways to reach us anytime</p>
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8 p-6 md:p-12">
             {contactInfo.map((info, index) => (
               <div key={index} className="group relative">
                 {/* Card */}
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-white/10">
+                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
                     {/* Icon */}
                     <div className="relative mb-6">
-                      <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-taxi-yellow">
+                      <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-taxi-yellow shadow-sm">
                         <info.icon className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
                       </div>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-4">{info.title}</h3>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{info.title}</h3>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className={`text-gray-400 ${idx === 0 ? 'text-sm mb-1' : 'text-base font-bold text-taxi-yellow'}`}>
+                      <p key={idx} className={`${idx === 0 ? 'text-slate-500 text-sm mb-1' : 'text-base font-bold text-taxi-yellow'}`}>
                         {detail}
                       </p>
                     ))}
@@ -110,21 +110,21 @@ const Contact = () => {
       {/* Contact Form & Map */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid md:grid-cols-2 gap-12 p-6 md:p-12">
             {/* Contact Form */}
             <div className="relative">
-              <div className="relative glass rounded-3xl p-8 md:p-12 border border-white/10">
-                <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
+              <div className="relative glass rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm">
+                <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-6">
                   <Send className="text-taxi-yellow" size={16} />
                   <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Send Message</span>
                 </div>
                 
-                <h2 className="text-4xl font-bold text-white mb-8">Get in Touch</h2>
+                <h2 className="text-4xl font-bold text-slate-900 mb-8">Get in Touch</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-gray-300 font-medium mb-2">
+                    <label htmlFor="name" className="block text-slate-700 font-medium mb-2">
                       Your Name *
                     </label>
                     <input
@@ -134,12 +134,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 rounded-xl border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-taxi-yellow transition-all duration-300"
+                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-gray-300 font-medium mb-2">
+                    <label htmlFor="email" className="block text-slate-700 font-medium mb-2">
                       Email Address *
                     </label>
                     <input
@@ -149,12 +149,12 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 rounded-xl border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-taxi-yellow transition-all duration-300"
+                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm"
                       placeholder="john@example.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-gray-300 font-medium mb-2">
+                    <label htmlFor="phone" className="block text-slate-700 font-medium mb-2">
                       Phone Number
                     </label>
                     <input
@@ -163,12 +163,12 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-4 rounded-xl border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-taxi-yellow transition-all duration-300"
+                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-gray-300 font-medium mb-2">
+                    <label htmlFor="message" className="block text-slate-700 font-medium mb-2">
                       Message *
                     </label>
                     <textarea
@@ -178,7 +178,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-4 rounded-xl border border-white/10 bg-white/5 text-white placeholder-gray-500 focus:outline-none focus:border-taxi-yellow transition-all duration-300 resize-none"
+                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 resize-none shadow-sm"
                       placeholder="Tell us how we can help you..."
                     ></textarea>
                   </div>
@@ -192,9 +192,9 @@ const Contact = () => {
                 </form>
                 
                 {isSubmitted && (
-                  <div className="mt-6 p-4 bg-white/5 border border-taxi-yellow/30 rounded-lg flex items-center space-x-2 animate-fadeIn">
+                  <div className="mt-6 p-4 bg-white border border-taxi-yellow/30 rounded-lg flex items-center space-x-2 animate-fadeIn shadow-sm">
                     <CheckCircle className="text-taxi-yellow" size={20} />
-                    <span className="text-white font-medium">Message sent successfully! We'll get back to you soon.</span>
+                    <span className="text-slate-900 font-medium">Message sent successfully! We'll get back to you soon.</span>
                   </div>
                 )}
               </div>
@@ -202,26 +202,26 @@ const Contact = () => {
 
             {/* Map Placeholder */}
             <div className="relative">
-              <div className="relative glass rounded-3xl p-8 h-full min-h-[400px] flex items-center justify-center border border-white/10">
+              <div className="relative glass rounded-3xl p-8 h-full min-h-[400px] flex items-center justify-center border border-slate-100 shadow-sm">
                 <div className="text-center">
-                  <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
+                  <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-6">
                     <MapPin className="text-taxi-yellow" size={16} />
                     <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Location</span>
                   </div>
                   
                   <div className="relative mb-6">
-                    <div className="w-24 h-24 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto">
+                    <div className="w-24 h-24 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto shadow-sm">
                       <MapPin className="text-taxi-yellow" size={48} />
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-white mb-3">Find Us in Udaipur</h3>
-                  <p className="text-gray-400 mb-2">Interactive map will be displayed here</p>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Find Us in Udaipur</h3>
+                  <p className="text-slate-500 mb-2">Interactive map will be displayed here</p>
                   <p className="text-lg font-bold text-taxi-yellow">Udaipur, Rajasthan 313001</p>
                   
                   {/* CTA */}
                   <div className="mt-8">
-                    <a href="#" className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 text-white font-bold py-3 px-8 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300">
+                    <a href="#" className="inline-flex items-center space-x-2 bg-white border border-slate-200 text-slate-700 font-bold py-3 px-8 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 shadow-sm">
                       <MapPin size={16} />
                       <span>Get Directions</span>
                     </a>
@@ -240,8 +240,8 @@ const Contact = () => {
             <Phone className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Quick Contact</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Quick Contact Options</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Choose your preferred way to reach us</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Quick Contact Options</h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Choose your preferred way to reach us</p>
         </div>
         
         <div className="relative">
@@ -269,17 +269,17 @@ const Contact = () => {
               }
             ].map((option, index) => (
               <div key={index} className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-white/10">
+                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
                     <div className="relative mb-6">
-                      <div className="w-20 h-20 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-taxi-yellow">
+                      <div className="w-20 h-20 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-taxi-yellow shadow-sm">
                         <option.icon className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={40} />
                       </div>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-white mb-3">{option.title}</h3>
-                    <p className="text-gray-400 mb-8">{option.desc}</p>
-                    <button className="w-full bg-white/5 border border-white/10 text-white font-bold py-3 px-6 rounded-xl hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300">
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{option.title}</h3>
+                    <p className="text-slate-600 mb-8">{option.desc}</p>
+                    <button className="w-full bg-slate-50 border border-slate-100 text-slate-700 font-bold py-3 px-6 rounded-xl hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 shadow-sm">
                       <span>{option.action}</span>
                     </button>
                   </div>
@@ -293,16 +293,16 @@ const Contact = () => {
       {/* FAQ Link */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-taxi-yellow/10 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-taxi-yellow/20 rounded-3xl shadow-sm"></div>
           
-          <div className="relative glass rounded-3xl p-12 md:p-20 text-center border border-white/10">
-            <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-6">
+          <div className="relative glass rounded-3xl p-12 md:p-20 text-center border border-slate-100 shadow-sm">
+            <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-6">
               <HelpCircle className="text-taxi-yellow" size={16} />
               <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Need Help?</span>
             </div>
             
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Have Questions?</h2>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Have Questions?</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
               Check out our FAQ section for quick answers to common questions
             </p>
             

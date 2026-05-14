@@ -97,16 +97,16 @@ const FAQ = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-white/[0.02]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-slate-50 border-b border-slate-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
+            <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full mb-8 border border-slate-200 shadow-sm">
               <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
               <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Help Center</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">Frequently Asked Questions</h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light mx-auto">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h1>
+            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light mx-auto">
               Find answers to common questions about our taxi services
             </p>
           </div>
@@ -116,8 +116,8 @@ const FAQ = () => {
       {/* Category Filter */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-white mb-4">Browse by Category</h2>
-          <p className="text-gray-400">Find answers specific to your needs</p>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Browse by Category</h2>
+          <p className="text-slate-600">Find answers specific to your needs</p>
         </div>
         <div className="flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
@@ -126,8 +126,8 @@ const FAQ = () => {
               onClick={() => setSelectedCategory(category)}
               className={`px-6 py-3 rounded-full font-bold transition-all duration-300 border ${
                 selectedCategory === category
-                  ? 'bg-taxi-yellow text-taxi-black border-taxi-yellow'
-                  : 'bg-white/5 text-gray-300 border-white/10 hover:bg-white/10 hover:text-white'
+                  ? 'bg-taxi-yellow text-taxi-black border-taxi-yellow shadow-md'
+                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-slate-900 shadow-sm'
               }`}
             >
               <div className="flex items-center space-x-2">
@@ -145,8 +145,8 @@ const FAQ = () => {
           {filteredFAQs.map((faq, index) => (
             <div key={index} className="group relative">
               <div
-                className={`glass rounded-2xl overflow-hidden transition-all duration-300 border border-white/10 ${
-                  activeIndex === index ? 'ring-1 ring-taxi-yellow bg-white/5' : 'hover:bg-white/5'
+                className={`glass rounded-2xl overflow-hidden transition-all duration-300 border border-slate-100 shadow-sm ${
+                  activeIndex === index ? 'ring-1 ring-taxi-yellow bg-slate-50' : 'hover:bg-slate-50'
                 }`}
               >
                 {/* Question Button */}
@@ -155,19 +155,19 @@ const FAQ = () => {
                   className="w-full px-6 py-6 text-left flex items-center justify-between transition-colors duration-300"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <HelpCircle className={activeIndex === index ? 'text-taxi-yellow' : 'text-gray-400'} size={20} />
+                    <div className="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
+                      <HelpCircle className={activeIndex === index ? 'text-taxi-yellow' : 'text-slate-400'} size={20} />
                     </div>
-                    <h3 className={`text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-taxi-yellow' : 'text-white group-hover:text-taxi-yellow'}`}>
+                    <h3 className={`text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-taxi-yellow' : 'text-slate-900 group-hover:text-taxi-yellow'}`}>
                       {faq.question}
                     </h3>
                   </div>
                   
                   <div className="flex items-center space-x-4">
-                    <span className="hidden md:inline-block text-xs text-gray-400 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+                    <span className="hidden md:inline-block text-xs text-slate-500 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
                       {faq.category}
                     </span>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ${activeIndex === index ? 'bg-taxi-yellow text-taxi-black rotate-180' : 'bg-white/5 text-white group-hover:bg-white/10'}`}>
+                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ${activeIndex === index ? 'bg-taxi-yellow text-taxi-black rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'}`}>
                       <ChevronDown size={16} />
                     </div>
                   </div>
@@ -176,9 +176,9 @@ const FAQ = () => {
                 {/* Answer */}
                 {activeIndex === index && (
                   <div className="px-6 pb-6 animate-fadeIn">
-                    <div className="flex items-start space-x-4 pt-4 border-t border-white/10">
+                    <div className="flex items-start space-x-4 pt-4 border-t border-slate-100">
                       <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 opacity-0"></div>
-                      <p className="text-gray-300 leading-relaxed text-base flex-1">{faq.answer}</p>
+                      <p className="text-slate-600 leading-relaxed text-base flex-1">{faq.answer}</p>
                     </div>
                   </div>
                 )}
@@ -191,49 +191,49 @@ const FAQ = () => {
       {/* Contact Support */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
-          <div className="relative glass rounded-3xl p-8 md:p-16 border border-white/10">
+          <div className="relative glass rounded-3xl p-8 md:p-16 border border-slate-100">
             <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Still Have Questions?</h2>
-              <p className="text-xl text-gray-300">Our support team is here to help you 24/7</p>
+              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Still Have Questions?</h2>
+              <p className="text-xl text-slate-600">Our support team is here to help you 24/7</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-white/10">
+                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
+                    <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
                       <Phone className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Call Us</h3>
-                    <p className="text-gray-400 mb-2">24/7 customer support</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Call Us</h3>
+                    <p className="text-slate-500 mb-2">24/7 customer support</p>
                     <p className="text-taxi-yellow font-bold">+91 98765 43210</p>
                   </div>
                 </div>
               </div>
               
               <div className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-white/10">
+                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
+                    <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
                       <Mail className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Email Us</h3>
-                    <p className="text-gray-400 mb-2">Get quick responses</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Email Us</h3>
+                    <p className="text-slate-500 mb-2">Get quick responses</p>
                     <p className="text-taxi-yellow font-bold">info@taxigo.com</p>
                   </div>
                 </div>
               </div>
               
               <div className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-white/10">
+                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
+                    <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
                       <MapPin className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-3">Visit Us</h3>
-                    <p className="text-gray-400 mb-2">Udaipur, Rajasthan</p>
+                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Visit Us</h3>
+                    <p className="text-slate-500 mb-2">Udaipur, Rajasthan</p>
                     <p className="text-taxi-yellow font-bold">313001</p>
                   </div>
                 </div>
@@ -254,7 +254,7 @@ const FAQ = () => {
       {/* Quick Help */}
       <section className="container mx-auto px-4 py-16 lg:py-24">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">Quick Help</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Quick Help</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
@@ -263,12 +263,12 @@ const FAQ = () => {
             { title: 'Track Ride', desc: 'Real-time ride tracking', icon: CheckCircle },
             { title: 'Cancel Booking', desc: 'Easy cancellation process', icon: CheckCircle },
           ].map((item, index) => (
-            <div key={index} className="glass rounded-3xl p-6 text-center border border-white/10 transition-transform duration-300 hover:-translate-y-2">
-              <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+            <div key={index} className="glass rounded-3xl p-6 text-center border border-slate-100 shadow-sm transition-transform duration-300 hover:-translate-y-2">
+              <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                 <item.icon className="text-taxi-yellow" size={24} />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-              <p className="text-gray-400 text-sm">{item.desc}</p>
+              <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+              <p className="text-slate-600 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>

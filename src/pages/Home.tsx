@@ -29,8 +29,8 @@ const Home = () => {
       <section className="section-container">
         <div className="relative max-w-7xl mx-auto">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
+          <div className="absolute inset-0 bg-slate-50 border border-slate-100 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent rounded-3xl"></div>
           
           <div className="relative glass rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 lg:p-24 overflow-hidden">
             <div className="content-grid">
@@ -40,13 +40,13 @@ const Home = () => {
                     <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
                     <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight animate-slide-in-up">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight animate-slide-in-up">
                     Your Trusted
                     <span className="block text-gradient-vibrant mt-2">Journey Partner</span>
                   </h2>
                 </div>
                 
-                <p className="text-base sm:text-lg lg:text-xl text-gray-300 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0 animate-slide-in-up" style={{ animationDelay: '200ms' }}>
+                <p className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0 animate-slide-in-up" style={{ animationDelay: '200ms' }}>
                   With over a decade of excellence, we stand as Udaipur's premier transportation provider. 
                   We combine cutting-edge technology with traditional hospitality to deliver safe, comfortable, and affordable journeys that exceed expectations.
                 </p>
@@ -60,11 +60,11 @@ const Home = () => {
                     { icon: MapPin, text: "City Wide Coverage" }
                   ].map((item, index) => (
                     <div key={index} className="group relative animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
-                      <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all duration-300 hover-lift">
-                        <div className={`relative w-10 h-10 sm:w-14 sm:h-14 bg-white/5 rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/10 shadow-lg flex-shrink-0`}>
+                      <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white shadow-sm border border-slate-100 hover:bg-slate-50 transition-all duration-300 hover-lift">
+                        <div className={`relative w-10 h-10 sm:w-14 sm:h-14 bg-slate-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm flex-shrink-0`}>
                           <item.icon className="text-taxi-yellow w-4 h-4 sm:w-6 sm:h-6" />
                         </div>
-                        <span className="text-gray-200 font-medium text-sm sm:text-base group-hover:text-white transition-colors duration-300">{item.text}</span>
+                        <span className="text-slate-700 font-medium text-sm sm:text-base group-hover:text-slate-900 transition-colors duration-300">{item.text}</span>
                       </div>
                     </div>
                   ))}
@@ -79,21 +79,21 @@ const Home = () => {
               <div className="relative">
                 {/* Main visual */}
                 <div className="relative">
-                  <div className="w-full h-80 md:h-96 bg-white/5 border border-white/10 rounded-3xl flex items-center justify-center relative overflow-hidden backdrop-blur-sm">
+                  <div className="w-full h-80 md:h-96 bg-slate-50 border border-slate-100 rounded-3xl flex items-center justify-center relative overflow-hidden">
                     {/* Main content */}
                     <div className="relative z-10 text-center animate-slide-in-up">
                       <div className="w-24 h-24 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
                         <Car className="text-taxi-black" size={48} />
                       </div>
-                      <h3 className="text-2xl font-bold text-white mb-2">Premium Taxi Service</h3>
-                      <p className="text-gray-300">Experience luxury and comfort</p>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-2">Premium Taxi Service</h3>
+                      <p className="text-slate-600">Experience luxury and comfort</p>
                     </div>
                     
                     {/* Floating badges */}
-                    <div className="absolute top-8 left-8 bg-[#1a1a1a]/80 border border-white/10 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg">
-                      <span className="text-white font-bold text-sm">50K+ Rides</span>
+                    <div className="absolute top-8 left-8 bg-white border border-slate-100 shadow-xl px-3 py-2 rounded-full">
+                      <span className="text-slate-900 font-bold text-sm">50K+ Rides</span>
                     </div>
-                    <div className="absolute bottom-8 right-8 bg-[#1a1a1a]/80 border border-white/10 backdrop-blur-sm px-3 py-2 rounded-full shadow-lg" style={{ animationDelay: '1s' }}>
+                    <div className="absolute bottom-8 right-8 bg-white border border-slate-100 shadow-xl px-3 py-2 rounded-full" style={{ animationDelay: '1s' }}>
                       <span className="text-taxi-yellow font-bold text-sm">4.9 Rating</span>
                     </div>
                   </div>
@@ -127,13 +127,13 @@ const Home = () => {
             <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
             <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Our Impact</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 animate-slide-in-up">Numbers That Define Excellence</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Metrics that showcase our commitment to quality service</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Numbers That Define Excellence</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Metrics that showcase our commitment to quality service</p>
         </div>
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
             {[
@@ -149,23 +149,23 @@ const Home = () => {
                 <div className="relative z-10">
                   {/* Icon container */}
                   <div className="relative mx-auto mb-4 sm:mb-6">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300">
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-slate-50 border border-slate-100 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-taxi-yellow/10">
                       <metric.icon className="text-taxi-yellow w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
                     </div>
                   </div>
                   
                   {/* Number */}
-                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-2 sm:mb-3">
+                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-2 sm:mb-3">
                     {metric.number}
                   </div>
                   
                   {/* Label */}
-                  <div className="text-sm sm:text-base lg:text-lg font-semibold text-gray-300 mb-2">
+                  <div className="text-sm sm:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                     {metric.label}
                   </div>
                   
                   {/* Description */}
-                  <div className="text-sm text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-sm text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {metric.description}
                   </div>
                 </div>
@@ -177,10 +177,10 @@ const Home = () => {
         
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-4 bg-white/5 border border-white/10 px-8 py-4 rounded-full shadow-xl backdrop-blur-sm animate-slide-in-up hover-lift">
+          <div className="inline-flex items-center space-x-4 bg-white border border-slate-100 px-8 py-4 rounded-full shadow-lg backdrop-blur-sm animate-slide-in-up hover-lift">
             <div className="flex items-center space-x-2">
               <Star className="text-taxi-yellow" size={20} />
-              <span className="text-white font-bold">Trusted by thousands daily</span>
+              <span className="text-slate-900 font-bold">Trusted by thousands daily</span>
             </div>
           </div>
         </div>
@@ -193,8 +193,8 @@ const Home = () => {
             <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
             <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 animate-slide-in-up">Premium Transportation Services</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Premium Transportation Services</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
         </div>
         
         <div className="relative">
@@ -227,7 +227,7 @@ const Home = () => {
             ].map((service, index) => (
               <div key={index} className="group relative animate-slide-in-up hover-lift" style={{ animationDelay: `${300 + index * 100}ms` }}>
                 {/* Card */}
-                <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 overflow-hidden border border-white/10">
+                <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 overflow-hidden border border-slate-100 shadow-sm">
                   {/* Badge */}
                   {service.badge && (
                     <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
@@ -240,22 +240,22 @@ const Home = () => {
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-white/5 border border-white/10 rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 shadow-lg transition-all duration-300">
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-slate-50 border border-slate-100 rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 shadow-sm transition-all duration-300 group-hover:bg-taxi-yellow/10">
                       <service.icon className="text-taxi-yellow w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
                     </div>
                     
                     {/* Title */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-taxi-yellow transition-colors duration-300">
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-taxi-yellow transition-colors duration-300">
                       {service.title}
                     </h3>
                   
                   {/* Description */}
-                  <p className="text-gray-300 mb-6 leading-relaxed text-sm sm:text-base">{service.desc}</p>
+                  <p className="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base">{service.desc}</p>
                   
                   {/* Features */}
                   <div className="space-y-3 mb-8">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3 text-sm text-gray-300">
+                      <div key={idx} className="flex items-center space-x-3 text-sm text-slate-600">
                         <CheckCircle className="text-taxi-yellow w-4 h-4" />
                         <span>{feature}</span>
                       </div>
@@ -282,7 +282,60 @@ const Home = () => {
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </a>
           </div>
-          <p className="text-gray-300 mt-4 animate-slide-in-up" style={{ animationDelay: '800ms' }}>Discover our complete range of transportation solutions</p>
+          <p className="text-slate-600 mt-4 animate-slide-in-up" style={{ animationDelay: '800ms' }}>Discover our complete range of transportation solutions</p>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="section-container bg-white/[0.01]">
+        <div className="page-header">
+          <div className="section-badge">
+            <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
+            <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Simple Process</span>
+          </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">How It Works</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Get your ride in three easy steps</p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
+          {[
+            { 
+              step: '01', 
+              title: 'Book Your Ride', 
+              desc: 'Choose your destination and car type through our app or website.',
+              icon: BookOpen 
+            },
+            { 
+              step: '02', 
+              title: 'Get Driver Details', 
+              desc: 'Receive instant confirmation with driver and vehicle information.',
+              icon: Shield 
+            },
+            { 
+              step: '03', 
+              title: 'Enjoy Your Journey', 
+              desc: 'Sit back and relax as our professional driver takes you safely to your destination.',
+              icon: Car 
+            },
+          ].map((item, index) => (
+            <div key={index} className="relative group text-center px-6">
+              {/* Connector Line (Desktop) */}
+              {index < 2 && (
+                <div className="hidden md:block absolute top-12 left-[60%] w-full h-[2px] bg-gradient-to-r from-taxi-yellow/50 to-transparent z-0"></div>
+              )}
+              
+              <div className="relative z-10 flex flex-col items-center">
+                <div className="w-20 h-20 bg-white border border-slate-100 shadow-sm rounded-3xl flex items-center justify-center mb-6 group-hover:bg-taxi-yellow/10 group-hover:border-taxi-yellow/30 transition-all duration-500 hover-lift">
+                  <item.icon className="text-taxi-yellow w-10 h-10" />
+                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-taxi-yellow text-taxi-black rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                    {item.step}
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -293,8 +346,8 @@ const Home = () => {
             <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
             <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Customer Stories</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">What Our Customers Say</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">Real experiences from satisfied passengers</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">What Our Customers Say</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Real experiences from satisfied passengers</p>
         </div>
         
         <div className="relative">
@@ -304,7 +357,7 @@ const Home = () => {
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="group">
-                <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:scale-105 transition-all duration-500 border border-white/10">
+                <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:scale-105 transition-all duration-500 border border-slate-100">
                   {/* Stars */}
                   <div className="flex space-x-1 mb-4">
                     {[...Array(5)].map((_, i) => (
@@ -313,7 +366,7 @@ const Home = () => {
                   </div>
                   
                   {/* Quote */}
-                  <p className="text-gray-300 mb-6 text-sm sm:text-base leading-relaxed italic">
+                  <p className="text-slate-600 mb-6 text-sm sm:text-base leading-relaxed italic">
                     "{testimonial.text}"
                   </p>
                   
@@ -323,8 +376,8 @@ const Home = () => {
                       <span className="text-taxi-black font-bold text-sm">{testimonial.name.charAt(0)}</span>
                     </div>
                     <div>
-                      <div className="text-white font-semibold text-sm sm:text-base">{testimonial.name}</div>
-                      <div className="text-gray-400 text-xs">Verified Customer</div>
+                      <div className="text-slate-900 font-semibold text-sm sm:text-base">{testimonial.name}</div>
+                      <div className="text-slate-500 text-xs">Verified Customer</div>
                     </div>
                   </div>
                 </div>
@@ -341,22 +394,22 @@ const Home = () => {
             <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
             <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Quick Answers</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6">Frequently Asked Questions</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto font-light px-4">Get answers to common questions about our services</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">Frequently Asked Questions</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Get answers to common questions about our services</p>
         </div>
         
         <div className="relative max-w-4xl mx-auto">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
           <div className="relative space-y-6 sm:space-y-8 p-6 sm:p-8">
             {faqs.map((faq, index) => (
-              <div key={index} className="glass rounded-2xl p-6 border border-white/10 hover:bg-white/5 transition-all duration-300">
+              <div key={index} className="glass rounded-2xl p-6 border border-slate-100 hover:bg-slate-50 transition-all duration-300">
                 <div className="flex items-start space-x-4">
                   <HelpCircle className="text-taxi-yellow w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1" />
                   <div className="flex-1">
-                    <h4 className="text-white font-semibold mb-2 text-sm sm:text-base">{faq.q}</h4>
-                    <p className="text-gray-300 text-sm sm:text-base leading-relaxed">{faq.a}</p>
+                    <h4 className="text-slate-900 font-semibold mb-2 text-sm sm:text-base">{faq.q}</h4>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{faq.a}</p>
                   </div>
                 </div>
               </div>
@@ -377,16 +430,16 @@ const Home = () => {
       <section className="section-container">
         <div className="relative max-w-4xl mx-auto">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white/[0.02] border border-taxi-yellow/10 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-taxi-yellow/20 rounded-3xl shadow-sm"></div>
           
-          <div className="relative glass rounded-3xl p-10 sm:p-16 lg:p-24 text-center border border-white/10">
+          <div className="relative glass rounded-3xl p-10 sm:p-16 lg:p-24 text-center border border-slate-100">
             <div className="max-w-2xl mx-auto space-y-8 sm:space-y-10">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
                 Ready to Experience
                 <span className="block text-gradient-vibrant mt-2">Premium Taxi Service?</span>
               </h2>
               
-              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
+              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
                 Join thousands of satisfied customers who trust Taxi GO for their transportation needs. 
                 Book your ride today and experience the difference!
               </p>
@@ -403,15 +456,15 @@ const Home = () => {
               </div>
               
               {/* Trust indicators */}
-              <div className="flex items-center justify-center space-x-8 pt-6 border-t border-white/20">
+              <div className="flex items-center justify-center space-x-8 pt-6 border-t border-slate-100">
                 <div className="flex items-center space-x-2">
                   <Star className="text-taxi-yellow w-5 h-5" />
-                  <span className="text-white font-semibold">4.9 Rating</span>
+                  <span className="text-slate-900 font-semibold">4.9 Rating</span>
                 </div>
-                <div className="text-gray-400">•</div>
-                <div className="text-white">50K+ Happy Customers</div>
-                <div className="text-gray-400">•</div>
-                <div className="text-white">24/7 Service</div>
+                <div className="text-slate-300">•</div>
+                <div className="text-slate-900">50K+ Happy Customers</div>
+                <div className="text-slate-300">•</div>
+                <div className="text-slate-900">24/7 Service</div>
               </div>
             </div>
           </div>

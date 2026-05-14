@@ -110,12 +110,12 @@ const Services = () => {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-white/[0.02]"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div className="absolute inset-0 bg-slate-50 border-b border-slate-100"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">Our Services</h1>
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed font-light mx-auto">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">Our Services</h1>
+            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light mx-auto">
               Comprehensive transportation solutions tailored to meet your every need
             </p>
           </div>
@@ -129,12 +129,12 @@ const Services = () => {
             <Car className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Our Services</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Premium Transportation</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your every need</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Premium Transportation</h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your every need</p>
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 md:p-12">
             {services.map((service) => (
@@ -146,8 +146,8 @@ const Services = () => {
               >
                 {/* Card */}
                 <div
-                  className={`relative glass rounded-3xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 border border-white/10 cursor-pointer ${
-                    selectedService === service.id ? 'ring-2 ring-taxi-yellow' : ''
+                  className={`relative glass rounded-3xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm cursor-pointer ${
+                    selectedService === service.id ? 'ring-2 ring-taxi-yellow shadow-xl' : ''
                   }`}
                   onClick={() => setSelectedService(service.id === selectedService ? null : service.id)}
                 >
@@ -165,17 +165,17 @@ const Services = () => {
                   <div className="relative z-10 pt-4">
                     {/* Icon */}
                     <div className="relative mb-6">
-                      <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:bg-taxi-yellow">
+                      <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:bg-taxi-yellow">
                         <service.icon className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
                       </div>
                     </div>
                     
                     <div className="text-center">
                       {/* Title */}
-                      <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">{service.title}</h3>
                       
                       {/* Description */}
-                      <p className="text-gray-400 leading-relaxed mb-4 text-sm">{service.description}</p>
+                      <p className="text-slate-600 leading-relaxed mb-4 text-sm">{service.description}</p>
                       
                       {/* Price */}
                       <div className="text-lg font-bold text-taxi-yellow mb-4">{service.price}</div>
@@ -183,12 +183,12 @@ const Services = () => {
                     
                     {/* Features (shown when selected) */}
                     {selectedService === service.id && (
-                      <div className="mt-6 pt-6 border-t border-white/10 animate-fadeIn">
-                        <h4 className="font-bold text-white mb-4">Features:</h4>
+                      <div className="mt-6 pt-6 border-t border-slate-100 animate-fadeIn">
+                        <h4 className="font-bold text-slate-900 mb-4">Features:</h4>
                         <ul className="space-y-3">
                           {service.features.map((feature, index) => (
-                            <li key={index} className="flex items-center text-gray-300">
-                              <div className="w-5 h-5 bg-white/10 rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                            <li key={index} className="flex items-center text-slate-600">
+                              <div className="w-5 h-5 bg-slate-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0 border border-slate-100">
                                 <CheckCircle className="text-taxi-yellow" size={12} />
                               </div>
                               <span className="text-sm">{feature}</span>
@@ -204,7 +204,7 @@ const Services = () => {
                     {/* View more hint (when not selected) */}
                     {selectedService !== service.id && (
                       <div className="text-center mt-4">
-                        <div className="inline-flex items-center space-x-2 text-gray-400 font-medium group-hover:text-taxi-yellow transition-colors duration-300">
+                        <div className="inline-flex items-center space-x-2 text-slate-500 font-medium group-hover:text-taxi-yellow transition-colors duration-300">
                           <span className="text-sm">View Details</span>
                           <CheckCircle className="transition-transform duration-300" size={14} />
                         </div>
@@ -225,36 +225,36 @@ const Services = () => {
             <Car className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Our Fleet</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Premium Vehicles</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Choose from our wide range of well-maintained vehicles</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Premium Vehicles</h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Choose from our wide range of well-maintained vehicles</p>
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8 p-6 md:p-12">
             {vehicleCategories.map((category, index) => (
               <div key={index} className="group relative">
                 {/* Card */}
-                <div className="relative glass rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-2 border border-white/10">
+                <div className="relative glass rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10">
                     {/* Category badge */}
-                    <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-3 py-1 rounded-full mb-4">
+                    <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-3 py-1 rounded-full mb-4">
                       <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
                       <span className="text-taxi-yellow font-bold text-sm">{category.category}</span>
                     </div>
                     
                     {/* Price */}
-                    <div className="text-2xl font-bold text-white mb-4 group-hover:text-taxi-yellow transition-colors duration-300">
+                    <div className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-taxi-yellow transition-colors duration-300">
                       {category.price}
                     </div>
                     
                     {/* Vehicles */}
                     <div className="mb-6">
-                      <p className="text-sm text-gray-400 mb-3 font-medium">Available Vehicles:</p>
+                      <p className="text-sm text-slate-500 mb-3 font-medium">Available Vehicles:</p>
                       <div className="flex flex-wrap gap-2">
                         {category.vehicles.map((vehicle, idx) => (
-                          <span key={idx} className="bg-white/5 border border-white/10 text-gray-300 px-3 py-1 rounded-full text-xs font-medium">
+                          <span key={idx} className="bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
                             {vehicle}
                           </span>
                         ))}
@@ -264,7 +264,7 @@ const Services = () => {
                     {/* Features */}
                     <ul className="space-y-2 mb-6">
                       {category.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-gray-400">
+                        <li key={idx} className="flex items-center text-slate-600">
                           <CheckCircle className="text-taxi-yellow mr-2 flex-shrink-0" size={14} />
                           <span className="text-sm">{feature}</span>
                         </li>
@@ -272,7 +272,7 @@ const Services = () => {
                     </ul>
                     
                     {/* Button */}
-                    <button className="w-full bg-white/5 text-white font-bold py-3 px-6 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 border border-white/10">
+                    <button className="w-full bg-slate-50 text-slate-700 font-bold py-3 px-6 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 border border-slate-100 shadow-sm">
                       Select Category
                     </button>
                   </div>
@@ -285,10 +285,10 @@ const Services = () => {
 
       {/* Service Process */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="glass rounded-3xl p-10 md:p-16 border border-white/10">
+        <div className="glass rounded-3xl p-10 md:p-16 border border-slate-100 shadow-sm">
           <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">How It Works</h2>
-            <p className="text-xl text-gray-300">Simple steps to book your ride</p>
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">How It Works</h2>
+            <p className="text-xl text-slate-600">Simple steps to book your ride</p>
           </div>
           <div className="grid md:grid-cols-4 gap-6 relative">
             {/* Connecting Line */}
@@ -300,11 +300,11 @@ const Services = () => {
               { step: '4', title: 'Enjoy Your Trip', desc: 'Safe and comfortable journey' },
             ].map((item, index) => (
               <div key={index} className="text-center relative z-10">
-                <div className="w-16 h-16 bg-white border border-white/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-taxi-yellow transition-colors duration-300">
+                <div className="w-16 h-16 bg-white border border-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-taxi-yellow transition-colors duration-300 shadow-sm">
                   <span className="text-2xl font-bold text-taxi-black">{item.step}</span>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -314,8 +314,8 @@ const Services = () => {
       {/* Pricing Highlights */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Transparent Pricing</h2>
-          <p className="text-xl text-gray-300">No hidden charges, fair and affordable rates</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Transparent Pricing</h2>
+          <p className="text-xl text-slate-600">No hidden charges, fair and affordable rates</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {[
@@ -323,12 +323,12 @@ const Services = () => {
             { title: 'Competitive Rates', desc: 'Best prices in the market', icon: CheckCircle },
             { title: 'Multiple Payment Options', desc: 'Cash, card, and digital payments', icon: CheckCircle },
           ].map((item, index) => (
-            <div key={index} className="glass rounded-3xl p-8 text-center transition-transform duration-300 hover:-translate-y-2 border border-white/10">
-              <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div key={index} className="glass rounded-3xl p-8 text-center transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
+              <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
                 <item.icon className="text-taxi-yellow" size={32} />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-              <p className="text-gray-400 text-sm">{item.desc}</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
+              <p className="text-slate-600 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -337,17 +337,17 @@ const Services = () => {
       {/* CTA */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-taxi-yellow/10 rounded-3xl"></div>
-          <div className="relative glass rounded-3xl p-12 md:p-20 text-center border border-white/10">
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Need a Custom Service?</h2>
-            <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+          <div className="absolute inset-0 bg-white border border-taxi-yellow/20 rounded-3xl shadow-sm"></div>
+          <div className="relative glass rounded-3xl p-12 md:p-20 text-center border border-slate-100 shadow-sm">
+            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Need a Custom Service?</h2>
+            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
               We offer customized transportation solutions for special requirements
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-taxi-yellow text-taxi-black font-bold py-4 px-10 rounded-full hover:bg-yellow-400 transition-all duration-300">
                 Get Custom Quote
               </button>
-              <button className="bg-white/5 border border-white/10 text-white font-bold py-4 px-10 rounded-full hover:bg-white/10 transition-all duration-300">
+              <button className="bg-white text-slate-900 border border-slate-200 font-bold py-4 px-10 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-sm">
                 Contact Support
               </button>
             </div>

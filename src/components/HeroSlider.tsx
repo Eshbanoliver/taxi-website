@@ -14,7 +14,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["24/7 Service", "GPS Tracking", "Safe & Secure"],
       ctaText: "Book Premium Ride",
-      bgGradient: "from-black/70 via-black/50 to-black/70"
+      bgGradient: "from-white/80 via-white/40 to-white/80"
     },
     {
       id: 2,
@@ -112,7 +112,7 @@ const HeroSlider = () => {
                 <div className="text-center lg:text-left space-y-8 lg:space-y-12">
                   {/* Title */}
                   <div className="space-y-4">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight">
+                    <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-tight">
                       {slide.title}
                     </h1>
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl text-taxi-yellow font-semibold">
@@ -121,7 +121,7 @@ const HeroSlider = () => {
                   </div>
                   
                   {/* Description */}
-                  <p className="text-xl sm:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                  <p className="text-xl sm:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto lg:mx-0">
                     {slide.description}
                   </p>
                   
@@ -130,10 +130,10 @@ const HeroSlider = () => {
                     {slide.features.map((feature, idx) => (
                       <div
                         key={idx}
-                        className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-sm px-6 py-3 rounded-full border border-taxi-yellow/30"
+                        className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-slate-200 shadow-sm"
                       >
                         <CheckCircle className="text-taxi-yellow" size={20} />
-                        <span className="text-white font-medium text-base">{feature}</span>
+                        <span className="text-slate-700 font-medium text-base">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -145,7 +145,7 @@ const HeroSlider = () => {
                       <span>{slide.ctaText}</span>
                       <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </button>
-                    <a href="/services" className="group bg-white/10 backdrop-blur-md text-white font-semibold py-5 px-10 rounded-full hover:bg-white/20 transform hover:scale-105 transition-all duration-300 border border-white/20 flex items-center justify-center min-w-[220px] text-lg">
+                    <a href="/services" className="group bg-white text-slate-900 font-semibold py-5 px-10 rounded-full hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 border border-slate-200 flex items-center justify-center min-w-[220px] text-lg shadow-sm">
                       <span>View All Services</span>
                       <ChevronRight size={24} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
@@ -161,14 +161,14 @@ const HeroSlider = () => {
       <div className="absolute top-1/2 left-4 right-4 transform -translate-y-1/2 flex justify-between items-center pointer-events-none z-30">
         <button
           onClick={prevSlide}
-          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20 shadow-xl"
+          className="pointer-events-auto group bg-white text-slate-900 p-4 rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-110 border border-slate-200 shadow-lg"
           aria-label="Previous slide"
         >
           <ChevronLeft size={28} className="group-hover:-translate-x-0.5 transition-transform" />
         </button>
         <button
           onClick={nextSlide}
-          className="pointer-events-auto group bg-white/10 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20 shadow-xl"
+          className="pointer-events-auto group bg-white text-slate-900 p-4 rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-110 border border-slate-200 shadow-lg"
           aria-label="Next slide"
         >
           <ChevronRight size={28} className="group-hover:translate-x-0.5 transition-transform" />
@@ -184,7 +184,7 @@ const HeroSlider = () => {
             className={`h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
                 ? 'bg-taxi-yellow w-16'
-                : 'bg-white/40 hover:bg-white/60 w-10'
+                : 'bg-slate-300 hover:bg-slate-400 w-10'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -194,7 +194,7 @@ const HeroSlider = () => {
       {/* Professional Auto-play Toggle */}
       <button
         onClick={() => setIsAutoPlay(!isAutoPlay)}
-        className="absolute top-12 right-12 bg-white/10 backdrop-blur-md text-white p-4 rounded-full hover:bg-white/20 transition-all duration-300 border border-white/20 z-30 shadow-xl"
+        className="absolute top-12 right-12 bg-white text-slate-900 p-4 rounded-full hover:bg-gray-50 transition-all duration-300 border border-slate-200 z-30 shadow-lg"
         aria-label={isAutoPlay ? "Pause autoplay" : "Start autoplay"}
       >
         {isAutoPlay ? (
@@ -211,28 +211,28 @@ const HeroSlider = () => {
 
       {/* Professional Trust Badges */}
       <div className="absolute top-12 left-12 flex flex-col space-y-4 z-20">
-        <div className="bg-taxi-yellow/20 backdrop-blur-sm p-4 rounded-xl border border-taxi-yellow/30 flex items-center space-x-3 shadow-xl">
+        <div className="bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 shadow-lg">
           <Star className="text-taxi-yellow" size={24} />
           <div>
-            <p className="text-white font-bold text-xl">4.9</p>
-            <p className="text-white/80 text-sm">Rating</p>
+            <p className="text-slate-900 font-bold text-xl">4.9</p>
+            <p className="text-slate-500 text-sm">Rating</p>
           </div>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 flex items-center space-x-3 shadow-xl">
-          <Shield className="text-white" size={24} />
+        <div className="bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 shadow-lg">
+          <Shield className="text-slate-900" size={24} />
           <div>
-            <p className="text-white font-bold text-xl">100%</p>
-            <p className="text-white/80 text-sm">Insured</p>
+            <p className="text-slate-900 font-bold text-xl">100%</p>
+            <p className="text-slate-500 text-sm">Insured</p>
           </div>
         </div>
       </div>
       
-      <div className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/20 flex items-center space-x-3 z-20 shadow-xl">
-        <Clock className="text-white" size={24} />
+      <div className="absolute bottom-12 right-12 bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 z-20 shadow-lg">
+        <Clock className="text-slate-900" size={24} />
         <div>
-          <p className="text-white font-bold text-xl">24/7</p>
-          <p className="text-white/80 text-sm">Service</p>
+          <p className="text-slate-900 font-bold text-xl">24/7</p>
+          <p className="text-slate-500 text-sm">Service</p>
         </div>
       </div>
     </div>

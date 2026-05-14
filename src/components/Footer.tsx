@@ -18,9 +18,9 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative glass-dark mt-20 overflow-hidden w-full overflow-x-hidden">
+    <footer className="relative bg-slate-50 border-t border-slate-100 mt-20 overflow-hidden w-full overflow-x-hidden">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-white/[0.02]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent"></div>
       
       <div className="relative container mx-auto px-4 py-4 sm:py-6">
         {/* Top Section */}
@@ -29,11 +29,11 @@ const Footer = () => {
             <Car className="text-taxi-yellow w-4 h-4" />
             <span className="text-taxi-yellow font-bold text-xs sm:text-sm">Stay Connected</span>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-2">
             Let's Take You
             <span className="block text-taxi-yellow">Wherever You Need</span>
           </h2>
-          <p className="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto px-4">
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto px-4">
             Join thousands of satisfied customers who trust us for their daily transportation needs
           </p>
         </div>
@@ -47,11 +47,11 @@ const Footer = () => {
                   <Car className="text-taxi-black w-4 h-4" />
                 </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>
-                <p className="text-xs text-gray-400 hidden sm:block">Your Journey Partner</p>
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>
+                <p className="text-xs text-slate-500 hidden sm:block">Your Journey Partner</p>
               </div>
             </div>
-            <p className="text-gray-300 text-xs leading-relaxed">
+            <p className="text-slate-600 text-xs leading-relaxed">
               Your trusted partner for professional taxi services in Udaipur and beyond. Safe, reliable, and affordable transportation solutions.
             </p>
             
@@ -59,16 +59,16 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <div className="flex items-center space-x-1">
                 <Star className="text-taxi-yellow w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-white font-semibold text-xs">4.9</span>
+                <span className="text-slate-900 font-semibold text-xs">4.9</span>
               </div>
-              <div className="w-px h-2 bg-white/30"></div>
-              <div className="text-white text-xs">50K+ Rides</div>
+              <div className="w-px h-2 bg-slate-200"></div>
+              <div className="text-slate-700 text-xs">50K+ Rides</div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-3">
-            <h4 className="text-base font-bold text-white mb-3 flex items-center space-x-2">
+            <h4 className="text-base font-bold text-slate-900 mb-3 flex items-center space-x-2">
               <div className="w-5 h-5 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
                 <ArrowRight className="text-taxi-yellow" size={12} />
               </div>
@@ -79,7 +79,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="group flex items-center space-x-1 text-gray-300 hover:text-taxi-yellow transition-all duration-300 hover:translate-x-1 text-xs"
+                    className="group flex items-center space-x-1 text-slate-600 hover:text-taxi-yellow transition-all duration-300 hover:translate-x-1 text-xs"
                   >
                     <div className="w-0 h-0.5 bg-taxi-yellow group-hover:w-4 transition-all duration-300"></div>
                     <span className="font-medium">{link.name}</span>
@@ -91,7 +91,7 @@ const Footer = () => {
 
           {/* Services */}
           <div className="space-y-3">
-            <h4 className="text-base font-bold text-white mb-3 flex items-center space-x-2">
+            <h4 className="text-base font-bold text-slate-900 mb-3 flex items-center space-x-2">
               <div className="w-5 h-5 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
                 <Car className="text-taxi-yellow" size={12} />
               </div>
@@ -102,7 +102,7 @@ const Footer = () => {
                 <li key={service.name}>
                   <a
                     href={service.href}
-                    className="group flex items-center space-x-1 text-gray-300 hover:text-taxi-yellow transition-all duration-300 hover:translate-x-1 text-xs"
+                    className="group flex items-center space-x-1 text-slate-600 hover:text-taxi-yellow transition-all duration-300 hover:translate-x-1 text-xs"
                   >
                     <div className="w-0 h-0.5 bg-taxi-yellow group-hover:w-4 transition-all duration-300"></div>
                     <span className="font-medium">{service.name}</span>
@@ -114,7 +114,7 @@ const Footer = () => {
 
           {/* Contact & Social */}
           <div className="space-y-3">
-            <h4 className="text-base font-bold text-white mb-3 flex items-center space-x-2">
+            <h4 className="text-base font-bold text-slate-900 mb-3 flex items-center space-x-2">
               <div className="w-5 h-5 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
                 <Phone className="text-taxi-yellow" size={12} />
               </div>
@@ -126,7 +126,7 @@ const Footer = () => {
                 <div className="w-6 h-6 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Phone className="text-taxi-yellow" size={14} />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300 text-xs">+91 98765 43210</span>
+                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">+91 98765 43210</span>
               </div>
               
               <div className="group flex items-center space-x-2">
@@ -146,10 +146,10 @@ const Footer = () => {
 
             {/* Social Media */}
             <div className="space-y-3 pt-2">
-              <h5 className="text-xs font-semibold text-white">Follow Us</h5>
+              <h5 className="text-xs font-semibold text-slate-900">Follow Us</h5>
               <div className="flex space-x-3">
-                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
-                  <Facebook className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300 shadow-sm">
+                  <Facebook className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
                 </a>
                 
                 <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
@@ -169,14 +169,14 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/20 pt-3">
+        <div className="border-t border-slate-200 pt-3">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-1 md:space-y-0">
-            <p className="text-gray-300 text-center md:text-left text-xs">
+            <p className="text-slate-500 text-center md:text-left text-xs">
               ©️ Copyright 2026 | Taxi GO | All Rights Reserved
             </p>
             
             <div className="flex items-center space-x-3">
-              <a href="/sitemap" className="text-gray-400 hover:text-taxi-yellow transition-colors duration-300 text-xs">
+              <a href="/sitemap" className="text-slate-400 hover:text-taxi-yellow transition-colors duration-300 text-xs">
                 Sitemap
               </a>
             </div>

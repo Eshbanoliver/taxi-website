@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full ${
       isScrolled 
-        ? 'bg-[#0a0a0a]/90 backdrop-blur-xl shadow-2xl border-b border-white/10' 
+        ? 'bg-white/80 backdrop-blur-xl shadow-lg border-b border-gray-100' 
         : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4 sm:px-6 py-4">
@@ -36,7 +36,7 @@ const Header = () => {
               <Car className="text-taxi-black w-6 h-6" />
             </div>
             <div className="flex flex-col">
-              <h1 className="text-2xl font-bold text-white tracking-tight">
+              <h1 className={`text-2xl font-bold tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
                 Taxi<span className="text-taxi-yellow">GO</span>
               </h1>
             </div>
@@ -51,7 +51,7 @@ const Header = () => {
                 className={`text-sm font-semibold tracking-wide transition-colors duration-300 ${
                   activeSection === item.icon
                     ? 'text-taxi-yellow'
-                    : 'text-gray-300 hover:text-white'
+                    : isScrolled ? 'text-slate-600 hover:text-slate-900' : 'text-slate-700 hover:text-slate-900'
                 }`}
               >
                 {item.name}
@@ -69,7 +69,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden text-white p-2"
+            className={`lg:hidden p-2 ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -78,13 +78,13 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 py-4 bg-[#111111] rounded-2xl border border-white/5 shadow-2xl animate-slide-in-up">
+          <div className="lg:hidden mt-4 py-4 bg-white/95 backdrop-blur-xl rounded-2xl border border-gray-100 shadow-2xl animate-slide-in-up">
             <nav className="flex flex-col space-y-2 px-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="px-4 py-3 rounded-xl font-medium text-gray-300 hover:text-white hover:bg-white/5 transition-colors duration-300 flex items-center space-x-3"
+                  className="px-4 py-3 rounded-xl font-medium text-slate-600 hover:text-slate-900 hover:bg-gray-50 transition-colors duration-300 flex items-center space-x-3"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   <span>{item.name}</span>

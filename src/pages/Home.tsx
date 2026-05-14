@@ -29,16 +29,16 @@ const Home = () => {
       <section className="section-container">
         <div className="relative max-w-7xl mx-auto">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-slate-50 border border-slate-100 rounded-3xl"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent rounded-3xl"></div>
+          <div className="absolute inset-0 bg-mesh-emerald border border-emerald-100/50 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-50/30 to-transparent rounded-3xl"></div>
           
           <div className="relative glass rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 lg:p-24 overflow-hidden">
             <div className="content-grid">
               <div className="space-y-8 sm:space-y-12 text-center lg:text-left">
                 <div className="space-y-6 sm:space-y-8">
                   <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-slate-50 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-slate-100 shadow-sm backdrop-blur-sm">
-                    <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-                    <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
+                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                    <span className="text-emerald-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
                   </div>
                   <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight animate-slide-in-up">
                     Your Trusted
@@ -61,8 +61,8 @@ const Home = () => {
                   ].map((item, index) => (
                     <div key={index} className="group relative animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
                       <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white shadow-sm border border-slate-100 hover:bg-slate-50 transition-all duration-300 hover-lift">
-                        <div className="icon-container w-10 h-10 sm:w-14 sm:h-14">
-                          <item.icon className="icon-primary w-5 h-5 sm:w-7 sm:h-7" strokeWidth={1.5} />
+                        <div className="icon-container w-10 h-10 sm:w-14 sm:h-14 bg-emerald-50/50 border-emerald-100/50">
+                          <item.icon className="text-emerald-500 w-5 h-5 sm:w-7 sm:h-7" strokeWidth={1.5} />
                         </div>
                         <span className="text-slate-700 font-medium text-sm sm:text-base group-hover:text-slate-900 transition-colors duration-300">{item.text}</span>
                       </div>
@@ -133,7 +133,7 @@ const Home = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
+          <div className="absolute inset-0 bg-mesh-amber border border-amber-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
             {[
@@ -149,8 +149,8 @@ const Home = () => {
                 <div className="relative z-10">
                   {/* Icon container */}
                   <div className="relative mx-auto mb-4 sm:mb-6">
-                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-4 sm:mb-6">
-                      <metric.icon className="icon-primary w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" strokeWidth={1.5} />
+                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-4 sm:mb-6 bg-amber-50/50 border-amber-100/50">
+                      <metric.icon className="text-amber-500 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" strokeWidth={1.5} />
                     </div>
                   </div>
                   
@@ -199,7 +199,7 @@ const Home = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white border border-slate-100 shadow-sm rounded-3xl"></div>
+          <div className="absolute inset-0 bg-mesh-indigo border border-indigo-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 p-6 sm:p-8">
             {[
@@ -231,7 +231,7 @@ const Home = () => {
                   {/* Badge */}
                   {service.badge && (
                     <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
-                      <div className="bg-taxi-yellow text-taxi-black text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                      <div className="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                         {service.badge}
                       </div>
                     </div>
@@ -240,8 +240,8 @@ const Home = () => {
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className="icon-container w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mb-6">
-                      <service.icon className="icon-primary w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" strokeWidth={1.5} />
+                    <div className="icon-container w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mb-6 bg-indigo-50/50 border-indigo-100/50">
+                      <service.icon className="text-indigo-500 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" strokeWidth={1.5} />
                     </div>
                     
                     {/* Title */}
@@ -263,7 +263,7 @@ const Home = () => {
                   </div>
                   
                   {/* CTA */}
-                  <a href="/services" className="inline-flex items-center space-x-2 text-taxi-yellow font-semibold hover:text-yellow-400 transition-colors duration-300 group">
+                  <a href="/services" className="inline-flex items-center space-x-2 text-indigo-500 font-semibold hover:text-indigo-600 transition-colors duration-300 group">
                     <span>Learn More</span>
                     <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
                   </a>
@@ -290,8 +290,8 @@ const Home = () => {
       <section className="section-container bg-slate-50/50">
         <div className="page-header">
           <div className="section-badge">
-            <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-            <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Simple Process</span>
+            <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+            <span className="text-indigo-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Simple Process</span>
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">How It Works</h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Get your ride in three easy steps</p>
@@ -352,7 +352,7 @@ const Home = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white border border-slate-100 shadow-sm rounded-3xl"></div>
+          <div className="absolute inset-0 bg-mesh-rose border border-rose-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
             {testimonials.map((testimonial, index) => (

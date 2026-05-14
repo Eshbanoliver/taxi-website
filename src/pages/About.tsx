@@ -78,7 +78,7 @@ const About = () => {
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
+          <div className="absolute inset-0 bg-mesh-violet border border-violet-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
             <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -141,8 +141,8 @@ const About = () => {
                     <div className="relative mb-8">
                       <div className="w-32 h-32 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto shadow-2xl">
                         <div className="text-center">
-                          <div className="text-4xl font-black text-taxi-black">2013</div>
-                          <div className="text-sm font-bold text-taxi-black">Founded</div>
+                          <div className="text-4xl font-black text-violet-600">2013</div>
+                          <div className="text-sm font-bold text-violet-500">Founded</div>
                         </div>
                       </div>
                     </div>
@@ -246,7 +246,7 @@ const About = () => {
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
+          <div className="absolute inset-0 bg-mesh-emerald border border-emerald-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8 p-6 md:p-12">
             {[
@@ -277,8 +277,8 @@ const About = () => {
             ].map((value, index) => (
               <div key={index} className="glass rounded-3xl p-6 border border-slate-100 transition-transform duration-300 hover:-translate-y-2">
                 <div className="relative z-10 text-center">
-                  <div className="icon-container w-16 h-16 mx-auto mb-6">
-                    <value.icon className="icon-primary w-8 h-8" strokeWidth={1.5} />
+                  <div className="icon-container w-16 h-16 mx-auto mb-6 bg-emerald-50/50 border-emerald-100/50">
+                    <value.icon className="text-emerald-500 w-8 h-8" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
                   <p className="text-slate-600 leading-relaxed mb-6 text-sm">{value.desc}</p>

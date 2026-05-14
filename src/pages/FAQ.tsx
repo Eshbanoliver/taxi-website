@@ -191,7 +191,7 @@ const FAQ = () => {
       {/* Contact Support */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
+          <div className="absolute inset-0 bg-mesh-amber border border-amber-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative glass rounded-3xl p-8 md:p-16 border border-slate-100">
             <div className="text-center mb-16">
@@ -256,7 +256,9 @@ const FAQ = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Quick Help</h2>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+          <div className="absolute inset-0 bg-mesh-indigo rounded-3xl -m-4 sm:-m-6 lg:-m-8"></div>
+          <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           {[
             { title: 'Book a Taxi', desc: 'Quick and easy booking', icon: CheckCircle },
             { title: 'Check Fare', desc: 'Get instant price estimates', icon: CheckCircle },
@@ -272,7 +274,8 @@ const FAQ = () => {
             </div>
           ))}
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 };

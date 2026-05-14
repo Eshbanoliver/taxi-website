@@ -134,7 +134,7 @@ const Services = () => {
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
+          <div className="absolute inset-0 bg-mesh-indigo border border-indigo-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 md:p-12">
             {services.map((service) => (
@@ -165,8 +165,8 @@ const Services = () => {
                   <div className="relative z-10 pt-4">
                     {/* Icon */}
                     <div className="relative mb-6">
-                      <div className="icon-container w-16 h-16 mx-auto">
-                        <service.icon className="icon-primary w-8 h-8" strokeWidth={1.5} />
+                      <div className="icon-container w-16 h-16 mx-auto bg-indigo-50/50 border-indigo-100/50">
+                        <service.icon className="text-indigo-500 w-8 h-8" strokeWidth={1.5} />
                       </div>
                     </div>
                     
@@ -337,7 +337,7 @@ const Services = () => {
       {/* CTA */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="relative">
-          <div className="absolute inset-0 bg-white border border-taxi-yellow/20 rounded-3xl shadow-sm"></div>
+          <div className="absolute inset-0 bg-mesh-amber border border-amber-100/50 rounded-3xl shadow-sm"></div>
           <div className="relative glass rounded-3xl p-12 md:p-20 text-center border border-slate-100 shadow-sm">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Need a Custom Service?</h2>
             <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">

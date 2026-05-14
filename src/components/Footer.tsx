@@ -43,8 +43,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-2 sm:space-y-3 group">
             <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-taxi-yellow rounded-xl flex items-center justify-center shadow-lg transition-all duration-300">
-                  <Car className="text-taxi-black w-4 h-4" />
+                <div className="w-8 h-8 icon-container">
+                  <Car className="icon-dark w-4 h-4" strokeWidth={1.5} />
                 </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>
@@ -123,22 +123,22 @@ const Footer = () => {
             
             <div className="space-y-2">
               <div className="group flex items-center space-x-2">
-                <div className="w-6 h-6 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Phone className="text-taxi-yellow" size={14} />
+                <div className="w-6 h-6 icon-container group-hover:scale-110">
+                  <Phone className="icon-primary" size={12} strokeWidth={1.5} />
                 </div>
                 <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">+91 98765 43210</span>
               </div>
               
               <div className="group flex items-center space-x-2">
-                <div className="w-6 h-6 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="text-taxi-yellow" size={14} />
+                <div className="w-6 h-6 icon-container group-hover:scale-110">
+                  <Mail className="icon-primary" size={12} strokeWidth={1.5} />
                 </div>
                 <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">info@taxigo.com</span>
               </div>
               
               <div className="group flex items-center space-x-2">
-                <div className="w-6 h-6 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <MapPin className="text-taxi-yellow" size={14} />
+                <div className="w-6 h-6 icon-container group-hover:scale-110">
+                  <MapPin className="icon-primary" size={12} strokeWidth={1.5} />
                 </div>
                 <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">Udaipur, Rajasthan</span>
               </div>
@@ -148,20 +148,20 @@ const Footer = () => {
             <div className="space-y-3 pt-2">
               <h5 className="text-xs font-semibold text-slate-900">Follow Us</h5>
               <div className="flex space-x-3">
-                <a href="#" className="w-8 h-8 bg-white border border-slate-200 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300 shadow-sm">
-                  <Facebook className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
+                  <Facebook className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
                 </a>
                 
-                <a href="#" className="w-8 h-8 bg-white border border-slate-200 shadow-sm rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
-                  <Instagram className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
+                  <Instagram className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
                 </a>
                 
-                <a href="#" className="w-8 h-8 bg-white border border-slate-200 shadow-sm rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
-                  <Twitter className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
+                  <Twitter className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
                 </a>
                 
-                <a href="#" className="w-8 h-8 bg-white border border-slate-200 shadow-sm rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
-                  <Youtube className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
+                  <Youtube className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
                 </a>
               </div>
             </div>

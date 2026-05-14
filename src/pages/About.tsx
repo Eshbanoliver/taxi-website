@@ -54,8 +54,8 @@ const About = () => {
                 { number: '24/7', label: 'Service', icon: Clock }
               ].map((stat, index) => (
                 <div key={index} className="glass rounded-2xl p-6 border border-slate-100 text-center transition-transform duration-300 hover:scale-105">
-                  <div className="w-12 h-12 bg-slate-50 rounded-xl flex items-center justify-center mx-auto mb-4 border border-slate-100 shadow-sm">
-                    <stat.icon className="text-taxi-yellow" size={24} />
+                  <div className="icon-container w-12 h-12 mx-auto mb-4">
+                    <stat.icon className="icon-primary w-6 h-6" strokeWidth={1.5} />
                   </div>
                   <div className="text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
                   <div className="text-xs text-slate-500">{stat.label}</div>
@@ -180,8 +180,8 @@ const About = () => {
             {/* Mission Card */}
             <div className="glass rounded-3xl p-8 md:p-12 border border-slate-100 transition-transform duration-300 hover:scale-[1.02]">
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-8">
-                  <Target className="text-taxi-yellow" size={40} />
+                <div className="icon-container w-20 h-20 mx-auto mb-8">
+                  <Target className="icon-primary w-10 h-10" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-6">Our Mission</h3>
                 <p className="text-lg text-slate-600 leading-relaxed mb-8">
@@ -207,8 +207,8 @@ const About = () => {
             {/* Vision Card */}
             <div className="glass rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
               <div className="relative z-10 text-center">
-                <div className="w-20 h-20 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-8">
-                  <Eye className="text-taxi-yellow" size={40} />
+                <div className="icon-container w-20 h-20 mx-auto mb-8">
+                  <Eye className="icon-primary w-10 h-10" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-3xl font-bold text-slate-900 mb-6">Our Vision</h3>
                 <p className="text-lg text-slate-600 leading-relaxed mb-8">
@@ -277,8 +277,8 @@ const About = () => {
             ].map((value, index) => (
               <div key={index} className="glass rounded-3xl p-6 border border-slate-100 transition-transform duration-300 hover:-translate-y-2">
                 <div className="relative z-10 text-center">
-                  <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <value.icon className="text-taxi-yellow" size={32} />
+                  <div className="icon-container w-16 h-16 mx-auto mb-6">
+                    <value.icon className="icon-primary w-8 h-8" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
                   <p className="text-slate-600 leading-relaxed mb-6 text-sm">{value.desc}</p>

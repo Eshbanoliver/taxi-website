@@ -32,8 +32,8 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="w-10 h-10 bg-taxi-yellow rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-[0_0_15px_rgba(255,215,0,0.2)]">
-              <Car className="text-taxi-black w-6 h-6" />
+            <div className="w-10 h-10 icon-container">
+              <Car className="icon-dark w-6 h-6" strokeWidth={1.5} />
             </div>
             <div className="flex flex-col">
               <h1 className={`text-2xl font-bold tracking-tight ${isScrolled ? 'text-slate-900' : 'text-slate-900'}`}>
@@ -61,7 +61,7 @@ const Header = () => {
             {/* Book Now Button */}
             <div className="ml-6">
               <button className="bg-taxi-yellow text-taxi-black font-bold py-2.5 px-6 rounded-full hover:bg-yellow-400 hover:shadow-[0_0_20px_rgba(255,215,0,0.3)] transition-all duration-300 flex items-center space-x-2 text-sm">
-                <Phone size={16} />
+                <Phone size={16} strokeWidth={2} />
                 <span>Book Now</span>
               </button>
             </div>
@@ -91,7 +91,7 @@ const Header = () => {
                 </a>
               ))}
               <button className="mt-4 bg-taxi-yellow text-taxi-black font-bold py-3 px-6 rounded-xl hover:bg-yellow-400 transition-colors duration-300 flex items-center justify-center space-x-2">
-                <Phone size={18} />
+                <Phone size={18} strokeWidth={2} />
                 <span>Book Now</span>
               </button>
             </nav>

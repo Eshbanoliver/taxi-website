@@ -132,7 +132,9 @@ const HeroSlider = () => {
                         key={idx}
                         className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-slate-200 shadow-sm"
                       >
-                        <CheckCircle className="text-taxi-yellow" size={20} />
+                        <div className="icon-container w-8 h-8">
+                          <CheckCircle className="icon-primary w-5 h-5" strokeWidth={1.5} />
+                        </div>
                         <span className="text-slate-700 font-medium text-base">{feature}</span>
                       </div>
                     ))}
@@ -141,13 +143,13 @@ const HeroSlider = () => {
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
                     <button className="group relative bg-taxi-yellow text-taxi-black font-bold py-5 px-10 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-3 min-w-[220px] text-lg">
-                      <Phone size={24} className="group-hover:animate-pulse" />
+                      <Phone size={24} strokeWidth={2} className="group-hover:animate-pulse" />
                       <span>{slide.ctaText}</span>
                       <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </button>
                     <a href="/services" className="group bg-white text-slate-900 font-semibold py-5 px-10 rounded-full hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 border border-slate-200 flex items-center justify-center min-w-[220px] text-lg shadow-sm">
                       <span>View All Services</span>
-                      <ChevronRight size={24} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                      <ChevronRight size={24} strokeWidth={2} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
@@ -164,14 +166,14 @@ const HeroSlider = () => {
           className="pointer-events-auto group bg-white text-slate-900 p-4 rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-110 border border-slate-200 shadow-lg"
           aria-label="Previous slide"
         >
-          <ChevronLeft size={28} className="group-hover:-translate-x-0.5 transition-transform" />
+          <ChevronLeft size={28} strokeWidth={1.5} className="group-hover:-translate-x-0.5 transition-transform" />
         </button>
         <button
           onClick={nextSlide}
           className="pointer-events-auto group bg-white text-slate-900 p-4 rounded-full hover:bg-gray-50 transition-all duration-300 transform hover:scale-110 border border-slate-200 shadow-lg"
           aria-label="Next slide"
         >
-          <ChevronRight size={28} className="group-hover:translate-x-0.5 transition-transform" />
+          <ChevronRight size={28} strokeWidth={1.5} className="group-hover:translate-x-0.5 transition-transform" />
         </button>
       </div>
 
@@ -212,7 +214,9 @@ const HeroSlider = () => {
       {/* Professional Trust Badges */}
       <div className="absolute top-12 left-12 flex flex-col space-y-4 z-20">
         <div className="bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 shadow-lg">
-          <Star className="text-taxi-yellow" size={24} />
+          <div className="icon-container w-12 h-12">
+            <Star className="icon-primary w-6 h-6" strokeWidth={1.5} />
+          </div>
           <div>
             <p className="text-slate-900 font-bold text-xl">4.9</p>
             <p className="text-slate-500 text-sm">Rating</p>
@@ -220,7 +224,9 @@ const HeroSlider = () => {
         </div>
         
         <div className="bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 shadow-lg">
-          <Shield className="text-slate-900" size={24} />
+          <div className="icon-container w-12 h-12">
+            <Shield className="icon-dark w-6 h-6" strokeWidth={1.5} />
+          </div>
           <div>
             <p className="text-slate-900 font-bold text-xl">100%</p>
             <p className="text-slate-500 text-sm">Insured</p>
@@ -229,7 +235,9 @@ const HeroSlider = () => {
       </div>
       
       <div className="absolute bottom-12 right-12 bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 z-20 shadow-lg">
-        <Clock className="text-slate-900" size={24} />
+        <div className="icon-container w-12 h-12">
+          <Clock className="icon-dark w-6 h-6" strokeWidth={1.5} />
+        </div>
         <div>
           <p className="text-slate-900 font-bold text-xl">24/7</p>
           <p className="text-slate-500 text-sm">Service</p>

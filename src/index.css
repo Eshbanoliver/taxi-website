@@ -57,6 +57,35 @@
   .glass {
     @apply bg-white/70 backdrop-blur-xl border border-white shadow-[0_8px_32px_0_rgba(31,38,135,0.07)] hover:bg-white/90 hover:border-white hover:shadow-[0_8px_32px_0_rgba(251,191,36,0.1)] transition-all duration-500;
   }
+
+  .icon-container {
+    @apply relative flex items-center justify-center rounded-2xl transition-all duration-500 overflow-hidden;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(248, 250, 252, 0.8) 100%);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  }
+
+  .icon-container::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+    background: radial-gradient(circle at center, rgba(251, 191, 36, 0.15) 0%, transparent 70%);
+  }
+
+  .icon-container:hover {
+    @apply shadow-lg -translate-y-0.5 border-taxi-yellow/30;
+  }
+
+  .icon-container:hover::before {
+    @apply opacity-100;
+  }
+
+  .icon-primary {
+    @apply text-taxi-yellow drop-shadow-[0_0_8px_rgba(251,191,36,0.3)];
+  }
+
+  .icon-dark {
+    @apply text-slate-900 drop-shadow-[0_0_8px_rgba(15,23,42,0.1)];
+  }
   
   .glass-dark {
     @apply bg-slate-900/95 backdrop-blur-2xl border border-slate-800 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)];

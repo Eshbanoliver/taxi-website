@@ -61,8 +61,8 @@ const Home = () => {
                   ].map((item, index) => (
                     <div key={index} className="group relative animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
                       <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white shadow-sm border border-slate-100 hover:bg-slate-50 transition-all duration-300 hover-lift">
-                        <div className={`relative w-10 h-10 sm:w-14 sm:h-14 bg-slate-50 rounded-xl sm:rounded-2xl flex items-center justify-center border border-slate-100 shadow-sm flex-shrink-0`}>
-                          <item.icon className="text-taxi-yellow w-4 h-4 sm:w-6 sm:h-6" />
+                        <div className="icon-container w-10 h-10 sm:w-14 sm:h-14">
+                          <item.icon className="icon-primary w-5 h-5 sm:w-7 sm:h-7" strokeWidth={1.5} />
                         </div>
                         <span className="text-slate-700 font-medium text-sm sm:text-base group-hover:text-slate-900 transition-colors duration-300">{item.text}</span>
                       </div>
@@ -82,8 +82,8 @@ const Home = () => {
                   <div className="w-full h-80 md:h-96 bg-slate-50 border border-slate-100 rounded-3xl flex items-center justify-center relative overflow-hidden">
                     {/* Main content */}
                     <div className="relative z-10 text-center animate-slide-in-up">
-                      <div className="w-24 h-24 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                        <Car className="text-taxi-black" size={48} />
+                      <div className="w-24 h-24 icon-container mx-auto mb-6 shadow-2xl">
+                        <Car className="icon-dark w-12 h-12" strokeWidth={1.25} />
                       </div>
                       <h3 className="text-2xl font-bold text-slate-900 mb-2">Premium Taxi Service</h3>
                       <p className="text-slate-600">Experience luxury and comfort</p>
@@ -149,8 +149,8 @@ const Home = () => {
                 <div className="relative z-10">
                   {/* Icon container */}
                   <div className="relative mx-auto mb-4 sm:mb-6">
-                    <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-slate-50 border border-slate-100 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-taxi-yellow/10">
-                      <metric.icon className="text-taxi-yellow w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-4 sm:mb-6">
+                      <metric.icon className="icon-primary w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" strokeWidth={1.5} />
                     </div>
                   </div>
                   
@@ -240,8 +240,8 @@ const Home = () => {
                   {/* Content */}
                   <div className="relative z-10">
                     {/* Icon */}
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-slate-50 border border-slate-100 rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 shadow-sm transition-all duration-300 group-hover:bg-taxi-yellow/10">
-                      <service.icon className="text-taxi-yellow w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" />
+                    <div className="icon-container w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mb-6">
+                      <service.icon className="icon-primary w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" strokeWidth={1.5} />
                     </div>
                     
                     {/* Title */}

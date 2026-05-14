@@ -165,8 +165,8 @@ const Services = () => {
                   <div className="relative z-10 pt-4">
                     {/* Icon */}
                     <div className="relative mb-6">
-                      <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto transition-transform duration-300 group-hover:bg-taxi-yellow">
-                        <service.icon className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
+                      <div className="icon-container w-16 h-16 mx-auto">
+                        <service.icon className="icon-primary w-8 h-8" strokeWidth={1.5} />
                       </div>
                     </div>
                     
@@ -324,8 +324,8 @@ const Services = () => {
             { title: 'Multiple Payment Options', desc: 'Cash, card, and digital payments', icon: CheckCircle },
           ].map((item, index) => (
             <div key={index} className="glass rounded-3xl p-8 text-center transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
-              <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-sm">
-                <item.icon className="text-taxi-yellow" size={32} />
+              <div className="icon-container w-16 h-16 mx-auto mb-6">
+                <item.icon className="icon-primary w-8 h-8" strokeWidth={1.5} />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-3">{item.title}</h3>
               <p className="text-slate-600 text-sm">{item.desc}</p>

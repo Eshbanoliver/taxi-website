@@ -155,8 +155,8 @@ const FAQ = () => {
                   className="w-full px-6 py-6 text-left flex items-center justify-between transition-colors duration-300"
                 >
                   <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 bg-white border border-slate-100 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
-                      <HelpCircle className={activeIndex === index ? 'text-taxi-yellow' : 'text-slate-400'} size={20} />
+                    <div className="icon-container w-10 h-10 flex-shrink-0">
+                      <HelpCircle className={activeIndex === index ? 'icon-primary' : 'icon-dark opacity-40'} size={20} strokeWidth={1.5} />
                     </div>
                     <h3 className={`text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-taxi-yellow' : 'text-slate-900 group-hover:text-taxi-yellow'}`}>
                       {faq.question}
@@ -203,8 +203,8 @@ const FAQ = () => {
               <div className="group relative">
                 <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
-                      <Phone className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
+                    <div className="icon-container w-16 h-16 mx-auto mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
+                      <Phone className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={32} strokeWidth={1.5} />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Call Us</h3>
                     <p className="text-slate-500 mb-2">24/7 customer support</p>
@@ -216,8 +216,8 @@ const FAQ = () => {
               <div className="group relative">
                 <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
-                      <Mail className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
+                    <div className="icon-container w-16 h-16 mx-auto mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
+                      <Mail className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={32} strokeWidth={1.5} />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Email Us</h3>
                     <p className="text-slate-500 mb-2">Get quick responses</p>
@@ -229,8 +229,8 @@ const FAQ = () => {
               <div className="group relative">
                 <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-300 group-hover:bg-taxi-yellow">
-                      <MapPin className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
+                    <div className="icon-container w-16 h-16 mx-auto mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
+                      <MapPin className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={32} strokeWidth={1.5} />
                     </div>
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Visit Us</h3>
                     <p className="text-slate-500 mb-2">Udaipur, Rajasthan</p>
@@ -264,8 +264,8 @@ const FAQ = () => {
             { title: 'Cancel Booking', desc: 'Easy cancellation process', icon: CheckCircle },
           ].map((item, index) => (
             <div key={index} className="glass rounded-3xl p-6 text-center border border-slate-100 shadow-sm transition-transform duration-300 hover:-translate-y-2">
-              <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                <item.icon className="text-taxi-yellow" size={24} />
+              <div className="icon-container w-12 h-12 mx-auto mb-4">
+                <item.icon className="icon-primary w-6 h-6" strokeWidth={1.5} />
               </div>
               <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
               <p className="text-slate-600 text-sm">{item.desc}</p>

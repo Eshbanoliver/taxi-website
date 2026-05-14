@@ -88,8 +88,8 @@ const Contact = () => {
                   <div className="relative z-10 text-center">
                     {/* Icon */}
                     <div className="relative mb-6">
-                      <div className="w-16 h-16 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-taxi-yellow shadow-sm">
-                        <info.icon className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={32} />
+                      <div className="icon-container w-16 h-16 mx-auto">
+                        <info.icon className="icon-primary w-8 h-8" strokeWidth={1.5} />
                       </div>
                     </div>
                     
@@ -210,8 +210,8 @@ const Contact = () => {
                   </div>
                   
                   <div className="relative mb-6">
-                    <div className="w-24 h-24 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto shadow-sm">
-                      <MapPin className="text-taxi-yellow" size={48} />
+                    <div className="icon-container w-24 h-24 mx-auto shadow-sm">
+                      <MapPin className="icon-primary w-12 h-12" strokeWidth={1.5} />
                     </div>
                   </div>
                   
@@ -272,8 +272,8 @@ const Contact = () => {
                 <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
                     <div className="relative mb-6">
-                      <div className="w-20 h-20 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto transition-colors duration-300 group-hover:bg-taxi-yellow shadow-sm">
-                        <option.icon className="text-taxi-yellow group-hover:text-taxi-black transition-colors duration-300" size={40} />
+                      <div className="icon-container w-20 h-20 mx-auto group-hover:bg-taxi-yellow transition-colors duration-300">
+                        <option.icon className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={40} strokeWidth={1.5} />
                       </div>
                     </div>
                     

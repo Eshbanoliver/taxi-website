@@ -125,7 +125,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
             <Car className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Our Services</span>
           </div>
@@ -221,7 +221,7 @@ const Services = () => {
       {/* Vehicle Categories */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
             <Car className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Our Fleet</span>
           </div>

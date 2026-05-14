@@ -69,7 +69,7 @@ const Contact = () => {
       {/* Contact Information */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
             <Phone className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Contact Info</span>
           </div>
@@ -236,7 +236,7 @@ const Contact = () => {
       {/* Quick Contact Options */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
             <Phone className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Quick Contact</span>
           </div>
@@ -245,7 +245,7 @@ const Contact = () => {
         </div>
         
         <div className="relative">
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 shadow-sm rounded-3xl"></div>
           
           <div className="relative grid md:grid-cols-3 gap-8 p-6 md:p-12">
             {[

@@ -36,7 +36,7 @@ const Home = () => {
             <div className="content-grid">
               <div className="space-y-8 sm:space-y-12 text-center lg:text-left">
                 <div className="space-y-6 sm:space-y-8">
-                  <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-white/5 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-white/10 backdrop-blur-sm">
+                  <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-slate-50 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-slate-100 shadow-sm backdrop-blur-sm">
                     <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
                     <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
                   </div>
@@ -199,7 +199,7 @@ const Home = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 shadow-sm rounded-3xl"></div>
           
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 p-6 sm:p-8">
             {[
@@ -287,7 +287,7 @@ const Home = () => {
       </section>
 
       {/* How It Works */}
-      <section className="section-container bg-white/[0.01]">
+      <section className="section-container bg-slate-50/50">
         <div className="page-header">
           <div className="section-badge">
             <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
@@ -352,7 +352,7 @@ const Home = () => {
         
         <div className="relative">
           {/* Background decoration */}
-          <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-3xl"></div>
+          <div className="absolute inset-0 bg-white border border-slate-100 shadow-sm rounded-3xl"></div>
           
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
             {testimonials.map((testimonial, index) => (

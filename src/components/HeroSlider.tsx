@@ -14,7 +14,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["24/7 Service", "GPS Tracking", "Safe & Secure"],
       ctaText: "Book Premium Ride",
-      bgGradient: "from-white/80 via-white/40 to-white/80"
+      bgGradient: "from-white/90 via-white/40 to-white/90"
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1436491865334-268b13d53b3a?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["Flight Monitoring", "Luggage Help", "Meet & Greet"],
       ctaText: "Book Airport Ride",
-      bgGradient: "from-black/70 via-black/50 to-black/70"
+      bgGradient: "from-white/95 via-white/70 to-white/95"
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["Monthly Billing", "Priority Service", "Executive Vehicles"],
       ctaText: "Corporate Plans",
-      bgGradient: "from-black/70 via-black/50 to-black/70"
+      bgGradient: "from-white/95 via-white/70 to-white/95"
     },
     {
       id: 4,
@@ -44,7 +44,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["Local Guides", "Flexible Routes", "Photo Stops"],
       ctaText: "Book City Tour",
-      bgGradient: "from-black/70 via-black/50 to-black/70"
+      bgGradient: "from-white/95 via-white/70 to-white/95"
     },
     {
       id: 5,
@@ -54,7 +54,7 @@ const HeroSlider = () => {
       image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1920&h=1080&fit=crop&crop=center&auto=format",
       features: ["One-way & Round-trip", "Highway Expert", "Comfortable"],
       ctaText: "Plan Outstation Trip",
-      bgGradient: "from-black/70 via-black/50 to-black/70"
+      bgGradient: "from-white/95 via-white/70 to-white/95"
     }
   ];
 

@@ -69,7 +69,7 @@ const About = () => {
       {/* Company Story */}
       <section id="story" className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
             <Car className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Our Journey</span>
           </div>
@@ -103,12 +103,12 @@ const About = () => {
                 {/* Timeline item 2 */}
                 <div className="group relative">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
-                      <span className="text-white group-hover:text-taxi-black font-bold">2</span>
+                    <div className="w-12 h-12 bg-slate-50 border border-slate-100 shadow-sm rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
+                      <span className="text-slate-900 group-hover:text-taxi-black font-bold">2</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Growth & Expansion</h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Growth & Expansion</h3>
+                      <p className="text-slate-600 leading-relaxed">
                         Our journey has been driven by our commitment to customer satisfaction and our passion for 
                         excellence. We've continuously expanded our services, upgraded our fleet, and embraced technology.
                       </p>
@@ -119,12 +119,12 @@ const About = () => {
                 {/* Timeline item 3 */}
                 <div className="group relative">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
-                      <span className="text-white group-hover:text-taxi-black font-bold">3</span>
+                    <div className="w-12 h-12 bg-slate-50 border border-slate-100 shadow-sm rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
+                      <span className="text-slate-900 group-hover:text-taxi-black font-bold">3</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Today's Success</h3>
-                      <p className="text-gray-300 leading-relaxed">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Today's Success</h3>
+                      <p className="text-slate-600 leading-relaxed">
                         Today, we're proud to be the preferred choice for locals and tourists alike, offering 
                         comprehensive transportation solutions with over 100 vehicles and dedicated professionals.
                       </p>
@@ -149,9 +149,9 @@ const About = () => {
                     
                     {/* Current status */}
                     <div className="mt-8">
-                      <div className="inline-flex items-center space-x-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full">
+                      <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full shadow-sm">
                         <div className="w-3 h-3 bg-taxi-yellow rounded-full"></div>
-                        <span className="text-white font-bold">Leading Service Provider</span>
+                        <span className="text-slate-900 font-bold">Leading Service Provider</span>
                       </div>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ const About = () => {
       {/* Mission & Vision */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
             <Target className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Our Purpose</span>
           </div>
@@ -205,7 +205,7 @@ const About = () => {
             </div>
             
             {/* Vision Card */}
-            <div className="glass rounded-3xl p-8 md:p-12 border border-white/10 transition-transform duration-300 hover:scale-[1.02]">
+            <div className="glass rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
               <div className="relative z-10 text-center">
                 <div className="w-20 h-20 bg-slate-50 border border-slate-100 rounded-2xl flex items-center justify-center mx-auto mb-8">
                   <Eye className="text-taxi-yellow" size={40} />
@@ -224,7 +224,7 @@ const About = () => {
                   ].map((point, index) => (
                     <div key={index} className="flex items-center space-x-3">
                       <CheckCircle className="text-taxi-yellow flex-shrink-0" size={18} />
-                      <span className="text-gray-300">{point}</span>
+                      <span className="text-slate-600">{point}</span>
                     </div>
                   ))}
                 </div>
@@ -237,7 +237,7 @@ const About = () => {
       {/* Core Values */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-4">
+          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
             <Heart className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Our Principles</span>
           </div>
@@ -301,8 +301,8 @@ const About = () => {
       {/* Achievements & Team */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">Meet Our Team</h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">The dedicated professionals behind your trusted service</p>
+          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Meet Our Team</h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">The dedicated professionals behind your trusted service</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
@@ -322,7 +322,7 @@ const About = () => {
 
       {/* Why Choose Us */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="glass rounded-3xl p-10 md:p-16 border border-white/10">
+        <div className="glass rounded-3xl p-10 md:p-16 border border-slate-100 shadow-sm">
           <div className="text-center mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Why Choose Taxi GO?</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">Setting the standard for excellence in transportation</p>

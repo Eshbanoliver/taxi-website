@@ -133,14 +133,14 @@ const Footer = () => {
                 <div className="w-6 h-6 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Mail className="text-taxi-yellow" size={14} />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300 text-xs">info@taxigo.com</span>
+                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">info@taxigo.com</span>
               </div>
               
               <div className="group flex items-center space-x-2">
                 <div className="w-6 h-6 bg-taxi-yellow/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <MapPin className="text-taxi-yellow" size={14} />
                 </div>
-                <span className="text-gray-300 group-hover:text-white transition-colors duration-300 text-xs">Udaipur, Rajasthan</span>
+                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">Udaipur, Rajasthan</span>
               </div>
             </div>
 
@@ -152,16 +152,16 @@ const Footer = () => {
                   <Facebook className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
                 </a>
                 
-                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
-                  <Instagram className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 bg-white border border-slate-200 shadow-sm rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
+                  <Instagram className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
                 </a>
                 
-                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
-                  <Twitter className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 bg-white border border-slate-200 shadow-sm rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
+                  <Twitter className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
                 </a>
                 
-                <a href="#" className="w-8 h-8 bg-white/5 border border-white/10 rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
-                  <Youtube className="text-white group-hover:text-taxi-black transition-colors" size={14} />
+                <a href="#" className="w-8 h-8 bg-white border border-slate-200 shadow-sm rounded-full flex items-center justify-center hover:bg-taxi-yellow hover:border-taxi-yellow group transition-all duration-300">
+                  <Youtube className="text-slate-600 group-hover:text-taxi-black transition-colors" size={14} />
                 </a>
               </div>
             </div>

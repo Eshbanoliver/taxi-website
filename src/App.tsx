@@ -12,18 +12,16 @@ import FloatingButtons from './components/FloatingButtons';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-[#0a0a0a] flex flex-col w-full overflow-x-hidden relative text-white font-sans">
+      <div className="min-h-screen bg-white flex flex-col w-full overflow-x-hidden relative text-slate-900 font-sans">
         
         {/* Vibrant Background Orbs / Mesh Gradient */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-          <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-purple-600/30 blur-[100px] sm:blur-[120px] mix-blend-screen animate-pulse" style={{ animationDuration: '8s' }}></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-blue-600/30 blur-[100px] sm:blur-[120px] mix-blend-screen animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }}></div>
-          <div className="absolute top-[30%] left-[50%] w-[30vw] h-[30vw] rounded-full bg-emerald-500/20 blur-[100px] sm:blur-[120px] mix-blend-screen animate-pulse" style={{ animationDuration: '12s', animationDelay: '2s' }}></div>
-          <div className="absolute top-[10%] right-[10%] w-[25vw] h-[25vw] rounded-full bg-pink-600/20 blur-[100px] sm:blur-[120px] mix-blend-screen animate-pulse" style={{ animationDuration: '9s', animationDelay: '3s' }}></div>
+          <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-taxi-yellow/10 blur-[100px] sm:blur-[120px] mix-blend-multiply animate-pulse" style={{ animationDuration: '8s' }}></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-slate-200/50 blur-[100px] sm:blur-[120px] mix-blend-multiply animate-pulse" style={{ animationDuration: '10s', animationDelay: '1s' }}></div>
         </div>
         
         {/* Subtle Background Pattern */}
-        <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-0" style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+        <div className="fixed inset-0 pointer-events-none opacity-[0.05] z-0" style={{ backgroundImage: 'radial-gradient(#000000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         {/* Header - Fixed Position */}
         <Header />

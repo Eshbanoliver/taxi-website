@@ -9,10 +9,13 @@ import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 import FloatingButtons from './components/FloatingButtons';
 
+import CustomCursor from './components/CustomCursor';
+
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-white flex flex-col w-full overflow-x-hidden relative text-slate-900 font-sans">
+        <CustomCursor />
         
         {/* Vibrant Background Orbs / Mesh Gradient */}
         <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">

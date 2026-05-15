@@ -93,18 +93,17 @@ const HeroSlider = () => {
               index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
             }`}
           >
-            {/* Background Image */}
-            <div
-              className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-              style={{ 
-                backgroundImage: `url(${slide.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center'
-              }}
-            />
-            
-            {/* Gradient Overlay */}
-            <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient}`} />
+            {/* Background Image with Ken Burns effect */}
+            <div className="absolute inset-0 z-0 overflow-hidden">
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-full object-cover animate-ken-burns"
+              />
+              {/* Gradient Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} mix-blend-multiply opacity-60`} />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/40" />
+            </div>
             
             {/* Content */}
             <div className="relative w-full h-full flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-8">
@@ -112,16 +111,16 @@ const HeroSlider = () => {
                 <div className="text-center lg:text-left space-y-8 lg:space-y-12">
                   {/* Title */}
                   <div className="space-y-4">
-                    <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-tight">
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-slate-900 leading-tight drop-shadow-sm">
                       {slide.title}
                     </h1>
-                    <h2 className="text-xl sm:text-3xl lg:text-4xl text-taxi-yellow font-semibold">
+                    <h2 className="text-xl sm:text-3xl lg:text-4xl text-taxi-yellow font-bold text-glow">
                       {slide.subtitle}
                     </h2>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-lg sm:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                  <p className="text-lg sm:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto lg:mx-0 font-medium">
                     {slide.description}
                   </p>
                   
@@ -130,24 +129,24 @@ const HeroSlider = () => {
                     {slide.features.map((feature, idx) => (
                       <div
                         key={idx}
-                        className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-slate-200 shadow-sm"
+                        className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-slate-200 shadow-xl hover-lift cursor-default"
                       >
                         <div className="icon-container w-6 h-6 sm:w-8 sm:h-8">
                           <CheckCircle className="icon-primary w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
                         </div>
-                        <span className="text-slate-700 font-medium text-sm sm:text-base">{feature}</span>
+                        <span className="text-slate-900 font-bold text-sm sm:text-base">{feature}</span>
                       </div>
                     ))}
                   </div>
                   
                   {/* CTA Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start px-4 sm:px-0">
-                    <button className="group relative bg-taxi-yellow text-taxi-black font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-3 w-full sm:min-w-[220px] sm:w-auto text-base sm:text-lg">
-                      <Phone size={20} strokeWidth={2} className="group-hover:animate-pulse" />
+                    <button className="group relative btn-primary shimmer hover-glow py-4 sm:py-5 px-8 sm:px-12 shadow-2xl flex items-center justify-center space-x-3 w-full sm:w-auto text-base sm:text-lg">
+                      <Phone size={20} strokeWidth={2} className="group-hover:rotate-12 transition-transform" />
                       <span>{slide.ctaText}</span>
                     </button>
-                    <a href="/services" className="group bg-white text-slate-900 font-semibold py-4 sm:py-5 px-8 sm:px-10 rounded-full hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 border border-slate-200 flex items-center justify-center w-full sm:min-w-[220px] sm:w-auto text-base sm:text-lg shadow-sm">
-                      <span>View Services</span>
+                    <a href="/services" className="group bg-white/80 backdrop-blur-md text-slate-900 font-bold py-4 sm:py-5 px-8 sm:px-12 rounded-full hover:bg-white transform hover:scale-105 transition-all duration-300 border border-slate-200 flex items-center justify-center w-full sm:w-auto text-base sm:text-lg shadow-xl">
+                      <span>Explore Services</span>
                       <ChevronRight size={20} strokeWidth={2} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>

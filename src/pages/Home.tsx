@@ -42,9 +42,9 @@ const Home = () => {
                     <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                     <span className="text-emerald-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
                   </div>
-                  <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight animate-slide-in-up">
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-tight animate-slide-in-up">
                     Your Trusted
-                    <span className="block text-gradient-vibrant mt-1 sm:mt-2">Journey Partner</span>
+                    <span className="block text-gradient-vibrant mt-1 sm:mt-2 shimmer">Journey Partner</span>
                   </h2>
                 </div>
                 
@@ -80,23 +80,24 @@ const Home = () => {
               
               <div className="relative">
                 {/* Main visual */}
-                <div className="relative">
-                  <div className="w-full h-80 md:h-96 bg-slate-50 border border-slate-100 rounded-3xl flex items-center justify-center relative overflow-hidden">
+                <div className="relative animate-float">
+                  <div className="absolute -inset-4 bg-emerald-400/20 blur-3xl rounded-full animate-pulse"></div>
+                  <div className="w-full h-80 md:h-96 bg-white/40 backdrop-blur-md border border-white/40 rounded-3xl flex items-center justify-center relative overflow-hidden shadow-2xl hover-glow transition-all duration-700 hover:scale-[1.02]">
                     {/* Main content */}
                     <div className="relative z-10 text-center animate-slide-in-up">
-                      <div className="w-24 h-24 icon-container mx-auto mb-6 shadow-2xl">
-                        <Car className="icon-dark w-12 h-12" strokeWidth={1.25} />
+                      <div className="w-24 h-24 icon-container mx-auto mb-6 shadow-2xl bg-white border-slate-100">
+                        <Car className="icon-dark w-12 h-12 animate-float" strokeWidth={1.25} />
                       </div>
-                      <h3 className="text-2xl font-bold text-slate-900 mb-2">Premium Taxi Service</h3>
-                      <p className="text-slate-600">Experience luxury and comfort</p>
+                      <h3 className="text-2xl font-black text-slate-900 mb-2 shimmer">Premium Taxi Service</h3>
+                      <p className="text-slate-700 font-medium">Experience luxury and comfort</p>
                     </div>
                     
                     {/* Floating badges */}
-                    <div className="absolute top-8 left-8 bg-white border border-slate-100 shadow-xl px-3 py-2 rounded-full">
-                      <span className="text-slate-900 font-bold text-sm">50K+ Rides</span>
+                    <div className="absolute top-8 left-8 bg-white border border-slate-100 shadow-xl px-4 py-2 rounded-full animate-bounce" style={{ animationDuration: '3s' }}>
+                      <span className="text-slate-900 font-black text-sm">50K+ Rides</span>
                     </div>
-                    <div className="absolute bottom-8 right-8 bg-white border border-slate-100 shadow-xl px-3 py-2 rounded-full" style={{ animationDelay: '1s' }}>
-                      <span className="text-taxi-yellow font-bold text-sm">4.9 Rating</span>
+                    <div className="absolute bottom-8 right-8 bg-white border border-slate-100 shadow-xl px-4 py-2 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '3s' }}>
+                      <span className="text-taxi-yellow font-black text-sm">4.9 Rating</span>
                     </div>
                   </div>
                 </div>
@@ -147,29 +148,29 @@ const Home = () => {
               { number: '24/7', label: 'Service Available', icon: Clock, description: 'Always here for you' },
           ].map((metric, index) => (
             <div key={index} className="group relative animate-slide-in-up hover-lift" style={{ animationDelay: `${300 + index * 100}ms` }}>
-              {/* Card */}
-              <div className="relative glass rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 text-center transition-all duration-500 overflow-hidden">
+              {/* Card with glow */}
+              <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 overflow-hidden hover-glow hover:border-amber-200/50">
                 {/* Content */}
                 <div className="relative z-10">
-                  {/* Icon container */}
-                  <div className="relative mx-auto mb-4 sm:mb-6">
-                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 mx-auto mb-4 sm:mb-6 bg-amber-50/50 border-amber-100/50">
-                      <metric.icon className="text-amber-500 w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" strokeWidth={1.5} />
+                  {/* Icon container with float */}
+                  <div className="relative mx-auto mb-6">
+                    <div className="icon-container w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-white border-amber-100/50 shadow-lg group-hover:scale-110 transition-transform duration-500 animate-float" style={{ animationDelay: `${index * 200}ms` }}>
+                      <metric.icon className="text-amber-500 w-8 h-8 sm:w-10 sm:h-10" strokeWidth={1.5} />
                     </div>
                   </div>
                   
-                  {/* Number */}
-                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-2 sm:mb-3">
+                  {/* Number with shimmer */}
+                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-2 shimmer">
                     {metric.number}
                   </div>
                   
                   {/* Label */}
-                  <div className="text-sm sm:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                  <div className="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest mb-2">
                     {metric.label}
                   </div>
                   
                   {/* Description */}
-                  <div className="text-sm text-slate-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-sm text-slate-500 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     {metric.description}
                   </div>
                 </div>
@@ -434,45 +435,54 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* Final CTA with Premium Mesh Dark */}
       <section className="section-container">
-        <div className="relative max-w-4xl mx-auto">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-white border border-taxi-yellow/20 rounded-3xl shadow-sm"></div>
+        <div className="relative max-w-5xl mx-auto group overflow-hidden rounded-[3rem]">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-mesh-dark opacity-90 transition-transform duration-1000 group-hover:scale-105"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-taxi-yellow/10 via-transparent to-amber-500/10"></div>
           
-          <div className="relative glass rounded-3xl p-10 sm:p-16 lg:p-24 text-center border border-slate-100">
-            <div className="max-w-2xl mx-auto space-y-8 sm:space-y-10">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6">
+          <div className="relative glass-dark p-10 sm:p-20 lg:p-28 text-center border-white/10 shadow-2xl overflow-hidden">
+            {/* Shimmer overlay */}
+            <div className="absolute inset-0 shimmer opacity-20 pointer-events-none"></div>
+            
+            <div className="max-w-3xl mx-auto space-y-10 sm:space-y-12 relative z-10">
+              <div className="inline-flex items-center space-x-2 bg-taxi-yellow/20 backdrop-blur-md border border-taxi-yellow/30 px-6 py-2 rounded-full animate-float">
+                <div className="w-2 h-2 bg-taxi-yellow rounded-full animate-pulse"></div>
+                <span className="text-taxi-yellow font-black text-xs sm:text-sm tracking-widest uppercase text-glow">Premium Journey</span>
+              </div>
+              
+              <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight">
                 Ready to Experience
-                <span className="block text-gradient-vibrant mt-2">Premium Taxi Service?</span>
+                <span className="block text-gradient-vibrant mt-2 shimmer drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]">World Class Service?</span>
               </h2>
               
-              <p className="text-lg sm:text-xl text-slate-600 leading-relaxed">
+              <p className="text-lg sm:text-xl text-slate-300 leading-relaxed font-medium">
                 Join thousands of satisfied customers who trust Taxi GO for their transportation needs. 
                 Book your ride today and experience the difference!
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 sm:px-0">
-                <a href="/contact" className="btn-primary w-full sm:w-auto flex justify-center">
-                  <Phone className="w-5 h-5" />
+              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center px-4 sm:px-0">
+                <a href="/contact" className="btn-primary shimmer hover-glow w-full sm:w-auto flex justify-center py-5 px-12 shadow-[0_0_30px_rgba(251,191,36,0.3)] text-lg">
+                  <Phone className="w-6 h-6 mr-3" />
                   <span>Book Now</span>
                 </a>
-                <a href="/services" className="btn-secondary w-full sm:w-auto flex justify-center">
-                  <BookOpen className="w-5 h-5" />
+                <a href="/services" className="btn-secondary bg-white/10 backdrop-blur-md border-white/20 text-white hover:bg-white hover:text-taxi-black w-full sm:w-auto flex justify-center py-5 px-12 text-lg">
+                  <BookOpen className="w-6 h-6 mr-3" />
                   <span>View Services</span>
                 </a>
               </div>
               
               {/* Trust indicators */}
-              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-6 border-t border-slate-100">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-10 pt-10 border-t border-white/10">
                 <div className="flex items-center space-x-2">
-                  <Star className="text-taxi-yellow w-4 h-4 sm:w-5 sm:h-5" />
-                  <span className="text-slate-900 font-semibold text-sm sm:text-base">4.9 Rating</span>
+                  <Star className="text-taxi-yellow fill-current w-5 h-5" />
+                  <span className="text-white font-bold text-sm sm:text-lg">4.9 Rating</span>
                 </div>
-                <div className="hidden sm:block text-slate-300">•</div>
-                <div className="text-slate-900 text-sm sm:text-base font-semibold">50K+ Customers</div>
-                <div className="hidden sm:block text-slate-300">•</div>
-                <div className="text-slate-900 text-sm sm:text-base font-semibold">24/7 Service</div>
+                <div className="hidden sm:block text-white/20">•</div>
+                <div className="text-white font-bold text-sm sm:text-lg">50K+ Customers</div>
+                <div className="hidden sm:block text-white/20">•</div>
+                <div className="text-white font-bold text-sm sm:text-lg">24/7 Service</div>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Car, Plane, Clock, Briefcase, Heart, Calendar, MapPin, CheckCircle } from 'lucide-react';
+import { Car, Plane, Clock, Briefcase, Heart, Calendar, MapPin, CheckCircle, ArrowRight, Award } from 'lucide-react';
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -107,7 +107,6 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen">
     <div className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">

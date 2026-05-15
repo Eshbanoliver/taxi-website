@@ -333,7 +333,6 @@
     transform: rotate(45deg);
     animation: shimmer 2s infinite;
   }
-}
 
 @keyframes shimmer {
   0% { transform: translateX(-150%) rotate(45deg); }

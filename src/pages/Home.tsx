@@ -26,16 +26,12 @@ const Home = () => {
       <HeroSlider />
 
       {/* About Us Preview */}
-      <section className="section-container bg-emerald-50/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-emerald-200/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-emerald-100/20 blur-[120px] rounded-full"></div>
-        <div className="relative max-w-7xl mx-auto">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-mesh-emerald border border-emerald-100/50 rounded-3xl"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-50/30 to-transparent rounded-3xl"></div>
-          
-          <div className="relative glass rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 lg:p-24 overflow-hidden mask-slant shadow-2xl border-white/20">
-            <div className="absolute inset-0 bg-mesh-dark-vibrant opacity-95 animate-moving-mesh"></div>
+      {/* About Us Preview */}
+      <section className="section-container relative overflow-hidden">
+        <div className="absolute inset-0 bg-vibrant-emerald animate-moving-mesh"></div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="relative glass rounded-[3rem] p-8 sm:p-16 md:p-24 overflow-hidden mask-slant shadow-2xl border-white/20">
+            <div className="absolute inset-0 bg-black/20 backdrop-blur-3xl"></div>
             <div className="relative content-grid">
               <div className="space-y-8 sm:space-y-12 text-center lg:text-left">
                 <div className="space-y-6 sm:space-y-8">
@@ -49,7 +45,7 @@ const Home = () => {
                   </h2>
                 </div>
                 
-                <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 animate-slide-in-up" style={{ animationDelay: '200ms' }}>
+                <p className="text-lg sm:text-xl lg:text-2xl text-slate-100 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 animate-slide-in-up" style={{ animationDelay: '200ms' }}>
                   With over a decade of excellence, we stand as Udaipur's premier transportation provider. 
                   We combine cutting-edge technology with traditional hospitality to deliver safe, comfortable, and affordable journeys.
                 </p>
@@ -63,8 +59,8 @@ const Home = () => {
                     { icon: MapPin, text: "City Wide Coverage", color: "rose" }
                   ].map((item, index) => (
                     <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
-                      <div className="flex items-center space-x-4 p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group hover:border-white/20 transition-all duration-300">
-                        <div className={`icon-container w-12 h-12 sm:w-16 sm:h-16 bg-${item.color}-500/10 border-${item.color}-500/20 shadow-[0_0_20px_rgba(255,255,255,0.05)]`}>
+                      <div className="flex items-center space-x-4 p-5 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl group hover:border-white/40 transition-all duration-300">
+                        <div className={`icon-container w-12 h-12 sm:w-16 sm:h-16 bg-${item.color}-500 shadow-[0_0_20px_rgba(255,255,255,0.1)]`}>
                           <item.icon className={`text-white w-6 h-6 sm:w-8 sm:h-8 animate-float`} style={{ animationDelay: `${index * 500}ms` }} strokeWidth={2} />
                         </div>
                         <span className="text-white font-black text-base sm:text-lg group-hover:text-taxi-yellow transition-colors duration-300 tracking-wide">{item.text}</span>
@@ -83,41 +79,43 @@ const Home = () => {
                 {/* Main visual with 3D Float */}
                 <div className="relative animate-float card-3d">
                   <div className="absolute -inset-10 bg-taxi-yellow/20 blur-[100px] rounded-full animate-pulse"></div>
-                  <div className="w-full h-[400px] md:h-[550px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[3rem] flex items-center justify-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
+                  <div className="w-full h-[400px] md:h-[550px] bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[3rem] flex items-center justify-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
                     {/* Main content */}
                     <div className="relative z-10 text-center animate-slide-in-up">
                       <div className="w-32 h-32 icon-container mx-auto mb-8 shadow-[0_0_50px_rgba(251,191,36,0.4)] bg-taxi-yellow border-none">
                         <Car className="text-taxi-black w-16 h-16 animate-float" strokeWidth={2} />
                       </div>
                       <h3 className="text-3xl sm:text-4xl font-black text-white mb-4 shimmer text-gradient-gold">Premium Taxi</h3>
-                      <p className="text-slate-300 text-xl font-bold">World Class Experience</p>
+                      <p className="text-slate-100 text-xl font-bold">World Class Experience</p>
                     </div>
                     
                     {/* Floating badges with 3D shadow */}
-                    <div className="absolute top-12 left-12 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl px-6 py-3 rounded-2xl animate-bounce" style={{ animationDuration: '4s' }}>
+                    <div className="absolute top-12 left-12 bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl px-6 py-3 rounded-2xl animate-bounce" style={{ animationDuration: '4s' }}>
                       <span className="text-white font-black text-lg">50K+ Rides</span>
                     </div>
-                    <div className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl px-6 py-3 rounded-2xl animate-bounce" style={{ animationDelay: '1.5s', animationDuration: '4s' }}>
+                    <div className="absolute bottom-12 right-12 bg-white/20 backdrop-blur-xl border border-white/30 shadow-2xl px-6 py-3 rounded-2xl animate-bounce" style={{ animationDelay: '1.5s', animationDuration: '4s' }}>
                       <span className="text-taxi-yellow font-black text-lg">4.9 Rating</span>
                     </div>
                   </div>
                 </div>
-                
-                {/* Trust indicators */}
-                <div className="mt-12 sm:mt-16 grid grid-cols-3 gap-6 sm:gap-8">
-                  {[
-                    { number: "10+", label: "Years Experience" },
-                    { number: "15+", label: "Cities" },
-                    { number: "100%", label: "Satisfaction" }
-                  ].map((stat, index) => (
-                    <div key={index} className="text-center group animate-slide-in-up" style={{ animationDelay: `${800 + index * 100}ms` }}>
-                      <div className="text-2xl font-bold text-taxi-black group-hover:text-taxi-yellow transition-colors duration-300">
-                        {stat.number}
-                      </div>
-                      <div className="text-xs text-gray-600 mt-1">{stat.label}</div>
+              </div>
+            </div>
+            
+            {/* Trust indicators restored */}
+            <div className="relative z-10 mt-16 pt-12 border-t border-white/10">
+              <div className="grid grid-cols-3 gap-8">
+                {[
+                  { number: "10+", label: "Years Experience" },
+                  { number: "15+", label: "Cities" },
+                  { number: "100%", label: "Satisfaction" }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center group animate-slide-in-up" style={{ animationDelay: `${800 + index * 100}ms` }}>
+                    <div className="text-3xl sm:text-4xl font-black text-white group-hover:text-taxi-yellow transition-colors duration-300">
+                      {stat.number}
                     </div>
-                  ))}
-                </div>
+                    <div className="text-xs sm:text-sm text-slate-400 font-bold uppercase tracking-widest mt-2">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -196,22 +194,18 @@ const Home = () => {
       </section>
 
       {/* Services Preview */}
-      <section className="section-container bg-indigo-50/30 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-1/3 h-1/3 bg-indigo-200/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 right-0 w-1/3 h-1/3 bg-blue-100/20 blur-[120px] rounded-full"></div>
-        <div className="page-header">
-          <div className="section-badge">
-            <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-            <span className="text-indigo-600 font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
+      <section className="section-container relative overflow-hidden">
+        <div className="absolute inset-0 bg-vibrant-indigo animate-moving-mesh"></div>
+        <div className="page-header relative z-10">
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2 rounded-full mb-6">
+            <div className="w-2 h-2 bg-indigo-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(129,140,248,1)]"></div>
+            <span className="text-white font-black text-xs sm:text-sm tracking-wider uppercase text-glow">What We Offer</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Premium Transportation Services</h2>
-          <p className="text-sm sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-6 animate-slide-in-up shimmer">Premium Services</h2>
+          <p className="text-lg sm:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto font-medium px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions with excellence</p>
         </div>
         
-        <div className="relative">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-mesh-indigo border border-indigo-100/50 rounded-3xl shadow-sm"></div>
-          
+        <div className="relative perspective-1000 max-w-7xl mx-auto">
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 mb-12 sm:mb-16 p-6 sm:p-8">
             {[
               { 
@@ -219,65 +213,60 @@ const Home = () => {
                 desc: 'Quick and affordable city transportation',
                 icon: Car,
                 features: ['Quick Pickup', 'Affordable Rates', 'City Coverage'],
-                badge: 'Popular'
+                badge: 'Popular',
+                color: 'gold'
               },
               { 
                 title: 'Airport Transfer', 
                 desc: 'Punctual pickup and drop services',
                 icon: Plane,
                 features: ['Flight Tracking', 'Luggage Help', 'Meet & Greet'],
-                badge: 'Premium'
+                badge: 'Premium',
+                color: 'sapphire'
               },
               { 
                 title: 'Outstation Trips', 
                 desc: 'Comfortable long-distance travel',
                 icon: MapPin,
                 features: ['One-way & Round', 'Experienced Drivers', 'Comfortable'],
-                badge: null
+                badge: 'Expert',
+                color: 'sunset'
               },
             ].map((service, index) => (
-              <div key={index} className="group relative animate-slide-in-up hover-lift" style={{ animationDelay: `${300 + index * 100}ms` }}>
-                {/* Card */}
-                <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-500 overflow-hidden border border-slate-100 shadow-sm">
-                  {/* Badge */}
+              <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
+                <div className="relative glass-dark rounded-[3rem] p-10 transition-all duration-700 overflow-hidden border-white/5 shadow-2xl">
                   {service.badge && (
-                    <div className="absolute top-4 sm:top-6 right-4 sm:right-6">
-                      <div className="bg-indigo-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                    <div className="absolute top-6 right-6">
+                      <div className="bg-taxi-yellow text-taxi-black text-xs font-black px-4 py-1.5 rounded-full shadow-xl animate-pulse">
                         {service.badge}
                       </div>
                     </div>
                   )}
                   
-                  {/* Content */}
                   <div className="relative z-10">
-                    {/* Icon */}
-                    <div className="icon-container w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 mb-6 bg-indigo-50/50 border-indigo-100/50">
-                      <service.icon className="text-indigo-500 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8" strokeWidth={1.5} />
+                    <div className="icon-container w-20 h-20 mb-8 bg-white/5 border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)] animate-float" style={{ animationDelay: `${index * 400}ms` }}>
+                      <service.icon className="text-white w-10 h-10" strokeWidth={1.5} />
                     </div>
                     
-                    {/* Title */}
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-taxi-yellow transition-colors duration-300">
+                    <h3 className={`text-2xl sm:text-3xl font-black mb-4 text-gradient-${service.color} shimmer`}>
                       {service.title}
                     </h3>
                   
-                  {/* Description */}
-                  <p className="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base">{service.desc}</p>
-                  
-                  {/* Features */}
-                  <div className="space-y-3 mb-8">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-3 text-sm text-slate-600">
-                        <CheckCircle className="text-taxi-yellow w-4 h-4" />
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  {/* CTA */}
-                  <a href="/services" className="inline-flex items-center space-x-2 text-indigo-500 font-semibold hover:text-indigo-600 transition-colors duration-300 group">
-                    <span>Learn More</span>
-                    <ArrowRight className="group-hover:translate-x-1 transition-transform w-4 h-4" />
-                  </a>
+                    <p className="text-slate-300 mb-8 leading-relaxed text-lg font-medium">{service.desc}</p>
+                    
+                    <div className="space-y-4 mb-10">
+                      {service.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center space-x-3 text-slate-200 font-bold">
+                          <CheckCircle className="text-taxi-yellow w-5 h-5 shadow-[0_0_10px_rgba(251,191,36,0.5)]" />
+                          <span>{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <a href="/services" className="inline-flex items-center space-x-3 text-white font-black hover:text-taxi-yellow transition-all duration-300 group text-lg">
+                      <span>Learn More</span>
+                      <ArrowRight className="group-hover:translate-x-2 transition-transform w-6 h-6" />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -286,14 +275,14 @@ const Home = () => {
         </div>
         
         {/* CTA Section */}
-        <div className="text-center">
+        <div className="text-center relative z-10">
           <div className="relative inline-block group animate-slide-in-up" style={{ animationDelay: '600ms' }}>
-            <a href="/services" className="btn-primary inline-flex items-center space-x-3">
-              <span className="text-taxi-black">Explore All Services</span>
+            <a href="/services" className="btn-primary inline-flex items-center space-x-3 shadow-[0_0_30px_rgba(251,191,36,0.4)]">
+              <span>Explore All Services</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
             </a>
           </div>
-          <p className="text-slate-600 mt-4 animate-slide-in-up" style={{ animationDelay: '800ms' }}>Discover our complete range of transportation solutions</p>
+          <p className="text-slate-300 mt-4 animate-slide-in-up font-bold" style={{ animationDelay: '800ms' }}>Discover our complete range of transportation solutions</p>
         </div>
       </section>
 
@@ -351,46 +340,42 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="section-container bg-rose-50/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/4 h-1/4 bg-rose-200/20 blur-[100px] rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-pink-100/20 blur-[100px] rounded-full"></div>
-        <div className="page-header">
-          <div className="section-badge">
-            <div className="w-2 h-2 bg-rose-500 rounded-full"></div>
-            <span className="text-rose-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Customer Stories</span>
+      <section className="section-container relative overflow-hidden">
+        <div className="absolute inset-0 bg-vibrant-rose animate-moving-mesh"></div>
+        <div className="page-header relative z-10">
+          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2 rounded-full mb-6">
+            <div className="w-2 h-2 bg-rose-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(251,113,133,1)]"></div>
+            <span className="text-white font-black text-xs sm:text-sm tracking-wider uppercase text-glow">Testimonials</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">What Our Customers Say</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Real experiences from satisfied passengers</p>
+          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-6 animate-slide-in-up shimmer">Customer Stories</h2>
+          <p className="text-lg sm:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto font-medium px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Real experiences from our valued passengers</p>
         </div>
         
-        <div className="relative">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-mesh-rose border border-rose-100/50 rounded-3xl shadow-sm"></div>
-          
+        <div className="relative perspective-1000 max-w-7xl mx-auto">
           <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="group">
-                <div className="glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 hover:scale-105 transition-all duration-500 border border-slate-100">
-                  {/* Stars */}
-                  <div className="flex space-x-1 mb-4">
+              <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
+                <div className="glass-dark rounded-[3rem] p-10 transition-all duration-700 overflow-hidden border-white/5 shadow-2xl">
+                  {/* Stars with glow */}
+                  <div className="flex space-x-2 mb-8">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="text-taxi-yellow fill-current w-4 h-4 sm:w-5 sm:h-5" />
+                      <Star key={i} className="text-taxi-yellow fill-current w-5 h-5 shadow-[0_0_15px_rgba(251,191,36,0.6)]" />
                     ))}
                   </div>
                   
                   {/* Quote */}
-                  <p className="text-slate-600 mb-6 text-sm sm:text-base leading-relaxed italic">
+                  <p className="text-slate-200 mb-10 text-lg sm:text-xl leading-relaxed italic font-medium">
                     "{testimonial.text}"
                   </p>
                   
                   {/* Author */}
-                  <div className="flex items-center space-x-3">
-                    <div className="w-10 h-10 bg-taxi-yellow rounded-full flex items-center justify-center">
-                      <span className="text-taxi-black font-bold text-sm">{testimonial.name.charAt(0)}</span>
+                  <div className="flex items-center space-x-4 pt-8 border-t border-white/10">
+                    <div className="w-14 h-14 bg-taxi-yellow rounded-2xl flex items-center justify-center shadow-xl transform rotate-3">
+                      <span className="text-taxi-black font-black text-xl">{testimonial.name.charAt(0)}</span>
                     </div>
                     <div>
-                      <div className="text-slate-900 font-semibold text-sm sm:text-base">{testimonial.name}</div>
-                      <div className="text-slate-500 text-xs">Verified Customer</div>
+                      <div className="text-white font-black text-lg">{testimonial.name}</div>
+                      <div className="text-taxi-yellow font-bold text-sm tracking-widest uppercase">Verified</div>
                     </div>
                   </div>
                 </div>

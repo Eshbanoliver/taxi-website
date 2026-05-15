@@ -108,107 +108,108 @@ const Services = () => {
 
   return (
     <div className="min-h-screen">
+    <div className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-50 border-b border-slate-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent"></div>
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
+        <div className="absolute inset-0 bg-vibrant-cyan animate-moving-mesh"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6">Our Services</h1>
-            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed font-light mx-auto px-4">
-              Comprehensive transportation solutions tailored to meet your every need
+          <div className="text-center max-w-5xl mx-auto space-y-10">
+            <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full shadow-2xl animate-float">
+              <div className="w-2.5 h-2.5 bg-cyan-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(34,211,238,1)]"></div>
+              <span className="text-white font-black text-sm tracking-[0.3em] uppercase">Excellence in Motion</span>
+            </div>
+            
+            <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black text-white leading-tight animate-slide-in-up shimmer">
+              Our <span className="text-gradient-gold">Services</span>
+            </h1>
+            
+            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-100 leading-relaxed font-medium max-w-4xl mx-auto animate-slide-in-up" style={{ animationDelay: '200ms' }}>
+              Comprehensive transportation solutions tailored to meet your every need with precision and luxury.
             </p>
           </div>
         </div>
+        
+        {/* Slant Divider */}
+        <div className="absolute bottom-0 left-0 w-full h-24 bg-vibrant-indigo mask-slant transform rotate-180"></div>
       </section>
 
       {/* Services Grid */}
-      <section className="container mx-auto px-4 py-24 lg:py-36 bg-indigo-50/30 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-indigo-200/20 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-blue-100/20 blur-[120px] rounded-full"></div>
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Car className="text-indigo-500" size={16} />
-            <span className="text-indigo-600 font-semibold">Our Services</span>
-          </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">Premium Transportation</h2>
-          <p className="text-sm sm:text-xl text-slate-600 max-w-2xl mx-auto px-4">Comprehensive solutions tailored to meet your every need</p>
-        </div>
+      <section className="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-48">
+        <div className="absolute inset-0 bg-vibrant-indigo animate-moving-mesh"></div>
+        <div className="absolute inset-0 bg-black/10 backdrop-blur-3xl"></div>
         
-        <div className="relative">
-          <div className="absolute inset-0 bg-mesh-indigo border border-indigo-100/50 rounded-3xl shadow-sm"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-24 space-y-6">
+            <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2 rounded-full shadow-2xl">
+              <Car className="text-taxi-yellow animate-float" size={20} />
+              <span className="text-white font-black tracking-widest uppercase text-sm">Full Catalog</span>
+            </div>
+            <h2 className="text-4xl sm:text-6xl font-black text-white shimmer">Premium Transportation</h2>
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto font-medium">World-class solutions for every journey requirement</p>
+          </div>
           
-          <div className="relative grid md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 md:p-12">
-            {services.map((service) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-16 perspective-1000">
+            {services.map((service, index) => (
               <div
                 key={service.id}
-                className={`group relative ${
-                  selectedService === service.id ? 'scale-[1.02]' : ''
+                className={`card-3d group animate-slide-in-up ${
+                  selectedService === service.id ? 'scale-[1.05] z-20' : 'z-10'
                 }`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
-                {/* Card */}
                 <div
-                  className={`relative glass rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm cursor-pointer ${
-                    selectedService === service.id ? 'ring-2 ring-taxi-yellow shadow-xl' : ''
+                  className={`relative glass-dark rounded-[3rem] p-8 sm:p-10 transition-all duration-700 border border-white/5 shadow-2xl cursor-pointer overflow-hidden ${
+                    selectedService === service.id ? 'border-taxi-yellow/50 shadow-[0_0_50px_rgba(251,191,36,0.3)]' : 'hover:border-white/20'
                   }`}
                   onClick={() => setSelectedService(service.id === selectedService ? null : service.id)}
                 >
+                  {/* Shimmer overlay */}
+                  <div className="absolute inset-0 shimmer opacity-10 pointer-events-none"></div>
                   
-                  {/* Popular badge */}
                   {service.popular && (
-                    <div className="absolute top-4 left-4 z-10">
-                      <div className="bg-taxi-yellow text-taxi-black text-xs font-bold px-3 py-1 rounded-full">
-                        Popular
+                    <div className="absolute top-6 right-6 z-20">
+                      <div className="bg-taxi-yellow text-taxi-black text-xs font-black px-4 py-1.5 rounded-full shadow-2xl animate-pulse">
+                        POPULAR
                       </div>
                     </div>
                   )}
                   
-                  {/* Content */}
                   <div className="relative z-10 pt-4">
-                    {/* Icon */}
-                    <div className="relative mb-6">
-                      <div className="icon-container w-16 h-16 mx-auto bg-indigo-50/50 border-indigo-100/50">
-                        <service.icon className="text-indigo-500 w-8 h-8" strokeWidth={1.5} />
+                    <div className="relative mb-10">
+                      <div className="icon-container w-20 h-20 mx-auto bg-white/5 border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:scale-110 transition-transform duration-500 animate-float">
+                        <service.icon className="text-white w-10 h-10" strokeWidth={1.5} />
                       </div>
                     </div>
                     
                     <div className="text-center">
-                      {/* Title */}
-                      <h3 className="text-2xl font-bold text-slate-900 mb-3">{service.title}</h3>
-                      
-                      {/* Description */}
-                      <p className="text-slate-600 leading-relaxed mb-4 text-sm">{service.description}</p>
-                      
-                      {/* Price */}
-                      <div className="text-lg font-bold text-taxi-yellow mb-4">{service.price}</div>
+                      <h3 className="text-3xl font-black text-white mb-4 text-gradient-gold shimmer">{service.title}</h3>
+                      <p className="text-slate-300 leading-relaxed mb-6 text-lg font-medium">{service.description}</p>
+                      <div className="text-xl font-black text-taxi-yellow mb-6 text-glow">{service.price}</div>
                     </div>
                     
-                    {/* Features (shown when selected) */}
                     {selectedService === service.id && (
-                      <div className="mt-6 pt-6 border-t border-slate-100 animate-fadeIn">
-                        <h4 className="font-bold text-slate-900 mb-4">Features:</h4>
-                        <ul className="space-y-3">
-                          {service.features.map((feature, index) => (
-                            <li key={index} className="flex items-center text-slate-600">
-                              <div className="w-5 h-5 bg-slate-50 rounded-full flex items-center justify-center mr-3 flex-shrink-0 border border-slate-100">
-                                <CheckCircle className="text-taxi-yellow" size={12} />
-                              </div>
-                              <span className="text-sm">{feature}</span>
+                      <div className="mt-8 pt-8 border-t border-white/10 animate-fadeIn space-y-8">
+                        <h4 className="font-black text-white text-lg tracking-widest uppercase">Key Features:</h4>
+                        <ul className="space-y-4">
+                          {service.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-slate-200 font-bold">
+                              <CheckCircle className="text-taxi-yellow mr-4 shadow-[0_0_10px_rgba(251,191,36,0.5)]" size={20} />
+                              <span className="text-base">{feature}</span>
                             </li>
                           ))}
                         </ul>
-                        <button className="w-full bg-taxi-yellow text-taxi-black font-bold py-3 px-6 rounded-full hover:bg-yellow-400 transition-all duration-300 mt-6">
-                          Book Now
+                        <button className="w-full btn-primary shimmer py-5 px-8 text-lg shadow-[0_0_30px_rgba(251,191,36,0.3)]">
+                          Book This Experience
                         </button>
                       </div>
                     )}
                     
-                    {/* View more hint (when not selected) */}
                     {selectedService !== service.id && (
-                      <div className="text-center mt-4">
-                        <div className="inline-flex items-center space-x-2 text-slate-500 font-medium group-hover:text-taxi-yellow transition-colors duration-300">
-                          <span className="text-sm">View Details</span>
-                          <CheckCircle className="transition-transform duration-300" size={14} />
+                      <div className="text-center mt-6">
+                        <div className="inline-flex items-center space-x-3 text-slate-400 font-black group-hover:text-taxi-yellow transition-colors duration-300 uppercase tracking-widest text-xs">
+                          <span>View Details</span>
+                          <ArrowRight className="group-hover:translate-x-2 transition-transform" size={16} />
                         </div>
                       </div>
                     )}
@@ -221,63 +222,56 @@ const Services = () => {
       </section>
 
       {/* Vehicle Categories */}
-      <section className="container mx-auto px-4 py-24 lg:py-36 bg-slate-50/50 relative overflow-hidden">
-        <div className="absolute top-1/2 left-0 w-1/4 h-1/4 bg-blue-200/20 blur-[100px] rounded-full"></div>
-        <div className="absolute bottom-0 right-0 w-1/4 h-1/4 bg-indigo-100/20 blur-[100px] rounded-full"></div>
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Car className="text-blue-500" size={16} />
-            <span className="text-blue-600 font-semibold">Our Fleet</span>
-          </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">Premium Vehicles</h2>
-          <p className="text-sm sm:text-xl text-slate-600 max-w-2xl mx-auto px-4">Choose from our wide range of well-maintained vehicles</p>
-        </div>
+      <section className="relative overflow-hidden pt-32 pb-48 lg:pt-48 lg:pb-64">
+        <div className="absolute inset-0 bg-vibrant-emerald animate-moving-mesh"></div>
+        <div className="absolute inset-0 bg-black/20 backdrop-blur-3xl"></div>
         
-        <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-24 space-y-6">
+            <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2 rounded-full shadow-2xl">
+              <Award className="text-emerald-400 animate-float" size={20} />
+              <span className="text-white font-black tracking-widest uppercase text-sm">Premium Fleet</span>
+            </div>
+            <h2 className="text-4xl sm:text-6xl font-black text-white shimmer">Select Your Class</h2>
+            <p className="text-lg sm:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto font-medium">Well-maintained luxury vehicles for every occasion</p>
+          </div>
           
-          <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8 p-6 md:p-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 perspective-1000">
             {vehicleCategories.map((category, index) => (
-              <div key={index} className="group relative">
-                {/* Card */}
-                <div className="relative glass rounded-3xl p-6 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
+              <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${index * 150}ms` }}>
+                <div className="relative glass-dark rounded-[2.5rem] p-8 transition-all duration-700 border border-white/5 shadow-2xl hover:border-white/20">
                   <div className="relative z-10">
-                    {/* Category badge */}
-                    <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-3 py-1 rounded-full mb-4">
-                      <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-                      <span className="text-taxi-yellow font-bold text-sm">{category.category}</span>
+                    <div className="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-5 py-2 rounded-full mb-8">
+                      <div className="w-2 h-2 bg-taxi-yellow rounded-full animate-pulse shadow-[0_0_10px_rgba(251,191,36,1)]"></div>
+                      <span className="text-taxi-yellow font-black text-xs sm:text-sm tracking-widest uppercase">{category.category}</span>
                     </div>
                     
-                    {/* Price */}
-                    <div className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-taxi-yellow transition-colors duration-300">
+                    <div className="text-3xl font-black text-white mb-8 shimmer">
                       {category.price}
                     </div>
                     
-                    {/* Vehicles */}
-                    <div className="mb-6">
-                      <p className="text-sm text-slate-500 mb-3 font-medium">Available Vehicles:</p>
-                      <div className="flex flex-wrap gap-2">
+                    <div className="mb-10">
+                      <p className="text-sm text-slate-400 mb-4 font-black tracking-widest uppercase">The Fleet:</p>
+                      <div className="flex flex-wrap gap-3">
                         {category.vehicles.map((vehicle, idx) => (
-                          <span key={idx} className="bg-slate-50 border border-slate-100 text-slate-600 px-3 py-1 rounded-full text-xs font-medium shadow-sm">
+                          <span key={idx} className="bg-white/5 border border-white/10 text-white px-4 py-1.5 rounded-xl text-xs font-black shadow-inner">
                             {vehicle}
                           </span>
                         ))}
                       </div>
                     </div>
                     
-                    {/* Features */}
-                    <ul className="space-y-2 mb-6">
+                    <ul className="space-y-4 mb-10">
                       {category.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-slate-600">
-                          <CheckCircle className="text-taxi-yellow mr-2 flex-shrink-0" size={14} />
+                        <li key={idx} className="flex items-center text-slate-300 font-bold">
+                          <CheckCircle className="text-taxi-yellow mr-3 shadow-[0_0_10px_rgba(251,191,36,0.5)]" size={16} />
                           <span className="text-sm">{feature}</span>
                         </li>
                       ))}
                     </ul>
                     
-                    {/* Button */}
-                    <button className="w-full bg-slate-50 text-slate-700 font-bold py-3 px-6 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 border border-slate-100 shadow-sm">
-                      Select Category
+                    <button className="w-full bg-white/5 text-white font-black py-4 px-6 rounded-2xl hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-500 border border-white/10 shadow-xl group">
+                      <span>Select Category</span>
                     </button>
                   </div>
                 </div>
@@ -338,22 +332,38 @@ const Services = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="relative">
-          <div className="absolute inset-0 bg-mesh-amber border border-amber-100/50 rounded-3xl shadow-sm"></div>
-          <div className="relative glass rounded-3xl p-12 md:p-20 text-center border border-slate-100 shadow-sm">
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Need a Custom Service?</h2>
-            <p className="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
-              We offer customized transportation solutions for special requirements
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-taxi-yellow text-taxi-black font-bold py-4 px-10 rounded-full hover:bg-yellow-400 transition-all duration-300">
-                Get Custom Quote
-              </button>
-              <button className="bg-white text-slate-900 border border-slate-200 font-bold py-4 px-10 rounded-full hover:bg-gray-50 transition-all duration-300 shadow-sm">
-                Contact Support
-              </button>
+      {/* Custom CTA */}
+      <section className="relative overflow-hidden pt-24 pb-32 lg:pt-36 lg:pb-48">
+        <div className="absolute inset-0 bg-vibrant-violet animate-moving-mesh"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-md"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="relative glass-dark rounded-[4rem] p-12 md:p-24 lg:p-32 text-center border-white/10 shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] overflow-hidden group">
+            {/* Shimmer overlay */}
+            <div className="absolute inset-0 shimmer opacity-20 pointer-events-none"></div>
+            
+            <div className="max-w-4xl mx-auto space-y-12">
+              <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full animate-float">
+                <div className="w-2.5 h-2.5 bg-taxi-yellow rounded-full animate-pulse shadow-[0_0_15px_rgba(251,191,36,1)]"></div>
+                <span className="text-white font-black text-sm tracking-[0.4em] uppercase">Tailored Travel</span>
+              </div>
+              
+              <h2 className="text-4xl sm:text-6xl lg:text-8xl font-black text-white leading-tight">
+                Need a <span className="text-gradient-gold shimmer">Custom Service?</span>
+              </h2>
+              
+              <p className="text-xl sm:text-2xl text-slate-200 leading-relaxed font-medium">
+                We offer bespoke transportation solutions for weddings, corporate events, and specialized requirements. 
+                Experience the difference with Taxi GO.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-8 justify-center pt-8">
+                <button className="btn-primary shimmer hover-glow py-6 px-16 text-xl shadow-[0_0_50px_rgba(251,191,36,0.3)]">
+                  Get Custom Quote
+                </button>
+                <button className="bg-white/10 backdrop-blur-2xl border border-white/20 text-white font-black py-6 px-16 rounded-3xl hover:bg-white hover:text-taxi-black transition-all duration-500 text-xl shadow-2xl">
+                  Contact Support
+                </button>
+              </div>
             </div>
           </div>
         </div>

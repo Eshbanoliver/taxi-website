@@ -19,46 +19,49 @@ const About = () => {
   return (
     <div className="w-full overflow-x-hidden">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        {/* Background layers */}
-        <div className="absolute inset-0 bg-slate-50 border-b border-slate-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent"></div>
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
+        {/* Background Image with Vibrant Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] animate-ken-burns"
+          style={{ backgroundImage: `url('/about_hero_taxi_1778825012509.png')` }}
+        ></div>
+        <div className="absolute inset-0 bg-vibrant-emerald opacity-90 animate-moving-mesh"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
         
         <div className="relative z-10 container mx-auto px-4">
-          <div className="text-center max-w-4xl mx-auto">
+          <div className="text-center max-w-5xl mx-auto space-y-12">
             {/* Badge */}
-            <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full mb-8 border border-slate-200 shadow-sm">
-              <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-              <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Our Story</span>
+            <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full shadow-2xl animate-float">
+              <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(52,211,153,1)]"></div>
+              <span className="text-white font-black text-sm tracking-[0.3em] uppercase">Since 2014</span>
             </div>
             
             {/* Main heading */}
-            <div className="relative mb-8 sm:mb-12">
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
-                About <span className="text-gradient-vibrant">Taxi GO</span>
-              </h1>
-            </div>
+            <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black text-white leading-tight animate-slide-in-up shimmer">
+              Our <span className="text-gradient-gold">Excellence</span>
+            </h1>
             
-            {/* Enhanced description */}
-            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed font-light mb-12 sm:mb-16 px-4">
-              Discover our journey of excellence, from a small fleet to Udaipur's most trusted taxi service. 
-              <span className="block text-slate-900 font-bold mt-3 sm:mt-4">Driven by passion, committed to you.</span>
+            {/* Description */}
+            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-100 leading-relaxed font-medium max-w-4xl mx-auto animate-slide-in-up" style={{ animationDelay: '200ms' }}>
+              Udaipur's most trusted taxi service, built on a decade of safety, hospitality, and professional commitment.
             </p>
             
-            {/* Stats preview */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4 sm:px-0">
+            {/* Stats preview with 3D effect */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 perspective-1000">
               {[
-                { number: '10+', label: 'Years Exp', icon: Award },
-                { number: '50K+', label: 'Customers', icon: Users },
-                { number: '100+', label: 'Pro Drivers', icon: Shield },
-                { number: '24/7', label: 'Service', icon: Clock }
+                { number: '10+', label: 'Years Exp', icon: Award, color: 'gold' },
+                { number: '50K+', label: 'Customers', icon: Users, color: 'sapphire' },
+                { number: '100+', label: 'Pro Drivers', icon: Shield, color: 'sunset' },
+                { number: '24/7', label: 'Service', icon: Clock, color: 'gold' }
               ].map((stat, index) => (
-                <div key={index} className="glass rounded-2xl p-4 sm:p-6 border border-slate-100 text-center transition-transform duration-300 hover:scale-105 shadow-sm">
-                  <div className="icon-container w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4">
-                    <stat.icon className="icon-primary w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
+                <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
+                  <div className="glass-dark rounded-3xl p-6 border border-white/10 text-center shadow-2xl hover:border-white/30 transition-all duration-500">
+                    <div className="icon-container w-14 h-14 mx-auto mb-4 bg-white/5 border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+                      <stat.icon className="text-white w-7 h-7" strokeWidth={1.5} />
+                    </div>
+                    <div className={`text-2xl sm:text-3xl font-black mb-1 shimmer text-gradient-${stat.color}`}>{stat.number}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400 font-black uppercase tracking-[0.2em]">{stat.label}</div>
                   </div>
-                  <div className="text-xl sm:text-2xl font-bold text-slate-900 mb-0.5 sm:mb-1">{stat.number}</div>
-                  <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>

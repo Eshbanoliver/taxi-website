@@ -49,18 +49,28 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-50 border-b border-slate-100"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent"></div>
+      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
+        {/* Background Image with Vibrant Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] animate-ken-burns"
+          style={{ backgroundImage: `url('/contact_hero_taxi_1778825062870.png')` }}
+        ></div>
+        <div className="absolute inset-0 bg-vibrant-violet opacity-90 animate-moving-mesh"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center space-x-2 bg-white px-4 py-2 rounded-full mb-8 border border-slate-200 shadow-sm">
-              <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-              <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Get In Touch</span>
+          <div className="text-center max-w-5xl mx-auto space-y-12">
+            <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full shadow-2xl animate-float">
+              <div className="w-2.5 h-2.5 bg-violet-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(139,92,246,1)]"></div>
+              <span className="text-white font-black text-sm tracking-[0.3em] uppercase">Connect With Us</span>
             </div>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6">Contact Us</h1>
-            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed font-light mx-auto px-4">
-              Get in touch with us for bookings, inquiries, or support
+            
+            <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black text-white leading-tight animate-slide-in-up shimmer">
+              Get In <span className="text-gradient-gold">Touch</span>
+            </h1>
+            
+            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-100 leading-relaxed font-medium max-w-4xl mx-auto animate-slide-in-up" style={{ animationDelay: '200ms' }}>
+              We're here to help you 24/7. Reach out for bookings, inquiries, or any transportation support.
             </p>
           </div>
         </div>

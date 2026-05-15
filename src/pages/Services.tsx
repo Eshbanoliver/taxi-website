@@ -110,8 +110,14 @@ const Services = () => {
     <div className="min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
-        <div className="absolute inset-0 bg-vibrant-cyan animate-moving-mesh"></div>
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+        {/* Background Image with Vibrant Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] animate-ken-burns"
+          style={{ backgroundImage: `url('/services_hero_taxi_1778825029030.png')` }}
+        ></div>
+        <div className="absolute inset-0 bg-vibrant-cyan opacity-90 animate-moving-mesh"></div>
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-5xl mx-auto space-y-10">
             <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full shadow-2xl animate-float">

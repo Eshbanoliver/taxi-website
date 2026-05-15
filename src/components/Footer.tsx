@@ -43,8 +43,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-2 sm:space-y-3 group">
             <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 icon-container">
-                  <Car className="icon-dark w-4 h-4" strokeWidth={1.5} />
+                <div className="w-10 h-10 flex items-center justify-center">
+                  <img src="/logo.png" alt="TaxiGO Logo" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
                 </div>
               <div>
                 <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>

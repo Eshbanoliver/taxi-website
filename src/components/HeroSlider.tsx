@@ -93,48 +93,54 @@ const HeroSlider = () => {
               index === currentSlide ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
             }`}
           >
-            {/* Background Image with Ken Burns effect */}
+            {/* Background Image with Intense Ken Burns effect */}
             <div className="absolute inset-0 z-0 overflow-hidden">
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="w-full h-full object-cover animate-ken-burns"
+                className="w-full h-full object-cover animate-ken-burns scale-110"
               />
-              {/* Gradient Overlay */}
-              <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} mix-blend-multiply opacity-60`} />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/40" />
+              {/* Animated Mesh Overlay */}
+              <div className={`absolute inset-0 bg-gradient-to-r ${slide.bgGradient} mix-blend-multiply opacity-70 animate-moving-mesh`} />
+              <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-transparent to-slate-900/80" />
             </div>
             
             {/* Content */}
             <div className="relative w-full h-full flex items-center justify-center lg:justify-start px-4 sm:px-6 lg:px-8">
               <div className="w-full max-w-7xl mx-auto lg:mx-0">
-                <div className="text-center lg:text-left space-y-8 lg:space-y-12">
-                  {/* Title */}
-                  <div className="space-y-4">
-                    <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black text-slate-900 leading-tight drop-shadow-sm">
-                      {slide.title}
+                <div className="text-center lg:text-left space-y-10 lg:space-y-16">
+                  {/* Title Section */}
+                  <div className="space-y-6">
+                    <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2.5 rounded-full animate-float shadow-2xl">
+                      <div className="w-2.5 h-2.5 bg-taxi-yellow rounded-full animate-pulse shadow-[0_0_15px_rgba(251,191,36,1)]"></div>
+                      <span className="text-white font-black text-sm tracking-[0.2em] uppercase text-glow">{slide.subtitle}</span>
+                    </div>
+                    
+                    <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-black text-white leading-[1] drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+                      {slide.title.split(' ').map((word, i) => (
+                        <span key={i} className={`inline-block mr-4 ${i === 0 ? 'text-gradient-gold shimmer' : ''}`}>
+                          {word}
+                        </span>
+                      ))}
                     </h1>
-                    <h2 className="text-xl sm:text-3xl lg:text-4xl text-taxi-yellow font-bold text-glow">
-                      {slide.subtitle}
-                    </h2>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-lg sm:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto lg:mx-0 font-medium">
+                  <p className="text-xl sm:text-2xl lg:text-3xl text-slate-100 leading-relaxed max-w-4xl mx-auto lg:mx-0 font-medium drop-shadow-lg">
                     {slide.description}
                   </p>
                   
-                  {/* Features */}
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-6">
+                  {/* Features with 3D effect */}
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-8 perspective-1000">
                     {slide.features.map((feature, idx) => (
                       <div
                         key={idx}
-                        className="inline-flex items-center space-x-2 bg-white/90 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-slate-200 shadow-xl hover-lift cursor-default"
+                        className="card-3d inline-flex items-center space-x-3 bg-white/10 backdrop-blur-2xl px-6 py-4 rounded-2xl border border-white/20 shadow-2xl cursor-pointer"
                       >
-                        <div className="icon-container w-6 h-6 sm:w-8 sm:h-8">
-                          <CheckCircle className="icon-primary w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
+                        <div className="icon-container w-10 h-10 bg-taxi-yellow shadow-[0_0_20px_rgba(251,191,36,0.4)]">
+                          <CheckCircle className="text-taxi-black w-6 h-6" strokeWidth={2.5} />
                         </div>
-                        <span className="text-slate-900 font-bold text-sm sm:text-base">{feature}</span>
+                        <span className="text-white font-black text-base sm:text-lg tracking-wide">{feature}</span>
                       </div>
                     ))}
                   </div>

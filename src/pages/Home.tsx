@@ -34,70 +34,71 @@ const Home = () => {
           <div className="absolute inset-0 bg-mesh-emerald border border-emerald-100/50 rounded-3xl"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-emerald-50/30 to-transparent rounded-3xl"></div>
           
-          <div className="relative glass rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 lg:p-24 overflow-hidden">
-            <div className="content-grid">
+          <div className="relative glass rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 lg:p-24 overflow-hidden mask-slant shadow-2xl border-white/20">
+            <div className="absolute inset-0 bg-mesh-dark-vibrant opacity-95 animate-moving-mesh"></div>
+            <div className="relative content-grid">
               <div className="space-y-8 sm:space-y-12 text-center lg:text-left">
                 <div className="space-y-6 sm:space-y-8">
-                  <div className="inline-flex items-center space-x-2 sm:space-x-3 bg-slate-50 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-slate-100 shadow-sm backdrop-blur-sm">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
-                    <span className="text-emerald-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
+                  <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-3 rounded-full shadow-2xl animate-float">
+                    <div className="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(52,211,153,1)]"></div>
+                    <span className="text-white font-black text-xs sm:text-sm tracking-[0.2em] uppercase">Since 2014</span>
                   </div>
-                  <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-slate-900 leading-tight animate-slide-in-up">
+                  <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white leading-tight animate-slide-in-up">
                     Your Trusted
-                    <span className="block text-gradient-vibrant mt-1 sm:mt-2 shimmer">Journey Partner</span>
+                    <span className="block text-gradient-gold mt-2 shimmer">Journey Partner</span>
                   </h2>
                 </div>
                 
-                <p className="text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed font-light max-w-2xl mx-auto lg:mx-0 animate-slide-in-up" style={{ animationDelay: '200ms' }}>
+                <p className="text-lg sm:text-xl lg:text-2xl text-slate-300 leading-relaxed font-medium max-w-2xl mx-auto lg:mx-0 animate-slide-in-up" style={{ animationDelay: '200ms' }}>
                   With over a decade of excellence, we stand as Udaipur's premier transportation provider. 
-                  We combine cutting-edge technology with traditional hospitality to deliver safe, comfortable, and affordable journeys that exceed expectations.
+                  We combine cutting-edge technology with traditional hospitality to deliver safe, comfortable, and affordable journeys.
                 </p>
                 
-                {/* Key highlights */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+                {/* Key highlights with 3D Effect */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 perspective-1000">
                   {[
-                    { icon: Shield, text: "Fully Licensed & Insured" },
-                    { icon: Clock, text: "24/7 Availability" },
-                    { icon: Users, text: "Professional Drivers" },
-                    { icon: MapPin, text: "City Wide Coverage" }
+                    { icon: Shield, text: "Fully Licensed & Insured", color: "emerald" },
+                    { icon: Clock, text: "24/7 Availability", color: "amber" },
+                    { icon: Users, text: "Professional Drivers", color: "indigo" },
+                    { icon: MapPin, text: "City Wide Coverage", color: "rose" }
                   ].map((item, index) => (
-                    <div key={index} className="group relative animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
-                      <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white shadow-sm border border-slate-100 hover:bg-slate-50 transition-all duration-300 hover-lift">
-                        <div className="icon-container w-10 h-10 sm:w-14 sm:h-14 bg-emerald-50/50 border-emerald-100/50">
-                          <item.icon className="text-emerald-500 w-5 h-5 sm:w-7 sm:h-7" strokeWidth={1.5} />
+                    <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
+                      <div className="flex items-center space-x-4 p-5 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 shadow-2xl group hover:border-white/20 transition-all duration-300">
+                        <div className={`icon-container w-12 h-12 sm:w-16 sm:h-16 bg-${item.color}-500/10 border-${item.color}-500/20 shadow-[0_0_20px_rgba(255,255,255,0.05)]`}>
+                          <item.icon className={`text-white w-6 h-6 sm:w-8 sm:h-8 animate-float`} style={{ animationDelay: `${index * 500}ms` }} strokeWidth={2} />
                         </div>
-                        <span className="text-slate-700 font-medium text-sm sm:text-base group-hover:text-slate-900 transition-colors duration-300">{item.text}</span>
+                        <span className="text-white font-black text-base sm:text-lg group-hover:text-taxi-yellow transition-colors duration-300 tracking-wide">{item.text}</span>
                       </div>
                     </div>
                   ))}
                 </div>
                 
-                <a href="/about" className="btn-primary inline-flex items-center space-x-2 sm:space-x-3 text-sm sm:text-base animate-slide-in-up" style={{ animationDelay: '700ms' }}>
-                  <span className="text-taxi-black">Discover Our Story</span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <a href="/about" className="btn-primary shimmer hover-glow inline-flex items-center space-x-3 text-lg py-5 px-12 shadow-[0_0_30px_rgba(251,191,36,0.3)] animate-slide-in-up" style={{ animationDelay: '700ms' }}>
+                  <span>Discover Our Story</span>
+                  <ArrowRight className="w-6 h-6" />
                 </a>
               </div>
               
-              <div className="relative">
-                {/* Main visual */}
-                <div className="relative animate-float">
-                  <div className="absolute -inset-4 bg-emerald-400/20 blur-3xl rounded-full animate-pulse"></div>
-                  <div className="w-full h-80 md:h-96 bg-white/40 backdrop-blur-md border border-white/40 rounded-3xl flex items-center justify-center relative overflow-hidden shadow-2xl hover-glow transition-all duration-700 hover:scale-[1.02]">
+              <div className="relative perspective-1000">
+                {/* Main visual with 3D Float */}
+                <div className="relative animate-float card-3d">
+                  <div className="absolute -inset-10 bg-taxi-yellow/20 blur-[100px] rounded-full animate-pulse"></div>
+                  <div className="w-full h-[400px] md:h-[550px] bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[3rem] flex items-center justify-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
                     {/* Main content */}
                     <div className="relative z-10 text-center animate-slide-in-up">
-                      <div className="w-24 h-24 icon-container mx-auto mb-6 shadow-2xl bg-white border-slate-100">
-                        <Car className="icon-dark w-12 h-12 animate-float" strokeWidth={1.25} />
+                      <div className="w-32 h-32 icon-container mx-auto mb-8 shadow-[0_0_50px_rgba(251,191,36,0.4)] bg-taxi-yellow border-none">
+                        <Car className="text-taxi-black w-16 h-16 animate-float" strokeWidth={2} />
                       </div>
-                      <h3 className="text-2xl font-black text-slate-900 mb-2 shimmer">Premium Taxi Service</h3>
-                      <p className="text-slate-700 font-medium">Experience luxury and comfort</p>
+                      <h3 className="text-3xl sm:text-4xl font-black text-white mb-4 shimmer text-gradient-gold">Premium Taxi</h3>
+                      <p className="text-slate-300 text-xl font-bold">World Class Experience</p>
                     </div>
                     
-                    {/* Floating badges */}
-                    <div className="absolute top-8 left-8 bg-white border border-slate-100 shadow-xl px-4 py-2 rounded-full animate-bounce" style={{ animationDuration: '3s' }}>
-                      <span className="text-slate-900 font-black text-sm">50K+ Rides</span>
+                    {/* Floating badges with 3D shadow */}
+                    <div className="absolute top-12 left-12 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl px-6 py-3 rounded-2xl animate-bounce" style={{ animationDuration: '4s' }}>
+                      <span className="text-white font-black text-lg">50K+ Rides</span>
                     </div>
-                    <div className="absolute bottom-8 right-8 bg-white border border-slate-100 shadow-xl px-4 py-2 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '3s' }}>
-                      <span className="text-taxi-yellow font-black text-sm">4.9 Rating</span>
+                    <div className="absolute bottom-12 right-12 bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl px-6 py-3 rounded-2xl animate-bounce" style={{ animationDelay: '1.5s', animationDuration: '4s' }}>
+                      <span className="text-taxi-yellow font-black text-lg">4.9 Rating</span>
                     </div>
                   </div>
                 </div>
@@ -136,41 +137,44 @@ const Home = () => {
           <p className="text-sm sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Metrics that showcase our commitment to quality service</p>
         </div>
         
-        <div className="relative">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-mesh-amber border border-amber-100/50 rounded-3xl shadow-sm"></div>
+        <div className="relative perspective-1000">
+          {/* Animated Background */}
+          <div className="absolute inset-0 bg-mesh-dark-vibrant rounded-[3rem] animate-moving-mesh shadow-inner"></div>
           
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-10 sm:p-16">
             {[
-              { number: '50K+', label: 'Rides Completed', icon: Car, description: 'Safe journeys delivered' },
-              { number: '10K+', label: 'Happy Customers', icon: Users, description: 'Satisfied passengers' },
-              { number: '15+', label: 'Cities Covered', icon: MapPin, description: 'Wide network reach' },
-              { number: '24/7', label: 'Service Available', icon: Clock, description: 'Always here for you' },
+              { number: '50K+', label: 'Rides Completed', icon: Car, description: 'Safe journeys delivered', color: 'gold' },
+              { number: '10K+', label: 'Happy Customers', icon: Users, description: 'Satisfied passengers', color: 'sapphire' },
+              { number: '15+', label: 'Cities Covered', icon: MapPin, description: 'Wide network reach', color: 'sunset' },
+              { number: '24/7', label: 'Service Available', icon: Clock, description: 'Always here for you', color: 'gold' },
           ].map((metric, index) => (
-            <div key={index} className="group relative animate-slide-in-up hover-lift" style={{ animationDelay: `${300 + index * 100}ms` }}>
-              {/* Card with glow */}
-              <div className="relative glass rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-center transition-all duration-500 overflow-hidden hover-glow hover:border-amber-200/50">
+            <div key={index} className="group relative animate-slide-in-up card-3d" style={{ animationDelay: `${300 + index * 100}ms` }}>
+              {/* Card with Intense Glow */}
+              <div className="relative glass-dark rounded-[2.5rem] p-10 text-center transition-all duration-700 overflow-hidden border-white/5 hover:border-white/20 shadow-2xl">
+                {/* Shimmer overlay */}
+                <div className="absolute inset-0 shimmer opacity-10 pointer-events-none"></div>
+                
                 {/* Content */}
                 <div className="relative z-10">
                   {/* Icon container with float */}
-                  <div className="relative mx-auto mb-6">
-                    <div className="icon-container w-16 h-16 sm:w-20 sm:h-20 mx-auto bg-white border-amber-100/50 shadow-lg group-hover:scale-110 transition-transform duration-500 animate-float" style={{ animationDelay: `${index * 200}ms` }}>
-                      <metric.icon className="text-amber-500 w-8 h-8 sm:w-10 sm:h-10" strokeWidth={1.5} />
+                  <div className="relative mx-auto mb-10">
+                    <div className="icon-container w-20 h-20 sm:w-24 sm:h-24 mx-auto bg-white/5 border-white/10 shadow-[0_0_30px_rgba(255,255,255,0.05)] group-hover:scale-110 transition-transform duration-700 animate-float" style={{ animationDelay: `${index * 300}ms` }}>
+                      <metric.icon className="text-white w-10 h-10 sm:w-12 sm:h-12" strokeWidth={1.5} />
                     </div>
                   </div>
                   
-                  {/* Number with shimmer */}
-                  <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 mb-2 shimmer">
+                  {/* Number with vibrant gradient */}
+                  <div className={`text-4xl sm:text-5xl lg:text-6xl font-black mb-4 shimmer text-gradient-${metric.color}`}>
                     {metric.number}
                   </div>
                   
                   {/* Label */}
-                  <div className="text-sm sm:text-base font-black text-slate-700 uppercase tracking-widest mb-2">
+                  <div className="text-sm sm:text-base font-black text-white uppercase tracking-[0.3em] mb-4 text-glow">
                     {metric.label}
                   </div>
                   
                   {/* Description */}
-                  <div className="text-sm text-slate-500 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="text-sm text-slate-400 font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     {metric.description}
                   </div>
                 </div>

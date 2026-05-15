@@ -82,24 +82,28 @@ const Services = () => {
   const vehicleCategories = [
     {
       category: 'Economy',
+      image: '/vehicle_economy_1778825576986.png',
       vehicles: ['Swift', 'WagonR', 'i10', 'Alto'],
       price: '₹7-10/km',
       features: ['AC', '4 Seats', 'Fuel Efficient'],
     },
     {
       category: 'Sedan',
+      image: '/vehicle_sedan_1778825594122.png',
       vehicles: ['Dzire', 'City', 'Ciaz', 'Verna'],
       price: '₹10-15/km',
       features: ['AC', '4 Seats', 'Comfortable', 'Spacious'],
     },
     {
       category: 'SUV',
+      image: '/vehicle_suv_1778825613726.png',
       vehicles: ['Brezza', 'XUV500', 'Scorpio', 'Innova'],
       price: '₹13-20/km',
       features: ['AC', '7 Seats', 'Powerful', 'Off-road'],
     },
     {
       category: 'Luxury',
+      image: '/vehicle_luxury_1778825630578.png',
       vehicles: ['BMW 3 Series', 'Mercedes C-Class', 'Audi A4'],
       price: '₹25-35/km',
       features: ['AC', '4 Seats', 'Premium', 'Executive'],
@@ -244,8 +248,14 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 perspective-1000">
             {vehicleCategories.map((category, index) => (
               <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${index * 150}ms` }}>
-                <div className="relative glass-dark rounded-[2.5rem] p-8 transition-all duration-700 border border-white/5 shadow-2xl hover:border-white/20">
-                  <div className="relative z-10">
+                <div className="relative glass-dark rounded-[2.5rem] transition-all duration-700 border border-white/5 shadow-2xl hover:border-white/20 group overflow-hidden">
+                  {/* Vehicle Stock Image */}
+                  <div className="h-48 overflow-hidden relative">
+                    <img src={category.image} alt={category.category} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+                  </div>
+
+                  <div className="relative z-10 p-8">
                     <div className="inline-flex items-center space-x-3 bg-white/5 border border-white/10 px-5 py-2 rounded-full mb-8">
                       <div className="w-2 h-2 bg-taxi-yellow rounded-full animate-pulse shadow-[0_0_10px_rgba(251,191,36,1)]"></div>
                       <span className="text-taxi-yellow font-black text-xs sm:text-sm tracking-widest uppercase">{category.category}</span>

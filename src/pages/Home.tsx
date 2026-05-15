@@ -8,10 +8,10 @@ const Home = () => {
   const categories = ['All', 'Sedan', 'SUV', 'Luxury', 'Economy'];
   
   const testimonials = [
-    { name: 'Rahul Sharma', text: 'Excellent service! The driver was professional and the car was spotless.', rating: 5 },
-    { name: 'Priya Patel', text: 'Very reliable and affordable. Best taxi service in Udaipur!', rating: 5 },
-    { name: 'Amit Kumar', text: 'Punctual pickups and comfortable rides. Highly recommended!', rating: 5 },
-    { name: 'Kavya Nair', text: 'Transparent pricing and no hidden charges. Trustworthy service!', rating: 5 },
+    { name: 'Rahul Sharma', text: 'Excellent service! The driver was professional and the car was spotless.', rating: 5, image: '/user_rahul_1778825783527.png' },
+    { name: 'Priya Patel', text: 'Very reliable and affordable. Best taxi service in Udaipur!', rating: 5, image: '/user_priya_1778825801950.png' },
+    { name: 'Amit Kumar', text: 'Punctual pickups and comfortable rides. Highly recommended!', rating: 5, image: '/user_amit_1778825821792.png' },
+    { name: 'Kavya Nair', text: 'Transparent pricing and no hidden charges. Trustworthy service!', rating: 5, image: '/user_priya_1778825801950.png' }, // Reusing Priya for now due to quota
   ];
 
   const faqs = [
@@ -79,11 +79,13 @@ const Home = () => {
                 {/* Main visual with 3D Float */}
                 <div className="relative animate-float card-3d">
                   <div className="absolute -inset-10 bg-taxi-yellow/20 blur-[100px] rounded-full animate-pulse"></div>
-                  <div className="w-full h-[400px] md:h-[550px] bg-white/10 backdrop-blur-2xl border border-white/20 rounded-[3rem] flex items-center justify-center relative overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
+                  <div className="w-full h-[400px] md:h-[550px] relative rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)]">
+                    <img src="/about_hero_taxi_1778825012509.png" alt="Premium Taxi" className="w-full h-full object-cover transition-transform duration-[10000ms] animate-ken-burns" />
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
                     {/* Main content */}
-                    <div className="relative z-10 text-center animate-slide-in-up">
-                      <div className="w-32 h-32 icon-container mx-auto mb-8 shadow-[0_0_50px_rgba(251,191,36,0.4)] bg-taxi-yellow border-none">
-                        <Car className="text-taxi-black w-16 h-16 animate-float" strokeWidth={2} />
+                    <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center p-8">
+                      <div className="w-24 h-24 icon-container mx-auto mb-6 shadow-[0_0_50px_rgba(251,191,36,0.4)] bg-taxi-yellow border-none">
+                        <Car className="text-taxi-black w-12 h-12 animate-float" strokeWidth={2} />
                       </div>
                       <h3 className="text-3xl sm:text-4xl font-black text-white mb-4 shimmer text-gradient-gold">Premium Taxi</h3>
                       <p className="text-slate-100 text-xl font-bold">World Class Experience</p>
@@ -370,8 +372,13 @@ const Home = () => {
                   
                   {/* Author */}
                   <div className="flex items-center space-x-4 pt-8 border-t border-white/10">
-                    <div className="w-14 h-14 bg-taxi-yellow rounded-2xl flex items-center justify-center shadow-xl transform rotate-3">
-                      <span className="text-taxi-black font-black text-xl">{testimonial.name.charAt(0)}</span>
+                    <div className="w-16 h-16 relative">
+                      <div className="absolute inset-0 bg-taxi-yellow rounded-2xl rotate-6 transition-transform group-hover:rotate-12 duration-500"></div>
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name} 
+                        className="relative z-10 w-full h-full object-cover rounded-2xl border-2 border-white shadow-xl"
+                      />
                     </div>
                     <div>
                       <div className="text-white font-black text-lg">{testimonial.name}</div>

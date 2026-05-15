@@ -3,10 +3,10 @@ import { Users, Award, Clock, CheckCircle, Target, Eye, Heart, Shield, Car, Star
 
 const About = () => {
   const team = [
-    { name: 'Rajesh Kumar', role: 'Founder & CEO', experience: '15+ years' },
-    { name: 'Priya Sharma', role: 'Operations Manager', experience: '10+ years' },
-    { name: 'Amit Patel', role: 'Customer Relations', experience: '8+ years' },
-    { name: 'Suman Verma', role: 'Fleet Manager', experience: '12+ years' },
+    { name: 'Rajesh Kumar', role: 'Founder & CEO', experience: '15+ years', image: '/team_ceo_1778825666916.png' },
+    { name: 'Priya Sharma', role: 'Operations Manager', experience: '10+ years', image: '/team_ops_1778825703910.png' },
+    { name: 'Amit Patel', role: 'Customer Relations', experience: '8+ years', image: '/team_customer_1778825739366.png' },
+    { name: 'Suman Verma', role: 'Fleet Manager', experience: '12+ years', image: '/team_fleet_1778825719491.png' },
   ];
 
   const achievements = [
@@ -313,15 +313,18 @@ const About = () => {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {team.map((member, index) => (
-            <div key={index} className="glass rounded-3xl p-8 border border-slate-100 text-center transition-transform duration-300 hover:-translate-y-2">
-              <div className="w-24 h-24 bg-slate-50 border border-slate-100 rounded-full mx-auto mb-6 flex items-center justify-center shadow-sm">
-                <div className="text-2xl font-bold text-taxi-yellow">
-                  {member.name.split(' ').map(n => n[0]).join('')}
-                </div>
+            <div key={index} className="glass rounded-3xl p-8 border border-slate-100 text-center transition-transform duration-300 hover:-translate-y-2 group">
+              <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 relative">
+                <div className="absolute inset-0 bg-taxi-yellow rounded-full rotate-12 group-hover:rotate-45 transition-transform duration-500"></div>
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white shadow-xl"
+                />
               </div>
               <h3 className="text-xl font-bold text-slate-900 mb-1">{member.name}</h3>
-              <p className="text-taxi-yellow font-medium mb-2">{member.role}</p>
-              <p className="text-slate-500 text-sm">{member.experience}</p>
+              <p className="text-taxi-yellow font-black text-sm uppercase tracking-widest mb-2">{member.role}</p>
+              <p className="text-slate-500 text-sm font-bold">{member.experience}</p>
             </div>
           ))}
         </div>

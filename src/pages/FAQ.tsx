@@ -105,8 +105,8 @@ const FAQ = () => {
               <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
               <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Help Center</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h1>
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light mx-auto">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6">Frequently Asked Questions</h1>
+            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed font-light mx-auto px-4">
               Find answers to common questions about our taxi services
             </p>
           </div>
@@ -119,19 +119,19 @@ const FAQ = () => {
           <h2 className="text-3xl font-bold text-slate-900 mb-4">Browse by Category</h2>
           <p className="text-slate-600">Find answers specific to your needs</p>
         </div>
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap sm:justify-center gap-2 sm:gap-3 px-4 sm:px-0 overflow-x-auto sm:overflow-x-visible pb-4 sm:pb-0 scrollbar-hide">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-bold transition-all duration-300 border ${
+              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 border whitespace-nowrap text-xs sm:text-sm ${
                 selectedCategory === category
                   ? 'bg-taxi-yellow text-taxi-black border-taxi-yellow shadow-md'
                   : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-slate-900 shadow-sm'
               }`}
             >
-              <div className="flex items-center space-x-2">
-                {selectedCategory === category && <div className="w-2 h-2 bg-taxi-black rounded-full" />}
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                {selectedCategory === category && <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-taxi-black rounded-full" />}
                 <span>{category}</span>
               </div>
             </button>
@@ -154,11 +154,11 @@ const FAQ = () => {
                   onClick={() => toggleFAQ(index)}
                   className="w-full px-6 py-6 text-left flex items-center justify-between transition-colors duration-300"
                 >
-                  <div className="flex items-center space-x-4">
-                    <div className="icon-container w-10 h-10 flex-shrink-0">
-                      <HelpCircle className={activeIndex === index ? 'icon-primary' : 'icon-dark opacity-40'} size={20} strokeWidth={1.5} />
+                  <div className="flex items-center space-x-3 sm:space-x-4">
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
+                      <HelpCircle className={activeIndex === index ? 'icon-primary' : 'icon-dark opacity-40'} size={18} className="sm:size-5" strokeWidth={1.5} />
                     </div>
-                    <h3 className={`text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-taxi-yellow' : 'text-slate-900 group-hover:text-taxi-yellow'}`}>
+                    <h3 className={`text-base sm:text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-taxi-yellow' : 'text-slate-900 group-hover:text-taxi-yellow'}`}>
                       {faq.question}
                     </h3>
                   </div>
@@ -176,9 +176,9 @@ const FAQ = () => {
                 {/* Answer */}
                 {activeIndex === index && (
                   <div className="px-6 pb-6 animate-fadeIn">
-                    <div className="flex items-start space-x-4 pt-4 border-t border-slate-100">
-                      <div className="w-10 h-10 flex items-center justify-center flex-shrink-0 opacity-0"></div>
-                      <p className="text-slate-600 leading-relaxed text-base flex-1">{faq.answer}</p>
+                    <div className="flex items-start space-x-3 sm:space-x-4 pt-4 border-t border-slate-100">
+                      <div className="hidden sm:block w-10 h-10 flex-shrink-0"></div>
+                      <p className="text-slate-600 leading-relaxed text-sm sm:text-base flex-1">{faq.answer}</p>
                     </div>
                   </div>
                 )}
@@ -194,47 +194,47 @@ const FAQ = () => {
           <div className="absolute inset-0 bg-mesh-amber border border-amber-100/50 rounded-3xl shadow-sm"></div>
           
           <div className="relative glass rounded-3xl p-8 md:p-16 border border-slate-100">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Still Have Questions?</h2>
-              <p className="text-xl text-slate-600">Our support team is here to help you 24/7</p>
+            <div className="text-center mb-10 sm:mb-16">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">Still Have Questions?</h2>
+              <p className="text-sm sm:text-xl text-slate-600 px-4">Our support team is here to help you 24/7</p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-8 mb-16">
               <div className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
+                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="icon-container w-16 h-16 mx-auto mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
-                      <Phone className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={32} strokeWidth={1.5} />
+                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
+                      <Phone className="icon-primary group-hover:text-taxi-black transition-colors duration-300 size-6 sm:size-8" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Call Us</h3>
-                    <p className="text-slate-500 mb-2">24/7 customer support</p>
-                    <p className="text-taxi-yellow font-bold">+91 98765 43210</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Call Us</h3>
+                    <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">24/7 customer support</p>
+                    <p className="text-taxi-yellow font-bold text-sm sm:text-base">+91 98765 43210</p>
                   </div>
                 </div>
               </div>
               
               <div className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
+                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="icon-container w-16 h-16 mx-auto mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
-                      <Mail className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={32} strokeWidth={1.5} />
+                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
+                      <Mail className="icon-primary group-hover:text-taxi-black transition-colors duration-300 size-6 sm:size-8" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Email Us</h3>
-                    <p className="text-slate-500 mb-2">Get quick responses</p>
-                    <p className="text-taxi-yellow font-bold">info@taxigo.com</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Email Us</h3>
+                    <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">Get quick responses</p>
+                    <p className="text-taxi-yellow font-bold text-sm sm:text-base">info@taxigo.com</p>
                   </div>
                 </div>
               </div>
               
               <div className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
+                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="icon-container w-16 h-16 mx-auto mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
-                      <MapPin className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={32} strokeWidth={1.5} />
+                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
+                      <MapPin className="icon-primary group-hover:text-taxi-black transition-colors duration-300 size-6 sm:size-8" strokeWidth={1.5} />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">Visit Us</h3>
-                    <p className="text-slate-500 mb-2">Udaipur, Rajasthan</p>
-                    <p className="text-taxi-yellow font-bold">313001</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Visit Us</h3>
+                    <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">Udaipur, Rajasthan</p>
+                    <p className="text-taxi-yellow font-bold text-sm sm:text-base">313001</p>
                   </div>
                 </div>
               </div>

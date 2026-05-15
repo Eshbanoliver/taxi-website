@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-3 group cursor-pointer">
-            <div className="w-12 h-12 flex items-center justify-center">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
               <img src="/logo.png" alt="TaxiGO Logo" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
             </div>
             <div className="flex flex-col">

@@ -33,32 +33,32 @@ const About = () => {
             </div>
             
             {/* Main heading */}
-            <div className="relative mb-12">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-6">
+            <div className="relative mb-8 sm:mb-12">
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 leading-tight mb-4 sm:mb-6">
                 About <span className="text-gradient-vibrant">Taxi GO</span>
               </h1>
             </div>
             
             {/* Enhanced description */}
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light mb-16">
+            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed font-light mb-12 sm:mb-16 px-4">
               Discover our journey of excellence, from a small fleet to Udaipur's most trusted taxi service. 
-              <span className="block text-slate-900 font-bold mt-4">Driven by passion, committed to you.</span>
+              <span className="block text-slate-900 font-bold mt-3 sm:mt-4">Driven by passion, committed to you.</span>
             </p>
             
             {/* Stats preview */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8 sm:mb-12 px-4 sm:px-0">
               {[
-                { number: '10+', label: 'Years Experience', icon: Award },
-                { number: '50K+', label: 'Happy Customers', icon: Users },
+                { number: '10+', label: 'Years Exp', icon: Award },
+                { number: '50K+', label: 'Customers', icon: Users },
                 { number: '100+', label: 'Pro Drivers', icon: Shield },
                 { number: '24/7', label: 'Service', icon: Clock }
               ].map((stat, index) => (
-                <div key={index} className="glass rounded-2xl p-6 border border-slate-100 text-center transition-transform duration-300 hover:scale-105">
-                  <div className="icon-container w-12 h-12 mx-auto mb-4">
-                    <stat.icon className="icon-primary w-6 h-6" strokeWidth={1.5} />
+                <div key={index} className="glass rounded-2xl p-4 sm:p-6 border border-slate-100 text-center transition-transform duration-300 hover:scale-105 shadow-sm">
+                  <div className="icon-container w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4">
+                    <stat.icon className="icon-primary w-5 h-5 sm:w-6 sm:h-6" strokeWidth={1.5} />
                   </div>
-                  <div className="text-2xl font-bold text-slate-900 mb-1">{stat.number}</div>
-                  <div className="text-xs text-slate-500">{stat.label}</div>
+                  <div className="text-xl sm:text-2xl font-bold text-slate-900 mb-0.5 sm:mb-1">{stat.number}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 uppercase tracking-wider">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -82,19 +82,19 @@ const About = () => {
         <div className="relative">
           <div className="absolute inset-0 bg-mesh-violet border border-violet-100/50 rounded-3xl shadow-sm"></div>
           
-          <div className="relative glass rounded-3xl p-8 md:p-16 overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="relative glass rounded-3xl p-6 sm:p-16 overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-12 items-center">
               {/* Story Content */}
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 {/* Timeline item 1 */}
                 <div className="group relative">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-slate-50 border border-slate-100 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
-                      <span className="text-slate-700 group-hover:text-taxi-black font-bold">1</span>
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-50 border border-slate-100 rounded-full flex items-center justify-center shadow-sm transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
+                      <span className="text-slate-700 group-hover:text-taxi-black font-bold text-sm sm:text-base">1</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-taxi-yellow transition-colors duration-300">The Beginning</h3>
-                      <p className="text-slate-600 leading-relaxed">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1 sm:mb-2 group-hover:text-taxi-yellow transition-colors duration-300">The Beginning</h3>
+                      <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                         Founded in 2013, Taxi GO started as a small fleet of 5 cars with a simple mission: 
                         to provide safe, reliable, and affordable transportation in Udaipur.
                       </p>
@@ -104,13 +104,13 @@ const About = () => {
                 
                 {/* Timeline item 2 */}
                 <div className="group relative">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-slate-50 border border-slate-100 shadow-sm rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
-                      <span className="text-slate-900 group-hover:text-taxi-black font-bold">2</span>
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-50 border border-slate-100 shadow-sm rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
+                      <span className="text-slate-900 group-hover:text-taxi-black font-bold text-sm sm:text-base">2</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Growth & Expansion</h3>
-                      <p className="text-slate-600 leading-relaxed">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1 sm:mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Growth & Expansion</h3>
+                      <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                         Our journey has been driven by our commitment to customer satisfaction and our passion for 
                         excellence. We've continuously expanded our services, upgraded our fleet, and embraced technology.
                       </p>
@@ -120,13 +120,13 @@ const About = () => {
                 
                 {/* Timeline item 3 */}
                 <div className="group relative">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-slate-50 border border-slate-100 shadow-sm rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
-                      <span className="text-slate-900 group-hover:text-taxi-black font-bold">3</span>
+                  <div className="flex items-start space-x-3 sm:space-x-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-50 border border-slate-100 shadow-sm rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group-hover:bg-taxi-yellow flex-shrink-0">
+                      <span className="text-slate-900 group-hover:text-taxi-black font-bold text-sm sm:text-base">3</span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Today's Success</h3>
-                      <p className="text-slate-600 leading-relaxed">
+                      <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-1 sm:mb-2 group-hover:text-taxi-yellow transition-colors duration-300">Today's Success</h3>
+                      <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
                         Today, we're proud to be the preferred choice for locals and tourists alike, offering 
                         comprehensive transportation solutions with over 100 vehicles and dedicated professionals.
                       </p>
@@ -137,23 +137,23 @@ const About = () => {
               </div>
               
               {/* Visual Timeline */}
-              <div className="relative">
-                <div className="relative bg-slate-50 border border-slate-100 rounded-3xl p-8 transition-all duration-500 overflow-hidden shadow-sm">
+              <div className="relative mt-8 sm:mt-0">
+                <div className="relative bg-slate-50 border border-slate-100 rounded-3xl p-6 sm:p-8 transition-all duration-500 overflow-hidden shadow-sm">
                   <div className="relative z-10 text-center">
-                    <div className="relative mb-8">
-                      <div className="w-32 h-32 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto shadow-2xl">
+                    <div className="relative mb-4 sm:mb-8">
+                      <div className="w-24 h-24 sm:w-32 sm:h-32 bg-taxi-yellow rounded-full flex items-center justify-center mx-auto shadow-2xl">
                         <div className="text-center">
-                          <div className="text-4xl font-black text-violet-600">2013</div>
-                          <div className="text-sm font-bold text-violet-500">Founded</div>
+                          <div className="text-2xl sm:text-4xl font-black text-violet-600">2013</div>
+                          <div className="text-xs sm:text-sm font-bold text-violet-500">Founded</div>
                         </div>
                       </div>
                     </div>
                     
                     {/* Current status */}
-                    <div className="mt-8">
-                      <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full shadow-sm">
-                        <div className="w-3 h-3 bg-taxi-yellow rounded-full"></div>
-                        <span className="text-slate-900 font-bold">Leading Service Provider</span>
+                    <div className="mt-4 sm:mt-8">
+                      <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full shadow-sm">
+                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-taxi-yellow rounded-full"></div>
+                        <span className="text-slate-900 font-bold text-xs sm:text-sm">Leading Service Provider</span>
                       </div>
                     </div>
                   </div>

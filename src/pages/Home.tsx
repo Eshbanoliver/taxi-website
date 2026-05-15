@@ -42,9 +42,9 @@ const Home = () => {
                     <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
                     <span className="text-emerald-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Since 2014</span>
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight animate-slide-in-up">
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-slate-900 leading-tight animate-slide-in-up">
                     Your Trusted
-                    <span className="block text-gradient-vibrant mt-2">Journey Partner</span>
+                    <span className="block text-gradient-vibrant mt-1 sm:mt-2">Journey Partner</span>
                   </h2>
                 </div>
                 
@@ -131,8 +131,8 @@ const Home = () => {
             <div className="w-2 h-2 bg-amber-500 rounded-full"></div>
             <span className="text-amber-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Our Impact</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Numbers That Define Excellence</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Metrics that showcase our commitment to quality service</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Numbers That Define Excellence</h2>
+          <p className="text-sm sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Metrics that showcase our commitment to quality service</p>
         </div>
         
         <div className="relative">
@@ -199,8 +199,8 @@ const Home = () => {
             <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
             <span className="text-indigo-600 font-bold text-xs sm:text-sm tracking-wider uppercase">What We Offer</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Premium Transportation Services</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 animate-slide-in-up">Premium Transportation Services</h2>
+          <p className="text-sm sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto font-light px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Comprehensive transportation solutions tailored to meet your every need with excellence and reliability</p>
         </div>
         
         <div className="relative">
@@ -299,8 +299,8 @@ const Home = () => {
             <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
             <span className="text-indigo-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Simple Process</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">How It Works</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Get your ride in three easy steps</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">How It Works</h2>
+          <p className="text-sm sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Get your ride in three easy steps</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
@@ -331,14 +331,14 @@ const Home = () => {
               )}
               
               <div className="relative z-10 flex flex-col items-center">
-                <div className="w-20 h-20 bg-white border border-slate-100 shadow-sm rounded-3xl flex items-center justify-center mb-6 group-hover:bg-taxi-yellow/10 group-hover:border-taxi-yellow/30 transition-all duration-500 hover-lift">
-                  <item.icon className="text-taxi-yellow w-10 h-10" />
-                  <div className="absolute -top-3 -right-3 w-10 h-10 bg-taxi-yellow text-taxi-black rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white border border-slate-100 shadow-sm rounded-3xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-taxi-yellow/10 group-hover:border-taxi-yellow/30 transition-all duration-500 hover-lift">
+                  <item.icon className="text-taxi-yellow w-8 h-8 sm:w-10 sm:h-10" />
+                  <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-8 h-8 sm:w-10 sm:h-10 bg-taxi-yellow text-taxi-black rounded-full flex items-center justify-center font-bold text-base sm:text-lg shadow-lg">
                     {item.step}
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{item.title}</h3>
-                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-4">{item.title}</h3>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
             </div>
           ))}
@@ -452,27 +452,27 @@ const Home = () => {
                 Book your ride today and experience the difference!
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="/contact" className="btn-primary">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4 sm:px-0">
+                <a href="/contact" className="btn-primary w-full sm:w-auto flex justify-center">
                   <Phone className="w-5 h-5" />
                   <span>Book Now</span>
                 </a>
-                <a href="/services" className="btn-secondary">
+                <a href="/services" className="btn-secondary w-full sm:w-auto flex justify-center">
                   <BookOpen className="w-5 h-5" />
                   <span>View Services</span>
                 </a>
               </div>
               
               {/* Trust indicators */}
-              <div className="flex items-center justify-center space-x-8 pt-6 border-t border-slate-100">
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 pt-6 border-t border-slate-100">
                 <div className="flex items-center space-x-2">
-                  <Star className="text-taxi-yellow w-5 h-5" />
-                  <span className="text-slate-900 font-semibold">4.9 Rating</span>
+                  <Star className="text-taxi-yellow w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="text-slate-900 font-semibold text-sm sm:text-base">4.9 Rating</span>
                 </div>
-                <div className="text-slate-300">•</div>
-                <div className="text-slate-900">50K+ Happy Customers</div>
-                <div className="text-slate-300">•</div>
-                <div className="text-slate-900">24/7 Service</div>
+                <div className="hidden sm:block text-slate-300">•</div>
+                <div className="text-slate-900 text-sm sm:text-base font-semibold">50K+ Customers</div>
+                <div className="hidden sm:block text-slate-300">•</div>
+                <div className="text-slate-900 text-sm sm:text-base font-semibold">24/7 Service</div>
               </div>
             </div>
           </div>

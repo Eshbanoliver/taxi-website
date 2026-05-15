@@ -58,8 +58,8 @@ const Contact = () => {
               <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
               <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Get In Touch</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">Contact Us</h1>
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light mx-auto">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6">Contact Us</h1>
+            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed font-light mx-auto px-4">
               Get in touch with us for bookings, inquiries, or support
             </p>
           </div>
@@ -73,29 +73,29 @@ const Contact = () => {
             <Phone className="text-taxi-yellow" size={16} />
             <span className="text-taxi-yellow font-semibold">Contact Info</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Get in Touch</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Multiple ways to reach us anytime</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">Get in Touch</h2>
+          <p className="text-sm sm:text-xl text-slate-600 max-w-2xl mx-auto px-4">Multiple ways to reach us anytime</p>
         </div>
         
         <div className="relative">
           <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
-          <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-8 p-6 md:p-12">
+          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 p-6 sm:p-12">
             {contactInfo.map((info, index) => (
               <div key={index} className="group relative">
                 {/* Card */}
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
+                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
                   <div className="relative z-10 text-center">
                     {/* Icon */}
-                    <div className="relative mb-6">
-                      <div className="icon-container w-16 h-16 mx-auto">
-                        <info.icon className="icon-primary w-8 h-8" strokeWidth={1.5} />
+                    <div className="relative mb-4 sm:mb-6">
+                      <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto">
+                        <info.icon className="icon-primary w-6 h-6 sm:w-8 sm:h-8" strokeWidth={1.5} />
                       </div>
                     </div>
                     
-                    <h3 className="text-2xl font-bold text-slate-900 mb-4">{info.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-4">{info.title}</h3>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className={`${idx === 0 ? 'text-slate-500 text-sm mb-1' : 'text-base font-bold text-taxi-yellow'}`}>
+                      <p key={idx} className={`${idx === 0 ? 'text-slate-500 text-xs sm:text-sm mb-1' : 'text-sm sm:text-base font-bold text-taxi-yellow'}`}>
                         {detail}
                       </p>
                     ))}
@@ -112,19 +112,19 @@ const Contact = () => {
         <div className="relative">
           <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
-          <div className="relative grid md:grid-cols-2 gap-12 p-6 md:p-12">
+          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 p-6 sm:p-12">
             {/* Contact Form */}
             <div className="relative">
-              <div className="relative glass rounded-3xl p-8 md:p-12 border border-slate-100 shadow-sm">
-                <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-6">
-                  <Send className="text-taxi-yellow" size={16} />
-                  <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Send Message</span>
+              <div className="relative glass rounded-3xl p-6 sm:p-12 border border-slate-100 shadow-sm">
+                <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-4 sm:mb-6">
+                  <Send className="text-taxi-yellow" size={14} />
+                  <span className="text-taxi-yellow font-bold text-[10px] sm:text-sm tracking-wider uppercase">Send Message</span>
                 </div>
                 
-                <h2 className="text-4xl font-bold text-slate-900 mb-8">Get in Touch</h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Contact Us</h2>
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                   <div>
-                    <label htmlFor="name" className="block text-slate-700 font-medium mb-2">
+                    <label htmlFor="name" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
                       Your Name *
                     </label>
                     <input
@@ -134,12 +134,12 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm"
+                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm text-sm sm:text-base"
                       placeholder="John Doe"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-slate-700 font-medium mb-2">
+                    <label htmlFor="email" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
                       Email Address *
                     </label>
                     <input
@@ -149,12 +149,12 @@ const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm"
+                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm text-sm sm:text-base"
                       placeholder="john@example.com"
                     />
                   </div>
                   <div>
-                    <label htmlFor="phone" className="block text-slate-700 font-medium mb-2">
+                    <label htmlFor="phone" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
                       Phone Number
                     </label>
                     <input
@@ -163,12 +163,12 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm"
+                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm text-sm sm:text-base"
                       placeholder="+91 98765 43210"
                     />
                   </div>
                   <div>
-                    <label htmlFor="message" className="block text-slate-700 font-medium mb-2">
+                    <label htmlFor="message" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
                       Message *
                     </label>
                     <textarea
@@ -177,24 +177,24 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      rows={5}
-                      className="w-full px-4 py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 resize-none shadow-sm"
-                      placeholder="Tell us how we can help you..."
+                      rows={4}
+                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 resize-none shadow-sm text-sm sm:text-base"
+                      placeholder="How can we help you?"
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-taxi-yellow text-taxi-black font-bold py-4 px-8 rounded-xl hover:bg-yellow-400 transition-all duration-300 flex items-center justify-center space-x-3 group"
+                    className="w-full bg-taxi-yellow text-taxi-black font-bold py-3.5 sm:py-4 px-8 rounded-xl hover:bg-yellow-400 transition-all duration-300 flex items-center justify-center space-x-3 group text-sm sm:text-base"
                   >
-                    <Send className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" size={20} />
+                    <Send className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" size={18} />
                     <span>Send Message</span>
                   </button>
                 </form>
                 
                 {isSubmitted && (
-                  <div className="mt-6 p-4 bg-white border border-taxi-yellow/30 rounded-lg flex items-center space-x-2 animate-fadeIn shadow-sm">
-                    <CheckCircle className="text-taxi-yellow" size={20} />
-                    <span className="text-slate-900 font-medium">Message sent successfully! We'll get back to you soon.</span>
+                  <div className="mt-4 p-3 sm:p-4 bg-white border border-taxi-yellow/30 rounded-lg flex items-center space-x-2 animate-fadeIn shadow-sm">
+                    <CheckCircle className="text-taxi-yellow" size={18} />
+                    <span className="text-slate-900 font-medium text-xs sm:text-sm">Message sent successfully! We'll get back to you soon.</span>
                   </div>
                 )}
               </div>
@@ -202,27 +202,27 @@ const Contact = () => {
 
             {/* Map Placeholder */}
             <div className="relative">
-              <div className="relative glass rounded-3xl p-8 h-full min-h-[400px] flex items-center justify-center border border-slate-100 shadow-sm">
+              <div className="relative glass rounded-3xl p-6 sm:p-8 h-full min-h-[300px] sm:min-h-[400px] flex items-center justify-center border border-slate-100 shadow-sm">
                 <div className="text-center">
-                  <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-6">
-                    <MapPin className="text-taxi-yellow" size={16} />
-                    <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Location</span>
+                  <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6">
+                    <MapPin className="text-taxi-yellow" size={14} />
+                    <span className="text-taxi-yellow font-bold text-[10px] sm:text-sm tracking-wider uppercase">Location</span>
                   </div>
                   
-                  <div className="relative mb-6">
-                    <div className="icon-container w-24 h-24 mx-auto shadow-sm">
-                      <MapPin className="icon-primary w-12 h-12" strokeWidth={1.5} />
+                  <div className="relative mb-4 sm:mb-6">
+                    <div className="icon-container w-16 h-16 sm:w-24 sm:h-24 mx-auto shadow-sm">
+                      <MapPin className="icon-primary w-8 h-8 sm:w-12 sm:h-12" strokeWidth={1.5} />
                     </div>
                   </div>
                   
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3">Find Us in Udaipur</h3>
-                  <p className="text-slate-500 mb-2">Interactive map will be displayed here</p>
-                  <p className="text-lg font-bold text-taxi-yellow">Udaipur, Rajasthan 313001</p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Find Us in Udaipur</h3>
+                  <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">Interactive map will be displayed here</p>
+                  <p className="text-base sm:text-lg font-bold text-taxi-yellow">Udaipur, Rajasthan 313001</p>
                   
                   {/* CTA */}
-                  <div className="mt-8">
-                    <a href="#" className="inline-flex items-center space-x-2 bg-white border border-slate-200 text-slate-700 font-bold py-3 px-8 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 shadow-sm">
-                      <MapPin size={16} />
+                  <div className="mt-6 sm:mt-8">
+                    <a href="#" className="inline-flex items-center space-x-2 bg-white border border-slate-200 text-slate-700 font-bold py-2.5 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 shadow-sm text-xs sm:text-sm">
+                      <MapPin size={14} />
                       <span>Get Directions</span>
                     </a>
                   </div>

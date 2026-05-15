@@ -114,8 +114,8 @@ const Services = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-slate-100/50 to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6">Our Services</h1>
-            <p className="text-xl md:text-2xl text-slate-600 leading-relaxed font-light mx-auto">
+            <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-900 mb-4 sm:mb-6">Our Services</h1>
+            <p className="text-lg sm:text-2xl text-slate-600 leading-relaxed font-light mx-auto px-4">
               Comprehensive transportation solutions tailored to meet your every need
             </p>
           </div>
@@ -131,8 +131,8 @@ const Services = () => {
             <Car className="text-indigo-500" size={16} />
             <span className="text-indigo-600 font-semibold">Our Services</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Premium Transportation</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your every need</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">Premium Transportation</h2>
+          <p className="text-sm sm:text-xl text-slate-600 max-w-2xl mx-auto px-4">Comprehensive solutions tailored to meet your every need</p>
         </div>
         
         <div className="relative">
@@ -148,7 +148,7 @@ const Services = () => {
               >
                 {/* Card */}
                 <div
-                  className={`relative glass rounded-3xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm cursor-pointer ${
+                  className={`relative glass rounded-3xl p-6 sm:p-8 transition-all duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm cursor-pointer ${
                     selectedService === service.id ? 'ring-2 ring-taxi-yellow shadow-xl' : ''
                   }`}
                   onClick={() => setSelectedService(service.id === selectedService ? null : service.id)}
@@ -229,8 +229,8 @@ const Services = () => {
             <Car className="text-blue-500" size={16} />
             <span className="text-blue-600 font-semibold">Our Fleet</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Premium Vehicles</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Choose from our wide range of well-maintained vehicles</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">Premium Vehicles</h2>
+          <p className="text-sm sm:text-xl text-slate-600 max-w-2xl mx-auto px-4">Choose from our wide range of well-maintained vehicles</p>
         </div>
         
         <div className="relative">
@@ -289,26 +289,26 @@ const Services = () => {
 
       {/* Service Process */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="glass rounded-3xl p-10 md:p-16 border border-slate-100 shadow-sm">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">How It Works</h2>
-            <p className="text-xl text-slate-600">Simple steps to book your ride</p>
+        <div className="glass rounded-3xl p-6 sm:p-16 border border-slate-100 shadow-sm">
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">How It Works</h2>
+            <p className="text-sm sm:text-xl text-slate-600 px-4">Simple steps to book your ride</p>
           </div>
-          <div className="grid md:grid-cols-4 gap-6 relative">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 relative">
             {/* Connecting Line */}
-            <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-white/10"></div>
+            <div className="hidden md:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-slate-100"></div>
             {[
-              { step: '1', title: 'Book Your Ride', desc: 'Call, app, or website' },
-              { step: '2', title: 'Get Confirmation', desc: 'Instant booking confirmation' },
-              { step: '3', title: 'Driver Assigned', desc: 'Professional driver assigned' },
-              { step: '4', title: 'Enjoy Your Trip', desc: 'Safe and comfortable journey' },
+              { step: '1', title: 'Book Ride', desc: 'Call, app, or website' },
+              { step: '2', title: 'Confirmation', desc: 'Instant booking status' },
+              { step: '3', title: 'Driver Info', desc: 'Pro driver details sent' },
+              { step: '4', title: 'Enjoy Trip', desc: 'Safe & comfy journey' },
             ].map((item, index) => (
-              <div key={index} className="text-center relative z-10">
-                <div className="w-16 h-16 bg-white border border-slate-200 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-taxi-yellow transition-colors duration-300 shadow-sm">
-                  <span className="text-2xl font-bold text-taxi-black">{item.step}</span>
+              <div key={index} className="text-center relative z-10 group">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white border border-slate-200 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:bg-taxi-yellow transition-all duration-300 shadow-sm">
+                  <span className="text-xl sm:text-2xl font-bold text-taxi-black">{item.step}</span>
                 </div>
-                <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-slate-600 text-sm">{item.desc}</p>
+                <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-1 sm:mb-2">{item.title}</h3>
+                <p className="text-slate-600 text-xs sm:text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -318,8 +318,8 @@ const Services = () => {
       {/* Pricing Highlights */}
       <section className="container mx-auto px-4 py-24 lg:py-36">
         <div className="text-center mb-12">
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Transparent Pricing</h2>
-          <p className="text-xl text-slate-600">No hidden charges, fair and affordable rates</p>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-4">Transparent Pricing</h2>
+          <p className="text-sm sm:text-xl text-slate-600 px-4">No hidden charges, fair and affordable rates</p>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {[

@@ -112,44 +112,43 @@ const HeroSlider = () => {
                 <div className="text-center lg:text-left space-y-8 lg:space-y-12">
                   {/* Title */}
                   <div className="space-y-4">
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-tight">
+                    <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold text-slate-900 leading-tight">
                       {slide.title}
                     </h1>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl text-taxi-yellow font-semibold">
+                    <h2 className="text-xl sm:text-3xl lg:text-4xl text-taxi-yellow font-semibold">
                       {slide.subtitle}
                     </h2>
                   </div>
                   
                   {/* Description */}
-                  <p className="text-xl sm:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto lg:mx-0">
+                  <p className="text-lg sm:text-2xl text-slate-700 leading-relaxed max-w-3xl mx-auto lg:mx-0">
                     {slide.description}
                   </p>
                   
                   {/* Features */}
-                  <div className="flex flex-wrap justify-center lg:justify-start gap-4 sm:gap-6">
+                  <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-6">
                     {slide.features.map((feature, idx) => (
                       <div
                         key={idx}
-                        className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-slate-200 shadow-sm"
+                        className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm px-4 py-2 sm:px-6 sm:py-3 rounded-full border border-slate-200 shadow-sm"
                       >
-                        <div className="icon-container w-8 h-8">
-                          <CheckCircle className="icon-primary w-5 h-5" strokeWidth={1.5} />
+                        <div className="icon-container w-6 h-6 sm:w-8 sm:h-8">
+                          <CheckCircle className="icon-primary w-4 h-4 sm:w-5 sm:h-5" strokeWidth={1.5} />
                         </div>
-                        <span className="text-slate-700 font-medium text-base">{feature}</span>
+                        <span className="text-slate-700 font-medium text-sm sm:text-base">{feature}</span>
                       </div>
                     ))}
                   </div>
                   
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-                    <button className="group relative bg-taxi-yellow text-taxi-black font-bold py-5 px-10 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-3 min-w-[220px] text-lg">
-                      <Phone size={24} strokeWidth={2} className="group-hover:animate-pulse" />
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start px-4 sm:px-0">
+                    <button className="group relative bg-taxi-yellow text-taxi-black font-bold py-4 sm:py-5 px-8 sm:px-10 rounded-full hover:bg-yellow-400 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-3 w-full sm:min-w-[220px] sm:w-auto text-base sm:text-lg">
+                      <Phone size={20} strokeWidth={2} className="group-hover:animate-pulse" />
                       <span>{slide.ctaText}</span>
-                      <div className="absolute inset-0 bg-white/20 rounded-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
                     </button>
-                    <a href="/services" className="group bg-white text-slate-900 font-semibold py-5 px-10 rounded-full hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 border border-slate-200 flex items-center justify-center min-w-[220px] text-lg shadow-sm">
-                      <span>View All Services</span>
-                      <ChevronRight size={24} strokeWidth={2} className="ml-2 group-hover:translate-x-1 transition-transform" />
+                    <a href="/services" className="group bg-white text-slate-900 font-semibold py-4 sm:py-5 px-8 sm:px-10 rounded-full hover:bg-gray-50 transform hover:scale-105 transition-all duration-300 border border-slate-200 flex items-center justify-center w-full sm:min-w-[220px] sm:w-auto text-base sm:text-lg shadow-sm">
+                      <span>View Services</span>
+                      <ChevronRight size={20} strokeWidth={2} className="ml-2 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
                 </div>
@@ -196,23 +195,23 @@ const HeroSlider = () => {
       {/* Professional Auto-play Toggle */}
       <button
         onClick={() => setIsAutoPlay(!isAutoPlay)}
-        className="absolute top-12 right-12 bg-white text-slate-900 p-4 rounded-full hover:bg-gray-50 transition-all duration-300 border border-slate-200 z-30 shadow-lg"
+        className="absolute top-6 right-6 lg:top-12 lg:right-12 bg-white text-slate-900 p-3 lg:p-4 rounded-full hover:bg-gray-50 transition-all duration-300 border border-slate-200 z-30 shadow-lg"
         aria-label={isAutoPlay ? "Pause autoplay" : "Start autoplay"}
       >
         {isAutoPlay ? (
-          <div className="w-6 h-6 flex items-center justify-center">
-            <div className="w-5 h-5 bg-current rounded-sm" />
+          <div className="w-5 h-5 lg:w-6 lg:h-6 flex items-center justify-center">
+            <div className="w-4 h-4 lg:w-5 lg:h-5 bg-current rounded-sm" />
           </div>
         ) : (
-          <div className="w-6 h-6 flex items-center justify-center space-x-1.5">
-            <div className="w-1.5 h-5 bg-current" />
-            <div className="w-1.5 h-5 bg-current" />
+          <div className="w-5 h-5 lg:w-6 lg:h-6 flex items-center justify-center space-x-1.5">
+            <div className="w-1 h-4 lg:w-1.5 lg:h-5 bg-current" />
+            <div className="w-1 h-4 lg:w-1.5 lg:h-5 bg-current" />
           </div>
         )}
       </button>
 
-      {/* Professional Trust Badges */}
-      <div className="absolute top-12 left-12 flex flex-col space-y-4 z-20">
+      {/* Professional Trust Badges - Hidden on mobile for less clutter */}
+      <div className="hidden lg:flex absolute top-12 left-12 flex-col space-y-4 z-20">
         <div className="bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 shadow-lg">
           <div className="icon-container w-12 h-12">
             <Star className="icon-primary w-6 h-6" strokeWidth={1.5} />
@@ -234,7 +233,7 @@ const HeroSlider = () => {
         </div>
       </div>
       
-      <div className="absolute bottom-12 right-12 bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 z-20 shadow-lg">
+      <div className="hidden lg:flex absolute bottom-12 right-12 bg-white p-4 rounded-xl border border-slate-100 flex items-center space-x-3 z-20 shadow-lg">
         <div className="icon-container w-12 h-12">
           <Clock className="icon-dark w-6 h-6" strokeWidth={1.5} />
         </div>

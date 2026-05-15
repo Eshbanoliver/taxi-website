@@ -288,101 +288,116 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="section-container bg-slate-50/50">
-        <div className="page-header">
-          <div className="section-badge">
-            <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
-            <span className="text-indigo-600 font-bold text-xs sm:text-sm tracking-wider uppercase">Simple Process</span>
+      {/* How It Works - Clean Minimalist Section */}
+      <section className="bg-minimal py-32 sm:py-48 lg:py-64">
+        <div className="container mx-auto px-4 sm:px-8">
+          <div className="text-center max-w-4xl mx-auto mb-24 sm:mb-32">
+            <div className="section-badge mb-8 mx-auto">
+              <div className="w-2 h-2 bg-taxi-yellow rounded-full animate-pulse"></div>
+              <span className="text-slate-900 font-black text-xs sm:text-sm tracking-[0.3em] uppercase">Simple Process</span>
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black text-slate-900 mb-10 leading-tight">
+              Booking Your Ride <span className="text-taxi-yellow">Simplified</span>
+            </h2>
+            <p className="text-xl sm:text-2xl text-slate-500 font-medium leading-relaxed">
+              Experience the ease of modern travel. We've optimized every step to get you moving faster.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">How It Works</h2>
-          <p className="text-sm sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Get your ride in three easy steps</p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-12 max-w-6xl mx-auto">
-          {[
-            { 
-              step: '01', 
-              title: 'Book Your Ride', 
-              desc: 'Choose your destination and car type through our app or website.',
-              icon: BookOpen 
-            },
-            { 
-              step: '02', 
-              title: 'Get Driver Details', 
-              desc: 'Receive instant confirmation with driver and vehicle information.',
-              icon: Shield 
-            },
-            { 
-              step: '03', 
-              title: 'Enjoy Your Journey', 
-              desc: 'Sit back and relax as our professional driver takes you safely to your destination.',
-              icon: Car 
-            },
-          ].map((item, index) => (
-            <div key={index} className="relative group text-center px-6">
-              {/* Connector Line (Desktop) */}
-              {index < 2 && (
-                <div className="hidden md:block absolute top-12 left-[60%] w-full h-[2px] bg-gradient-to-r from-taxi-yellow/50 to-transparent z-0"></div>
-              )}
-              
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white border border-slate-100 shadow-sm rounded-3xl flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-taxi-yellow/10 group-hover:border-taxi-yellow/30 transition-all duration-500 hover-lift">
-                  <item.icon className="text-taxi-yellow w-8 h-8 sm:w-10 sm:h-10" />
-                  <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-8 h-8 sm:w-10 sm:h-10 bg-taxi-yellow text-taxi-black rounded-full flex items-center justify-center font-bold text-base sm:text-lg shadow-lg">
-                    {item.step}
+          <div className="bento-grid">
+            {[
+              { 
+                step: '01', 
+                title: 'Choose Destination', 
+                desc: 'Select your pickup and drop-off points with precision using our interactive map.',
+                span: 'md:col-span-2 lg:col-span-2',
+                icon: MapPin,
+                color: 'bg-amber-50 text-amber-600'
+              },
+              { 
+                step: '02', 
+                title: 'Select Class', 
+                desc: 'From Economy to Luxury, pick the vehicle that matches your style and budget perfectly.',
+                span: 'md:col-span-2 lg:col-span-2',
+                icon: Car,
+                color: 'bg-indigo-50 text-indigo-600'
+              },
+              { 
+                step: '03', 
+                title: 'Live Tracking', 
+                desc: 'Monitor your ride in real-time as it approaches your location.',
+                span: 'md:col-span-2 lg:col-span-2',
+                icon: Clock,
+                color: 'bg-emerald-50 text-emerald-600'
+              },
+              { 
+                step: '04', 
+                title: 'Safe Arrival', 
+                desc: 'Enjoy a secure journey with professional drivers and reach your destination safely.',
+                span: 'md:col-span-4 lg:col-span-6',
+                icon: Shield,
+                color: 'bg-rose-50 text-rose-600'
+              },
+            ].map((item, index) => (
+              <div key={index} className={`bento-card ${item.span} group`}>
+                <div className="flex flex-col h-full justify-between">
+                  <div>
+                    <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mb-10 group-hover:scale-110 transition-transform duration-500`}>
+                      <item.icon size={32} strokeWidth={2.5} />
+                    </div>
+                    <h3 className="text-3xl font-black text-slate-900 mb-6">{item.title}</h3>
+                    <p className="text-lg text-slate-500 leading-relaxed font-medium">{item.desc}</p>
+                  </div>
+                  <div className="mt-12">
+                    <span className="text-6xl font-black text-slate-100 group-hover:text-taxi-yellow/20 transition-colors duration-500">{item.step}</span>
                   </div>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-4">{item.title}</h3>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Testimonials - More Spacing */}
       <section className="section-container relative overflow-hidden">
         <div className="absolute inset-0 bg-vibrant-rose animate-moving-mesh"></div>
         <div className="page-header relative z-10">
-          <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-xl border border-white/20 px-6 py-2 rounded-full mb-6">
-            <div className="w-2 h-2 bg-rose-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(251,113,133,1)]"></div>
-            <span className="text-white font-black text-xs sm:text-sm tracking-wider uppercase text-glow">Testimonials</span>
+          <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full mb-12">
+            <div className="w-2.5 h-2.5 bg-rose-400 rounded-full animate-pulse"></div>
+            <span className="text-white font-black text-xs sm:text-sm tracking-[0.2em] uppercase">Trusted Voice</span>
           </div>
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-white mb-6 animate-slide-in-up shimmer">Customer Stories</h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-slate-200 max-w-3xl mx-auto font-medium px-4 animate-slide-in-up" style={{ animationDelay: '200ms' }}>Real experiences from our valued passengers</p>
+          <h2 className="text-5xl sm:text-8xl font-black text-white mb-10 shimmer">Client Stories</h2>
+          <p className="text-xl sm:text-2xl text-slate-200 max-w-4xl mx-auto font-medium px-4">Real feedback from Udaipur's most satisfied travelers</p>
         </div>
         
-        <div className="relative perspective-1000 max-w-7xl mx-auto">
-          <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 p-6 sm:p-8">
+        <div className="relative perspective-1000 max-w-7xl mx-auto mt-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="card-3d animate-slide-in-up" style={{ animationDelay: `${300 + index * 100}ms` }}>
-                <div className="glass-dark rounded-[3rem] p-10 transition-all duration-700 overflow-hidden border-white/5 shadow-2xl">
-                  {/* Stars with glow */}
-                  <div className="flex space-x-2 mb-8">
+                <div className="glass-dark rounded-[3.5rem] p-12 transition-all duration-700 overflow-hidden border-white/5 shadow-2xl">
+                  {/* Stars with intense glow */}
+                  <div className="flex space-x-2 mb-10">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="text-taxi-yellow fill-current w-5 h-5 shadow-[0_0_15px_rgba(251,191,36,0.6)]" />
+                      <Star key={i} className="text-taxi-yellow fill-current w-6 h-6 shadow-[0_0_20px_rgba(251,191,36,0.8)]" />
                     ))}
                   </div>
                   
-                  {/* Quote */}
-                  <p className="text-slate-200 mb-10 text-lg sm:text-xl leading-relaxed italic font-medium">
+                  <p className="text-slate-200 mb-12 text-xl leading-relaxed italic font-medium">
                     "{testimonial.text}"
                   </p>
                   
-                  {/* Author */}
-                  <div className="flex items-center space-x-4 pt-8 border-t border-white/10">
-                    <div className="w-16 h-16 relative">
-                      <div className="absolute inset-0 bg-taxi-yellow rounded-2xl rotate-6 transition-transform group-hover:rotate-12 duration-500"></div>
+                  <div className="flex items-center space-x-5 pt-10 border-t border-white/10">
+                    <div className="w-20 h-20 relative">
+                      <div className="absolute inset-0 bg-taxi-yellow rounded-[1.5rem] rotate-6 group-hover:rotate-12 duration-500"></div>
                       <img 
                         src={testimonial.image} 
                         alt={testimonial.name} 
-                        className="relative z-10 w-full h-full object-cover rounded-2xl border-2 border-white shadow-xl"
+                        className="relative z-10 w-full h-full object-cover rounded-[1.5rem] border-4 border-white shadow-2xl"
                       />
                     </div>
                     <div>
-                      <div className="text-white font-black text-lg">{testimonial.name}</div>
-                      <div className="text-taxi-yellow font-bold text-sm tracking-widest uppercase">Verified</div>
+                      <div className="text-white font-black text-xl">{testimonial.name}</div>
+                      <div className="text-taxi-yellow font-black text-xs tracking-[0.2em] uppercase">verified</div>
                     </div>
                   </div>
                 </div>
@@ -392,40 +407,36 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FAQ Preview */}
-      <section className="section-container">
-        <div className="page-header">
-          <div className="section-badge">
-            <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
-            <span className="text-taxi-yellow font-bold text-xs sm:text-sm tracking-wider uppercase">Quick Answers</span>
+      {/* FAQ Preview - Clean Bento Style */}
+      <section className="bg-white py-32 sm:py-48 lg:py-64 relative overflow-hidden">
+        <div className="container mx-auto px-4 sm:px-8 relative z-10">
+          <div className="text-center max-w-4xl mx-auto mb-24">
+            <div className="section-badge mb-8 mx-auto">
+              <div className="w-2 h-2 bg-taxi-yellow rounded-full"></div>
+              <span className="text-slate-900 font-black text-xs sm:text-sm tracking-[0.3em] uppercase">Knowledge Base</span>
+            </div>
+            <h2 className="text-5xl sm:text-7xl font-black text-slate-900 mb-8">Got Questions?</h2>
+            <p className="text-xl text-slate-500 font-medium">Everything you need to know about our services, answered by our team.</p>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 sm:mb-6">Frequently Asked Questions</h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-light px-4">Get answers to common questions about our services</p>
-        </div>
-        
-        <div className="relative max-w-4xl mx-auto">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
           
-          <div className="relative space-y-6 sm:space-y-8 p-6 sm:p-8">
+          <div className="max-w-5xl mx-auto grid gap-8">
             {faqs.map((faq, index) => (
-              <div key={index} className="glass rounded-2xl p-6 border border-slate-100 hover:bg-slate-50 transition-all duration-300">
-                <div className="flex items-start space-x-4">
-                  <HelpCircle className="text-taxi-yellow w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1" />
-                  <div className="flex-1">
-                    <h4 className="text-slate-900 font-semibold mb-2 text-sm sm:text-base">{faq.q}</h4>
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">{faq.a}</p>
-                  </div>
+              <div key={index} className="group bento-card flex items-start space-x-8 p-10 hover:border-taxi-yellow/30">
+                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-taxi-yellow/10 transition-colors duration-500">
+                  <HelpCircle className="text-taxi-yellow" size={28} />
+                </div>
+                <div>
+                  <h4 className="text-2xl font-black text-slate-900 mb-4">{faq.q}</h4>
+                  <p className="text-lg text-slate-500 font-medium leading-relaxed">{faq.a}</p>
                 </div>
               </div>
             ))}
           </div>
           
-          {/* CTA */}
-          <div className="text-center mt-8">
-            <a href="/faq" className="btn-secondary inline-flex items-center space-x-2">
-              <span>View All FAQs</span>
-              <ArrowRight className="w-4 h-4" />
+          <div className="text-center mt-20">
+            <a href="/faq" className="btn-secondary bg-slate-900 text-white hover:bg-taxi-yellow hover:text-taxi-black py-6 px-16 shadow-2xl group">
+              <span>View Full FAQ Center</span>
+              <ArrowRight className="inline-block ml-3 group-hover:translate-x-2 transition-transform" />
             </a>
           </div>
         </div>

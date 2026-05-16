@@ -166,7 +166,7 @@ const FAQ = () => {
                 >
                   <div className="flex items-center space-x-3 sm:space-x-4">
                     <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                      <HelpCircle className={activeIndex === index ? 'icon-primary' : 'icon-dark opacity-40'} size={18} className="sm:size-5" strokeWidth={1.5} />
+                      <HelpCircle className={`${activeIndex === index ? 'icon-primary' : 'icon-dark opacity-40'} sm:size-5`} size={18} strokeWidth={1.5} />
                     </div>
                     <h3 className={`text-base sm:text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-taxi-yellow' : 'text-slate-900 group-hover:text-taxi-yellow'}`}>
                       {faq.question}

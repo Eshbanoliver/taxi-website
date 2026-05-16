@@ -3,11 +3,11 @@ import { Phone, MapPin, Mail, Facebook, Instagram, Twitter, Youtube, Car, Star, 
 
 const Footer = () => {
   const quickLinks = [
-    { name: 'Home', href: '/', icon: 'home' },
-    { name: 'About Us', href: '/about', icon: 'about' },
-    { name: 'Services', href: '/services', icon: 'services' },
-    { name: 'FAQ', href: '/faq', icon: 'faq' },
-    { name: 'Contact Us', href: '/contact', icon: 'contact' },
+    { name: 'Home', href: '/' },
+    { name: 'About Us', href: '/about' },
+    { name: 'Services', href: '/services' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   const services = [
@@ -18,168 +18,105 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-slate-50 border-t border-slate-100 mt-20 overflow-hidden w-full overflow-x-hidden">
+    <footer className="relative bg-slate-900 pt-32 pb-12 overflow-hidden w-full">
       {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent"></div>
+      <div className="absolute inset-0 bg-vibrant-indigo opacity-20 animate-moving-mesh" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
       
-      <div className="relative container mx-auto px-4 py-4 sm:py-6">
-        {/* Top Section */}
-        <div className="text-center mb-4 sm:mb-6">
-          <div className="inline-flex items-center space-x-2 bg-taxi-yellow/10 px-3 py-1 rounded-full mb-3 border border-taxi-yellow/20">
-            <Car className="text-taxi-yellow w-4 h-4" />
-            <span className="text-taxi-yellow font-bold text-xs sm:text-sm">Stay Connected</span>
+      <div className="relative container mx-auto px-6">
+        {/* Top Branding Section */}
+        <div className="grid lg:grid-cols-2 gap-24 mb-32 items-center">
+          <div className="space-y-8">
+            <div className="flex items-center space-x-4 group">
+               <div className="w-16 h-16 bg-taxi-yellow rounded-2xl flex items-center justify-center shadow-2xl group-hover:rotate-12 transition-transform">
+                  <Car size={32} className="text-taxi-black" />
+               </div>
+               <div>
+                  <h2 className="text-4xl font-black text-white tracking-tight">Taxi GO</h2>
+                  <p className="text-taxi-yellow font-black uppercase tracking-[0.3em] text-[10px]">Elite Mobility</p>
+               </div>
+            </div>
+            <p className="text-xl text-slate-400 font-medium max-w-xl">
+              Udaipur's premier transportation service. We combine luxury with reliability to craft the perfect journey for every guest.
+            </p>
+            <div className="flex space-x-6">
+              {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
+                <a key={i} href="#" className="w-12 h-12 icon-container bg-white/5 border-white/10 text-white hover:bg-taxi-yellow hover:text-taxi-black transition-all">
+                  <Icon size={20} />
+                </a>
+              ))}
+            </div>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-900 mb-2">
-            Let's Take You
-            <span className="block text-taxi-yellow">Wherever You Need</span>
-          </h2>
-          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto px-4">
-            Join thousands of satisfied customers who trust us for their daily transportation needs
-          </p>
+          
+          <div className="glass-premium p-12 rounded-[3rem] border-white/5">
+            <h3 className="text-2xl font-black text-white mb-8">Newsletter</h3>
+            <p className="text-slate-400 mb-8 font-medium">Subscribe for exclusive travel offers and city guides.</p>
+            <div className="flex gap-4">
+              <input 
+                type="email" 
+                placeholder="Email address" 
+                className="flex-1 bg-white/5 border border-white/10 rounded-2xl px-6 py-4 text-white focus:ring-2 focus:ring-taxi-yellow outline-none transition-all"
+              />
+              <button className="bg-taxi-yellow p-4 rounded-2xl text-taxi-black hover:scale-105 transition-transform">
+                <ArrowRight size={24} />
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-4 sm:mb-6">
-          {/* Company Info */}
-          <div className="space-y-2 sm:space-y-3 group">
-            <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 flex items-center justify-center">
-                  <img src="/logo.png" alt="TaxiGO Logo" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />
-                </div>
-              <div>
-                <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-taxi-yellow transition-colors duration-300">Taxi GO</h3>
-                <p className="text-xs text-slate-500 hidden sm:block">Your Journey Partner</p>
-              </div>
-            </div>
-            <p className="text-slate-600 text-xs leading-relaxed">
-              Your trusted partner for professional taxi services in Udaipur and beyond. Safe, reliable, and affordable transportation solutions.
-            </p>
-            
-            {/* Trust indicators */}
-            <div className="flex items-center space-x-2">
-              <div className="flex items-center space-x-1">
-                <Star className="text-taxi-yellow w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-slate-900 font-semibold text-xs">4.9</span>
-              </div>
-              <div className="w-px h-2 bg-slate-200"></div>
-              <div className="text-slate-700 text-xs">50K+ Rides</div>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-3">
-            <h4 className="text-base font-bold text-slate-900 mb-3 flex items-center space-x-2">
-              <div className="w-5 h-5 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
-                <ArrowRight className="text-taxi-yellow" size={12} />
-              </div>
-              <span>Quick Links</span>
-            </h4>
-            <ul className="space-y-1">
-              {quickLinks.map((link, index) => (
+        {/* Links Grid */}
+        <div className="grid md:grid-cols-4 gap-16 mb-32">
+          <div className="space-y-8">
+            <h4 className="text-white font-black uppercase tracking-widest text-xs">Explore</h4>
+            <ul className="space-y-4">
+              {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
-                    className="group flex items-center space-x-1 text-slate-600 hover:text-taxi-yellow transition-all duration-300 hover:translate-x-1 text-xs"
-                  >
-                    <div className="w-0 h-0.5 bg-taxi-yellow group-hover:w-4 transition-all duration-300"></div>
-                    <span className="font-medium">{link.name}</span>
-                  </a>
+                  <a href={link.href} className="text-slate-400 hover:text-taxi-yellow font-medium transition-colors">{link.name}</a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services */}
-          <div className="space-y-3">
-            <h4 className="text-base font-bold text-slate-900 mb-3 flex items-center space-x-2">
-              <div className="w-5 h-5 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
-                <Car className="text-taxi-yellow" size={12} />
-              </div>
-              <span>Our Services</span>
-            </h4>
-            <ul className="space-y-1">
-              {services.map((service, index) => (
+          <div className="space-y-8">
+            <h4 className="text-white font-black uppercase tracking-widest text-xs">Services</h4>
+            <ul className="space-y-4">
+              {services.map((service) => (
                 <li key={service.name}>
-                  <a
-                    href={service.href}
-                    className="group flex items-center space-x-1 text-slate-600 hover:text-taxi-yellow transition-all duration-300 hover:translate-x-1 text-xs"
-                  >
-                    <div className="w-0 h-0.5 bg-taxi-yellow group-hover:w-4 transition-all duration-300"></div>
-                    <span className="font-medium">{service.name}</span>
-                  </a>
+                  <a href={service.href} className="text-slate-400 hover:text-taxi-yellow font-medium transition-colors">{service.name}</a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact & Social */}
-          <div className="space-y-3">
-            <h4 className="text-base font-bold text-slate-900 mb-3 flex items-center space-x-2">
-              <div className="w-5 h-5 bg-taxi-yellow/20 rounded-full flex items-center justify-center">
-                <Phone className="text-taxi-yellow" size={12} />
-              </div>
-              <span>Get In Touch</span>
-            </h4>
-            
-            <div className="space-y-2">
-              <div className="group flex items-center space-x-2">
-                <div className="w-6 h-6 icon-container group-hover:scale-110">
-                  <Phone className="icon-primary" size={12} strokeWidth={1.5} />
+          <div className="space-y-8 md:col-span-2">
+            <h4 className="text-white font-black uppercase tracking-widest text-xs">Contact</h4>
+            <div className="grid sm:grid-cols-2 gap-12">
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 text-taxi-yellow">
+                   <Phone size={18} />
+                   <span className="font-black">+91 98765 43210</span>
                 </div>
-                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">+91 98765 43210</span>
+                <p className="text-slate-400 font-medium">24/7 Booking Support</p>
               </div>
-              
-              <div className="group flex items-center space-x-2">
-                <div className="w-6 h-6 icon-container group-hover:scale-110">
-                  <Mail className="icon-primary" size={12} strokeWidth={1.5} />
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 text-taxi-yellow">
+                   <MapPin size={18} />
+                   <span className="font-black">Udaipur, India</span>
                 </div>
-                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">info@taxigo.com</span>
-              </div>
-              
-              <div className="group flex items-center space-x-2">
-                <div className="w-6 h-6 icon-container group-hover:scale-110">
-                  <MapPin className="icon-primary" size={12} strokeWidth={1.5} />
-                </div>
-                <span className="text-slate-600 group-hover:text-slate-900 transition-colors duration-300 text-xs">Udaipur, Rajasthan</span>
-              </div>
-            </div>
-
-            {/* Social Media */}
-            <div className="space-y-3 pt-2">
-              <h5 className="text-xs font-semibold text-slate-900">Follow Us</h5>
-              <div className="flex space-x-3">
-                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
-                  <Facebook className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
-                </a>
-                
-                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
-                  <Instagram className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
-                </a>
-                
-                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
-                  <Twitter className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
-                </a>
-                
-                <a href="#" className="w-8 h-8 icon-container hover:bg-taxi-yellow group">
-                  <Youtube className="icon-dark group-hover:text-taxi-black transition-colors" size={14} strokeWidth={1.5} />
-                </a>
+                <p className="text-slate-400 font-medium">Rajasthan 313001</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-slate-200 pt-3">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-1 md:space-y-0">
-            <p className="text-slate-500 text-center md:text-left text-xs">
-              ©️ Copyright 2026 | Taxi GO | All Rights Reserved
-            </p>
-            
-            <div className="flex items-center space-x-3">
-              <a href="/sitemap" className="text-slate-400 hover:text-taxi-yellow transition-colors duration-300 text-xs">
-                Sitemap
-              </a>
-            </div>
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+          <div className="text-slate-500 font-medium text-sm">
+            © 2026 Taxi GO. Crafted with excellence for Udaipur.
+          </div>
+          <div className="flex space-x-8">
+             <a href="#" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">Privacy Policy</a>
+             <a href="#" className="text-slate-500 hover:text-white transition-colors text-sm font-medium">Terms of Service</a>
           </div>
         </div>
       </div>

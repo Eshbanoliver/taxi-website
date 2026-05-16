@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle, HelpCircle, ArrowRight } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, CheckCircle, ArrowRight, MessageCircle } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,303 +23,168 @@ const Contact = () => {
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: 'Phone',
-      details: ['24/7 Customer Support', '+91 98765 43210'],
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      details: ['General Inquiries', 'info@taxigo.com'],
-    },
-    {
-      icon: MapPin,
-      title: 'Address',
-      details: ['Udaipur, Rajasthan 313001', 'India'],
-    },
-    {
-      icon: Clock,
-      title: 'Business Hours',
-      details: ['24/7 Service Available', 'Always Open'],
-    }
-  ];
-
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
-        {/* Background Image with Vibrant Overlay */}
+      <section className="relative h-[60vh] flex items-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] animate-ken-burns"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
           style={{ backgroundImage: `url('/contact_hero_taxi_1778825062870.png')` }}
-        ></div>
-        <div className="absolute inset-0 bg-vibrant-violet opacity-90 animate-moving-mesh"></div>
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+        />
+        <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-5xl mx-auto space-y-12">
-            <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full shadow-2xl animate-float">
-              <div className="w-2.5 h-2.5 bg-violet-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(139,92,246,1)]"></div>
-              <span className="text-white font-black text-sm tracking-[0.3em] uppercase">Connect With Us</span>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl space-y-12 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-3 glass-premium px-8 py-3 rounded-full">
+              <div className="w-2.5 h-2.5 bg-violet-500 rounded-full animate-pulse shadow-soft-glow" />
+              <span className="text-white font-black text-xs tracking-[0.3em] uppercase">Connect With Us</span>
             </div>
             
-            <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black text-white leading-tight animate-slide-in-up shimmer">
-              Get In <span className="text-gradient-gold">Touch</span>
+            <h1 className="text-6xl md:text-9xl font-black text-white leading-tight">
+              Get In <span className="font-serif italic text-gradient-gold shimmer">Touch</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-100 leading-relaxed font-medium max-w-4xl mx-auto animate-slide-in-up" style={{ animationDelay: '200ms' }}>
-              We're here to help you 24/7. Reach out for bookings, inquiries, or any transportation support.
+            <p className="text-xl md:text-3xl text-slate-200 max-w-2xl font-medium leading-relaxed">
+              We're here to help you 24/7. Reach out for elite transportation support in Udaipur.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Phone className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Contact Info</span>
-          </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">Get in Touch</h2>
-          <p className="text-sm sm:text-xl text-slate-600 max-w-2xl mx-auto px-4">Multiple ways to reach us anytime</p>
-        </div>
-        
-        <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
-          
-          <div className="relative grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 p-6 sm:p-12">
-            {contactInfo.map((info, index) => (
-              <div key={index} className="group relative">
-                {/* Card */}
-                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
-                  <div className="relative z-10 text-center">
-                    {/* Icon */}
-                    <div className="relative mb-4 sm:mb-6">
-                      <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto">
-                        <info.icon className="icon-primary w-6 h-6 sm:w-8 sm:h-8" strokeWidth={1.5} />
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-4">{info.title}</h3>
-                    {info.details.map((detail, idx) => (
-                      <p key={idx} className={`${idx === 0 ? 'text-slate-500 text-xs sm:text-sm mb-1' : 'text-sm sm:text-base font-bold text-taxi-yellow'}`}>
-                        {detail}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form & Map */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 rounded-3xl shadow-sm"></div>
-          
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 p-6 sm:p-12">
+      {/* Contact Grid */}
+      <section className="py-32 md:py-64 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-2 gap-24 items-start">
             {/* Contact Form */}
-            <div className="relative">
-              <div className="relative glass rounded-3xl p-6 sm:p-12 border border-slate-100 shadow-sm">
-                <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-4 sm:mb-6">
-                  <Send className="text-taxi-yellow" size={14} />
-                  <span className="text-taxi-yellow font-bold text-[10px] sm:text-sm tracking-wider uppercase">Send Message</span>
+            <div className="glass-premium p-12 md:p-24 rounded-[4rem] border-slate-100 shadow-premium animate-fade-in-up">
+              <div className="space-y-12">
+                <div className="space-y-6">
+                  <h2 className="text-4xl font-black text-slate-900">Send a <span className="font-serif italic text-taxi-yellow">Message</span></h2>
+                  <p className="text-slate-500 font-medium">We usually respond within 30 minutes for urgent inquiries.</p>
                 </div>
-                
-                <h2 className="text-2xl sm:text-4xl font-bold text-slate-900 mb-6 sm:mb-8">Contact Us</h2>
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
-                      Your Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm text-sm sm:text-base"
-                      placeholder="John Doe"
-                    />
+
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="space-y-4">
+                      <label className="text-xs font-black uppercase tracking-widest text-slate-400">Full Name</label>
+                      <input 
+                        type="text" 
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className="w-full bg-slate-50 border-none rounded-2xl p-5 focus:ring-2 focus:ring-taxi-yellow transition-all" 
+                        placeholder="John Doe"
+                        required
+                      />
+                    </div>
+                    <div className="space-y-4">
+                      <label className="text-xs font-black uppercase tracking-widest text-slate-400">Email Address</label>
+                      <input 
+                        type="email" 
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full bg-slate-50 border-none rounded-2xl p-5 focus:ring-2 focus:ring-taxi-yellow transition-all" 
+                        placeholder="john@example.com"
+                        required
+                      />
+                    </div>
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm text-sm sm:text-base"
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="phone" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
-                      Phone Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 shadow-sm text-sm sm:text-base"
-                      placeholder="+91 98765 43210"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-slate-700 font-medium mb-1.5 sm:mb-2 text-sm sm:text-base">
-                      Message *
-                    </label>
-                    <textarea
-                      id="message"
+                  
+                  <div className="space-y-4">
+                    <label className="text-xs font-black uppercase tracking-widest text-slate-400">Message</label>
+                    <textarea 
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
+                      rows={6}
+                      className="w-full bg-slate-50 border-none rounded-3xl p-5 focus:ring-2 focus:ring-taxi-yellow transition-all resize-none" 
+                      placeholder="How can we assist your journey?"
                       required
-                      rows={4}
-                      className="w-full px-4 py-3 sm:py-4 rounded-xl border border-slate-200 bg-white text-slate-900 placeholder-slate-400 focus:outline-none focus:border-taxi-yellow transition-all duration-300 resize-none shadow-sm text-sm sm:text-base"
-                      placeholder="How can we help you?"
-                    ></textarea>
+                    />
                   </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-taxi-yellow text-taxi-black font-bold py-3.5 sm:py-4 px-8 rounded-xl hover:bg-yellow-400 transition-all duration-300 flex items-center justify-center space-x-3 group text-sm sm:text-base"
-                  >
-                    <Send className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" size={18} />
+
+                  <button type="submit" className="btn-premium w-full py-6 text-lg">
+                    <Send size={24} />
                     <span>Send Message</span>
                   </button>
+
+                  {isSubmitted && (
+                    <div className="flex items-center space-x-3 text-emerald-500 font-black animate-fadeIn justify-center">
+                      <CheckCircle size={20} />
+                      <span>Message Received Successfully!</span>
+                    </div>
+                  )}
                 </form>
-                
-                {isSubmitted && (
-                  <div className="mt-4 p-3 sm:p-4 bg-white border border-taxi-yellow/30 rounded-lg flex items-center space-x-2 animate-fadeIn shadow-sm">
-                    <CheckCircle className="text-taxi-yellow" size={18} />
-                    <span className="text-slate-900 font-medium text-xs sm:text-sm">Message sent successfully! We'll get back to you soon.</span>
-                  </div>
-                )}
               </div>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="relative">
-              <div className="relative glass rounded-3xl p-6 sm:p-8 h-full min-h-[300px] sm:min-h-[400px] flex items-center justify-center border border-slate-100 shadow-sm">
-                <div className="text-center">
-                  <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6">
-                    <MapPin className="text-taxi-yellow" size={14} />
-                    <span className="text-taxi-yellow font-bold text-[10px] sm:text-sm tracking-wider uppercase">Location</span>
-                  </div>
-                  
-                  <div className="relative mb-4 sm:mb-6">
-                    <div className="icon-container w-16 h-16 sm:w-24 sm:h-24 mx-auto shadow-sm">
-                      <MapPin className="icon-primary w-8 h-8 sm:w-12 sm:h-12" strokeWidth={1.5} />
+            {/* Contact Details */}
+            <div className="space-y-24">
+              <div className="space-y-12">
+                 <h2 className="text-5xl md:text-7xl font-black text-slate-900 leading-tight">
+                  Reach Out <br />
+                  <span className="font-serif italic text-taxi-yellow">Directly</span>
+                </h2>
+                <p className="text-xl md:text-2xl text-slate-500 font-medium">Choose your preferred channel for immediate assistance.</p>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-12">
+                {[
+                  { icon: Phone, title: 'Call Center', detail: '+91 98765 43210', desc: '24/7 Hotline' },
+                  { icon: MessageCircle, title: 'WhatsApp', detail: '+91 98765 43211', desc: 'Instant Chat' },
+                  { icon: Mail, title: 'Email', detail: 'info@taxigo.com', desc: 'General Inquiries' },
+                  { icon: MapPin, title: 'Office', detail: 'Udaipur, India', desc: 'Main Headquarters' },
+                ].map((item, index) => (
+                  <div key={index} className="group space-y-6 p-10 glass rounded-[3rem] hover:shadow-premium-hover transition-all duration-700 animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
+                    <div className="w-16 h-16 icon-container bg-slate-900 text-white shadow-2xl group-hover:scale-110 transition-transform">
+                      <item.icon size={28} />
+                    </div>
+                    <div className="space-y-2">
+                      <div className="text-slate-400 font-black uppercase tracking-widest text-[10px]">{item.desc}</div>
+                      <h3 className="text-2xl font-black text-slate-900">{item.title}</h3>
+                      <p className="text-taxi-yellow font-black text-lg">{item.detail}</p>
                     </div>
                   </div>
-                  
-                  <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Find Us in Udaipur</h3>
-                  <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">Interactive map will be displayed here</p>
-                  <p className="text-base sm:text-lg font-bold text-taxi-yellow">Udaipur, Rajasthan 313001</p>
-                  
-                  {/* CTA */}
-                  <div className="mt-6 sm:mt-8">
-                    <a href="#" className="inline-flex items-center space-x-2 bg-white border border-slate-200 text-slate-700 font-bold py-2.5 sm:py-3 px-6 sm:px-8 rounded-full hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 shadow-sm text-xs sm:text-sm">
-                      <MapPin size={14} />
-                      <span>Get Directions</span>
-                    </a>
-                  </div>
-                </div>
+                ))}
+              </div>
+
+              {/* Map Immersive Placeholder */}
+              <div className="relative rounded-[4rem] overflow-hidden shadow-2xl h-96 group animate-fade-in-up" style={{ animationDelay: '600ms' }}>
+                 <div className="absolute inset-0 bg-slate-100 flex items-center justify-center">
+                    <MapPin size={48} className="text-taxi-yellow animate-bounce" />
+                    <div className="absolute bottom-10 left-10 right-10">
+                       <div className="glass-premium p-8 rounded-3xl flex items-center justify-between">
+                          <div>
+                             <div className="font-black text-white text-xl">Udaipur, Rajasthan</div>
+                             <div className="text-slate-300 text-xs font-bold uppercase tracking-widest">Main Hub</div>
+                          </div>
+                          <button className="p-4 bg-taxi-yellow rounded-full text-taxi-black hover:scale-110 transition-transform">
+                             <ArrowRight size={24} />
+                          </button>
+                       </div>
+                    </div>
+                 </div>
+                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Contact Options */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 shadow-sm px-4 py-2 rounded-full mb-4">
-            <Phone className="text-taxi-yellow" size={16} />
-            <span className="text-taxi-yellow font-semibold">Quick Contact</span>
-          </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">Quick Contact Options</h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">Choose your preferred way to reach us</p>
-        </div>
-        
-        <div className="relative">
-          <div className="absolute inset-0 bg-white border border-slate-100 shadow-sm rounded-3xl"></div>
-          
-          <div className="relative grid md:grid-cols-3 gap-8 p-6 md:p-12">
-            {[
-              {
-                title: 'Call for Booking',
-                desc: 'Instant booking over phone',
-                action: 'Call Now',
-                icon: Phone,
-              },
-              {
-                title: 'WhatsApp Support',
-                desc: 'Chat with our team',
-                action: 'Start Chat',
-                icon: Send,
-              },
-              {
-                title: 'Email Support',
-                desc: 'Detailed inquiries',
-                action: 'Send Email',
-                icon: Mail,
-              }
-            ].map((option, index) => (
-              <div key={index} className="group relative">
-                <div className="relative glass rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
-                  <div className="relative z-10 text-center">
-                    <div className="relative mb-6">
-                      <div className="icon-container w-20 h-20 mx-auto group-hover:bg-taxi-yellow transition-colors duration-300">
-                        <option.icon className="icon-primary group-hover:text-taxi-black transition-colors duration-300" size={40} strokeWidth={1.5} />
-                      </div>
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">{option.title}</h3>
-                    <p className="text-slate-600 mb-8">{option.desc}</p>
-                    <button className="w-full bg-slate-50 border border-slate-100 text-slate-700 font-bold py-3 px-6 rounded-xl hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-300 shadow-sm">
-                      <span>{option.action}</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Link */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="relative">
-          <div className="absolute inset-0 bg-white border border-taxi-yellow/20 rounded-3xl shadow-sm"></div>
-          
-          <div className="relative glass rounded-3xl p-12 md:p-20 text-center border border-slate-100 shadow-sm">
-            <div className="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 px-4 py-2 rounded-full mb-6">
-              <HelpCircle className="text-taxi-yellow" size={16} />
-              <span className="text-taxi-yellow font-bold text-sm tracking-wider uppercase">Need Help?</span>
-            </div>
-            
-            <h2 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-6">Have Questions?</h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-10">
-              Check out our FAQ section for quick answers to common questions
-            </p>
-            
-            <a href="/faq" className="inline-flex items-center space-x-3 bg-taxi-yellow text-taxi-black font-bold py-4 px-10 rounded-full hover:bg-yellow-400 transition-all duration-300 group">
-              <HelpCircle size={20} />
-              <span>View FAQ</span>
-              <ArrowRight className="group-hover:translate-x-1 transition-transform" size={20} />
+      {/* Final Support CTA */}
+      <section className="py-32 md:py-64 bg-slate-50">
+        <div className="container mx-auto px-6 text-center space-y-12">
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900">Need immediate help?</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            <a href="tel:+919876543210" className="btn-premium py-6 px-16 text-xl">
+               <Phone size={24} />
+               <span>Call 24/7 Hotline</span>
+            </a>
+            <a href="https://wa.me/919876543211" className="btn-outline-premium border-slate-200 text-slate-900 hover:bg-slate-900 hover:text-white py-6 px-16 text-xl">
+               <MessageCircle size={24} />
+               <span>Chat on WhatsApp</span>
             </a>
           </div>
         </div>

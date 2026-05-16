@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, ChevronRight, HelpCircle, Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
+import { ChevronDown, HelpCircle, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -44,45 +44,10 @@ const FAQ = () => {
       question: 'Do you offer outstation services?',
       answer: 'Yes, we provide outstation taxi services for both one-way and round trips with experienced drivers.',
       category: 'Services'
-    },
-    {
-      question: 'Can I book a taxi for someone else?',
-      answer: 'Yes, you can book a taxi for family members, friends, or colleagues. Simply provide the pickup details.',
-      category: 'Booking'
-    },
-    {
-      question: 'What if my flight is delayed?',
-      answer: 'We track flight schedules and adjust pickup times accordingly for airport transfers.',
-      category: 'Services'
-    },
-    {
-      question: 'Do you have corporate packages?',
-      answer: 'Yes, we offer customized corporate travel solutions including employee transportation and client pickups.',
-      category: 'Corporate'
-    },
-    {
-      question: 'How can I track my booked taxi?',
-      answer: 'Once your booking is confirmed, you will receive real-time tracking information via SMS or our app.',
-      category: 'Tracking'
-    },
-    {
-      question: 'What safety measures do you have?',
-      answer: 'We prioritize passenger safety with verified drivers, GPS-enabled vehicles, and 24/7 customer support.',
-      category: 'Safety'
-    },
-    {
-      question: 'Do you provide child seats?',
-      answer: 'Yes, child seats are available upon request. Please mention this requirement while booking.',
-      category: 'Services'
-    },
-    {
-      question: 'What are your service hours?',
-      answer: 'We operate 24/7, including holidays and weekends. You can book our services anytime.',
-      category: 'General'
     }
   ];
 
-  const categories = ['All', 'Booking', 'Payment', 'Safety', 'Services', 'Pricing', 'Corporate', 'Tracking', 'Vehicles', 'General'];
+  const categories = ['All', 'Booking', 'Payment', 'Safety', 'Services', 'Pricing', 'Vehicles'];
   const [selectedCategory, setSelectedCategory] = useState('All');
 
   const filteredFAQs = selectedCategory === 'All' 
@@ -94,198 +59,142 @@ const FAQ = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 lg:pt-48 lg:pb-40 overflow-hidden">
-        {/* Background Image with Vibrant Overlay */}
+      <section className="relative h-[60vh] flex items-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[10000ms] animate-ken-burns"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
           style={{ backgroundImage: `url('/faq_hero_taxi_1778825046153.png')` }}
-        ></div>
-        <div className="absolute inset-0 bg-vibrant-rose opacity-90 animate-moving-mesh"></div>
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+        />
+        <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />
         
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-5xl mx-auto space-y-12">
-            <div className="inline-flex items-center space-x-3 bg-white/10 backdrop-blur-xl border border-white/20 px-8 py-3 rounded-full shadow-2xl animate-float">
-              <div className="w-2.5 h-2.5 bg-rose-400 rounded-full animate-pulse shadow-[0_0_15px_rgba(251,113,133,1)]"></div>
-              <span className="text-white font-black text-sm tracking-[0.3em] uppercase">Help Center</span>
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-4xl space-y-12 animate-fade-in-up">
+            <div className="inline-flex items-center space-x-3 glass-premium px-8 py-3 rounded-full">
+              <div className="w-2.5 h-2.5 bg-rose-500 rounded-full animate-pulse shadow-soft-glow" />
+              <span className="text-white font-black text-xs tracking-[0.3em] uppercase">Help Center</span>
             </div>
             
-            <h1 className="text-5xl sm:text-7xl lg:text-9xl font-black text-white leading-tight animate-slide-in-up shimmer">
-              Common <span className="text-gradient-gold">Questions</span>
+            <h1 className="text-6xl md:text-9xl font-black text-white leading-tight">
+              Common <span className="font-serif italic text-gradient-gold shimmer">Questions</span>
             </h1>
             
-            <p className="text-xl sm:text-2xl lg:text-3xl text-slate-100 leading-relaxed font-medium max-w-4xl mx-auto animate-slide-in-up" style={{ animationDelay: '200ms' }}>
+            <p className="text-xl md:text-3xl text-slate-200 max-w-2xl font-medium leading-relaxed">
               Find everything you need to know about Udaipur's premier transportation service.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Browse by Category</h2>
-          <p className="text-slate-600">Find answers specific to your needs</p>
-        </div>
-        <div className="flex flex-wrap sm:justify-center gap-2 sm:gap-3 px-4 sm:px-0 overflow-x-auto sm:overflow-x-visible pb-4 sm:pb-0 scrollbar-hide">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 sm:px-6 py-2 sm:py-3 rounded-full font-bold transition-all duration-300 border whitespace-nowrap text-xs sm:text-sm ${
-                selectedCategory === category
-                  ? 'bg-taxi-yellow text-taxi-black border-taxi-yellow shadow-md'
-                  : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-slate-900 shadow-sm'
-              }`}
-            >
-              <div className="flex items-center space-x-1 sm:space-x-2">
-                {selectedCategory === category && <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-taxi-black rounded-full" />}
-                <span>{category}</span>
+      {/* FAQ Categories & Items */}
+      <section className="py-32 md:py-48 bg-white relative">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-24">
+            {/* Sidebar Categories */}
+            <div className="lg:w-1/3 space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-4xl font-black text-slate-900">Categories</h2>
+                <div className="flex flex-wrap lg:flex-col gap-4">
+                  {categories.map((cat) => (
+                    <button
+                      key={cat}
+                      onClick={() => setSelectedCategory(cat)}
+                      className={`px-8 py-4 rounded-2xl font-black text-sm tracking-widest uppercase transition-all border text-left ${
+                        selectedCategory === cat 
+                        ? 'bg-taxi-yellow border-taxi-yellow text-taxi-black shadow-premium' 
+                        : 'bg-white border-slate-100 text-slate-400 hover:bg-slate-50'
+                      }`}
+                    >
+                      {cat}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </button>
-          ))}
-        </div>
-      </section>
 
-      {/* FAQ Items */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto space-y-4">
-          {filteredFAQs.map((faq, index) => (
-            <div key={index} className="group relative">
-              <div
-                className={`glass rounded-2xl overflow-hidden transition-all duration-300 border border-slate-100 shadow-sm ${
-                  activeIndex === index ? 'ring-1 ring-taxi-yellow bg-slate-50' : 'hover:bg-slate-50'
-                }`}
-              >
-                {/* Question Button */}
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-6 text-left flex items-center justify-between transition-colors duration-300"
-                >
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 flex-shrink-0">
-                      <HelpCircle className={`${activeIndex === index ? 'icon-primary' : 'icon-dark opacity-40'} sm:size-5`} size={18} strokeWidth={1.5} />
-                    </div>
-                    <h3 className={`text-base sm:text-lg font-bold transition-colors duration-300 ${activeIndex === index ? 'text-taxi-yellow' : 'text-slate-900 group-hover:text-taxi-yellow'}`}>
-                      {faq.question}
-                    </h3>
+              {/* Support Card */}
+              <div className="glass-dark p-12 rounded-[3rem] space-y-8 relative overflow-hidden group">
+                <div className="absolute inset-0 bg-vibrant-rose opacity-20 animate-moving-mesh" />
+                <h3 className="text-3xl font-black text-white relative z-10">Still have questions?</h3>
+                <p className="text-slate-300 font-medium relative z-10">Our support team is available 24/7 to assist you with any inquiries.</p>
+                <div className="space-y-4 relative z-10">
+                  <div className="flex items-center space-x-4 text-taxi-yellow">
+                    <Phone size={20} />
+                    <span className="font-black">+91 98765 43210</span>
                   </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <span className="hidden md:inline-block text-xs text-slate-500 bg-slate-50 px-3 py-1 rounded-full border border-slate-100">
-                      {faq.category}
-                    </span>
-                    <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300 ${activeIndex === index ? 'bg-taxi-yellow text-taxi-black rotate-180' : 'bg-slate-50 text-slate-400 group-hover:bg-slate-100'}`}>
-                      <ChevronDown size={16} />
-                    </div>
+                  <div className="flex items-center space-x-4 text-white">
+                    <Mail size={20} />
+                    <span className="font-black">support@taxigo.com</span>
                   </div>
+                </div>
+                <button className="btn-premium w-full py-5 relative z-10">
+                  Contact Now
                 </button>
-                
-                {/* Answer */}
-                {activeIndex === index && (
-                  <div className="px-6 pb-6 animate-fadeIn">
-                    <div className="flex items-start space-x-3 sm:space-x-4 pt-4 border-t border-slate-100">
-                      <div className="hidden sm:block w-10 h-10 flex-shrink-0"></div>
-                      <p className="text-slate-600 leading-relaxed text-sm sm:text-base flex-1">{faq.answer}</p>
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
-          ))}
-        </div>
-      </section>
 
-      {/* Contact Support */}
-      <section className="container mx-auto px-4 py-24 lg:py-36">
-        <div className="relative">
-          <div className="absolute inset-0 bg-mesh-amber border border-amber-100/50 rounded-3xl shadow-sm"></div>
-          
-          <div className="relative glass rounded-3xl p-8 md:p-16 border border-slate-100">
-            <div className="text-center mb-10 sm:mb-16">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">Still Have Questions?</h2>
-              <p className="text-sm sm:text-xl text-slate-600 px-4">Our support team is here to help you 24/7</p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8 mb-16">
-              <div className="group relative">
-                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
-                  <div className="relative z-10 text-center">
-                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
-                      <Phone className="icon-primary group-hover:text-taxi-black transition-colors duration-300 size-6 sm:size-8" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Call Us</h3>
-                    <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">24/7 customer support</p>
-                    <p className="text-taxi-yellow font-bold text-sm sm:text-base">+91 98765 43210</p>
+            {/* FAQ Accordion */}
+            <div className="lg:w-2/3 space-y-8">
+              {filteredFAQs.map((faq, index) => (
+                <div key={index} className="group">
+                  <div 
+                    className={`glass rounded-[2.5rem] overflow-hidden transition-all duration-500 border ${
+                      activeIndex === index ? 'border-taxi-yellow shadow-premium' : 'border-slate-100 hover:border-taxi-yellow/30'
+                    }`}
+                  >
+                    <button
+                      onClick={() => toggleFAQ(index)}
+                      className="w-full p-10 text-left flex items-center justify-between group-hover:bg-slate-50/50 transition-colors"
+                    >
+                      <div className="flex items-center space-x-8">
+                        <div className={`w-12 h-12 icon-container transition-colors ${activeIndex === index ? 'bg-taxi-yellow text-taxi-black' : 'bg-slate-100 text-slate-400'}`}>
+                          <HelpCircle size={24} />
+                        </div>
+                        <h3 className={`text-xl md:text-2xl font-black transition-colors ${activeIndex === index ? 'text-taxi-yellow' : 'text-slate-900'}`}>
+                          {faq.question}
+                        </h3>
+                      </div>
+                      <ChevronDown size={28} className={`text-slate-300 transition-transform duration-500 ${activeIndex === index ? 'rotate-180 text-taxi-yellow' : ''}`} />
+                    </button>
+                    
+                    {activeIndex === index && (
+                      <div className="px-10 pb-10 animate-fadeIn">
+                        <div className="pt-10 border-t border-slate-100">
+                          <p className="text-xl text-slate-600 leading-relaxed font-medium">
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-              
-              <div className="group relative">
-                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
-                  <div className="relative z-10 text-center">
-                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
-                      <Mail className="icon-primary group-hover:text-taxi-black transition-colors duration-300 size-6 sm:size-8" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Email Us</h3>
-                    <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">Get quick responses</p>
-                    <p className="text-taxi-yellow font-bold text-sm sm:text-base">info@taxigo.com</p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="group relative">
-                <div className="relative glass rounded-3xl p-6 sm:p-8 transition-transform duration-300 hover:-translate-y-2 border border-slate-100 shadow-sm">
-                  <div className="relative z-10 text-center">
-                    <div className="icon-container w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 group-hover:bg-taxi-yellow transition-colors duration-300">
-                      <MapPin className="icon-primary group-hover:text-taxi-black transition-colors duration-300 size-6 sm:size-8" strokeWidth={1.5} />
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Visit Us</h3>
-                    <p className="text-slate-500 text-xs sm:text-sm mb-1 sm:mb-2">Udaipur, Rajasthan</p>
-                    <p className="text-taxi-yellow font-bold text-sm sm:text-base">313001</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <button className="bg-taxi-yellow text-taxi-black font-bold py-4 px-10 rounded-full hover:bg-yellow-400 transition-all duration-300 inline-flex items-center space-x-3 group">
-                <Phone size={20} />
-                <span>Contact Support</span>
-                <ChevronRight className="group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quick Help */}
-      <section className="container mx-auto px-4 py-16 lg:py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Quick Help</h2>
-        </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
-          <div className="absolute inset-0 bg-mesh-indigo rounded-3xl -m-4 sm:-m-6 lg:-m-8"></div>
-          <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          {[
-            { title: 'Book a Taxi', desc: 'Quick and easy booking', icon: CheckCircle },
-            { title: 'Check Fare', desc: 'Get instant price estimates', icon: CheckCircle },
-            { title: 'Track Ride', desc: 'Real-time ride tracking', icon: CheckCircle },
-            { title: 'Cancel Booking', desc: 'Easy cancellation process', icon: CheckCircle },
-          ].map((item, index) => (
-            <div key={index} className="glass rounded-3xl p-6 text-center border border-slate-100 shadow-sm transition-transform duration-300 hover:-translate-y-2">
-              <div className="icon-container w-12 h-12 mx-auto mb-4">
-                <item.icon className="icon-primary w-6 h-6" strokeWidth={1.5} />
+      {/* Support CTA */}
+      <section className="py-32 md:py-64 bg-slate-50">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { icon: Phone, title: 'Call Center', desc: 'Available 24/7 for urgent bookings and support.', detail: '+91 98765 43210' },
+              { icon: Mail, title: 'Email Support', desc: 'For corporate inquiries and formal complaints.', detail: 'info@taxigo.com' },
+              { icon: MapPin, title: 'Head Office', desc: 'Visit us for long-term contracts and partnerships.', detail: 'Udaipur, Rajasthan' },
+            ].map((item, index) => (
+              <div key={index} className="bento-card-premium p-12 text-center space-y-8 group">
+                <div className="w-20 h-20 mx-auto icon-container bg-slate-900 text-white shadow-2xl group-hover:scale-110 transition-transform">
+                  <item.icon size={32} />
+                </div>
+                <h3 className="text-2xl font-black text-slate-900">{item.title}</h3>
+                <p className="text-slate-500 font-medium">{item.desc}</p>
+                <div className="text-taxi-yellow font-black tracking-widest uppercase text-sm pt-4 border-t border-slate-100">{item.detail}</div>
               </div>
-              <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-              <p className="text-slate-600 text-sm">{item.desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
   );
 };

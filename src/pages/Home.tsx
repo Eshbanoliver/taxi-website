@@ -60,7 +60,7 @@ const Home = () => {
             <div className="relative group perspective-1000">
               <div className="absolute -inset-4 bg-taxi-yellow/20 blur-3xl rounded-[4rem] group-hover:bg-taxi-yellow/30 transition-colors duration-1000" />
               <div className="relative rounded-[4rem] overflow-hidden shadow-2xl transition-transform duration-1000 group-hover:scale-105">
-                <img src="/about_hero_taxi_1778825012509.png" alt="Premium Taxi" className="w-full h-full object-cover" />
+                <img src="/about_hero_taxi_1778825012509.png" alt="Premium Taxi" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-12 left-12 right-12">
                   <div className="glass-premium p-8 rounded-3xl flex items-center justify-between">
@@ -177,7 +177,7 @@ const Home = () => {
                 </div>
                 <p className="text-2xl text-slate-900 font-serif leading-relaxed italic">"{testimonial.text}"</p>
                 <div className="flex items-center space-x-6">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-20 h-20 rounded-3xl object-cover shadow-premium" />
+                  <img src={testimonial.image} alt={testimonial.name} loading="lazy" decoding="async" className="w-20 h-20 rounded-3xl object-cover shadow-premium" />
                   <div>
                     <div className="font-black text-slate-900 text-xl">{testimonial.name}</div>
                     <div className="text-slate-400 font-bold uppercase tracking-widest text-xs">Verified Traveler</div>

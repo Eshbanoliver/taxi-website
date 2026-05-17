@@ -208,7 +208,7 @@ const Services = () => {
               <div key={index} className="group relative animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
                 <div className="relative glass-dark rounded-[3.5rem] overflow-hidden border-white/5 hover:border-white/20 transition-all duration-700">
                   <div className="h-64 overflow-hidden relative">
-                    <img src={category.image} alt={category.category} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <img src={category.image} alt={category.category} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
                   </div>
                   

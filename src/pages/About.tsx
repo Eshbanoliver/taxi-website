@@ -48,7 +48,7 @@ const About = () => {
             <div className="relative group">
                <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-[4rem]" />
                <div className="relative rounded-[4rem] overflow-hidden shadow-2xl">
-                 <img src="/about_hero_taxi_1778825012509.png" alt="Our Heritage" className="w-full object-cover" />
+                 <img src="/about_hero_taxi_1778825012509.png" alt="Our Heritage" loading="lazy" decoding="async" className="w-full object-cover" />
                </div>
             </div>
             
@@ -153,7 +153,7 @@ const About = () => {
             {team.map((member, index) => (
               <div key={index} className="group relative animate-fade-in-up" style={{ animationDelay: `${index * 150}ms` }}>
                 <div className="relative rounded-[3.5rem] overflow-hidden shadow-2xl transition-transform duration-1000 group-hover:-translate-y-4">
-                  <img src={member.image} alt={member.name} className="w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
+                  <img src={member.image} alt={member.name} loading="lazy" decoding="async" className="w-full aspect-[3/4] object-cover grayscale group-hover:grayscale-0 transition-all duration-1000" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80" />
                   <div className="absolute bottom-10 left-10 right-10 text-center">
                     <div className="font-black text-white text-2xl mb-2">{member.name}</div>

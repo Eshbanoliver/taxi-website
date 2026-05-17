@@ -141,6 +141,7 @@
   .animate-scroll {
     animation: scroll 30s linear infinite;
     width: fit-content;
+    will-change: transform;
   }
   
   .animate-scroll:hover {
@@ -221,10 +222,12 @@
   .animate-moving-mesh {
     background-size: 200% 200%;
     animation: moving-mesh 15s ease infinite;
+    will-change: background-position;
   }
 
   .animate-float {
     animation: float 4s ease-in-out infinite;
+    will-change: transform;
   }
 
   .animate-ken-burns {

@@ -11,7 +11,7 @@ const HeroSlider = () => {
       title: "Premium Taxi Service",
       subtitle: "Udaipur's Finest Journey",
       description: "Experience luxury and comfort with our elite fleet and professional chauffeurs.",
-      image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1920&h=1080&fit=crop&crop=center&auto=format",
+      image: "https://images.unsplash.com/photo-1542362567-b07e54358753?w=1280&h=720&fit=crop&crop=center&auto=format&q=75",
       features: ["24/7 Elite Service", "Real-time Tracking", "Safe & Discreet"],
       ctaText: "Book Premium Ride",
       color: "gold"
@@ -21,7 +21,7 @@ const HeroSlider = () => {
       title: "Airport Transfers",
       subtitle: "Timeless Punctuality",
       description: "Reliable airport pickup and drop services with real-time flight tracking for peace of mind.",
-      image: "https://images.unsplash.com/photo-1436491865334-268b13d53b3a?w=1920&h=1080&fit=crop&crop=center&auto=format",
+      image: "https://images.unsplash.com/photo-1436491865334-268b13d53b3a?w=1280&h=720&fit=crop&crop=center&auto=format&q=75",
       features: ["Flight Monitoring", "Concierge Service", "Meet & Greet"],
       ctaText: "Book Airport Ride",
       color: "sapphire"
@@ -31,7 +31,7 @@ const HeroSlider = () => {
       title: "Corporate Solutions",
       subtitle: "Executive Excellence",
       description: "Customized transportation solutions for modern enterprises and high-profile events.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1920&h=1080&fit=crop&crop=center&auto=format",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1280&h=720&fit=crop&crop=center&auto=format&q=75",
       features: ["Enterprise Billing", "Priority Dispatch", "Executive Fleet"],
       ctaText: "Corporate Plans",
       color: "gold"
@@ -78,6 +78,12 @@ const HeroSlider = () => {
               <img
                 src={slide.image}
                 alt={slide.title}
+                // First slide: high priority for LCP. Rest: lazy (not in viewport yet)
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'low'}
+                decoding={index === 0 ? 'sync' : 'async'}
+                width={1280}
+                height={720}
                 className={`w-full h-full object-cover transition-transform duration-[20s] ease-linear ${index === currentSlide ? 'scale-110' : 'scale-100'}`}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />

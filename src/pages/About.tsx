@@ -20,7 +20,10 @@ const About = () => {
         <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />
         
-        <div className="absolute top-1/4 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] animate-blob" />
+        {/* Floating Background Blobs */}
+        <div className="absolute top-1/4 -right-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px] animate-blob pointer-events-none" />
+        <div className="absolute top-1/3 -left-24 w-80 h-80 bg-amber-500/10 rounded-full blur-[100px] animate-blob pointer-events-none" style={{ animationDelay: '4s' }} />
+        <div className="absolute bottom-10 left-1/3 w-96 h-96 bg-indigo-500/10 rounded-full blur-[130px] animate-blob pointer-events-none" style={{ animationDelay: '8s' }} />
         
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl space-y-12 animate-fade-in-up">
@@ -42,7 +45,11 @@ const About = () => {
       </section>
 
       {/* Story Section - Editorial Layout */}
-      <section className="py-32 md:py-64 bg-white relative">
+      <section className="py-32 md:py-64 bg-white relative overflow-hidden">
+        {/* Background Blobs */}
+        <div className="absolute -left-32 top-1/4 w-[400px] h-[400px] bg-rose-500/5 rounded-full blur-[120px] animate-blob pointer-events-none" style={{ animationDelay: '2s' }} />
+        <div className="absolute -right-32 bottom-1/4 w-[450px] h-[450px] bg-cyan-500/5 rounded-full blur-[140px] animate-blob pointer-events-none" style={{ animationDelay: '6s' }} />
+        
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-24 items-center">
             <div className="relative group">
@@ -84,6 +91,10 @@ const About = () => {
       {/* Stats - Immersive Grid */}
       <section className="py-32 md:py-64 bg-slate-900 relative overflow-hidden">
         <div className="absolute inset-0 bg-vibrant-emerald opacity-10 animate-moving-mesh" />
+        {/* Background Blobs for Stats */}
+        <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-80 h-80 bg-purple-500/10 rounded-full blur-[100px] animate-blob pointer-events-none" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-amber-500/10 rounded-full blur-[100px] animate-blob pointer-events-none" style={{ animationDelay: '5s' }} />
+        
         <div className="container mx-auto px-6 relative z-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12">
             {[
@@ -106,6 +117,10 @@ const About = () => {
 
       {/* Values - Bento Cards */}
       <section className="py-32 md:py-64 bg-white relative overflow-hidden">
+        {/* Shifting Blobs behind Bento Grid */}
+        <div className="absolute -right-24 top-10 w-96 h-96 bg-violet-500/5 rounded-full blur-[120px] animate-blob pointer-events-none" style={{ animationDelay: '3s' }} />
+        <div className="absolute -left-24 bottom-10 w-96 h-96 bg-amber-500/5 rounded-full blur-[120px] animate-blob pointer-events-none" style={{ animationDelay: '7s' }} />
+        
         <div className="container mx-auto px-6">
           <div className="text-center max-w-4xl mx-auto mb-32 space-y-8 animate-fade-in-up">
             <h2 className="text-5xl md:text-8xl font-black text-slate-900 leading-tight">
@@ -138,7 +153,11 @@ const About = () => {
       </section>
 
       {/* Team - Luxury Portrait Style */}
-      <section className="py-32 md:py-64 bg-slate-50">
+      <section className="py-32 md:py-64 bg-slate-50 relative overflow-hidden">
+        {/* Soft floating portraits background blobs */}
+        <div className="absolute -left-20 top-1/3 w-[500px] h-[500px] bg-blue-500/5 rounded-full blur-[150px] animate-blob pointer-events-none" style={{ animationDelay: '1s' }} />
+        <div className="absolute -right-20 bottom-1/3 w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[150px] animate-blob pointer-events-none" style={{ animationDelay: '5s' }} />
+        
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-32 gap-12 animate-fade-in-up">
             <div className="space-y-8 max-w-2xl">
@@ -171,6 +190,10 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="relative glass-dark p-12 md:p-32 rounded-[4rem] overflow-hidden group">
             <div className="absolute inset-0 bg-vibrant-emerald opacity-30 animate-moving-mesh" />
+            {/* Glowing inner CTA blobs */}
+            <div className="absolute -left-24 top-0 w-80 h-80 bg-taxi-yellow/20 rounded-full blur-[100px] animate-blob pointer-events-none" style={{ animationDelay: '2s' }} />
+            <div className="absolute -right-24 bottom-0 w-80 h-80 bg-cyan-500/20 rounded-full blur-[100px] animate-blob pointer-events-none" style={{ animationDelay: '6s' }} />
+            
             <div className="relative z-10 text-center max-w-4xl mx-auto space-y-12">
               <h2 className="text-5xl md:text-8xl font-black text-white leading-tight">
                 Experience the <br />

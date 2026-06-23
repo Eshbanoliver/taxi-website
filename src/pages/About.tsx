@@ -1,5 +1,6 @@
 import React from 'react';
 import { Users, Award, Clock, CheckCircle, Target, Eye, Heart, Shield, Car, Phone, ArrowRight, MapPin } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const About = () => {
   const team = [
@@ -11,6 +12,11 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="About Taxi GO | Premium Transport Service Provider in Udaipur"
+        description="Learn about Taxi GO's journey, team, and values. Providing safe, reliable, and premium taxi services in Udaipur since 2014."
+        keywords="about Taxi GO, Udaipur taxi history, Udaipur cab company, taxi team Udaipur, transportation services Udaipur"
+      />
       {/* Hero Section */}
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div 

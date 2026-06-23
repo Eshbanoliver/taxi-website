@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Send, CheckCircle, ArrowRight, MessageCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -25,6 +26,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Contact Us | Book Taxi GO Udaipur | 24/7 Support Hotline"
+        description="Get in touch with Udaipur's premier taxi service. Call our 24/7 hotline, message us on WhatsApp, or send an inquiry online."
+        keywords="contact Taxi GO, Udaipur taxi booking phone, WhatsApp taxi Udaipur, rent car Udaipur contact, taxi company Udaipur address"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center overflow-hidden">
         <div 

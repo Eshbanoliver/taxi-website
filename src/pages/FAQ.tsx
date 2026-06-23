@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
+  
+  // ... rest of setup ...
   const faqs = [
     {
       question: 'How do I book a taxi?',
@@ -60,6 +62,11 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEO 
+        title="Frequently Asked Questions (FAQ) | Taxi GO Udaipur"
+        description="Got questions about booking, fares, or safety? Read our frequently asked questions about Udaipur's premier taxi service."
+        keywords="Udaipur taxi FAQs, book cab Udaipur help, taxi fares Udaipur, cab cancellation policy Udaipur, safe rides Udaipur FAQ"
+      />
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center overflow-hidden">
         <div 

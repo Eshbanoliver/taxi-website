@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, BookOpen, HelpCircle } from 'lucide-react';
 import HeroSlider from '../components/HeroSlider';
+import SEO from '../components/SEO';
 
 const Home = () => {
   const testimonials = [
@@ -12,6 +13,14 @@ const Home = () => {
 
   return (
     <div className="w-full bg-white selection:bg-taxi-yellow selection:text-taxi-black">
+      <SEO 
+        title="Taxi GO | Best Taxi & Cab Service in Udaipur | 24/7 Airport Transfers"
+        description="Book the most reliable and affordable taxi service in Udaipur. Taxi GO offers 24/7 airport transfers, local sightseeing tours, and outstation trips with premium vehicles and expert drivers."
+        keywords="taxi service Udaipur, car rental Udaipur, airport transfer Udaipur, sightseeing Udaipur, best cab service Udaipur, affordable taxi Udaipur, professional drivers"
+      />
+      
+      <h1 className="sr-only">Taxi GO Udaipur - Premium Taxi & Cab Service</h1>
+      
       {/* Hero Section */}
       <HeroSlider />
 

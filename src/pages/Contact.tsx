@@ -9,6 +9,7 @@ const Contact = () => {
     phone: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -20,8 +21,18 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitted(true);
-    setTimeout(() => setIsSubmitted(false), 3000);
+    setIsSubmitting(true);
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+      setTimeout(() => setIsSubmitted(false), 4000);
+    }, 1800);
   };
 
   return (
@@ -111,10 +122,23 @@ const Contact = () => {
                     />
                   </div>
 
-                  <button type="submit" className="btn-premium w-full py-6 text-lg">
-                    <Send size={24} />
-                    <span>Send Message</span>
-                  </button>
+                  <button 
+                     type="submit" 
+                     className="btn-premium w-full py-6 text-lg flex items-center justify-center gap-3"
+                     disabled={isSubmitting}
+                   >
+                     {isSubmitting ? (
+                       <>
+                         <div className="w-5 h-5 border-3 border-white border-t-transparent rounded-full animate-spin" />
+                         <span>Sending Message...</span>
+                       </>
+                     ) : (
+                       <>
+                         <Send size={24} />
+                         <span>Send Message</span>
+                       </>
+                     )}
+                   </button>
 
                   {isSubmitted && (
                     <div className="flex items-center space-x-3 text-emerald-500 font-black animate-fadeIn justify-center">

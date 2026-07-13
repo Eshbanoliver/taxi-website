@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Car, Plane, Clock, Briefcase, Heart, Calendar, MapPin, CheckCircle, ArrowRight, Award, Shield, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
+import VehicleDetailsModal from '../components/VehicleDetailsModal';
 
 interface ServicesProps {
   onOpenBooking: () => void;
@@ -9,6 +10,8 @@ interface ServicesProps {
 
 const Services = ({ onOpenBooking }: ServicesProps) => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<any | null>(null);
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
   const services = [
     {
@@ -243,7 +246,13 @@ const Services = ({ onOpenBooking }: ServicesProps) => {
                       ))}
                     </div>
                     
-                    <button className="w-full py-5 rounded-2xl bg-white/5 text-white font-black uppercase tracking-widest text-xs border border-white/10 hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-500">
+                    <button 
+                      onClick={() => {
+                        setSelectedCategory(category);
+                        setIsDetailsOpen(true);
+                      }}
+                      className="w-full py-5 rounded-2xl bg-white/5 text-white font-black uppercase tracking-widest text-xs border border-white/10 hover:bg-taxi-yellow hover:text-taxi-black transition-all duration-500"
+                    >
                       View Details
                     </button>
                   </div>
@@ -296,6 +305,11 @@ const Services = ({ onOpenBooking }: ServicesProps) => {
           </div>
         </div>
       </section>
+      <VehicleDetailsModal 
+        isOpen={isDetailsOpen} 
+        onClose={() => setIsDetailsOpen(false)} 
+        category={selectedCategory} 
+      />
     </div>
   );
 };

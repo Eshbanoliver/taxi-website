@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { ChevronDown, HelpCircle, Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
 import SEO from '../components/SEO';
 
-const FAQ = () => {
+interface FAQProps {
+  onOpenBooking: () => void;
+}
+
+const FAQ = ({ onOpenBooking }: FAQProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   
   // ... rest of setup ...
@@ -134,7 +138,10 @@ const FAQ = () => {
                     <span className="font-black">support@taxigo.com</span>
                   </div>
                 </div>
-                <button className="btn-premium w-full py-5 relative z-10">
+                <button 
+                  onClick={onOpenBooking}
+                  className="btn-premium w-full py-5 relative z-10"
+                >
                   Contact Now
                 </button>
               </div>

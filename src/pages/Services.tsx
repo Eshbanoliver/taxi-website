@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { Car, Plane, Clock, Briefcase, Heart, Calendar, MapPin, CheckCircle, ArrowRight, Award, Shield, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
-const Services = () => {
+interface ServicesProps {
+  onOpenBooking: () => void;
+}
+
+const Services = ({ onOpenBooking }: ServicesProps) => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
 
   const services = [
@@ -182,7 +187,10 @@ const Services = () => {
                         <span className="text-sm">{feature}</span>
                       </div>
                     ))}
-                    <button className="w-full btn-premium mt-8 py-5">
+                    <button 
+                      onClick={onOpenBooking}
+                      className="w-full btn-premium mt-8 py-5"
+                    >
                       Book Now
                     </button>
                   </div>
@@ -260,7 +268,10 @@ const Services = () => {
                   We offer bespoke transportation solutions for weddings, corporate galas, and specialized requirements. 
                 </p>
                 <div className="flex flex-wrap gap-8">
-                  <button className="btn-premium py-6 px-16 text-lg">
+                  <button 
+                    onClick={onOpenBooking}
+                    className="btn-premium py-6 px-16 text-lg"
+                  >
                     <Phone size={24} />
                     <span>Get Custom Quote</span>
                   </button>

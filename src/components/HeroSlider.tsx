@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Phone, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const HeroSlider = () => {
+interface HeroSliderProps {
+  onOpenBooking: () => void;
+}
+
+const HeroSlider = ({ onOpenBooking }: HeroSliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
 
@@ -135,14 +140,17 @@ const HeroSlider = () => {
                   
                   {/* CTA */}
                   <div className="flex flex-col sm:flex-row gap-8 animate-fade-in-up animation-delay-900">
-                    <button className="btn-premium group py-6 px-16 text-lg shadow-2xl">
+                    <button 
+                      onClick={onOpenBooking}
+                      className="btn-premium group py-6 px-16 text-lg shadow-2xl"
+                    >
                       <Phone size={24} className="group-hover:rotate-12 transition-transform" />
                       <span>{slide.ctaText}</span>
                     </button>
-                    <a href="/services" className="btn-outline-premium py-6 px-16 text-lg">
+                    <Link to="/services" className="btn-outline-premium py-6 px-16 text-lg">
                       <span>Explore Fleet</span>
                       <ChevronRight size={24} className="group-hover:translate-x-2 transition-transform" />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

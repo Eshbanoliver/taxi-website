@@ -1,9 +1,10 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
 import CustomCursor from './components/CustomCursor';
+import BookingModal from './components/BookingModal';
 
 // Eagerly load Home (critical first paint)
 import Home from './pages/Home';
@@ -22,6 +23,11 @@ const PageLoader = () => (
 );
 
 function App() {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
+  const openBooking = () => setIsBookingOpen(true);
+  const closeBooking = () => setIsBookingOpen(false);
+
   return (
     <Router>
       <div className="min-h-screen bg-white flex flex-col w-full overflow-x-hidden relative text-slate-900 font-sans">
@@ -37,16 +43,16 @@ function App() {
         <div className="fixed inset-0 pointer-events-none opacity-[0.05] z-0" style={{ backgroundImage: 'radial-gradient(#000000 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         
         {/* Header - Fixed Position */}
-        <Header />
+        <Header onOpenBooking={openBooking} />
         
         {/* Main Content Area */}
         <main className="flex-grow w-full relative z-10">
           <Suspense fallback={<PageLoader />}>
             <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/services" element={<Services />} />
-              <Route path="/faq" element={<FAQ />} />
+              <Route path="/" element={<Home onOpenBooking={openBooking} />} />
+              <Route path="/about" element={<About onOpenBooking={openBooking} />} />
+              <Route path="/services" element={<Services onOpenBooking={openBooking} />} />
+              <Route path="/faq" element={<FAQ onOpenBooking={openBooking} />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </Suspense>
@@ -57,6 +63,9 @@ function App() {
         
         {/* Floating Elements */}
         <FloatingButtons />
+
+        {/* Booking Dialog */}
+        <BookingModal isOpen={isBookingOpen} onClose={closeBooking} />
       </div>
     </Router>
   );

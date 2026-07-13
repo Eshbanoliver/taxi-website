@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Star, CheckCircle, Users, MapPin, Clock, Shield, Car, ArrowRight, Plane, Phone, BookOpen, HelpCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import HeroSlider from '../components/HeroSlider';
 import SEO from '../components/SEO';
 
-const Home = () => {
+interface HomeProps {
+  onOpenBooking: () => void;
+}
+
+const Home = ({ onOpenBooking }: HomeProps) => {
   const testimonials = [
     { name: 'Rahul Sharma', text: 'Excellent service! The driver was professional and the car was spotless.', rating: 5, image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format&q=80' },
     { name: 'Priya Patel', text: 'Very reliable and affordable. Best taxi service in Udaipur!', rating: 5, image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face&auto=format&q=80' },
@@ -22,7 +27,7 @@ const Home = () => {
       <h1 className="sr-only">Taxi GO Udaipur - Premium Taxi & Cab Service</h1>
       
       {/* Hero Section */}
-      <HeroSlider />
+      <HeroSlider onOpenBooking={onOpenBooking} />
 
       {/* About Section - Luxury Reveal */}
       <section className="relative py-32 md:py-64 overflow-hidden">
@@ -212,13 +217,16 @@ const Home = () => {
                 Join thousands of satisfied customers who trust Taxi GO for their transportation needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                <a href="/contact" className="btn-premium py-6 px-20 text-xl">
+                <button 
+                  onClick={onOpenBooking}
+                  className="btn-premium py-6 px-20 text-xl"
+                >
                   <Phone size={24} />
                   <span>Book Now</span>
-                </a>
-                <a href="/services" className="btn-outline-premium py-6 px-20 text-xl">
+                </button>
+                <Link to="/services" className="btn-outline-premium py-6 px-20 text-xl">
                   <span>View Fleet</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

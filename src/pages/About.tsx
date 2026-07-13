@@ -1,8 +1,13 @@
 import React from 'react';
 import { Users, Award, Clock, CheckCircle, Target, Eye, Heart, Shield, Car, Phone, ArrowRight, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 
-const About = () => {
+interface AboutProps {
+  onOpenBooking: () => void;
+}
+
+const About = ({ onOpenBooking }: AboutProps) => {
   const team = [
     { name: 'Rajesh Kumar', role: 'Founder & CEO', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face&auto=format&q=80' },
     { name: 'Priya Sharma', role: 'Operations Manager', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80' },
@@ -209,13 +214,16 @@ const About = () => {
                 Join thousands of satisfied customers who trust us for their transportation needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                <a href="/contact" className="btn-premium py-6 px-20 text-xl">
+                <button 
+                  onClick={onOpenBooking}
+                  className="btn-premium py-6 px-20 text-xl"
+                >
                   <Phone size={24} />
                   <span>Book Now</span>
-                </a>
-                <a href="/services" className="btn-outline-premium py-6 px-20 text-xl">
+                </button>
+                <Link to="/services" className="btn-outline-premium py-6 px-20 text-xl">
                   <span>Explore Fleet</span>
-                </a>
+                </Link>
               </div>
             </div>
           </div>

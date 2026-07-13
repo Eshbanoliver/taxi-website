@@ -180,23 +180,38 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Map Immersive Placeholder */}
+              {/* Map Immersive Interactive Section */}
               <div className="relative rounded-[4rem] overflow-hidden shadow-2xl h-96 group animate-fade-in-up" style={{ animationDelay: '600ms' }}>
-                 <div className="absolute inset-0 bg-slate-100 flex items-center justify-center">
-                    <MapPin size={48} className="text-taxi-yellow animate-bounce" />
-                    <div className="absolute bottom-10 left-10 right-10">
-                       <div className="glass-premium p-8 rounded-3xl flex items-center justify-between">
-                          <div>
-                             <div className="font-black text-white text-xl">Udaipur, Rajasthan</div>
-                             <div className="text-slate-300 text-xs font-bold uppercase tracking-widest">Main Hub</div>
-                          </div>
-                          <button className="p-4 bg-taxi-yellow rounded-full text-taxi-black hover:scale-110 transition-transform">
-                             <ArrowRight size={24} />
-                          </button>
+                 <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58023.774436814234!2d73.68412678854497!3d24.580795493033503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e56550a14411%3A0xdbd8c28455b868b0!2sUdaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) grayscale(10%) contrast(90%)' }} 
+                    allowFullScreen={true} 
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Taxi GO Udaipur Headquarters Map"
+                    className="w-full h-full object-cover"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
+                 
+                 {/* Floating Hub Overlay */}
+                 <div className="absolute bottom-10 left-10 right-10 pointer-events-none">
+                    <div className="glass-premium p-8 rounded-3xl flex items-center justify-between pointer-events-auto shadow-2xl">
+                       <div>
+                          <div className="font-black text-white text-xl">Udaipur, Rajasthan</div>
+                          <div className="text-slate-300 text-xs font-bold uppercase tracking-widest">Main Hub</div>
                        </div>
+                       <a 
+                          href="https://maps.google.com/?q=Udaipur,Rajasthan" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="p-4 bg-taxi-yellow rounded-full text-taxi-black hover:scale-110 transition-transform flex items-center justify-center"
+                       >
+                          <ArrowRight size={24} />
+                       </a>
                     </div>
                  </div>
-                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent pointer-events-none" />
               </div>
             </div>
           </div>

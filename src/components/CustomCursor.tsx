@@ -1,11 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 const CustomCursor = () => {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const glowRef = useRef<HTMLDivElement>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Disable custom cursor on mobile / touch devices for performance and responsiveness
+    const mobileCheck = window.matchMedia('(pointer: coarse)');
+    if (mobileCheck.matches) {
+      setIsMobile(true);
+      return;
+    }
     let mouseX = 0;
     let mouseY = 0;
     let dotX = 0;
@@ -119,7 +126,9 @@ const CustomCursor = () => {
       document.removeEventListener('mouseleave', onMouseLeave);
       document.removeEventListener('mouseenter', onMouseEnter);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <>

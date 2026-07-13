@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, MapPin, Mail, Facebook, Instagram, Twitter, Youtube, Car, Star, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const quickLinks = [
@@ -37,7 +38,7 @@ const Footer = () => {
                </div>
             </div>
             <p className="text-xl text-slate-400 font-medium max-w-xl">
-              Udaipur's premier transportation service. We combine luxury with reliability to craft the perfect journey for every guest.
+               Udaipur's premier transportation service. We combine luxury with reliability to craft the perfect journey for every guest.
             </p>
             <div className="flex space-x-6">
               {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
@@ -71,7 +72,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-slate-400 hover:text-taxi-yellow font-medium transition-colors">{link.name}</a>
+                  <Link to={link.href} className="text-slate-400 hover:text-taxi-yellow font-medium transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>
@@ -82,7 +83,7 @@ const Footer = () => {
             <ul className="space-y-4">
               {services.map((service) => (
                 <li key={service.name}>
-                  <a href={service.href} className="text-slate-400 hover:text-taxi-yellow font-medium transition-colors">{service.name}</a>
+                  <Link to={service.href} className="text-slate-400 hover:text-taxi-yellow font-medium transition-colors">{service.name}</Link>
                 </li>
               ))}
             </ul>

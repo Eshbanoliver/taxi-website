@@ -71,7 +71,7 @@ const FAQ = () => {
       <section className="relative h-[60vh] flex items-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
-          style={{ backgroundImage: `url('/faq_hero_taxi_1778825046153.png')` }}
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&h=900&fit=crop&auto=format&q=80')` }}
         />
         <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />

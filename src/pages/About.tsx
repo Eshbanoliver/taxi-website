@@ -4,10 +4,10 @@ import SEO from '../components/SEO';
 
 const About = () => {
   const team = [
-    { name: 'Rajesh Kumar', role: 'Founder & CEO', image: '/team_ceo_1778825666916.png' },
-    { name: 'Priya Sharma', role: 'Operations Manager', image: '/team_ops_1778825703910.png' },
-    { name: 'Amit Patel', role: 'Customer Relations', image: '/team_customer_1778825739366.png' },
-    { name: 'Suman Verma', role: 'Fleet Manager', image: '/team_fleet_1778825719491.png' },
+    { name: 'Rajesh Kumar', role: 'Founder & CEO', image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face&auto=format&q=80' },
+    { name: 'Priya Sharma', role: 'Operations Manager', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&crop=face&auto=format&q=80' },
+    { name: 'Amit Patel', role: 'Customer Relations', image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&crop=face&auto=format&q=80' },
+    { name: 'Suman Verma', role: 'Fleet Manager', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face&auto=format&q=80' },
   ];
 
   return (
@@ -21,7 +21,7 @@ const About = () => {
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
-          style={{ backgroundImage: `url('/about_hero_taxi_1778825012509.png')` }}
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1600&h=900&fit=crop&auto=format&q=80')` }}
         />
         <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />
@@ -61,7 +61,7 @@ const About = () => {
             <div className="relative group">
                <div className="absolute -inset-4 bg-emerald-500/10 blur-3xl rounded-[4rem]" />
                <div className="relative rounded-[4rem] overflow-hidden shadow-2xl">
-                 <img src="/about_hero_taxi_1778825012509.png" alt="Our Heritage" loading="lazy" decoding="async" className="w-full object-cover" />
+                 <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&h=800&fit=crop&auto=format&q=80" alt="Our Heritage" loading="lazy" decoding="async" className="w-full object-cover" />
                </div>
             </div>
             

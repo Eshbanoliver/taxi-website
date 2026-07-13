@@ -71,28 +71,28 @@ const Services = () => {
   const vehicleCategories = [
     {
       category: 'Economy',
-      image: '/vehicle_economy_1778825576986.png',
+      image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=600&h=400&fit=crop&auto=format&q=80',
       vehicles: ['Swift', 'WagonR', 'i10'],
       price: '₹7-10/km',
       features: ['AC', '4 Seats', 'Fuel Efficient'],
     },
     {
       category: 'Sedan',
-      image: '/vehicle_sedan_1778825594122.png',
+      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop&auto=format&q=80',
       vehicles: ['Dzire', 'City', 'Ciaz'],
       price: '₹10-15/km',
       features: ['AC', '4 Seats', 'Comfortable', 'Spacious'],
     },
     {
       category: 'SUV',
-      image: '/vehicle_suv_1778825613726.png',
+      image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=600&h=400&fit=crop&auto=format&q=80',
       vehicles: ['XUV500', 'Innova'],
       price: '₹13-20/km',
       features: ['AC', '7 Seats', 'Powerful'],
     },
     {
       category: 'Luxury',
-      image: '/vehicle_luxury_1778825630578.png',
+      image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=600&h=400&fit=crop&auto=format&q=80',
       vehicles: ['BMW', 'Mercedes'],
       price: '₹25-35/km',
       features: ['AC', '4 Seats', 'Premium', 'Executive'],
@@ -110,7 +110,7 @@ const Services = () => {
       <section className="relative h-[80vh] flex items-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-110"
-          style={{ backgroundImage: `url('/services_hero_taxi_1778825029030.png')` }}
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1616422285623-13ff0162193c?w=1600&h=900&fit=crop&auto=format&q=80')` }}
         />
         <div className="absolute inset-0 bg-slate-900/80 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/40 to-transparent" />

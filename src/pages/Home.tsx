@@ -5,10 +5,10 @@ import SEO from '../components/SEO';
 
 const Home = () => {
   const testimonials = [
-    { name: 'Rahul Sharma', text: 'Excellent service! The driver was professional and the car was spotless.', rating: 5, image: '/user_rahul_1778825783527.png' },
-    { name: 'Priya Patel', text: 'Very reliable and affordable. Best taxi service in Udaipur!', rating: 5, image: '/user_priya_1778825801950.png' },
-    { name: 'Amit Kumar', text: 'Punctual pickups and comfortable rides. Highly recommended!', rating: 5, image: '/user_amit_1778825821792.png' },
-    { name: 'Kavya Nair', text: 'Transparent pricing and no hidden charges. Trustworthy service!', rating: 5, image: '/user_priya_1778825801950.png' },
+    { name: 'Rahul Sharma', text: 'Excellent service! The driver was professional and the car was spotless.', rating: 5, image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face&auto=format&q=80' },
+    { name: 'Priya Patel', text: 'Very reliable and affordable. Best taxi service in Udaipur!', rating: 5, image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face&auto=format&q=80' },
+    { name: 'Amit Kumar', text: 'Punctual pickups and comfortable rides. Highly recommended!', rating: 5, image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop&crop=face&auto=format&q=80' },
+    { name: 'Kavya Nair', text: 'Transparent pricing and no hidden charges. Trustworthy service!', rating: 5, image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face&auto=format&q=80' },
   ];
 
   return (
@@ -69,7 +69,7 @@ const Home = () => {
             <div className="relative group perspective-1000">
               <div className="absolute -inset-4 bg-taxi-yellow/20 blur-3xl rounded-[4rem] group-hover:bg-taxi-yellow/30 transition-colors duration-1000" />
               <div className="relative rounded-[4rem] overflow-hidden shadow-2xl transition-transform duration-1000 group-hover:scale-105">
-                <img src="/about_hero_taxi_1778825012509.png" alt="Premium Taxi" loading="lazy" decoding="async" className="w-full h-full object-cover" />
+                <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=1200&h=800&fit=crop&auto=format&q=80" alt="Premium Taxi" loading="lazy" decoding="async" className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-12 left-12 right-12">
                   <div className="glass-premium p-8 rounded-3xl flex items-center justify-between">
